@@ -14,7 +14,8 @@ a {text-decoration: none;}
 .left-sec {background: rgb(255, 255, 255);margin-bottom: 24px;position: relative;box-sizing: border-box;}
 .title-box {border-bottom: 1px solid rgb(206, 211, 217);padding: 32px 40px;box-sizing: border-box;position: -webkit-sticky;position: sticky;top: -1px;background: #fff;z-index: 9;}
 .title-box h2 {margin: 0px 0px 20px;}
-.blue-btn {background: #0075ff;color: #fff;width: auto;padding: 8px 30px;border: 1px solid #0075ff;font-size: 20px;text-transform: uppercase;margin: 10px 0;display: inline-block;}
+button.blue-btn,.blue-btn {background: #0075ff;color: #fff;width: auto;padding: 8px 30px;border: 1px solid #0075ff;font-size: 20px;text-transform: uppercase;margin: 10px 0;display: inline-block;}
+button.blue-btn:hover,.blue-btn:hover {color: #0075ff;}
 .content-box {padding: 32px 40px;box-sizing: border-box;}
 .c-box-1 {display: flex;margin-bottom: 21px;width: 100%;justify-content: space-between;font-weight: 500;line-height: 30px;}
 .c-box-1 svg {float: left; margin-right: 10px; position: relative;top: 3px;}
@@ -31,6 +32,7 @@ a {text-decoration: none;}
 .form-box {box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px, rgba(0, 0, 0, 0.16) 0px 4px 16px;
     background-color: rgb(255, 255, 255);
     box-sizing: border-box; padding: 24px 40px;}
+.back-link {color: #1976d2; text-decoration: underline;}
 
 .footer {text-align: center;padding: 100px 0px 20px;font-size: 12px;color: #000;}
 .social-icon a {display: inline-block;padding: 0px 10px;color: #ccc;}

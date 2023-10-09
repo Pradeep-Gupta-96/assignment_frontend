@@ -121,33 +121,6 @@ const HomePage = () => {
                     <div className="copyright">© 2023 Areness Law, All Rights Reserved</div>
                 </div>
             </div>
-
-            <div className="form-sce">
-                <div className="bound">
-                    <div className="form-box">
-                        <Link >Back to Job Posting</Link>
-                        <h3>Assessment Intern</h3>
-                        <Box className='top-form' component="form" >
-                            <Grid container spacing={2}>
-                                <Grid item xs={12} sm={12}>
-                                    <TextField required id="outlined-required" label="Name" name='name' fullWidth sx={{ marginBottom: "15px" }} />
-                                    <TextField required id="outlined-required" label="College" name='college' fullWidth sx={{ marginBottom: "15px" }} />
-                                    <TextField required id="outlined-required" label="Year of Passing" name='year-of-passing' fullWidth sx={{ marginBottom: "15px" }} />
-                                    <TextField required id="outlined-required" label="Field of Interest" name='field-of-interest' fullWidth sx={{ marginBottom: "15px" }} />
-                                    <TextField required id="outlined-required" label="Bar Council" name='bar-council' fullWidth sx={{ marginBottom: "15px" }} />
-                                    <TextField required id="outlined-required" label="College Details" name='college-details' fullWidth sx={{ marginBottom: "15px" }} />
-                                    <TextField required id="outlined-required" label="Internship Details " name='internship-details' fullWidth sx={{ marginBottom: "15px" }} />
-                                    <TextField required id="outlined-required" label="Publications, if any " name='publications-if-any ' fullWidth sx={{ marginBottom: "15px" }} />
-                                </Grid>
-
-                            </Grid>
-                        </Box>
-                        <Box className="bottom-form">
-                            <Link className='blue-btn'>Next</Link>
-                        </Box>
-                    </div>
-                </div>
-            </div>
         </>
     )
 }
