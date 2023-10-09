@@ -14,12 +14,14 @@ const TestBoard = () => {
     if (sectA && sectB && sectC) {
         return (
             <>
-                <ProgresC />
+                <ProgresA />
+                
             </>
         );
     } else if (sectA && sectB) {
         return (
             <>
+                <ProgresA />
                 <ProgresB />
             </>
         );
