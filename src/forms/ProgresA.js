@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -24,10 +24,14 @@ const ProgresA = () => {
             console.error(error)
         }
     }
-
+    useEffect(() => {
+        if (!localStorage.getItem('yashodanandA')) {
+            navigate('/')
+        }
+    }, [])
     return (
         <Box sx={{ width: '100%' }}>
-            <Stepper  alternativeLabel>
+            <Stepper alternativeLabel>
                 {steps.map((label) => (
                     <Step key={label}>
                         <StepLabel>{label}</StepLabel>
