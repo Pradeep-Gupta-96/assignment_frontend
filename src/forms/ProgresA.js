@@ -35,23 +35,23 @@ const ProgresA = () => {
     }, [])
     return (
         <>
-        <div className="header">
-            <div className="bound">
-                <div className="topsec">
-                    <div className="logo"><Link className="nav-Link" to="/"><img src={logo} alt="Logo" /></Link></div>
-                    <div className="menu">
-                        <Link to="https://www.arenesslaw.com/career/" className='toggle-menu'>Search More Jobs</Link>
+            <div className="header">
+                <div className="bound">
+                    <div className="topsec">
+                        <div className="logo"><Link className="nav-Link" to="/"><img src={logo} alt="Logo" /></Link></div>
+                        <div className="menu">
+                            <Link to="https://www.arenesslaw.com/career/" className='toggle-menu'>Search More Jobs</Link>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div className="form-sce">
+            <div className="form-sce">
                 <div className="bound">
                     <div className="form-box">
                         <Link className="back-link">Back to Job Posting</Link>
                         <h3>Assessment Intern</h3>
-                        <Box sx={{ width: '100%' }}>
-                            <Stepper  alternativeLabel>
+                        <Box className="prog-bar" sx={{ width: '100%' }}>
+                            <Stepper alternativeLabel>
                                 {steps.map((label) => (
                                     <Step key={label}>
                                         <StepLabel>{label}</StepLabel>
@@ -79,7 +79,7 @@ const ProgresA = () => {
                             <Button className="blue-btn" onClick={onSubmit}>Next</Button>
 
                         </Box>
-                        
+
                     </div>
                 </div>
             </div>
