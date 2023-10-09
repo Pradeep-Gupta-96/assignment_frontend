@@ -27,20 +27,11 @@ a {text-decoration: none;}
 .arenesss-logo img {width: 80%;}
 .right-sce p {font-size: 14px;line-height: 22px;text-align: justify;font-weight: 500;}
 
-.footer {
-    text-align: center;
-    padding: 100px 0px 20px;
-    font-size: 12px;
-    color: #000;
-}
-.social-icon a {
-    display: inline-block;
-    padding: 0px 10px;
-    color: #ccc;
-}
-.copyright {
-    border-top: 1px solid #ccc;
-    display: inline-block;
-    padding: 10px 0px 0px;
-    margin-top: 20px;
-}
+.form-sce {display: inline-block;width: 100%;}
+.form-box {box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px, rgba(0, 0, 0, 0.16) 0px 4px 16px;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box; padding: 24px;}
+
+.footer {text-align: center;padding: 100px 0px 20px;font-size: 12px;color: #000;}
+.social-icon a {display: inline-block;padding: 0px 10px;color: #ccc;}
+.copyright {border-top: 1px solid #ccc;display: inline-block;padding: 10px 0px 0px;margin-top: 20px;}
