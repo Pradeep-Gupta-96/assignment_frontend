@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../images/logo.png'
 import Grid from '@mui/material/Grid';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
@@ -13,9 +13,19 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { Button } from '@mui/material';
 
 
 const HomePage = () => {
+    const navigate = useNavigate()
+    const onSubmit = async () => {
+        try {
+            localStorage.setItem("yashodanandA", "yashodanandA")
+            navigate('/testboard')
+        } catch (error) {
+            console.error(error)
+        }
+    }
     return (
         <>
             <div className="header">
@@ -40,7 +50,7 @@ const HomePage = () => {
                             <div className='shadow-remove left-sec'>
                                 <div className="title-box">
                                     <h2 className="css-7papts">Assessment Intern</h2>
-                                    <a className="blue-btn" href="#">Apply</a>
+                                    <Button className="blue-btn" onClick={onSubmit} >Apply</Button>
                                 </div>
                                 <div className="content-box">
                                     <div className="c-box-1">
@@ -103,10 +113,10 @@ const HomePage = () => {
             <div className="footer">
                 <div className="bound">
                     <div className="social-icon">
-                        <a href="https://www.facebook.com/arenesslaw" target="_blank"><FacebookIcon /></a>
-                        <a href="https://twitter.com/Arenesslaw" target="_blank"><TwitterIcon /></a>
-                        <a href="https://www.linkedin.com/company/areness" target="_blank"><LinkedInIcon /></a>
-                        <a href="https://www.instagram.com/areness_law/" target="_blank"><InstagramIcon /></a>
+                        <Link href="https://www.facebook.com/arenesslaw" target="_blank"><FacebookIcon /></Link>
+                        <Link href="https://twitter.com/Arenesslaw" target="_blank"><TwitterIcon /></Link>
+                        <Link href="https://www.linkedin.com/company/areness" target="_blank"><LinkedInIcon /></Link>
+                        <Link href="https://www.instagram.com/areness_law/" target="_blank"><InstagramIcon /></Link>
                     </div>
                     <div className="copyright">© 2023 Areness Law, All Rights Reserved</div>
                 </div>
@@ -120,20 +130,20 @@ const HomePage = () => {
                         <Box className='top-form' component="form" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={12}>
-                                    <TextField required id="outlined-required" label="Name" name='name' fullWidth sx={{marginBottom:"15px"}} />
-                                    <TextField required id="outlined-required" label="College" name='college' fullWidth sx={{marginBottom:"15px"}} />
-                                    <TextField required id="outlined-required" label="Year of Passing" name='year-of-passing' fullWidth sx={{marginBottom:"15px"}} />
-                                    <TextField required id="outlined-required" label="Field of Interest" name='field-of-interest' fullWidth sx={{marginBottom:"15px"}} />
-                                    <TextField required id="outlined-required" label="Bar Council" name='bar-council' fullWidth sx={{marginBottom:"15px"}} />
-                                    <TextField required id="outlined-required" label="College Details" name='college-details' fullWidth sx={{marginBottom:"15px"}} />
-                                    <TextField required id="outlined-required" label="Internship Details " name='internship-details' fullWidth sx={{marginBottom:"15px"}} />
-                                    <TextField required id="outlined-required" label="Publications, if any " name='publications-if-any ' fullWidth sx={{marginBottom:"15px"}} />
+                                    <TextField required id="outlined-required" label="Name" name='name' fullWidth sx={{ marginBottom: "15px" }} />
+                                    <TextField required id="outlined-required" label="College" name='college' fullWidth sx={{ marginBottom: "15px" }} />
+                                    <TextField required id="outlined-required" label="Year of Passing" name='year-of-passing' fullWidth sx={{ marginBottom: "15px" }} />
+                                    <TextField required id="outlined-required" label="Field of Interest" name='field-of-interest' fullWidth sx={{ marginBottom: "15px" }} />
+                                    <TextField required id="outlined-required" label="Bar Council" name='bar-council' fullWidth sx={{ marginBottom: "15px" }} />
+                                    <TextField required id="outlined-required" label="College Details" name='college-details' fullWidth sx={{ marginBottom: "15px" }} />
+                                    <TextField required id="outlined-required" label="Internship Details " name='internship-details' fullWidth sx={{ marginBottom: "15px" }} />
+                                    <TextField required id="outlined-required" label="Publications, if any " name='publications-if-any ' fullWidth sx={{ marginBottom: "15px" }} />
                                 </Grid>
-                                
+
                             </Grid>
                         </Box>
                         <Box className="bottom-form">
-                            <Link className='blue-btn'>Next</Link>             
+                            <Link className='blue-btn'>Next</Link>
                         </Box>
                     </div>
                 </div>
