@@ -37,7 +37,7 @@ const HomePage = () => {
                             <div className='shadow-remove left-sec'>
                                 <div className="title-box">
                                     <h2 className="css-7papts">Assessment Intern</h2>
-                                    <a className="blue-btn" href="#">Apply</a>
+                                    <Link className="blue-btn" to="/progresa" >Apply</Link>
                                 </div>
                                 <div className="content-box">
                                     <div className="c-box-1">
@@ -100,10 +100,10 @@ const HomePage = () => {
             <div className="footer">
                 <div className="bound">
                     <div className="social-icon">
-                        <a href="https://www.facebook.com/arenesslaw" target="_blank"><FacebookIcon /></a>
-                        <a href="https://twitter.com/Arenesslaw" target="_blank"><TwitterIcon /></a>
-                        <a href="https://www.linkedin.com/company/areness" target="_blank"><LinkedInIcon /></a>
-                        <a href="https://www.instagram.com/areness_law/" target="_blank"><InstagramIcon /></a>
+                        <Link href="https://www.facebook.com/arenesslaw" target="_blank"><FacebookIcon /></Link>
+                        <Link href="https://twitter.com/Arenesslaw" target="_blank"><TwitterIcon /></Link>
+                        <Link href="https://www.linkedin.com/company/areness" target="_blank"><LinkedInIcon /></Link>
+                        <Link href="https://www.instagram.com/areness_law/" target="_blank"><InstagramIcon /></Link>
                     </div>
                     <div className="copyright">© 2023 Areness Law, All Rights Reserved</div>
                 </div>
