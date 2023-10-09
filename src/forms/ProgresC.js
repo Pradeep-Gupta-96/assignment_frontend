@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -24,6 +24,11 @@ const ProgresC = () => {
             console.error(error)
         }
     }
+    useEffect(() => {
+        if (!localStorage.getItem('yashodanandC')) {
+            navigate('/progresb')
+        }
+    }, [])
 
     return (
         <Box sx={{ width: '100%' }}>

@@ -28,7 +28,11 @@ const ProgresA = () => {
             console.error(error)
         }
     }
-
+    useEffect(() => {
+        if (!localStorage.getItem('yashodanandA')) {
+            navigate('/')
+        }
+    }, [])
     return (
         <>
         <div className="header">
