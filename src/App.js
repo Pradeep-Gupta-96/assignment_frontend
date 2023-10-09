@@ -4,6 +4,8 @@ import HomePage from './components/HomePage';
 import ProgresA from './forms/ProgresA';
 import ProgresB from './forms/ProgresB';
 import ProgresC from './forms/ProgresC';
+import TestBoard from './forms/TestBoard';
+import Successpage from './forms/Successpage';
 
 
 
@@ -11,9 +13,11 @@ function App() {
 
   const myAllroute = [
     { path: "/", element: <HomePage/> },
+    { path: "/testboard", element: <TestBoard/> },
     { path: "/progresa", element: <ProgresA/> },
     { path: "/progresb", element: <ProgresB/> },
     { path: "/progresc", element: <ProgresC/> },
+    { path: "/successpage", element: <Successpage/> },
   
   ]
   
