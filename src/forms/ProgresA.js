@@ -48,7 +48,7 @@ const ProgresA = () => {
             <div className="form-sce">
                 <div className="bound">
                     <div className="form-box">
-                        <Link className="back-link">Back to Job Posting</Link>
+                        <Link className="back-link" to="/">Back to Job Posting</Link>
                         <h3>Assessment Intern</h3>
                         <Box className="prog-bar" sx={{ width: '100%' }}>
                             <Stepper alternativeLabel>
@@ -75,7 +75,7 @@ const ProgresA = () => {
                             </Grid>
                         </Box>
                         <Box sx={{ width: '100%' }} className="bottom-form">
-                            <Link className='back-link'>Back</Link>
+                            <Link className='back-link' to="/">Back</Link>
                             <Button className="blue-btn" onClick={onSubmit}>Next</Button>
 
                         </Box>

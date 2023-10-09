@@ -15,7 +15,6 @@ const TestBoard = () => {
         return (
             <>
                 <ProgresA />
-                
             </>
         );
     } else if (sectA && sectB) {
