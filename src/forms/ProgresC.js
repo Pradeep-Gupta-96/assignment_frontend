@@ -10,9 +10,9 @@ import { Button } from '@mui/material';
 import { useNavigate } from "react-router-dom"
 
 const steps = [
-    'Select master blaster campaign settings ProgresC',
-    'Create an ad group',
-    'Create an ad',
+    'Step 1',
+    'Step 2',
+    'Step 3',
 ];
 
 
@@ -69,7 +69,7 @@ const ProgresC = () => {
                         </Box>
                         <Box sx={{ width: '100%' }} className="bottom-form">
                             <Link className='back-link' to="/progresb">Back</Link>
-                            <Button className="blue-btn" onClick={onSubmit}>Next</Button>
+                            <Button className="blue-btn" onClick={onSubmit}>Submit</Button>
 
                         </Box>
 

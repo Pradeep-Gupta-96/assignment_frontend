@@ -10,9 +10,9 @@ import { Button } from '@mui/material';
 import { useNavigate } from "react-router-dom"
 
 const steps = [
-    'Select master blaster campaign settings ProgresB',
-    'Create an ad group',
-    'Create an ad',
+    'Step 1',
+    'Step 2',
+    'Step 3',
 ];
 
 

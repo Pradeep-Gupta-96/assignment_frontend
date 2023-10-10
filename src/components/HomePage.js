@@ -1,19 +1,14 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../images/logo.png'
+import banner from '../images/main-banner.png'
 import Grid from '@mui/material/Grid';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import ArticleIcon from '@mui/icons-material/Article';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
+import Footer from './Footer';
 
 
 const HomePage = () => {
@@ -40,7 +35,7 @@ const HomePage = () => {
             </div>
             <div className="banner">
                 <div className="bound">
-                    <div className="banner-box">Main Banner Coming Soon!!</div>
+                    <div className="banner-box"><img src={banner} /></div>
                 </div>
             </div>
             <div className="page-content">
@@ -110,17 +105,8 @@ const HomePage = () => {
                     </Grid>
                 </div>
             </div>
-            <div className="footer">
-                <div className="bound">
-                    <div className="social-icon">
-                        <Link href="https://www.facebook.com/arenesslaw" target="_blank"><FacebookIcon /></Link>
-                        <Link href="https://twitter.com/Arenesslaw" target="_blank"><TwitterIcon /></Link>
-                        <Link href="https://www.linkedin.com/company/areness" target="_blank"><LinkedInIcon /></Link>
-                        <Link href="https://www.instagram.com/areness_law/" target="_blank"><InstagramIcon /></Link>
-                    </div>
-                    <div className="copyright">© 2023 Areness Law, All Rights Reserved</div>
-                </div>
-            </div>
+            <Footer/>
+           
         </>
     )
 }

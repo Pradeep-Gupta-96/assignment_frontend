@@ -10,7 +10,7 @@ a {text-decoration: none;}
 .topsec {display: flex;justify-content: space-between;padding: 15px 0px;align-items: center;}
 .logo a {display: inline-block;width: 100%;}.logo img {height: 60px;}
 .menu a {color: #000;}
-.banner-box {background: #cccc;margin-bottom: 20px;height: 300px; display: flex;justify-content: center;align-items: center;}
+.banner-box {margin-bottom: 20px; display: flex;justify-content: center;align-items: center;}
 
 .left-sec {background: rgb(255, 255, 255);margin-bottom: 24px;position: relative;box-sizing: border-box;}
 .title-box {border-bottom: 1px solid rgb(206, 211, 217);padding: 32px 40px;box-sizing: border-box;position: -webkit-sticky;position: sticky;top: -1px;background: #fff;z-index: 9;}
@@ -34,9 +34,19 @@ button.blue-btn:hover,.blue-btn:hover {color: #1976d2;}
     background-color: rgb(255, 255, 255);
     box-sizing: border-box; padding: 24px 40px;}
 .back-link {color: #1976d2; text-decoration: underline;}
-.prog-bar {position: -webkit-sticky;position: sticky;top: -1px;background: #fff;z-index: 9;padding: 10px 0px 30px;}
-form.top-form {padding-bottom: 100px;min-height: 450px;}
+.prog-bar {position: -webkit-sticky;position: sticky;top: -1px;background: #fff;z-index: 9;padding: 10px 0px 50px;}
+.Mui-completed svg, .Mui-completed > span {color: green !important; border-color:  green !important;}
+.prog-bar .MuiStepLabel-alternativeLabel { font-family: 'Montserrat', sans-serif !important;font-weight: 500;}
+form.top-form {padding-bottom: 100px;min-height: 450px;padding-top: 10px;}
+form.top-form label,.checkbox-row legend { font-weight: 600;color: #000 !important;}
+form.top-form input,form.top-form label,form.top-form .MuiOutlinedInput-root,.MuiMenu-list li {font-family: 'Montserrat', sans-serif !important;}
 .bottom-form {border-top: 1px solid rgb(240, 241, 242);display: flex;justify-content: space-between;align-items: center;position: fixed;bottom: 0px;background: #fff;max-width: 1160px;z-index: 9;}
+.form-sce {background: url(../src/images/body-bg.jpg) no-repeat center; background-size: cover;}
+.form-sce.sucess {background: none;}
+form.top-form .checkbox-row {display: flex;flex-direction: inherit;align-items: center;}
+.checkbox-row legend,.checkbox-row label span {font-family: 'Montserrat', sans-serif !important;}
+.checkbox-row label {margin-left: 20px;}
+form.top-form .checkbox-row label,.checkbox-row legend {display: inline-block;}
 
 
 .footer {text-align: center;padding: 100px 0px 20px;font-size: 12px;color: #000;}
