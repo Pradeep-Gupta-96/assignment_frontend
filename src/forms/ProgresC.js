@@ -10,8 +10,8 @@ import { Button } from '@mui/material';
 import { useNavigate } from "react-router-dom"
 
 const steps = [
-    'Step 1',
-    'Step 2',
+    'Preliminary Details',
+    'Experience',
     'Step 3',
 ];
 

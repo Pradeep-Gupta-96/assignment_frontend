@@ -18,8 +18,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
 const steps = [
-    'Step 1',
-    'Step 2',
+    'Preliminary Details',
+    'Experience',
     'Step 3',
 ];
 
@@ -198,7 +198,6 @@ const ProgresA = () => {
                                             <MenuItem value={"Digital Governance"}>Digital Governance</MenuItem>
                                         </Select>
                                     </FormControl>
-                                    <TextField required id="outlined-required" label="Last Internship Details " name='last-internship-details' fullWidth sx={{ marginBottom: "25px" }} />
                                     <TextField required id="outlined-required" label="Publications, if any " name='publications-if-any ' fullWidth sx={{ marginBottom: "25px" }} />
                                 </Grid>
 

@@ -8,8 +8,8 @@ import StepLabel from '@mui/material/StepLabel';
 import Footer from '../components/Footer';
 
 const steps = [
-  'Step 1',
-  'Step 2',
+  'Preliminary Details',
+  'Experience',
   'Step 3',
 ];
 
