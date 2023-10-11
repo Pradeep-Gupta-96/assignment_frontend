@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../images/logo.png'
 import Box from '@mui/material/Box';
@@ -11,7 +11,6 @@ import { Button, FormLabel } from '@mui/material';
 import { useNavigate } from "react-router-dom"
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -26,15 +25,44 @@ const steps = [
 
 
 const ProgresA = () => {
-    const [age, setAge] = React.useState('');
     const navigate = useNavigate()
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        university: '',
+        college: '',
+        courseDuration: '',
+        course: '',
+        fieldOfInterest: '',
+        skills: '',
+        lastInternshipDetails: '',
+        publications: '',
+    });
 
     const handleChange = (event) => {
-        setAge(event.target.value);
+        const { name, value } = event.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
     };
+
+
     const onSubmit = async () => {
         try {
             localStorage.setItem("yashodanandB", "yashodanandB")
+            localStorage.setItem("name", formData.name)
+            localStorage.setItem("email", formData.email)
+            localStorage.setItem("phone", formData.phone)
+            localStorage.setItem("university", formData.university)
+            localStorage.setItem("college", formData.college)
+            localStorage.setItem("course_duration", formData.courseDuration)
+            localStorage.setItem("course", formData.course)
+            localStorage.setItem("field_of_interest", formData.fieldOfInterest)
+            localStorage.setItem("skills", formData.skills)
+            localStorage.setItem("last_internship_details", formData.lastInternshipDetails)
+            localStorage.setItem("publications", formData.publications)
             navigate('/progresb')
         } catch (error) {
             console.error(error)
@@ -74,35 +102,37 @@ const ProgresA = () => {
                         <Box className='top-form' component="form" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={12}>
-                                    <TextField required id="outlined-required" label="Name" name='name' fullWidth sx={{ marginBottom: "25px" }} />
-                                    <TextField required id="outlined-required" label="Email" name='email' fullWidth sx={{ marginBottom: "25px" }} />
-                                    <TextField required id="outlined-required" label="Phone" name='phone' fullWidth sx={{ marginBottom: "25px" }} />
-                                    <FormControl  sx={{ marginBottom: "25px" }} fullWidth>
+                                    <TextField required id="outlined-required" label="Name" name='name' value={formData.name} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                    <TextField required id="outlined-required" label="Email" name='email' value={formData.email} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                    <TextField required id="outlined-required" label="Phone" name='phone' value={formData.phone} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
                                         <InputLabel id="university">University</InputLabel>
                                         <Select
                                             labelId="university"
                                             id="demo-simple-select-helper"
-                                            value={age}
+                                            name="university"
+                                            value={formData.university}
                                             label="University"
                                             onChange={handleChange}
                                         >
                                             <MenuItem value="">
                                                 <em>College Name</em>
                                             </MenuItem>
-                                            <MenuItem value={2022}>University 1</MenuItem>
-                                            <MenuItem value={2021}>University 2</MenuItem>
-                                            <MenuItem value={2020}>University 3</MenuItem>
-                                            <MenuItem value={2019}>University 4</MenuItem>
-                                            <MenuItem value={2018}>University 5</MenuItem>
-                                            <MenuItem value={2017}>University 6</MenuItem>
+                                            <MenuItem value={"University 1"}>University 1</MenuItem>
+                                            <MenuItem value={"University 2"}>University 2</MenuItem>
+                                            <MenuItem value={"University 3"}>University 3</MenuItem>
+                                            <MenuItem value={"University 4"}>University 4</MenuItem>
+                                            <MenuItem value={"University 5"}>University 5</MenuItem>
+                                            <MenuItem value={"University 6"}>University 6</MenuItem>
                                         </Select>
                                     </FormControl>
-                                    <FormControl  sx={{ marginBottom: "25px" }} fullWidth>
+                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
                                         <InputLabel id="year-of-passing">College</InputLabel>
                                         <Select
                                             labelId="college"
                                             id="demo-simple-select-helper"
-                                            value={age}
+                                            name="college"
+                                            value={formData.college}
                                             label="College"
                                             onChange={handleChange}
                                         >
@@ -117,19 +147,33 @@ const ProgresA = () => {
                                             <MenuItem value={2017}>College 6</MenuItem>
                                         </Select>
                                     </FormControl>
-                                    <FormControl className="checkbox-row"  sx={{ marginBottom: "25px" }} fullWidth>
+                                    <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Course Duration:</FormLabel>
-                                        <FormControlLabel control={<Checkbox  />} label="3 Years" />
-                                        <FormControlLabel control={<Checkbox  />} label="5 Years" />
-
+                                        <FormControlLabel
+                                            control={<Checkbox />}
+                                            label="3 Years"
+                                            name="courseDuration"
+                                            value="3 Years"
+                                            checked={formData.courseDuration === '3 Years'}
+                                            onChange={handleChange}
+                                        />
+                                        <FormControlLabel
+                                            control={<Checkbox />}
+                                            label="5 Years"
+                                            name="courseDuration"
+                                            value="5 Years"
+                                            checked={formData.courseDuration === '5 Years'}
+                                            onChange={handleChange}
+                                        />
                                     </FormControl>
-                                    
-                                    <FormControl  sx={{ marginBottom: "25px" }} fullWidth>
+
+                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
                                         <InputLabel id="course">Course</InputLabel>
                                         <Select
                                             labelId="course"
                                             id="demo-simple-select-helper"
-                                            value={age}
+                                            name="course"
+                                            value={formData.course}
                                             label="Course"
                                             onChange={handleChange}
                                         >
@@ -144,12 +188,13 @@ const ProgresA = () => {
                                             <MenuItem value={"B.Sc LLB"}>B.Sc LLB</MenuItem>
                                         </Select>
                                     </FormControl>
-                                    <FormControl  sx={{ marginBottom: "25px" }} fullWidth>
+                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
                                         <InputLabel id="field-of-interest">Field of Interest</InputLabel>
                                         <Select
                                             labelId="field-of-interest"
                                             id="demo-simple-select-helper"
-                                            value={age}
+                                            name="fieldOfInterest"
+                                            value={formData.fieldOfInterest}
                                             label="Field of Interest"
                                             onChange={handleChange}
                                         >
@@ -172,12 +217,13 @@ const ProgresA = () => {
                                             <MenuItem value={"White Collar Crimes"}>White Collar Crimes</MenuItem>
                                         </Select>
                                     </FormControl>
-                                    <FormControl  sx={{ marginBottom: "25px" }} fullWidth>
+                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
                                         <InputLabel id="skills">Skills</InputLabel>
                                         <Select
                                             labelId="skills"
                                             id="demo-simple-select-helper"
-                                            value={age}
+                                            name='skills'
+                                            value={formData.skills}
                                             label="Skills"
                                             onChange={handleChange}
                                         >
@@ -198,22 +244,20 @@ const ProgresA = () => {
                                             <MenuItem value={"Digital Governance"}>Digital Governance</MenuItem>
                                         </Select>
                                     </FormControl>
-                                    <TextField required id="outlined-required" label="Last Internship Details " name='last-internship-details' fullWidth sx={{ marginBottom: "25px" }} />
-                                    <TextField required id="outlined-required" label="Publications, if any " name='publications-if-any ' fullWidth sx={{ marginBottom: "25px" }} />
+                                    <TextField required id="outlined-required" label="Last Internship Details " name='lastInternshipDetails' value={formData.lastInternshipDetails} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                    <TextField required id="outlined-required" label="Publications, if any " name='publications' value={formData.publications} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
                                 </Grid>
-
                             </Grid>
                         </Box>
                         <Box sx={{ width: '100%' }} className="bottom-form">
                             <Link className='back-link' to="/">Back</Link>
                             <Button className="blue-btn" onClick={onSubmit}>Next</Button>
-
                         </Box>
 
                     </div>
                 </div>
             </div>
-            
+
         </>
 
     )
