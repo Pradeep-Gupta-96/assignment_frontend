@@ -15,10 +15,13 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import ParticleEffect from '../components/ParticleEffect';
+
+
 
 const steps = [
-    'Step 1',
-    'Step 2',
+    'Preliminary Details',
+    'Experience',
     'Step 3',
 ];
 
@@ -86,6 +89,7 @@ const ProgresA = () => {
                 </div>
             </div>
             <div className="form-sce">
+                <ParticleEffect/>
                 <div className="bound">
                     <div className="form-box">
                         <Link className="back-link" to="/">Back to Job Posting</Link>
@@ -246,6 +250,7 @@ const ProgresA = () => {
                                     </FormControl>
                                     <TextField required id="outlined-required" label="Last Internship Details " name='lastInternshipDetails' value={formData.lastInternshipDetails} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
                                     <TextField required id="outlined-required" label="Publications, if any " name='publications' value={formData.publications} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                    <TextField required id="outlined-required" label="Publications, if any " name='publications-if-any ' fullWidth sx={{ marginBottom: "25px" }} />
                                 </Grid>
                             </Grid>
                         </Box>

@@ -10,6 +10,8 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { Button } from '@mui/material';
 import Footer from './Footer';
 
+// import "particles/app.js"
+
 
 const HomePage = () => {
     const navigate = useNavigate()
