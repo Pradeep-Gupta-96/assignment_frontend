@@ -85,8 +85,8 @@ const ProgresB = () => {
                                                 <em>College Name</em>
                                             </MenuItem>
                                             <MenuItem value={"IB"}>IB</MenuItem>
-                                            <MenuItem value={"CBSC"}>CBSC</MenuItem>
-                                            <MenuItem value={"ICSC"}>ICSC</MenuItem>
+                                            <MenuItem value={"CBSC"}>CBSE</MenuItem>
+                                            <MenuItem value={"ICSC"}>ICSE</MenuItem>
                                         </Select>
                                     </FormControl>
                                     <TextField required id="outlined-required" label="10th Class Education" name='10th-education' fullWidth sx={{ marginBottom: "25px" }} />
