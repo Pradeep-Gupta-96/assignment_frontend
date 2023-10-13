@@ -15,7 +15,6 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import ParticleEffect from '../components/ParticleEffect';
 
 
 
@@ -89,7 +88,6 @@ const ProgresA = () => {
                 </div>
             </div>
             <div className="form-sce">
-                <ParticleEffect/>
                 <div className="bound">
                     <div className="form-box">
                         <Link className="back-link" to="/">Back to Job Posting</Link>
