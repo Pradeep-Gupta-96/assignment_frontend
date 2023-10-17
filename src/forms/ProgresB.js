@@ -122,27 +122,90 @@ const ProgresB = () => {
                         <Box className='top-form' component="form" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={12}>
-                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
-                                        <InputLabel id="education-board">Education Board</InputLabel>
-                                        <Select
-                                            labelId="education-board"
-                                            id="demo-simple-select-helper"
-                                            name='educationBoard'
-                                            value={formData.educationBoard}
-                                            label="Education Board"
-                                            onChange={handleChange}
-                                        >
-                                            <MenuItem value="">
-                                                <em>College Name</em>
-                                            </MenuItem>
-                                            <MenuItem value={"IB"}>IB</MenuItem>
-                                            <MenuItem value={"CBSC"}>CBSE</MenuItem>
-                                            <MenuItem value={"ICSC"}>ICSE</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                    <TextField required id="outlined-required" label="10th Class Education" name='Class10Education' value={formData.Class10Education} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
-                                    <TextField required id="outlined-required" label="12th Class Education" name='Class12Education' value={formData.Class12Education} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
-                                    <TextField required id="outlined-required" label="College Percentage" name='CollegePercentage' value={formData.CollegePercentage} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                <div className="eduction">
+                                        <label style={{marginBottom: "10px", display: "inline-block"}} htmlFor="">Education Details</label>
+                                        <div className="edu-class">
+                                            <div className="class-box">
+                                                <label>Class X</label>
+                                            </div>
+                                            <div className="class-box">
+                                                <FormControl   fullWidth>
+                                                    <InputLabel id="10th-board">Board</InputLabel>
+                                                    <Select
+                                                        labelId="education-board"
+                                                        id="demo-simple-select-helper"
+                                                        label="Education Board"
+                                                        onChange={handleChange}
+                                                    >
+                                                        <MenuItem value={"IB"}>IB</MenuItem>
+                                                        <MenuItem value={"CBSC"}>CBSE</MenuItem>
+                                                        <MenuItem value={"ICSC"}>ICSE</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                                
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Percentage" name='percentage' fullWidth  />
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Year of Passing" name='year-of-passing' fullWidth  />
+                                            </div>
+                                        </div>
+                                        <div className="edu-class">
+                                            <div className="class-box">
+                                                <label>Class XII</label>
+                                            </div>
+                                            <div className="class-box">
+                                                 <FormControl   fullWidth>
+                                                    <InputLabel id="12th-board">Board</InputLabel>
+                                                    <Select
+                                                        labelId="education-board"
+                                                        id="demo-simple-select-helper"
+                                                        label="Education Board"
+                                                        onChange={handleChange}
+                                                    >
+                                                        <MenuItem value={"IB"}>IB</MenuItem>
+                                                        <MenuItem value={"CBSC"}>CBSE</MenuItem>
+                                                        <MenuItem value={"ICSC"}>ICSE</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Percentage" name='percentage' fullWidth  />
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Year of Passing" name='year-of-passing' fullWidth  />
+                                            </div>
+                                        </div>
+                                        <div className="edu-class">
+                                            <div className="class-box">
+                                                <label>Graduation</label>
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="University" name='board' fullWidth  />
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Percentage" name='percentage' fullWidth  />
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Year of Passing" name='year-of-passing' fullWidth  />
+                                            </div>
+                                        </div>
+                                        <div className="edu-class">
+                                            <div className="class-box">
+                                                <label>Masters</label>
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="University" name='university' fullWidth  />
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Percentage" name='percentage' fullWidth />
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Year of Passing" name='year-of-passing' fullWidth />
+                                            </div>
+                                        </div>
+                                    </div>
                                     <TextField required id="outlined-required" label="Last Internship Details " name='LastInternshipDetails' value={formData.LastInternshipDetails} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
                                     <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Have you Participated in Moot Court:</FormLabel>
