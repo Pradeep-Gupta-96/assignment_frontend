@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import logo from '../images/logo.png'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -9,12 +9,7 @@ import StepLabel from '@mui/material/StepLabel';
 import { Button, FormLabel } from '@mui/material';
 import { useNavigate } from "react-router-dom"
 import TextField from '@mui/material/TextField';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 
 const steps = [
     'Preliminary Details',
@@ -26,17 +21,57 @@ const steps = [
 
 const ProgresC = () => {
     const navigate = useNavigate()
-    const onSubmit = async () => {
+    const { id } = useParams(); // Retrieve the ID from the route.
+    const [formData, setFormData] = useState({
+        "Answer1": "",
+        "Answer2": "",
+        "Answer3": "",
+    });
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+  
+
+    const handleSubmit = async (event) => {
         try {
-            localStorage.clear()
-            navigate("/successpage")
+            event.preventDefault();
+            const API = `http://localhost:4000/api/insertTodo3/${id}`; // Include the ID in the API URL
+
+
+            // Make the HTTP POST request
+            const response = await fetch(API, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json', // Set the content type
+                },
+                body: JSON.stringify(formData), // Convert to JSON
+            });
+
+            if (response.ok) {
+                // Handle successful response
+                await response.json();
+                localStorage.clear()
+                // Redirect to another page or perform other actions
+                navigate('/successpage');
+            } else {
+                // Handle error response
+                console.error('Error:', response.statusText);
+            }
         } catch (error) {
-            console.error(error)
+            // Handle any errors that occur during the request
+            console.error('Form submission error:', error);
         }
-    }
+    };
+
     useEffect(() => {
         if (!localStorage.getItem('yashodanandC')) {
-            navigate('/progresb')
+            navigate('/progresb/:id')
         }
     }, [])
 
@@ -69,25 +104,24 @@ const ProgresC = () => {
                         <Box className='top-form' component="form" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={12}>
-                                    <FormControl className="question-row"  sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
+                                    <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
                                         <FormLabel sx={{ marginBottom: "15px" }} component="legend">Why Areness? Where do you envision your legal career in 5 years, and what steps do you plan to take to achieve your professional goals during that time?</FormLabel>
-                                        <TextField required id="outlined-required" label="Answer" name='12th-education' fullWidth  />
+                                        <TextField required id="outlined-required" label="Answer" name='Answer1' value={formData.Answer1} onChange={handleChange} fullWidth />
                                     </FormControl>
-                                    <FormControl className="question-row"  sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
+                                    <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
                                         <FormLabel sx={{ marginBottom: "15px" }} component="legend">What strategies and adaptations should legal practitioners consider in order to thrive and remain competitive in the face of significant transformations within the legal profession?</FormLabel>
-                                        <TextField required id="outlined-required" label="Answer" name='12th-education' fullWidth  />
+                                        <TextField required id="outlined-required" label="Answer" name='Answer2' value={formData.Answer2} onChange={handleChange} fullWidth />
                                     </FormControl>
-                                    <FormControl className="question-row"  sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
+                                    <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
                                         <FormLabel sx={{ marginBottom: "15px" }} component="legend">Imagine you are representing a client who has entered into a complex international business contract. The other party has failed to fulfill a significant contractual obligation, and your client is seeking to enforce the contract or seek damages. Help me through the steps you would take to assess the situation, advise your client, and develop a legal strategy to achieve a favorable outcome.</FormLabel>
-                                        <TextField required id="outlined-required" label="Answer" name='12th-education' fullWidth  />
+                                        <TextField required id="outlined-required" label="Answer" name='Answer3' value={formData.Answer3} onChange={handleChange} fullWidth />
                                     </FormControl>
                                 </Grid>
-
                             </Grid>
                         </Box>
                         <Box sx={{ width: '100%' }} className="bottom-form">
                             <Link className='back-link' to="/progresb">Back</Link>
-                            <Button className="blue-btn" onClick={onSubmit}>Submit</Button>
+                            <Button className="blue-btn" onClick={handleSubmit}>Submit</Button>
 
                         </Box>
 

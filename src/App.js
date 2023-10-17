@@ -6,6 +6,7 @@ import ProgresB from './forms/ProgresB';
 import ProgresC from './forms/ProgresC';
 import TestBoard from './forms/TestBoard';
 import Successpage from './forms/Successpage';
+import Dashboard from './Dashboard/Dashboard';
 
 
 
@@ -16,9 +17,10 @@ function App() {
     { path: "/", element: <HomePage/> },
     { path: "/testboard", element: <TestBoard/> },
     { path: "/progresa", element: <ProgresA/> },
-    { path: "/progresb", element: <ProgresB/> },
-    { path: "/progresc", element: <ProgresC/> },
+    { path: "/progresb/:id", element: <ProgresB/> },
+    { path: "/progresc/:id", element: <ProgresC/> },
     { path: "/successpage", element: <Successpage/> },
+    { path: "/dashboard", element: <Dashboard/> },
   
   ]
   
