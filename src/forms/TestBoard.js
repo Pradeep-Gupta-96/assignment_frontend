@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProgresA from './ProgresA';
 import ProgresB from './ProgresB';
-import ProgresC from './ProgresC';
 
 const TestBoard = () => {
     const navigate = useNavigate();

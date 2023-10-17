@@ -34,11 +34,11 @@ const ProgresA = () => {
         phone: '',
         university: '',
         college: '',
-        courseDuration: '',
+        course_duration: '',
         course: '',
-        fieldOfInterest: '',
+        field_of_interest: '',
         skills: '',
-        lastInternshipDetails: '',
+        last_internship_details: '',
         publications: '',
     });
 
@@ -51,30 +51,46 @@ const ProgresA = () => {
     };
 
 
-    const onSubmit = async () => {
+
+    const onSubmit = async (event) => {
         try {
-            localStorage.setItem("yashodanandB", "yashodanandB")
-            localStorage.setItem("name", formData.name)
-            localStorage.setItem("email", formData.email)
-            localStorage.setItem("phone", formData.phone)
-            localStorage.setItem("university", formData.university)
-            localStorage.setItem("college", formData.college)
-            localStorage.setItem("course_duration", formData.courseDuration)
-            localStorage.setItem("course", formData.course)
-            localStorage.setItem("field_of_interest", formData.fieldOfInterest)
-            localStorage.setItem("skills", formData.skills)
-            localStorage.setItem("last_internship_details", formData.lastInternshipDetails)
-            localStorage.setItem("publications", formData.publications)
-            navigate('/progresb')
+            event.preventDefault();
+            const API = 'http://localhost:4000/api/insertTodo1'; // Update the API endpoint
+
+            // Make the HTTP POST request
+            const response = await fetch(API, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json', // Set the content type
+                },
+                body: JSON.stringify(formData), // Convert to JSON
+            });
+
+            if (response.ok) {
+                // Handle successful response
+                const data = await response.json();
+                // The response should include the ID of the inserted record
+                const id = data.todo.id;
+                localStorage.setItem("yashodanandB", "yashodanandB")
+                // Redirect to another page or perform other actions
+                navigate(`/progresb/${id}`);
+            } else {
+                // Handle error response
+                console.error('Error:', response.statusText);
+            }
         } catch (error) {
-            console.error(error)
+            // Handle any errors that occur during the request
+            console.error('Form submission error:', error);
         }
-    }
+    };
+
+
     useEffect(() => {
         if (!localStorage.getItem('yashodanandA')) {
             navigate('/')
         }
     }, [])
+
     return (
         <>
             <div className="header">
@@ -154,17 +170,17 @@ const ProgresA = () => {
                                         <FormControlLabel
                                             control={<Checkbox />}
                                             label="3 Years"
-                                            name="courseDuration"
+                                            name="course_duration"
                                             value="3 Years"
-                                            checked={formData.courseDuration === '3 Years'}
+                                            checked={formData.course_duration === '3 Years'}
                                             onChange={handleChange}
                                         />
                                         <FormControlLabel
                                             control={<Checkbox />}
                                             label="5 Years"
-                                            name="courseDuration"
+                                            name="course_duration"
                                             value="5 Years"
-                                            checked={formData.courseDuration === '5 Years'}
+                                            checked={formData.course_duration === '5 Years'}
                                             onChange={handleChange}
                                         />
                                     </FormControl>
@@ -195,8 +211,8 @@ const ProgresA = () => {
                                         <Select
                                             labelId="field-of-interest"
                                             id="demo-simple-select-helper"
-                                            name="fieldOfInterest"
-                                            value={formData.fieldOfInterest}
+                                            name="field_of_interest"
+                                            value={formData.field_of_interest}
                                             label="Field of Interest"
                                             onChange={handleChange}
                                         >
@@ -246,9 +262,8 @@ const ProgresA = () => {
                                             <MenuItem value={"Digital Governance"}>Digital Governance</MenuItem>
                                         </Select>
                                     </FormControl>
-                                    <TextField required id="outlined-required" label="Last Internship Details " name='lastInternshipDetails' value={formData.lastInternshipDetails} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                    <TextField required id="outlined-required" label="Last Internship Details " name='last_internship_details' value={formData.last_internship_details} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
                                     <TextField required id="outlined-required" label="Publications, if any " name='publications' value={formData.publications} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
-                                    <TextField required id="outlined-required" label="Publications, if any " name='publications-if-any ' fullWidth sx={{ marginBottom: "25px" }} />
                                 </Grid>
                             </Grid>
                         </Box>
