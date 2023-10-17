@@ -48,8 +48,16 @@ form.top-form .checkbox-row {display: flex;flex-direction: inherit;align-items: 
 .checkbox-row label {margin-left: 20px;}
 form.top-form .checkbox-row label,.checkbox-row legend {display: inline-block;}
 .question-row  legend { font-weight: 500;color: #000 !important;font-family: 'Montserrat', sans-serif !important;}
+.edu-class {display: flex;justify-content: space-between;}
+.class-box {width: 30%;background: none;display: flex;align-items: center;margin-bottom: 10px;}
+.class-box:first-child {width: 8%;}
+form.top-form .class-box label {font-weight: 400; font-size: 14px;}
+.data-sce {padding: 40px 0px;}
+.data-table tr:nth-child(even) {background-color: rgb(241, 241, 241);}
+.data-sce table tr td {padding:8px 16px;}
+.data-sce table tr th {background: #528fcb;color: #fff;text-transform: capitalize;line-height: 20px;}
 
-form.top-form input, form.top-form .MuiOutlinedInput-root {background: #fff;}
+form.top-form input, form.top-form .MuiOutlinedInput-root {background: #fff;border-radius: 4px;}
 form.top-form .checkbox-row .MuiOutlinedInput-root {background: none;}
 
 

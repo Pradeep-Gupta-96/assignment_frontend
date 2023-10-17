@@ -36,7 +36,7 @@ const ProgresC = () => {
         });
     };
 
-  
+
 
     const handleSubmit = async (event) => {
         try {
@@ -105,7 +105,7 @@ const ProgresC = () => {
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={12}>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
-                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Why Areness? Where do you envision your legal career in 5 years, and what steps do you plan to take to achieve your professional goals during that time?</FormLabel>
+                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Why Areness? Where do you envision your legal career in 5 years, and what steps do you plan to take to achieve your professional goals during that time? <span style={{ fontSize: "12px" }}>(Max Word Limit 250)</span></FormLabel>
                                         <TextField required id="outlined-required" label="Answer" name='Answer1' value={formData.Answer1} onChange={handleChange} fullWidth />
                                     </FormControl>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>

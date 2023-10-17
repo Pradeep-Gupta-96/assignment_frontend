@@ -71,7 +71,6 @@ const ProgresA = () => {
                 const data = await response.json();
                 // The response should include the ID of the inserted record
                 const id = data.todo.id;
-                console.log("result",data )
                 localStorage.setItem("yashodanandB", "yashodanandB")
                 // Redirect to another page or perform other actions
                 navigate(`/progresb/${id}`);
