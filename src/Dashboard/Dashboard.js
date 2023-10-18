@@ -80,13 +80,21 @@ const Dashboard = () => {
                                         <TableCell >skills</TableCell>
                                         <TableCell >last internship details</TableCell>
                                         <TableCell >publications</TableCell>
-                                        <TableCell >education board</TableCell>
-                                        <TableCell >class10 education</TableCell>
-                                        <TableCell >class12 education</TableCell>
-                                        <TableCell >collegepercentage</TableCell>
-                                        <TableCell >lastinternshipdetails</TableCell>
-                                        <TableCell >Moot court</TableCell>
-                                        <TableCell >preferred location</TableCell>
+                                        <TableCell >class10education</TableCell>
+                                        <TableCell >class10 percentage</TableCell>
+                                        <TableCell >class10 year of passing</TableCell>
+                                        <TableCell >class12education</TableCell>
+                                        <TableCell >class12 percentage</TableCell>
+                                        <TableCell >class12 year of passing</TableCell>
+                                        <TableCell>graduation university</TableCell>
+                                        <TableCell>graduation percentage</TableCell>
+                                        <TableCell>graduation year of passing</TableCell>
+                                        <TableCell>masters university</TableCell>
+                                        <TableCell>masters percentage</TableCell>
+                                        <TableCell>masters year of passing</TableCell>
+                                        <TableCell>lastinternshipdetails</TableCell>
+                                        <TableCell>haveyouparticipatedinmootcourt</TableCell>
+                                        <TableCell>preferredlocation</TableCell>
                                         <TableCell >answer1</TableCell>
                                         <TableCell >answer2</TableCell>
                                         <TableCell >answer3</TableCell>
@@ -109,10 +117,18 @@ const Dashboard = () => {
                                                     <TableCell >{item.skills}</TableCell>
                                                     <TableCell >{item.last_internship_details}</TableCell>
                                                     <TableCell >{item.publications}</TableCell>
-                                                    <TableCell >{item.educationboard}</TableCell>
                                                     <TableCell >{item.class10education}</TableCell>
+                                                    <TableCell >{item.class10_percentage}</TableCell>
+                                                    <TableCell >{item.class10_year_of_passing}</TableCell>
                                                     <TableCell >{item.class12education}</TableCell>
-                                                    <TableCell >{item.collegepercentage}</TableCell>
+                                                    <TableCell >{item.class12_percentage}</TableCell>
+                                                    <TableCell >{item.class12_year_of_passing}</TableCell>
+                                                    <TableCell>{item.graduation_university}</TableCell>
+                                                    <TableCell>{item.graduation_percentage}</TableCell>
+                                                    <TableCell>{item.graduation_year_of_passing}</TableCell>
+                                                    <TableCell>{item.masters_university}</TableCell>
+                                                    <TableCell>{item.masters_percentage}</TableCell>
+                                                    <TableCell>{item.masters_year_of_passing}</TableCell>
                                                     <TableCell >{item.lastinternshipdetails}</TableCell>
                                                     <TableCell >{item.haveyouparticipatedinmootcourt}</TableCell>
                                                     <TableCell >{item.preferredlocation}</TableCell>
@@ -140,6 +156,7 @@ const Dashboard = () => {
                                                             View Answer 3
                                                         </Link>
                                                     </TableCell>
+                                                  
                                                     <Dialog open={isDialogOpen} onClose={handleClose} aria-labelledby="responsive-dialog-title">
                                                         <DialogContent>
                                                             <DialogContentText>
@@ -152,6 +169,7 @@ const Dashboard = () => {
                                                             </Button>
                                                         </DialogActions>
                                                     </Dialog>
+                                                   
                                                 </TableRow>
                                             );
                                         })}
@@ -171,7 +189,7 @@ const Dashboard = () => {
                 </div>
             </div>
 
-             <Footer />                           
+            <Footer />
 
         </>
 

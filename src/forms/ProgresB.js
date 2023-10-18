@@ -27,17 +27,24 @@ const steps = [
 const ProgresB = () => {
     const navigate = useNavigate()
     const [formData, setFormData] = useState({
-        educationBoard: "",
         Class10Education: "",
+        Class10_percentage: "",
+        Class10_year_of_passing: "",
         Class12Education: "",
-        CollegePercentage: "",
+        Class12_percentage: "",
+        Class12_year_of_passing: "",
+        graduation_university: "",
+        graduation_percentage: "",
+        graduation_year_of_passing: "",
+        masters_university: "",
+        masters_percentage: "",
+        masters_year_of_passing: "",
         LastInternshipDetails: "",
         HaveYouParticipatedinMootCourt: "",
         PreferredLocation: "",
     });
     const [avatar, setAvatar] = useState(null);
     const { id } = useParams()
-    console.log('params ID:', id)
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -51,6 +58,8 @@ const ProgresB = () => {
         const file = event.target.files[0];
         setAvatar(file);
     };
+
+
 
     const onSubmit = async () => {
         try {
@@ -122,18 +131,20 @@ const ProgresB = () => {
                         <Box className='top-form' component="form" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={12}>
-                                <div className="eduction">
-                                        <label style={{marginBottom: "10px", display: "inline-block"}} htmlFor="">Education Details</label>
+                                    <div className="eduction">
+                                        <label style={{ marginBottom: "10px", display: "inline-block" }} htmlFor="">Education Details</label>
                                         <div className="edu-class">
                                             <div className="class-box">
                                                 <label>Class X</label>
                                             </div>
                                             <div className="class-box">
-                                                <FormControl   fullWidth>
+                                                <FormControl fullWidth>
                                                     <InputLabel id="10th-board">Board</InputLabel>
                                                     <Select
-                                                        labelId="education-board"
+                                                        labelId="10th_board"
                                                         id="demo-simple-select-helper"
+                                                        name='Class10Education'
+                                                        value={formData.Class10Education}
                                                         label="Education Board"
                                                         onChange={handleChange}
                                                     >
@@ -142,13 +153,13 @@ const ProgresB = () => {
                                                         <MenuItem value={"ICSC"}>ICSE</MenuItem>
                                                     </Select>
                                                 </FormControl>
-                                                
+
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="Percentage" name='percentage' fullWidth  />
+                                                <TextField required id="outlined-required" label="Percentage" name='Class10_percentage' value={formData.Class10_percentage} onChange={handleChange} fullWidth />
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="Year of Passing" name='year-of-passing' fullWidth  />
+                                                <TextField required id="outlined-required" label="Year of Passing" name='Class10_year_of_passing' value={formData.Class10_year_of_passing} onChange={handleChange} fullWidth />
                                             </div>
                                         </div>
                                         <div className="edu-class">
@@ -156,12 +167,14 @@ const ProgresB = () => {
                                                 <label>Class XII</label>
                                             </div>
                                             <div className="class-box">
-                                                 <FormControl   fullWidth>
+                                                <FormControl fullWidth>
                                                     <InputLabel id="12th-board">Board</InputLabel>
                                                     <Select
-                                                        labelId="education-board"
+                                                        labelId="12th_board"
                                                         id="demo-simple-select-helper"
                                                         label="Education Board"
+                                                        name='Class12Education'
+                                                        value={formData.Class12Education}
                                                         onChange={handleChange}
                                                     >
                                                         <MenuItem value={"IB"}>IB</MenuItem>
@@ -171,10 +184,10 @@ const ProgresB = () => {
                                                 </FormControl>
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="Percentage" name='percentage' fullWidth  />
+                                                <TextField required id="outlined-required" label="Percentage" name='Class12_percentage' value={formData.Class12_percentage} onChange={handleChange} fullWidth />
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="Year of Passing" name='year-of-passing' fullWidth  />
+                                                <TextField required id="outlined-required" label="Year of Passing" name='Class12_year_of_passing' value={formData.Class12_year_of_passing} onChange={handleChange} fullWidth />
                                             </div>
                                         </div>
                                         <div className="edu-class">
@@ -182,13 +195,13 @@ const ProgresB = () => {
                                                 <label>Graduation</label>
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="University" name='board' fullWidth  />
+                                                <TextField required id="outlined-required" label="University" name='graduation_university' value={formData.graduation_university} onChange={handleChange} fullWidth />
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="Percentage" name='percentage' fullWidth  />
+                                                <TextField required id="outlined-required" label="Percentage" name='graduation_percentage' value={formData.graduation_percentage} onChange={handleChange} fullWidth />
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="Year of Passing" name='year-of-passing' fullWidth  />
+                                                <TextField required id="outlined-required" label="Year of Passing" name='graduation_year_of_passing' value={formData.graduation_year_of_passing} onChange={handleChange} fullWidth />
                                             </div>
                                         </div>
                                         <div className="edu-class">
@@ -196,13 +209,13 @@ const ProgresB = () => {
                                                 <label>Masters</label>
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="University" name='university' fullWidth  />
+                                                <TextField required id="outlined-required" label="University" name='masters_university' value={formData.masters_university} onChange={handleChange} fullWidth />
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="Percentage" name='percentage' fullWidth />
+                                                <TextField required id="outlined-required" label="Percentage" name='masters_percentage' value={formData.masters_percentage} onChange={handleChange} fullWidth />
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="Year of Passing" name='year-of-passing' fullWidth />
+                                                <TextField required id="outlined-required" label="Year of Passing" name='masters_year_of_passing' value={formData.masters_year_of_passing} onChange={handleChange} fullWidth />
                                             </div>
                                         </div>
                                     </div>
