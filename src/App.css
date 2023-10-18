@@ -23,6 +23,7 @@ button.blue-btn:hover,.blue-btn:hover {color: #1976d2;}
 .other-info > div {margin-bottom: 5px;}
 .c-box-2 h3 {margin: 20px 0px 10px;}
 .c-box-2 p,.c-box-2 li {font-size: 15px;line-height: 26px;text-align: justify;font-weight: 400;}
+.c-box-2 li {margin-bottom: 10px;}
 
 .right-sce {padding: 40px 24px;background: #fff;}
 .right-sce {padding: 40px 24px;background: #fff;}
@@ -41,7 +42,7 @@ form.top-form {padding-bottom: 100px;min-height: 450px;padding-top: 10px;}
 form.top-form label,.checkbox-row legend { font-weight: 600;color: #000 !important;}
 form.top-form input,form.top-form label,form.top-form .MuiOutlinedInput-root,.MuiMenu-list li {font-family: 'Montserrat', sans-serif !important;}
 .bottom-form {border-top: 1px solid rgb(240, 241, 242);display: flex;justify-content: space-between;align-items: center;position: fixed;bottom: 0px;background: #fff;max-width: 1160px;z-index: 9;background: #ededed;}
-.form-sce {background: url(../src/images/body-bg.jpg) no-repeat center; background-size: cover;}
+.form-sce {background: url(../src/images/body-bg-2.png) no-repeat center; background-size: cover;background-attachment: fixed;}
 .form-sce.sucess {background: none;}
 form.top-form .checkbox-row {display: flex;flex-direction: inherit;align-items: center;}
 .checkbox-row legend,.checkbox-row label span {font-family: 'Montserrat', sans-serif !important;}
