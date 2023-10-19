@@ -15,6 +15,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import TimmerCompo from './TimmerCompo';
 
 const steps = [
     'Preliminary Details',
@@ -44,7 +45,7 @@ const ProgresB = () => {
         PreferredLocation: "",
     });
     const [avatar, setAvatar] = useState(null);
-    const { id } = useParams()
+    const id = localStorage.getItem('id');
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -63,7 +64,7 @@ const ProgresB = () => {
 
     const onSubmit = async () => {
         try {
-            const API = `http://localhost:4000/api/updateTodo/${id}`; // Include the ID in the API URL
+            const API = `http://3.111.214.106:4000/api/updateTodo/${id}`; // Include the ID in the API URL
 
             const formDataObject = new FormData();
             for (const key in formData) {
@@ -83,7 +84,6 @@ const ProgresB = () => {
             if (response.ok) {
                 // Handle successful response
                 const data = await response.json();
-                const id = data.todo.id;
                 localStorage.setItem("yashodanandC", "yashodanandC")
                 navigate(`/progresc/${id}`);
             } else {
@@ -98,7 +98,7 @@ const ProgresB = () => {
 
     useEffect(() => {
         if (!localStorage.getItem('yashodanandB')) {
-            navigate('/progresa/:id')
+            navigate(`/progresa`)
         }
     }, [])
 
@@ -117,6 +117,7 @@ const ProgresB = () => {
             <div className="form-sce">
                 <div className="bound">
                     <div className="form-box">
+                    <TimmerCompo initialTime={45 * 60}  />
                         <Link className="back-link" to="/">Back to Job Posting</Link>
                         <h3>Assessment Intern</h3>
                         <Box className="prog-bar" sx={{ width: '100%' }}>

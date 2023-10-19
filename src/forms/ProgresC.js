@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import logo from '../images/logo.png'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -10,6 +10,7 @@ import { Button, FormLabel } from '@mui/material';
 import { useNavigate } from "react-router-dom"
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
+import TimmerCompo from './TimmerCompo';
 
 const steps = [
     'Preliminary Details',
@@ -21,7 +22,7 @@ const steps = [
 
 const ProgresC = () => {
     const navigate = useNavigate()
-    const { id } = useParams(); // Retrieve the ID from the route.
+    
     const [formData, setFormData] = useState({
         "Answer1": "",
         "Answer2": "",
@@ -36,12 +37,12 @@ const ProgresC = () => {
         });
     };
 
-
+    const id = localStorage.getItem('id');
 
     const handleSubmit = async (event) => {
         try {
             event.preventDefault();
-            const API = `http://localhost:4000/api/insertTodo3/${id}`; // Include the ID in the API URL
+            const API = `http://3.111.214.106:4000/api/insertTodo3/${id}`; // Include the ID in the API URL
 
 
             // Make the HTTP POST request
@@ -71,7 +72,7 @@ const ProgresC = () => {
 
     useEffect(() => {
         if (!localStorage.getItem('yashodanandC')) {
-            navigate('/progresb/:id')
+            navigate(`/progresb/${id}`)
         }
     }, [])
 
@@ -90,6 +91,7 @@ const ProgresC = () => {
             <div className="form-sce">
                 <div className="bound">
                     <div className="form-box">
+                    <TimmerCompo/>
                         <Link className="back-link" to="/">Back to Job Posting</Link>
                         <h3>Assessment Intern</h3>
                         <Box className="prog-bar" sx={{ width: '100%' }}>
@@ -120,7 +122,7 @@ const ProgresC = () => {
                             </Grid>
                         </Box>
                         <Box sx={{ width: '100%' }} className="bottom-form">
-                            <Link className='back-link' to="/progresb">Back</Link>
+                        <Link className='back-link' to={`/progresb/${id}`}>Back</Link>
                             <Button className="blue-btn" onClick={handleSubmit}>Submit</Button>
 
                         </Box>

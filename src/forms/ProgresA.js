@@ -15,6 +15,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import TimmerCompo from './TimmerCompo';
 
 
 
@@ -41,6 +42,7 @@ const ProgresA = () => {
         last_internship_details: '',
         publications: '',
     });
+    const [autoSubmit, setAutoSubmit] = useState(false);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -52,10 +54,20 @@ const ProgresA = () => {
 
 
 
+    const handleTimeout = () => {
+      setAutoSubmit(true);
+      // You can trigger auto-submit logic here if needed
+    };
+
+
     const onSubmit = async (event) => {
         try {
             event.preventDefault();
-            const API = 'http://localhost:4000/api/insertTodo1'; // Update the API endpoint
+            const API = 'http://3.111.214.106:4000/api/insertTodo1'; // Update the API endpoint
+
+            // Check if 'id' is stored in local storage
+            const localId = localStorage.getItem("id");
+            const idToUse = localId ? localId : null;
 
             // Make the HTTP POST request
             const response = await fetch(API, {
@@ -69,8 +81,14 @@ const ProgresA = () => {
             if (response.ok) {
                 // Handle successful response
                 const data = await response.json();
-                // The response should include the ID of the inserted record
-                const id = data.todo.id;
+                // Get the ID from the API response if not found in local storage
+                const id = idToUse || data.todo.id;
+
+                if (!localId) {
+                    // Store the ID in local storage for future use
+                    localStorage.setItem("id", id);
+                }
+
                 localStorage.setItem("yashodanandB", "yashodanandB")
                 // Redirect to another page or perform other actions
                 navigate(`/progresb/${id}`);
@@ -106,6 +124,7 @@ const ProgresA = () => {
             <div className="form-sce">
                 <div className="bound">
                     <div className="form-box">
+                    <TimmerCompo initialTime={45 * 60} onTimeout={handleTimeout} />
                         <Link className="back-link" to="/">Back to Job Posting</Link>
                         <h3>Assessment Intern</h3>
                         <Box className="prog-bar" sx={{ width: '100%' }}>
