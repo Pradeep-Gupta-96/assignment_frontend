@@ -12,6 +12,7 @@ import { Button, Dialog, DialogActions, DialogContent, DialogContentText, Link }
 import Footer from '../components/Footer';
 import * as XLSX from 'xlsx'; // Correct import statement
 import ArticleIcon from '@mui/icons-material/Article';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
 
 const Dashboard = () => {
     const [page, setPage] = React.useState(0);
@@ -83,45 +84,43 @@ const Dashboard = () => {
             </div>
             <div className="data-sce">
                 <div className="bound">
-                    <Button variant="contained" color="primary" onClick={exportToExcel}>
-                        Export to Excel
-                    </Button>
+                    <Link className='dawn-csv' variant="contained" color="primary" onClick={exportToExcel}><FileDownloadIcon /> Export to CSV </Link>
                     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
                         <TableContainer sx={{ maxHeight: 440 }}>
                             <Table stickyHeader aria-label="sticky table" className='data-table'>
                                 <TableHead>
-                                    <TableCell>id</TableCell>
-                                    <TableCell>name</TableCell>
-                                    <TableCell>email</TableCell>
-                                    <TableCell>phone</TableCell>
-                                    <TableCell>university</TableCell>
-                                    <TableCell>college</TableCell>
-                                    <TableCell>course duration</TableCell>
-                                    <TableCell>course</TableCell>
-                                    <TableCell>field of interest</TableCell>
-                                    <TableCell>skills</TableCell>
-                                    <TableCell>last internship details</TableCell>
-                                    <TableCell>publications</TableCell>
-                                    <TableCell>class10education</TableCell>
-                                    <TableCell>class10 percentage</TableCell>
-                                    <TableCell>class10 year of passing</TableCell>
-                                    <TableCell>class12education</TableCell>
-                                    <TableCell>class12 percentage</TableCell>
-                                    <TableCell>class12 year of passing</TableCell>
-                                    <TableCell>graduation university</TableCell>
-                                    <TableCell>graduation percentage</TableCell>
-                                    <TableCell>graduation year of passing</TableCell>
-                                    <TableCell>masters university</TableCell>
-                                    <TableCell>masters percentage</TableCell>
-                                    <TableCell>masters year of passing</TableCell>
+                                    <TableCell>ID</TableCell>
+                                    <TableCell>Name</TableCell>
+                                    <TableCell>Email</TableCell>
+                                    <TableCell>Phone</TableCell>
+                                    <TableCell>University</TableCell>
+                                    <TableCell>College</TableCell>
+                                    <TableCell>Course Duration</TableCell>
+                                    <TableCell>Course</TableCell>
+                                    <TableCell>Field of Interest</TableCell>
+                                    <TableCell>Skills</TableCell>
+                                    <TableCell>Internship Details</TableCell>
+                                    <TableCell>Publications</TableCell>
+                                    <TableCell>Class 10th Education</TableCell>
+                                    <TableCell>10th Percentage</TableCell>
+                                    <TableCell>10th Year of Passing</TableCell>
+                                    <TableCell>Class 12th Education</TableCell>
+                                    <TableCell>12th Percentage</TableCell>
+                                    <TableCell>12th Year of Passing</TableCell>
+                                    <TableCell>Graduation University</TableCell>
+                                    <TableCell>Graduation Percentage</TableCell>
+                                    <TableCell>Graduation Year of Passing</TableCell>
+                                    <TableCell>Masters university</TableCell>
+                                    <TableCell>Masters percentage</TableCell>
+                                    <TableCell>Masters year of passing</TableCell>
                                     <TableCell>lastinternshipdetails</TableCell>
-                                    <TableCell>have you participated in court</TableCell>
-                                    <TableCell>preferredlocation</TableCell>
-                                    <TableCell>answer1</TableCell>
-                                    <TableCell>answer2</TableCell>
-                                    <TableCell>answer3</TableCell>
+                                    <TableCell>Participated in Court</TableCell>
+                                    <TableCell>Preferred Location</TableCell>
+                                    <TableCell>Answer 1</TableCell>
+                                    <TableCell>Answer 2</TableCell>
+                                    <TableCell>Answer 3</TableCell>
                                     <TableCell>Resume</TableCell>
-                                    <TableCell>created at</TableCell>
+                                    <TableCell>Created at</TableCell>
                                 </TableHead>
                                 <TableBody>
                                     {todos
@@ -182,12 +181,12 @@ const Dashboard = () => {
                                                         </Link>
                                                     </TableCell>
                                                     <TableCell>
-                                                        <a href={`http://localhost:4000/${item.uploadresume}`} target="_blank" rel="noopener noreferrer">
+                                                        <a href={`http://3.111.214.106:4000/${item.uploadresume}`} target="_blank" rel="noopener noreferrer">
                                                             <ArticleIcon/>
                                                         </a>
                                                     </TableCell>
 
-                                                    <TableCell>{formatDate(item.created_at)}</TableCell>
+                                                     <TableCell>{formatDate(item.created_at)}</TableCell>
 
                                                     <Dialog open={isDialogOpen} onClose={handleClose} aria-labelledby="responsive-dialog-title">
                                                         <DialogContent>
