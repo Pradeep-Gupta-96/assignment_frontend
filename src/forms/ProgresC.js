@@ -80,7 +80,7 @@ const ProgresC = () => {
     }, [])
 
     // this funtion is for checking timming 
-    const API1 = `http://localhost:4000/api/todo/${id}`;
+    const API1 = `http://3.111.214.106:4000/api/todo/${id}`;
     const fetchData1 = React.useCallback(async () => {
         try {
             const response = await fetch(API1);
@@ -88,7 +88,7 @@ const ProgresC = () => {
             const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
 
             const now = new Date().getTime();
-            const fortyFiveMinutes = 1 * 60 * 1000; // 45 minutes in milliseconds
+            const fortyFiveMinutes = 45 * 60 * 1000; // 45 minutes in milliseconds
             setTimerTargetTime(timestamp + fortyFiveMinutes);
 
             if (now - timestamp >= fortyFiveMinutes) {

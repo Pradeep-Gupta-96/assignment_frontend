@@ -65,7 +65,7 @@ const ProgresB = () => {
 
     const onSubmit = async () => {
         try {
-            const API = `http://localhost:4000/api/updateTodo2/${id}`; // Include the ID in the API URL
+            const API = `http://3.111.214.106:4000/api/updateTodo2/${id}`; // Include the ID in the API URL
 
             const formDataObject = new FormData();
             for (const key in formData) {
@@ -112,7 +112,7 @@ const ProgresB = () => {
             const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
 
             const now = new Date().getTime();
-            const fortyFiveMinutes = 1 * 60 * 1000; // 45 minutes in milliseconds
+            const fortyFiveMinutes = 45 * 60 * 1000; // 45 minutes in milliseconds
             setTimerTargetTime(timestamp + fortyFiveMinutes);
 
             if (now - timestamp >= fortyFiveMinutes) {

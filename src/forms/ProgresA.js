@@ -57,10 +57,12 @@ const ProgresA = () => {
     const id = localStorage.getItem("id");
     const onSubmit = async (event) => {
         try {
-            event.preventDefault();
+            if (event) {
+                event.preventDefault();
+            }
             // Check if 'id' is stored in local storage
 
-            const API = `http://localhost:4000/api/updateTodo1/${id}`; // Update the API endpoint
+            const API = `http://3.111.214.106:4000/api/updateTodo1/${id}`; // Update the API endpoint
 
             // Make the HTTP POST request
             const response = await fetch(API, {
@@ -105,7 +107,7 @@ const ProgresA = () => {
           const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
     
           const now = new Date().getTime();
-          const fortyFiveMinutes = 1 * 60 * 1000; // 45 minutes in milliseconds
+          const fortyFiveMinutes = 45 * 60 * 1000; // 45 minutes in milliseconds
           setTimerTargetTime(timestamp + fortyFiveMinutes);
     
           if (now - timestamp >= fortyFiveMinutes) {
