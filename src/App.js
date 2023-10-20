@@ -7,6 +7,8 @@ import ProgresC from './forms/ProgresC';
 import TestBoard from './forms/TestBoard';
 import Successpage from './forms/Successpage';
 import Dashboard from './Dashboard/Dashboard';
+import FinalStep from './Secondtest/FinalStep';
+import Finalsuccess from './Secondtest/Finalsuccess';
 
 
 
@@ -21,6 +23,8 @@ function App() {
     { path: "/progresc/:id", element: <ProgresC/> },
     { path: "/successpage", element: <Successpage/> },
     { path: "/dashboard", element: <Dashboard/> },
+    { path: "/finalStep", element: <FinalStep/> },
+    { path: "/finalsuccess", element: <Finalsuccess/> },
   
   ]
   
