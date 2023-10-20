@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import logo from '../images/logo.png'
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
@@ -12,6 +12,7 @@ import { Button, Dialog, DialogActions, DialogContent, DialogContentText, Link }
 import Footer from '../components/Footer';
 import * as XLSX from 'xlsx'; // Correct import statement
 import ArticleIcon from '@mui/icons-material/Article';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const Dashboard = () => {
     const [page, setPage] = React.useState(0);
@@ -20,7 +21,7 @@ const Dashboard = () => {
     const [openDialogIndex, setOpenDialogIndex] = React.useState(-1);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
 
-    const API1 = 'http://3.111.214.106:4000/api/getAllTodo';
+    const API1 = 'http://localhost:4000/api/getAllTodo';
 
     const fetchData1 = React.useCallback(async () => {
         try {
@@ -68,6 +69,19 @@ const Dashboard = () => {
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Candidates');
         XLSX.writeFile(workbook, 'candidates.xlsx');
     };
+
+    const clickForDelete = async (id) => {
+        const API2 = `http://3.111.214.106:4000/api/deletetodo/${id}`;
+        try {
+            const response = await fetch(`${API2}`,{
+                method:"DELETE"
+            });
+            await response.json();
+            window.location.reload()
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <>
@@ -122,6 +136,7 @@ const Dashboard = () => {
                                     <TableCell>answer3</TableCell>
                                     <TableCell>Resume</TableCell>
                                     <TableCell>created at</TableCell>
+                                    <TableCell>Delete</TableCell>
                                 </TableHead>
                                 <TableBody>
                                     {todos
@@ -182,12 +197,13 @@ const Dashboard = () => {
                                                         </Link>
                                                     </TableCell>
                                                     <TableCell>
-                                                        <a href={`http://localhost:4000/${item.uploadresume}`} target="_blank" rel="noopener noreferrer">
-                                                            <ArticleIcon/>
+                                                        <a href={`http://3.111.214.106:4000/${item.uploadresume}`} target="_blank" rel="noopener noreferrer">
+                                                            <ArticleIcon />
                                                         </a>
                                                     </TableCell>
 
                                                     <TableCell>{formatDate(item.created_at)}</TableCell>
+                                                    <TableCell><DeleteIcon onClick={()=>{clickForDelete(item.id)}}/></TableCell>
 
                                                     <Dialog open={isDialogOpen} onClose={handleClose} aria-labelledby="responsive-dialog-title">
                                                         <DialogContent>

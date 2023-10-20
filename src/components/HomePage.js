@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../images/logo.png'
-import banner from '../images/main-banner.png'
 import videobanner from '../images/main-banner.mp4'
 import Grid from '@mui/material/Grid';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
@@ -16,14 +15,39 @@ import Footer from './Footer';
 
 const HomePage = () => {
     const navigate = useNavigate()
-    const onSubmit = async () => {
+
+    const onSubmit = async (event) => {
         try {
-            localStorage.setItem("yashodanandA", "yashodanandA")
-            navigate('/testboard')
+            event.preventDefault();
+            const API = 'http://3.111.214.106:4000/api/insertTimestampOnly';
+
+            const response = await fetch(API, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                const id = data.todo.id; // Assuming the response includes the ID
+
+                // Save the ID in local storage
+                localStorage.setItem("id", id);
+
+                // Set a flag in local storage to indicate that step A is completed
+                localStorage.setItem("yashodanandA", "yashodanandA");
+
+                // Redirect to the '/testboard' route
+                navigate('/testboard');
+            } else {
+                console.error('Error:', response.statusText);
+            }
         } catch (error) {
-            console.error(error)
+            console.error('Form submission error:', error);
         }
-    }
+    };
+
     return (
         <>
             <div className="header">
@@ -39,13 +63,13 @@ const HomePage = () => {
             <div className="banner">
                 <div className="bound">
                     <div className="banner-box">
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                    >
-                        <source src={videobanner} type="video/mp4" />
-                    </video>
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                        >
+                            <source src={videobanner} type="video/mp4" />
+                        </video>
                     </div>
                 </div>
             </div>
@@ -72,25 +96,25 @@ const HomePage = () => {
                                         <p>As an Assessment Intern at Areness, you will have the unique opportunity to gain invaluable experience in various areas of law. We are looking for a dedicated law fresher who is committed to providing exceptional legal research and eager to learn from experienced attorneys. </p>
                                         <h3>Key Responsibilities:</h3>
                                         <ol>
-                                            <li><strong>Legal Research:</strong> Conduct legal research to support senior attorneys and clients in various legal matters. Stay updated on relevant laws, regulations, and case precedents.</li>  
-                                            <li><strong>Documentation:</strong> Assist in drafting legal documents, contracts, and agreements under the guidance of senior attorneys. Ensure accuracy and compliance with legal standards.</li>  
-                                            <li><strong>Court Appearances:</strong> Attend court proceedings and hearings as required.</li>  
+                                            <li><strong>Legal Research:</strong> Conduct legal research to support senior attorneys and clients in various legal matters. Stay updated on relevant laws, regulations, and case precedents.</li>
+                                            <li><strong>Documentation:</strong> Assist in drafting legal documents, contracts, and agreements under the guidance of senior attorneys. Ensure accuracy and compliance with legal standards.</li>
+                                            <li><strong>Court Appearances:</strong> Attend court proceedings and hearings as required.</li>
                                             <li><strong>Case Analysis:</strong> Analyse legal issues and provide recommendations to senior attorneys. Contribute to the development of case strategies. </li>
                                         </ol>
                                         <h3>Qualifications:</h3>
                                         <ol>
-                                            <li>Bachelor’s degree in Law (LLB or equivalent)</li> 
+                                            <li>Bachelor’s degree in Law (LLB or equivalent)</li>
                                             <li>Strong analytical and research skills.</li>
-                                            <li>Excellent written and verbal communication skills.</li> 
+                                            <li>Excellent written and verbal communication skills.</li>
                                             <li>Professionalism and commitment to maintaining client confidentiality.</li>
                                         </ol>
                                         <h3>Skills:</h3>
                                         <ul>
                                             <li>Legal Knowledge</li>
-                                            <li>Research Skills</li> 
-                                            <li>Legal Writing</li> 
-                                            <li>Analytical Skills</li> 
-                                            <li>Negotiation</li> 
+                                            <li>Research Skills</li>
+                                            <li>Legal Writing</li>
+                                            <li>Analytical Skills</li>
+                                            <li>Negotiation</li>
                                             <li>Networking </li>
                                         </ul>
                                     </div>
@@ -108,8 +132,8 @@ const HomePage = () => {
                     </Grid>
                 </div>
             </div>
-            <Footer/>
-           
+            <Footer />
+
         </>
     )
 }

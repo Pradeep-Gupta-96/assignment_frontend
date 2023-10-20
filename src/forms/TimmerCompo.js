@@ -1,37 +1,37 @@
-// Timer.js
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const TimmerCompo = ({ initialTime, onTimeout }) => {
-  const [timeLeft, setTimeLeft] = useState(initialTime);
+const TimmerCompo = ({ targetTime, onTimeout }) => {
+  const [timeLeft, setTimeLeft] = useState(targetTime - new Date().getTime());
 
   useEffect(() => {
-    if (timeLeft <= 0) {
-      onTimeout(); // Trigger the callback function when the timer reaches 0
-    }
+    const interval = setInterval(() => {
+      const newTimeLeft = targetTime - new Date().getTime();
+      setTimeLeft(newTimeLeft);
 
-    const timer = setInterval(() => {
-      if (timeLeft > 0) {
-        setTimeLeft(timeLeft - 1);
+      if (newTimeLeft <= 0) {
+        clearInterval(interval);
+        onTimeout();
       }
     }, 1000);
 
     return () => {
-      clearInterval(timer);
+      clearInterval(interval);
     };
-  }, [timeLeft, onTimeout]);
+  }, [targetTime, onTimeout]);
 
-  const minutes = Math.floor(timeLeft / 60);
-  const seconds = timeLeft % 60;
+  const minutes = Math.floor(timeLeft / 60000);
+  const seconds = Math.floor((timeLeft % 60000) / 1000);
 
   return (
     <div>
-      <h1>Countdown Timer</h1>
+      <h2>Countdown Timer</h2>
       <div>
-        Time Left: {minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}
+        Time Left: {minutes} minutes {seconds} seconds
       </div>
     </div>
   );
 };
+
 
 
 export default TimmerCompo

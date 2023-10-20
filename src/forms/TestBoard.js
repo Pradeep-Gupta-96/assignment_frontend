@@ -13,7 +13,7 @@ const TestBoard = () => {
     if (sectA && sectB && sectC) {
         return (
             <>
-                <ProgresA />
+                <ProgresA   />
             </>
         );
     } else if (sectA && sectB) {
@@ -26,7 +26,7 @@ const TestBoard = () => {
     } else if (sectA) {
         return (
             <>
-                <ProgresA />
+                <ProgresA  />
             </>
         );
     } else {

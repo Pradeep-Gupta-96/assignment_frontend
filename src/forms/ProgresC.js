@@ -22,12 +22,13 @@ const steps = [
 
 const ProgresC = () => {
     const navigate = useNavigate()
-    
+
     const [formData, setFormData] = useState({
         "Answer1": "",
         "Answer2": "",
         "Answer3": "",
     });
+    const [timerTargetTime, setTimerTargetTime] = useState(0); // Initialize target time to 0
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -41,8 +42,10 @@ const ProgresC = () => {
 
     const handleSubmit = async (event) => {
         try {
-            event.preventDefault();
-            const API = `http://3.111.214.106:4000/api/insertTodo3/${id}`; // Include the ID in the API URL
+            if (event) {
+                event.preventDefault();
+            }
+            const API = `http://3.111.214.106:4000/api/updateTodo3/${id}`; // Include the ID in the API URL
 
 
             // Make the HTTP POST request
@@ -76,6 +79,35 @@ const ProgresC = () => {
         }
     }, [])
 
+    // this funtion is for checking timming 
+    const API1 = `http://localhost:4000/api/todo/${id}`;
+    const fetchData1 = React.useCallback(async () => {
+        try {
+            const response = await fetch(API1);
+            const data = await response.json();
+            const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
+
+            const now = new Date().getTime();
+            const fortyFiveMinutes = 1 * 60 * 1000; // 45 minutes in milliseconds
+            setTimerTargetTime(timestamp + fortyFiveMinutes);
+
+            if (now - timestamp >= fortyFiveMinutes) {
+               
+                handleSubmit()
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }, [API1, id, navigate]);
+
+    React.useEffect(() => {
+        fetchData1();
+        const interval = setInterval(fetchData1, 1000);
+
+        return () => clearInterval(interval);
+    }, [fetchData1]);
+
+
     return (
         <>
             <div className="header">
@@ -91,7 +123,7 @@ const ProgresC = () => {
             <div className="form-sce">
                 <div className="bound">
                     <div className="form-box">
-                    <TimmerCompo/>
+                    <TimmerCompo targetTime={timerTargetTime} onTimeout={() => navigate(`/progresc/${id}`)} />
                         <Link className="back-link" to="/">Back to Job Posting</Link>
                         <h3>Assessment Intern</h3>
                         <Box className="prog-bar" sx={{ width: '100%' }}>
@@ -122,7 +154,7 @@ const ProgresC = () => {
                             </Grid>
                         </Box>
                         <Box sx={{ width: '100%' }} className="bottom-form">
-                        <Link className='back-link' to={`/progresb/${id}`}>Back</Link>
+                            <Link className='back-link' to={`/progresb/${id}`}>Back</Link>
                             <Button className="blue-btn" onClick={handleSubmit}>Submit</Button>
 
                         </Box>

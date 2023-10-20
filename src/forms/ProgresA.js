@@ -42,7 +42,8 @@ const ProgresA = () => {
         last_internship_details: '',
         publications: '',
     });
-    const [autoSubmit, setAutoSubmit] = useState(false);
+    const [timerTargetTime, setTimerTargetTime] = useState(0); // Initialize target time to 0
+
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -53,25 +54,17 @@ const ProgresA = () => {
     };
 
 
-
-    const handleTimeout = () => {
-      setAutoSubmit(true);
-      // You can trigger auto-submit logic here if needed
-    };
-
-
+    const id = localStorage.getItem("id");
     const onSubmit = async (event) => {
         try {
             event.preventDefault();
-            const API = 'http://3.111.214.106:4000/api/insertTodo1'; // Update the API endpoint
-
             // Check if 'id' is stored in local storage
-            const localId = localStorage.getItem("id");
-            const idToUse = localId ? localId : null;
+
+            const API = `http://localhost:4000/api/updateTodo1/${id}`; // Update the API endpoint
 
             // Make the HTTP POST request
             const response = await fetch(API, {
-                method: 'POST',
+                method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json', // Set the content type
                 },
@@ -81,13 +74,7 @@ const ProgresA = () => {
             if (response.ok) {
                 // Handle successful response
                 const data = await response.json();
-                // Get the ID from the API response if not found in local storage
-                const id = idToUse || data.todo.id;
 
-                if (!localId) {
-                    // Store the ID in local storage for future use
-                    localStorage.setItem("id", id);
-                }
 
                 localStorage.setItem("yashodanandB", "yashodanandB")
                 // Redirect to another page or perform other actions
@@ -109,6 +96,36 @@ const ProgresA = () => {
         }
     }, [])
 
+    // this funtion is for checking timming 
+    const API1 = `http://3.111.214.106:4000/api/todo/${id}`;
+    const fetchData1 = React.useCallback(async () => {
+        try {
+          const response = await fetch(API1);
+          const data = await response.json();
+          const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
+    
+          const now = new Date().getTime();
+          const fortyFiveMinutes = 1 * 60 * 1000; // 45 minutes in milliseconds
+          setTimerTargetTime(timestamp + fortyFiveMinutes);
+    
+          if (now - timestamp >= fortyFiveMinutes) {
+            // Time is up, navigate to the '/progresc/{id}' route
+            onSubmit()
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }, [API1, id, navigate]);
+    
+      React.useEffect(() => {
+        fetchData1();
+        const interval = setInterval(fetchData1, 1000);
+    
+        return () => clearInterval(interval);
+      }, [fetchData1]);
+
+
+
     return (
         <>
             <div className="header">
@@ -124,7 +141,7 @@ const ProgresA = () => {
             <div className="form-sce">
                 <div className="bound">
                     <div className="form-box">
-                    <TimmerCompo initialTime={45 * 60} onTimeout={handleTimeout} />
+                        <TimmerCompo targetTime={timerTargetTime} onTimeout={() => navigate(`/progresc/${id}`)} />
                         <Link className="back-link" to="/">Back to Job Posting</Link>
                         <h3>Assessment Intern</h3>
                         <Box className="prog-bar" sx={{ width: '100%' }}>

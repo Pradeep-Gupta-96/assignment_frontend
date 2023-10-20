@@ -46,6 +46,7 @@ const ProgresB = () => {
     });
     const [avatar, setAvatar] = useState(null);
     const id = localStorage.getItem('id');
+    const [timerTargetTime, setTimerTargetTime] = useState(0); // Initialize target time to 0
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -64,7 +65,7 @@ const ProgresB = () => {
 
     const onSubmit = async () => {
         try {
-            const API = `http://3.111.214.106:4000/api/updateTodo/${id}`; // Include the ID in the API URL
+            const API = `http://localhost:4000/api/updateTodo2/${id}`; // Include the ID in the API URL
 
             const formDataObject = new FormData();
             for (const key in formData) {
@@ -102,6 +103,35 @@ const ProgresB = () => {
         }
     }, [])
 
+    // this funtion is for checking timming 
+    const API1 = `http://3.111.214.106:4000/api/todo/${id}`;
+    const fetchData1 = React.useCallback(async () => {
+        try {
+            const response = await fetch(API1);
+            const data = await response.json();
+            const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
+
+            const now = new Date().getTime();
+            const fortyFiveMinutes = 1 * 60 * 1000; // 45 minutes in milliseconds
+            setTimerTargetTime(timestamp + fortyFiveMinutes);
+
+            if (now - timestamp >= fortyFiveMinutes) {
+                // Time is up, navigate to the '/progresc/{id}' route
+                onSubmit()
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }, [API1, id, navigate]);
+
+    React.useEffect(() => {
+        fetchData1();
+        const interval = setInterval(fetchData1, 1000);
+
+        return () => clearInterval(interval);
+    }, [fetchData1]);
+
+
     return (
         <>
             <div className="header">
@@ -117,7 +147,7 @@ const ProgresB = () => {
             <div className="form-sce">
                 <div className="bound">
                     <div className="form-box">
-                    <TimmerCompo initialTime={45 * 60}  />
+                    <TimmerCompo targetTime={timerTargetTime} onTimeout={() => navigate(`/progresc/${id}`)} />
                         <Link className="back-link" to="/">Back to Job Posting</Link>
                         <h3>Assessment Intern</h3>
                         <Box className="prog-bar" sx={{ width: '100%' }}>
