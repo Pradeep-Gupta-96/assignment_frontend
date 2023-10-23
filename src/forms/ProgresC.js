@@ -137,15 +137,15 @@ const ProgresC = () => {
                         <Box className='top-form' component="form" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={12}>
-                                    <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
+                                    <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important"}} fullWidth>
                                         <FormLabel sx={{ marginBottom: "15px" }} component="legend">Why Areness? Where do you envision your legal career in 5 years, and what steps do you plan to take to achieve your professional goals during that time? <span style={{ fontSize: "12px" }}>(Max Word Limit 250)</span></FormLabel>
                                         <TextField required id="outlined-required" label="Answer" name='Answer1' value={formData.Answer1} onChange={handleChange} fullWidth />
                                     </FormControl>
-                                    <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
+                                    <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important"}} fullWidth>
                                         <FormLabel sx={{ marginBottom: "15px" }} component="legend">What strategies and adaptations should legal practitioners consider in order to thrive and remain competitive in the face of significant transformations within the legal profession?</FormLabel>
                                         <TextField required id="outlined-required" label="Answer" name='Answer2' value={formData.Answer2} onChange={handleChange} fullWidth />
                                     </FormControl>
-                                    <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
+                                    <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important"}} fullWidth>
                                         <FormLabel sx={{ marginBottom: "15px" }} component="legend">Imagine you are representing a client who has entered into a complex international business contract. The other party has failed to fulfill a significant contractual obligation, and your client is seeking to enforce the contract or seek damages. Help me through the steps you would take to assess the situation, advise your client, and develop a legal strategy to achieve a favorable outcome.</FormLabel>
                                         <TextField required id="outlined-required" label="Answer" name='Answer3' value={formData.Answer3} onChange={handleChange} fullWidth />
                                     </FormControl>
