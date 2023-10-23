@@ -74,6 +74,8 @@ ul.op-row li {list-style: upper-alpha;}
 .four-op li {min-height: 40px;margin-bottom: 10px;}
 ul.ans-row li {list-style: lower-roman;}
 form.top-form .test-checkbox label {padding-left: 15px;}
+.timmer {float: right;}
+.timmer strong {font-weight: 600; font-size: 24px;}
 
 
 
