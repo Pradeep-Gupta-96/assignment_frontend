@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import logo from '../images/logo.png'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -84,7 +84,7 @@ const ProgresB = () => {
 
             if (response.ok) {
                 // Handle successful response
-                const data = await response.json();
+                await response.json();
                 localStorage.setItem("yashodanandC", "yashodanandC")
                 navigate(`/progresc/${id}`);
             } else {

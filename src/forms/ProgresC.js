@@ -39,6 +39,7 @@ const ProgresC = () => {
     };
 
     const id = localStorage.getItem('id');
+    console.log("C",id)
 
     const handleSubmit = async (event) => {
         try {
@@ -46,7 +47,6 @@ const ProgresC = () => {
                 event.preventDefault();
             }
             const API = `http://3.111.214.106:4000/api/updateTodo3/${id}`; // Include the ID in the API URL
-
 
             // Make the HTTP POST request
             const response = await fetch(API, {
@@ -60,7 +60,6 @@ const ProgresC = () => {
             if (response.ok) {
                 // Handle successful response
                 await response.json();
-                localStorage.clear()
                 // Redirect to another page or perform other actions
                 navigate('/successpage');
             } else {

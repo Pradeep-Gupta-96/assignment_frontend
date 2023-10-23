@@ -19,6 +19,7 @@ import TimmerCompo from './TimmerCompo';
 
 
 
+
 const steps = [
     'Preliminary Details',
     'Experience',
@@ -52,7 +53,6 @@ const ProgresA = () => {
             [name]: value,
         });
     };
-
 
     const id = localStorage.getItem("id");
     const onSubmit = async (event) => {
