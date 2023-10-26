@@ -19,7 +19,7 @@ const HomePage = () => {
     const onSubmit = async (event) => {
         try {
             event.preventDefault();
-            const API = 'http://3.111.214.106:4000/api/insertTimestampOnly';
+            const API = 'http://localhost:4000/api/insertTimestampOnly';
 
             const response = await fetch(API, {
                 method: 'POST',

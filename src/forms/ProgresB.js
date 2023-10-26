@@ -65,7 +65,7 @@ const ProgresB = () => {
 
     const onSubmit = async () => {
         try {
-            const API = `http://3.111.214.106:4000/api/updateTodo2/${id}`; // Include the ID in the API URL
+            const API = `http://localhost:4000/api/updateTodo2/${id}`; // Include the ID in the API URL
 
             const formDataObject = new FormData();
             for (const key in formData) {
@@ -104,7 +104,7 @@ const ProgresB = () => {
     }, [])
 
     // this funtion is for checking timming 
-    const API1 = `http://3.111.214.106:4000/api/todo/${id}`;
+    const API1 = `http://localhost:4000/api/todo/${id}`;
     const fetchData1 = React.useCallback(async () => {
         try {
             const response = await fetch(API1);

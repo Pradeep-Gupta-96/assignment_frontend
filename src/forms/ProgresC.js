@@ -46,7 +46,7 @@ const ProgresC = () => {
             if (event) {
                 event.preventDefault();
             }
-            const API = `http://3.111.214.106:4000/api/updateTodo3/${id}`; // Include the ID in the API URL
+            const API = `http://localhost:4000/api/updateTodo3/${id}`; // Include the ID in the API URL
 
             // Make the HTTP POST request
             const response = await fetch(API, {
@@ -79,7 +79,7 @@ const ProgresC = () => {
     }, [])
 
     // this funtion is for checking timming 
-    const API1 = `http://3.111.214.106:4000/api/todo/${id}`;
+    const API1 = `http://localhost:4000/api/todo/${id}`;
     const fetchData1 = React.useCallback(async () => {
         try {
             const response = await fetch(API1);

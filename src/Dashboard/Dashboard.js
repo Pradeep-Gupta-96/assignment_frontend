@@ -22,7 +22,7 @@ const Dashboard = () => {
     const [openDialogIndex, setOpenDialogIndex] = React.useState(-1);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
 
-    const API1 = 'http://3.111.214.106:4000/api/getAllTodo';
+    const API1 = 'http://localhost:4000/api/getAllTodo';
 
     const fetchData1 = React.useCallback(async () => {
         try {
@@ -72,7 +72,7 @@ const Dashboard = () => {
     };
 
     const clickForDelete = async (id) => {
-        const API2 = `http://3.111.214.106:4000/api/deletetodo/${id}`;
+        const API2 = `http://localhost:4000/api/deletetodo/${id}`;
         try {
             const response = await fetch(`${API2}`,{
                 method:"DELETE"
@@ -196,7 +196,7 @@ const Dashboard = () => {
                                                         </Link>
                                                     </TableCell>
                                                     <TableCell>
-                                                        <a href={`http://3.111.214.106:4000/${item.uploadresume}`} target="_blank" rel="noopener noreferrer">
+                                                        <a href={`http://localhost:4000/${item.uploadresume}`} target="_blank" rel="noopener noreferrer">
                                                             <ArticleIcon />
                                                         </a>
                                                     </TableCell>

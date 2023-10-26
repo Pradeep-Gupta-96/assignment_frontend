@@ -62,7 +62,7 @@ const ProgresA = () => {
             }
             // Check if 'id' is stored in local storage
 
-            const API = `http://3.111.214.106:4000/api/updateTodo1/${id}`; // Update the API endpoint
+            const API = `http://localhost:4000/api/updateTodo1/${id}`; // Update the API endpoint
 
             // Make the HTTP POST request
             const response = await fetch(API, {
@@ -99,7 +99,7 @@ const ProgresA = () => {
     }, [])
 
     // this funtion is for checking timming 
-    const API1 = `http://3.111.214.106:4000/api/todo/${id}`;
+    const API1 = `http://localhost:4000/api/todo/${id}`;
     const fetchData1 = React.useCallback(async () => {
         try {
           const response = await fetch(API1);
