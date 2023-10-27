@@ -6,6 +6,7 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Footer from '../components/Footer';
+import videobg from '../images/background-video.mp4';
 
 const steps = [
   'Preliminary Details',
@@ -27,6 +28,7 @@ const Successpage = () => {
                 </div>
             </div>
             <div className="form-sce sucess">
+                <video className='background-video' autoPlay loop muted > <source src={videobg} type="video/mp4" /> </video>
                 <div className="bound">
                     <div className="form-box">
                         

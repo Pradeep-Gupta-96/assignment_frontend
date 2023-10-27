@@ -11,12 +11,39 @@ import { useNavigate } from "react-router-dom"
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 import TimmerCompo from './TimmerCompo';
+import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
+import { styled } from '@mui/system';
+import videobg from '../images/background-video.mp4'
+
+
 
 const steps = [
     'Preliminary Details',
     'Experience',
     'Step 3',
 ];
+  const Textarea = styled(BaseTextareaAutosize)(
+    ({ theme }) => `
+    width: 100%;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: #000;
+    background: #fff;
+    border: 1px solid rgb(118, 118, 118);
+    &:hover {border-color: #3399FF;}
+    &:focus {border-color: #3399FF;}
+
+    // firefox
+    &:focus-visible {
+      outline: 0;
+    }
+  `,
+  );
 
 
 
@@ -120,6 +147,7 @@ const ProgresC = () => {
                 </div>
             </div>
             <div className="form-sce">
+                <video className='background-video' autoPlay loop muted > <source src={videobg} type="video/mp4" /> </video>
                 <div className="bound">
                     <div className="form-box">
                     <TimmerCompo targetTime={timerTargetTime} onTimeout={() => navigate(`/progresc/${id}`)} />
@@ -139,15 +167,15 @@ const ProgresC = () => {
                                 <Grid item xs={12} sm={12}>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important"}} fullWidth>
                                         <FormLabel sx={{ marginBottom: "15px" }} component="legend">Why Areness? Where do you envision your legal career in 5 years, and what steps do you plan to take to achieve your professional goals during that time? <span style={{ fontSize: "12px" }}>(Max Word Limit 250)</span></FormLabel>
-                                        <TextField required id="outlined-required" label="Answer" name='Answer1' value={formData.Answer1} onChange={handleChange} fullWidth />
+                                        <Textarea required id="outlined-required" label="Answer" name='Answer1' value={formData.Answer1} onChange={handleChange} aria-label="minimum height" minRows={3} placeholder="Minimum 250 Word" />
                                     </FormControl>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important"}} fullWidth>
                                         <FormLabel sx={{ marginBottom: "15px" }} component="legend">What strategies and adaptations should legal practitioners consider in order to thrive and remain competitive in the face of significant transformations within the legal profession?</FormLabel>
-                                        <TextField required id="outlined-required" label="Answer" name='Answer2' value={formData.Answer2} onChange={handleChange} fullWidth />
+                                        <Textarea required id="outlined-required" label="Answer" name='Answer2' value={formData.Answer2} onChange={handleChange}  aria-label="minimum height" minRows={3} placeholder="Minimum 250 Word" />
                                     </FormControl>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important"}} fullWidth>
                                         <FormLabel sx={{ marginBottom: "15px" }} component="legend">Imagine you are representing a client who has entered into a complex international business contract. The other party has failed to fulfill a significant contractual obligation, and your client is seeking to enforce the contract or seek damages. Help me through the steps you would take to assess the situation, advise your client, and develop a legal strategy to achieve a favorable outcome.</FormLabel>
-                                        <TextField required id="outlined-required" label="Answer" name='Answer3' value={formData.Answer3} onChange={handleChange} fullWidth />
+                                        <Textarea required id="outlined-required" label="Answer" name='Answer3' value={formData.Answer3} onChange={handleChange}  aria-label="minimum height" minRows={3} placeholder="Minimum 250 Word" />
                                     </FormControl>
                                 </Grid>
                             </Grid>

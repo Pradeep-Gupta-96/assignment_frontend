@@ -16,6 +16,7 @@ import Select from '@mui/material/Select';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import TimmerCompo from './TimmerCompo';
+import videobg from '../images/background-video.mp4';
 
 
 
@@ -141,6 +142,7 @@ const ProgresA = () => {
                 </div>
             </div>
             <div className="form-sce">
+                <video className='background-video' autoPlay loop muted > <source src={videobg} type="video/mp4" /> </video>
                 <div className="bound">
                     <div className="form-box">
                         <TimmerCompo targetTime={timerTargetTime} onTimeout={() => navigate(`/progresc/${id}`)} />
@@ -300,8 +302,26 @@ const ProgresA = () => {
                                             <MenuItem value={"Digital Governance"}>Digital Governance</MenuItem>
                                         </Select>
                                     </FormControl>
-                                    <TextField required id="outlined-required" label="Last Internship Details " name='last_internship_details' value={formData.last_internship_details} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
-                                    <TextField required id="outlined-required" label="Publications, if any " name='publications' value={formData.publications} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                    <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
+                                        <FormLabel component="legend">Publications, if any:</FormLabel>
+                                        <FormControlLabel
+                                            control={<Checkbox />}
+                                            label="Yes"
+                                            name="publications"
+                                            value="Yes"
+                                            checked={formData.publications === 'Yes'}
+                                            onChange={handleChange}
+                                        />
+                                        <FormControlLabel
+                                            control={<Checkbox />}
+                                            label="No"
+                                            name="publications"
+                                            value="No"
+                                            checked={formData.publications === 'No'}
+                                            onChange={handleChange}
+                                        />
+                                    </FormControl>
+                                    <TextField required id="outlined-required" label="Publications Link" name='publicationslink' value={formData.publicationslink} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
                                 </Grid>
                             </Grid>
                         </Box>

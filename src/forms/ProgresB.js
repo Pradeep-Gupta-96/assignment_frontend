@@ -16,6 +16,7 @@ import Select from '@mui/material/Select';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import TimmerCompo from './TimmerCompo';
+import videobg from '../images/background-video.mp4';
 
 const steps = [
     'Preliminary Details',
@@ -145,6 +146,7 @@ const ProgresB = () => {
                 </div>
             </div>
             <div className="form-sce">
+                <video className='background-video' autoPlay loop muted > <source src={videobg} type="video/mp4" /> </video>
                 <div className="bound">
                     <div className="form-box">
                     <TimmerCompo targetTime={timerTargetTime} onTimeout={() => navigate(`/progresc/${id}`)} />
@@ -187,7 +189,20 @@ const ProgresB = () => {
 
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="Percentage" name='Class10_percentage' value={formData.Class10_percentage} onChange={handleChange} fullWidth />
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="10th-board">Percentage</InputLabel>
+                                                    <Select
+                                                         required 
+                                                         id="outlined-required" 
+                                                         label="Percentage" 
+                                                         name='Class10_percentage' 
+                                                         value={formData.Class10_percentage} 
+                                                         onChange={handleChange} fullWidth
+                                                    >
+                                                        <MenuItem value={"Below-75"}> Below 75%</MenuItem>
+                                                        <MenuItem value={"Above-75"}>Above 75%</MenuItem>
+                                                    </Select>
+                                                </FormControl>
                                             </div>
                                             <div className="class-box">
                                                 <TextField required id="outlined-required" label="Year of Passing" name='Class10_year_of_passing' value={formData.Class10_year_of_passing} onChange={handleChange} fullWidth />
@@ -215,7 +230,20 @@ const ProgresB = () => {
                                                 </FormControl>
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="Percentage" name='Class12_percentage' value={formData.Class12_percentage} onChange={handleChange} fullWidth />
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="10th-board">Percentage</InputLabel>
+                                                    <Select
+                                                         required 
+                                                         id="outlined-required" 
+                                                         label="Percentage" 
+                                                         name='Class12_percentage' 
+                                                         value={formData.Class12_percentage} 
+                                                         onChange={handleChange} fullWidth
+                                                    >
+                                                        <MenuItem value={"Below-75"}>Below 75%</MenuItem>
+                                                        <MenuItem value={"Above-75"}>Above 75%</MenuItem>
+                                                    </Select>
+                                                </FormControl>
                                             </div>
                                             <div className="class-box">
                                                 <TextField required id="outlined-required" label="Year of Passing" name='Class12_year_of_passing' value={formData.Class12_year_of_passing} onChange={handleChange} fullWidth />
