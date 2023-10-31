@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import logo from '../images/logo.png'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { Button} from '@mui/material';
+import { Button, Checkbox, FormControlLabel } from '@mui/material';
 import { FormControl, FormLabel } from '@mui/material';
 import { Link } from 'react-router-dom';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import { allQuestionsA1 } from './Questionpart/PartA';
+import { allQuestionsB } from './Questionpart/PartB';
+import { allQuestionsC } from './Questionpart/PartC';
+import { allQuestionsD } from './Questionpart/PartD';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
 
@@ -25,17 +27,12 @@ const Textarea = styled(BaseTextareaAutosize)(
     border: 1px solid rgb(118, 118, 118);
     &:hover {border-color: #3399FF;}
     &:focus {border-color: #3399FF;}
-
     // firefox
     &:focus-visible {
       outline: 0;
     }
   `,
 );
-
-const allQuestionsA = ['question 1', 'question 2', 'question 3', 'question 4', 'question 5'];
-const allQuestionsB = ['question 1', 'question 2', 'question 3', 'question 4', 'question 5', 'question 6'];
-const allQuestionsC = ['question 1', 'question 2', 'question 3'];
 
 const shuffleArray = (array) => {
     const shuffledArray = [...array];
@@ -52,9 +49,10 @@ const getRandomQuestions = (questions, count) => {
 };
 
 const Practices = () => {
-    const sectionA = getRandomQuestions(allQuestionsA, 2);
-    const sectionB = getRandomQuestions(allQuestionsB, 3);
-    const sectionC = getRandomQuestions(allQuestionsC, 1);
+    const sectionA1 = getRandomQuestions(allQuestionsA1, 5);
+    const sectionB = getRandomQuestions(allQuestionsB, 2);
+    const sectionC = getRandomQuestions(allQuestionsC, 2);
+    const sectionD = getRandomQuestions(allQuestionsD, 6);
 
     const [formData, setFormData] = useState({
         Answer1: '',
@@ -69,6 +67,8 @@ const Practices = () => {
     const handleChange = (event) => {
         setFormData({ ...formData, [event.target.name]: event.target.value });
     };
+
+    console.log(formData)
 
     return (
         <>
@@ -91,23 +91,21 @@ const Practices = () => {
                                 <Grid item xs={12} sm={12}>
                                     <div className='section A'>
                                         <h3>PART A</h3>
-                                        {sectionA.map((question, index) => (
-                                            <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
+                                        {sectionA1.map((questionData, index) => (
+                                            <FormControl key={index} className="question-row" sx={{ marginBottom: "25px" }} fullWidth>
                                                 <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                                    {question}
+                                                    {index + 1}:- {questionData.question}
                                                 </FormLabel>
-                                                <Textarea
-                                                    required
-                                                    id={`outlined-required-${index}`}
-                                                    label="Answer"
-                                                    name={`Answer${index + 1}`}
-                                                    value={formData[`Answer${index + 1}`]}
-                                                    onChange={handleChange}
-                                                    aria-label="maximum height"
-                                                    minRows={3}
-                                                    placeholder="maximum 250 Word"
-                                                    onPaste={(e) => e.preventDefault()}
-                                                />
+                                                {questionData.options.map((option, optionIndex) => (
+                                                    <FormControlLabel
+                                                        key={optionIndex}
+                                                        name={`Answer${index + optionIndex + 1}`}
+                                                        value={(optionIndex + 1).toString()}
+                                                        onChange={handleChange}
+                                                        control={<Checkbox />}
+                                                        label={option}
+                                                    />
+                                                ))}
                                             </FormControl>
                                         ))}
                                     </div>
@@ -116,14 +114,14 @@ const Practices = () => {
                                         {sectionB.map((question, index) => (
                                             <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
                                                 <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                                    {question}
+                                                    {index + 1}:- {question}
                                                 </FormLabel>
                                                 <Textarea
                                                     required
                                                     id={`outlined-required-${index}`}
                                                     label="Answer"
-                                                    name={`Answer${index + sectionA.length + 1}`}
-                                                    value={formData[`Answer${index + sectionA.length + 1}`]}
+                                                    name={`Answer${index + sectionA1.length + 1}`}
+                                                    value={formData[`Answer${index + sectionA1.length + 1}`]}
                                                     onChange={handleChange}
                                                     aria-label="maximum height"
                                                     minRows={3}
@@ -138,14 +136,14 @@ const Practices = () => {
                                         {sectionC.map((question, index) => (
                                             <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
                                                 <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                                    {question}
+                                                    {index + 1}:- {question}
                                                 </FormLabel>
                                                 <Textarea
                                                     required
                                                     id={`outlined-required-${index}`}
                                                     label="Answer"
-                                                    name={`Answer${index + sectionA.length + sectionB.length + 1}`}
-                                                    value={formData[`Answer${index + sectionA.length + sectionB.length + 1}`]}
+                                                    name={`Answer${index + sectionA1.length + sectionB.length + 1}`}
+                                                    value={formData[`Answer${index + sectionA1.length + sectionB.length + 1}`]}
                                                     onChange={handleChange}
                                                     aria-label="maximum height"
                                                     minRows={3}
@@ -155,11 +153,31 @@ const Practices = () => {
                                             </FormControl>
                                         ))}
                                     </div>
-
+                                    <div className='section D'>
+                                        <h3>PART D</h3>
+                                        {sectionD.map((questionData, index) => (
+                                            <FormControl key={index} className="question-row" sx={{ marginBottom: "25px" }} fullWidth>
+                                                <FormLabel sx={{ marginBottom: "15px" }} component="legend">
+                                                    {index + 1}:-  {questionData.question}
+                                                </FormLabel>
+                                                {questionData.options.map((option, optionIndex) => (
+                                                    <FormControlLabel
+                                                        key={optionIndex}
+                                                        name={`Answer${index + sectionA1.length + sectionB.length + sectionC.length + optionIndex + 1}`}
+                                                        value={(optionIndex + 1).toString()}
+                                                        onChange={handleChange}
+                                                        control={<Checkbox />}
+                                                        label={option}
+                                                    />
+                                                ))}
+                                            </FormControl>
+                                        ))}
+                                    </div>
                                 </Grid>
                             </Grid>
                         </Box>
                         <Box sx={{ width: '100%' }} className="bottom-form">
+                            <Button className="blue-btn"></Button>
                             <Button className="blue-btn">Submit</Button>
                         </Box>
                     </div>
