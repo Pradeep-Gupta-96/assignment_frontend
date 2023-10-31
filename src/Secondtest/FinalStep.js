@@ -5,31 +5,28 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import { Button, FormLabel } from '@mui/material';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
 const FinalStep = () => {
-  return (
-    <>
-        <div className="header">
-            <div className="bound">
-                <div className="topsec">
-                    <div className="logo"><Link className="nav-Link" to="/"><img src={logo} alt="Logo" /></Link></div>
-                    <div className="menu">
-                        <Link to="https://www.arenesslaw.com/career/" className='toggle-menu'>Search More Jobs</Link>
+    return (
+        <>
+            <div className="header">
+                <div className="bound">
+                    <div className="topsec">
+                        <div className="logo"><Link className="nav-Link" to="/"><img src={logo} alt="Logo" /></Link></div>
+                        <div className="menu">
+                            <Link to="https://www.arenesslaw.com/career/" className='toggle-menu'>Search More Jobs</Link>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div className="form-sce">
-            <div className="bound">
-                <div className="form-box">
-                    <h3>Assessment Intern</h3>
-                    <Box className='top-form' component="form" >
+            <div className="form-sce">
+                <div className="bound">
+                    <div className="form-box">
+                        <h3>Assessment Intern</h3>
+                        <Box className='top-form' component="form" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={12}>
                                     <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
@@ -71,7 +68,7 @@ const FinalStep = () => {
                                         <FormLabel component="legend">Q 8. Match the following: (Correctly matched – please shuffle for confusing students) </FormLabel>
                                         <div className="four-op">
                                             <ul className="op-row">
-                                                <li className="op1">Appeal for restoration of Company’s name can’t be maintained by a person whose status as its director is disputed.</li>  
+                                                <li className="op1">Appeal for restoration of Company’s name can’t be maintained by a person whose status as its director is disputed.</li>
                                                 <li className="op1">Director of a Company can’t be prosecuted vicariously for cheque bounce if Company is not charged as accused.</li>
                                                 <li className="op1">Stockbroker has to obtain a registration certificate from SEBI for each SE where he operates and pay prescribed fee.</li>
                                                 <li className="op1">SEBI was not justified in penalizing a Company by taking a hyper technical view of the law on related party transaction.</li>
@@ -123,7 +120,7 @@ const FinalStep = () => {
                                         <FormLabel component="legend">Q 13. Identify the issues discussed in corporate governance case law and match the following correctly: (change to confuse the students/young scholars)</FormLabel>
                                         <div className="four-op">
                                             <ul className="op-row">
-                                                <li className="op1">Section 195 of the Income Tax Act applies to residents and cannot be extended to have extraterritorial jurisdiction.  </li>  
+                                                <li className="op1">Section 195 of the Income Tax Act applies to residents and cannot be extended to have extraterritorial jurisdiction.  </li>
                                                 <li className="op1">Directors are entitled to attend board meetings through VC even if intimation is not given at beginning of Calendar year.</li>
                                                 <li className="op1">Whether straitjacket formula to brand Company as ‘Shell Company’ was justified or not.</li>
                                                 <li className="op1">Whether the Board could be empowered to appoint additional directors by articles of Company without specifying it in the agenda of the meeting.</li>
@@ -140,7 +137,7 @@ const FinalStep = () => {
                                         <FormLabel component="legend">Q 14. Match the following Corporate Governance theories: (Correctly placed – change the order to confuse students/young lawyers)</FormLabel>
                                         <div className="four-op">
                                             <ul className="op-row">
-                                                <li className="op1">Agency Theory</li>  
+                                                <li className="op1">Agency Theory</li>
                                                 <li className="op1">Stewardship Theory</li>
                                                 <li className="op1">Resource Dependency Theory</li>
                                                 <li className="op1">Stakeholder Theory</li>
@@ -157,7 +154,7 @@ const FinalStep = () => {
                                         <FormLabel component="legend">Q 15. Match the following provisions from The Recovery of Debts and Bankruptcy Act, 1993: (reshuffle the options to confuse students/young lawyers).  </FormLabel>
                                         <div className="four-op">
                                             <ul className="op-row">
-                                                <li className="op1">Section 25</li>  
+                                                <li className="op1">Section 25</li>
                                                 <li className="op1">Section 22 A</li>
                                                 <li className="op1">Section 17A </li>
                                                 <li className="op1">Section 19</li>
@@ -176,7 +173,7 @@ const FinalStep = () => {
                                         <FormLabel component="legend">Q 16. Match the provisions under the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest (SARFAESI) Act 2002 correctly.</FormLabel>
                                         <div className="four-op">
                                             <ul className="op-row">
-                                                <li className="op1">Section 13</li>  
+                                                <li className="op1">Section 13</li>
                                                 <li className="op1">Section 17</li>
                                                 <li className="op1">Section 27 </li>
                                                 <li className="op1">Section 31</li>
@@ -199,7 +196,7 @@ const FinalStep = () => {
                                         <FormLabel component="legend">Q 18. Match the provisions from the Insolvency and Bankruptcy Code, 2016:</FormLabel>
                                         <div className="four-op">
                                             <ul className="op-row">
-                                                <li className="op1">Section 7</li>  
+                                                <li className="op1">Section 7</li>
                                                 <li className="op1">Section 9</li>
                                                 <li className="op1">Section 12A </li>
                                                 <li className="op1">Section 21</li>
@@ -222,7 +219,7 @@ const FinalStep = () => {
                                         <FormLabel component="legend">Q 20. Match the following case laws with issues that were adjudicated in them.</FormLabel>
                                         <div className="four-op">
                                             <ul className="op-row">
-                                                <li className="op1">Committee of Creditors Essar Steel India Limited v. Satish Kumar Gupta</li>  
+                                                <li className="op1">Committee of Creditors Essar Steel India Limited v. Satish Kumar Gupta</li>
                                                 <li className="op1">Bank of Baroda v. MBL Infrastructure Limited an Ors.</li>
                                                 <li className="op1">Mobilox Innovations Private Limited v. Kirusa Software Private Limited</li>
                                                 <li className="op1">K. Sashidhar v. Indian Overseas Bank</li>
@@ -247,7 +244,7 @@ const FinalStep = () => {
                                         <FormLabel component="legend">Q 23. Identify the arrangement of provisions under the Companies Act, 2013 to match the following correctly </FormLabel>
                                         <div className="four-op">
                                             <ul className="op-row">
-                                                <li className="op1">Section 7</li>  
+                                                <li className="op1">Section 7</li>
                                                 <li className="op1">Section 24</li>
                                                 <li className="op1">Section 43 </li>
                                                 <li className="op1">Section 166</li>
@@ -267,15 +264,15 @@ const FinalStep = () => {
                                         <TextField required id="outlined-required" label="Answer" name='Answer1' fullWidth />
                                     </FormControl>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
-                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 25. Mr. Ajay Bhai was appointed as workman in a company named “the Dublin” (hereinafter ‘the company’) that manufactured auto parts and related products for export to Germany. Mr. Ajay Bhai served amicably in the company for 15 years without any serious complaints. In any event, the above-named workmen was dismissed and terminated from services based on his conduct on the occasion of Dussehra when he was drunk and picked up a fight with some co-workers over illogical issues.<br /> <br />  
-Aggrieved by the decision of dismissal and termination of services, the workmen approached Labor Court for proper adjudication over the matter. The workmen want to allege that he was dismissed and terminated from the company illegally and that the action taken against him was not justified whatsoever. The workmen seek your advice and wants you to address the issue of whether the management was justified in dismissing or terminating his services with the company before the Labor Court. Advice the workmen and identify reliefs under the relevant provisions of the Industrial Dispute Act.   </FormLabel>
+                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 25. Mr. Ajay Bhai was appointed as workman in a company named “the Dublin” (hereinafter ‘the company’) that manufactured auto parts and related products for export to Germany. Mr. Ajay Bhai served amicably in the company for 15 years without any serious complaints. In any event, the above-named workmen was dismissed and terminated from services based on his conduct on the occasion of Dussehra when he was drunk and picked up a fight with some co-workers over illogical issues.<br /> <br />
+                                            Aggrieved by the decision of dismissal and termination of services, the workmen approached Labor Court for proper adjudication over the matter. The workmen want to allege that he was dismissed and terminated from the company illegally and that the action taken against him was not justified whatsoever. The workmen seek your advice and wants you to address the issue of whether the management was justified in dismissing or terminating his services with the company before the Labor Court. Advice the workmen and identify reliefs under the relevant provisions of the Industrial Dispute Act.   </FormLabel>
                                         <TextField required id="outlined-required" label="Answer" name='Answer1' fullWidth />
                                     </FormControl>
                                     <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Q 26. Identify the provisions from the employment and labor law of our country and match the following correctly</FormLabel>
                                         <div className="four-op">
                                             <ul className="op-row">
-                                                <li className="op1">The Minimum Wages Act, 1948</li>  
+                                                <li className="op1">The Minimum Wages Act, 1948</li>
                                                 <li className="op1">The Industrial Dispute Act, 1947 </li>
                                                 <li className="op1">The Workmen’s Compensation Act, 1923</li>
                                                 <li className="op1">The payment of wages Act, 1936</li>
@@ -292,15 +289,15 @@ Aggrieved by the decision of dismissal and termination of services, the workmen 
                                         <FormLabel component="legend">Q 27. Identify the issue adjudicated in case laws mentioned below:</FormLabel>
                                         <div className="four-op">
                                             <ul className="op-row">
-                                                <li className="op1">Syndicate Bank and Ors. V. K. Umesh Nayak, MANU/SC/0066/1995</li> 
-                                                <li className="op1">Central Provinces Transport Services Ltd. v. Raghunath Gopal Patwardhan MANU/SC/0067/1956</li>  
-                                                <li className="op1">Steel Authority of India Ltd. and Ors. v. National Union Waterfront Workers and Ors. MANU/SC/0515/2001</li> 
+                                                <li className="op1">Syndicate Bank and Ors. V. K. Umesh Nayak, MANU/SC/0066/1995</li>
+                                                <li className="op1">Central Provinces Transport Services Ltd. v. Raghunath Gopal Patwardhan MANU/SC/0067/1956</li>
+                                                <li className="op1">Steel Authority of India Ltd. and Ors. v. National Union Waterfront Workers and Ors. MANU/SC/0515/2001</li>
                                                 <li className="op1">Bengaluru Water Supply and Sewerage Board v. A. Rajappa MANU/SC/0257/1978 </li>
                                             </ul>
                                             <ul className="ans-row">
-                                                <li className="ans1">Whether workmen who proceed on legal or illegal strike are entitled to wages for period of strike.</li> 
-                                                <li className="ans1">Whether the definition of the term ‘industry’ under Section 2 of the Industrial Disputes Act, 1947 is wide enough to incorporate a dispute between employer and an individual employee as industrial dispute.</li>   
-                                                <li className="ans1">Whether or not, the concept of automatic absorption of contract labor, in establishment of principle employer especially on issuance of abolition notification, was implied in Section 10 of the Contract Labour (Regulation and Abolition) Act, 1970.</li>    
+                                                <li className="ans1">Whether workmen who proceed on legal or illegal strike are entitled to wages for period of strike.</li>
+                                                <li className="ans1">Whether the definition of the term ‘industry’ under Section 2 of the Industrial Disputes Act, 1947 is wide enough to incorporate a dispute between employer and an individual employee as industrial dispute.</li>
+                                                <li className="ans1">Whether or not, the concept of automatic absorption of contract labor, in establishment of principle employer especially on issuance of abolition notification, was implied in Section 10 of the Contract Labour (Regulation and Abolition) Act, 1970.</li>
                                                 <li className="ans1">Whether a statutory body performing sovereign functions are exempted from the definition of the term ‘industry’ under the Industrial Disputes Act, 1947.</li>
                                             </ul>
                                         </div>
@@ -310,32 +307,32 @@ Aggrieved by the decision of dismissal and termination of services, the workmen 
                                         <TextField required id="outlined-required" label="Answer" name='Answer1' fullWidth />
                                     </FormControl>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
-                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 29. <i>“Novelty or invention or innovative idea is not the requirement for protection of copyright but it does require minimal degree of creativity.”</i> <br /><br />  
-Originality, in the eyes of copyright law lies not in the idea or thought but the representation thereof. Analyze the above statement and discuss the proposition as applicable to literary, musical, dramatic and artistic works. <br /><br />
-Use decided cases to illustrate and support your arguments and analysis.</FormLabel>
+                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 29. <i>“Novelty or invention or innovative idea is not the requirement for protection of copyright but it does require minimal degree of creativity.”</i> <br /><br />
+                                            Originality, in the eyes of copyright law lies not in the idea or thought but the representation thereof. Analyze the above statement and discuss the proposition as applicable to literary, musical, dramatic and artistic works. <br /><br />
+                                            Use decided cases to illustrate and support your arguments and analysis.</FormLabel>
                                         <TextField required id="outlined-required" label="Answer" name='Answer1' fullWidth />
                                     </FormControl>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
-                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 30. “Cookware” is introduced in the market place by well-established metal industry which manufactures many other products including utensils. The stainless-steel products manufactured by the metal industry are very popular in the State. However, the manufacturing process adopted by the industry is very tedious and laborious. <br /><br /> 
+                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 30. “Cookware” is introduced in the market place by well-established metal industry which manufactures many other products including utensils. The stainless-steel products manufactured by the metal industry are very popular in the State. However, the manufacturing process adopted by the industry is very tedious and laborious. <br /><br />
                                             “Fantastic 3 Pvt. Ltd.” (Hereinafter the company) proprietors of cookware products invented some improvement in the old laborious method through which the company could produce plates of better quality and with higher speed. The company now wants to claim a patent in the said method of manufacturing.<br /><br />
                                             Discuss the position of the company’s patent in the territorial jurisdiction of India? What is the relationship between the Patent and Design Act? Answer the question in the light of potential overlap, if any, and the relative scope of protection offered by both statutes (i.e., Patent and Design Act), especially in the light of case law.</FormLabel>
                                         <TextField required id="outlined-required" label="Answer" name='Answer1' fullWidth />
                                     </FormControl>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
-                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 31. The intellectual property (IP) system is designed to protect humankind’s intellectual achievements, not only at the national level, but also across borders. Many products developed thanks to IP, such as Hollywood movies, French wines and German precision machine tools, have crossed national borders to enter other countries. But if the IP inherent in these products is not protected in other countries, they may be freely counterfeited and plagiarized, to the serious detriment of the right holders. In order to solve the problem of international protection of IP rights, countries enter into international IP treaties to align and harmonize as much as possible their IP regimes. <br /><br />  
-For example, the “Coca-Cola” trademark is worth billions, but its value is mainly derived from the goodwill amassed by the company in its long-term business operations, instead of the design of the mark itself. <br /><br /> 
-What remedies are available to redress Intellectual Property infringement? How does the international community coordinate Intellectual Property protection? </FormLabel>
+                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 31. The intellectual property (IP) system is designed to protect humankind’s intellectual achievements, not only at the national level, but also across borders. Many products developed thanks to IP, such as Hollywood movies, French wines and German precision machine tools, have crossed national borders to enter other countries. But if the IP inherent in these products is not protected in other countries, they may be freely counterfeited and plagiarized, to the serious detriment of the right holders. In order to solve the problem of international protection of IP rights, countries enter into international IP treaties to align and harmonize as much as possible their IP regimes. <br /><br />
+                                            For example, the “Coca-Cola” trademark is worth billions, but its value is mainly derived from the goodwill amassed by the company in its long-term business operations, instead of the design of the mark itself. <br /><br />
+                                            What remedies are available to redress Intellectual Property infringement? How does the international community coordinate Intellectual Property protection? </FormLabel>
                                         <TextField required id="outlined-required" label="Answer" name='Answer1' fullWidth />
                                     </FormControl>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
                                         <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 32. <i>“What is accorded to American nationals in a country should also be given to German and Japanese nationals doing business in that country, with no prejudice to nationals of any member countries. The principle of national treatment allows foreign nationals the same treatment as nationals on some important substantive issues, but not in all aspects.” Explain?</i> <br /><br />
-On the other hand, the MFN principle aims to iron out differences in treatment among foreign nationals. What is the “most-favoured-nation (MFN) treatment” principle and how is it different from national treatment principle?   </FormLabel>
+                                            On the other hand, the MFN principle aims to iron out differences in treatment among foreign nationals. What is the “most-favoured-nation (MFN) treatment” principle and how is it different from national treatment principle?   </FormLabel>
                                         <TextField required id="outlined-required" label="Answer" name='Answer1' fullWidth />
                                     </FormControl>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
-                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 33. ‘Ankush’ is a very famous writer and novelist. His novels gather publicity in no time. His first novel was published in 1950 with rare photographs, unpublished/inaccessible material. The effort to produce a coherent and authoritative volume involves considerable labor over several years. Therefore, Ankush’s work becomes hard to obtain. He submitted copy of a latest novel for publication in Thomson Reuters that was kept for by the publication house for more than 6 months due to Covid-19 pandemic. Ankush’s novels are impossible to come by except in some pirated or unauthorized editions. <br /><br /> 
-‘Balbir’, a not so well-known writer submitted his manuscripts to Penguin publishers that could be considered as pirated or unauthorized edition of Ankush’s original work. The pirated versions got published soon after the lockdown restrictions were lifted. The publishing house contacted Balbir and congratulated him for the popularity of his latest novel tilted “Do Apple Dream of Unmanned Vehicles”.  <br /><br /> 
-Ankush has approached you to confirm his legal rights, position and remedies if any available in Intellectual Property Law in force in territorial jurisdiction of our country?</FormLabel>
+                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 33. ‘Ankush’ is a very famous writer and novelist. His novels gather publicity in no time. His first novel was published in 1950 with rare photographs, unpublished/inaccessible material. The effort to produce a coherent and authoritative volume involves considerable labor over several years. Therefore, Ankush’s work becomes hard to obtain. He submitted copy of a latest novel for publication in Thomson Reuters that was kept for by the publication house for more than 6 months due to Covid-19 pandemic. Ankush’s novels are impossible to come by except in some pirated or unauthorized editions. <br /><br />
+                                            ‘Balbir’, a not so well-known writer submitted his manuscripts to Penguin publishers that could be considered as pirated or unauthorized edition of Ankush’s original work. The pirated versions got published soon after the lockdown restrictions were lifted. The publishing house contacted Balbir and congratulated him for the popularity of his latest novel tilted “Do Apple Dream of Unmanned Vehicles”.  <br /><br />
+                                            Ankush has approached you to confirm his legal rights, position and remedies if any available in Intellectual Property Law in force in territorial jurisdiction of our country?</FormLabel>
                                         <TextField required id="outlined-required" label="Answer" name='Answer1' fullWidth />
                                     </FormControl>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
@@ -343,8 +340,8 @@ Ankush has approached you to confirm his legal rights, position and remedies if 
                                         <TextField required id="outlined-required" label="Answer" name='Answer1' fullWidth />
                                     </FormControl>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important", marginBottom: "25px" }} fullWidth>
-                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 35. A company called “Calico” (hereinafter the company) is a traditional biotechnology company. The company ambitiously works on a mission of patenting the biological process of controlling aging and life span of human beings. The company filed for a patent in many jurisdictions for inventing a new gene that enables people to stay young and health. The new gene invented by the company supports life expectancy in human beings. The company successfully developed interventions in gene formation that enables people to live longer and healthier lives. The company has obtained patent protection on the invented gene from almost 123+ countries around the world. It was granted protection on the basis of inventing state-of-the-art-technology of nurturing human being. <br /><br /> 
-The company wants to file for patent protection in India for its process of “de novo gene formation”. The “de novo gene formation” proved effective in (a) anti-aging and (b) disease associated with ageing process of human beings. The question posed by legal experts of the company revolves around the issue whether or not patenting of such gene is justified in our jurisdiction? Please guide and advice. </FormLabel>
+                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 35. A company called “Calico” (hereinafter the company) is a traditional biotechnology company. The company ambitiously works on a mission of patenting the biological process of controlling aging and life span of human beings. The company filed for a patent in many jurisdictions for inventing a new gene that enables people to stay young and health. The new gene invented by the company supports life expectancy in human beings. The company successfully developed interventions in gene formation that enables people to live longer and healthier lives. The company has obtained patent protection on the invented gene from almost 123+ countries around the world. It was granted protection on the basis of inventing state-of-the-art-technology of nurturing human being. <br /><br />
+                                            The company wants to file for patent protection in India for its process of “de novo gene formation”. The “de novo gene formation” proved effective in (a) anti-aging and (b) disease associated with ageing process of human beings. The question posed by legal experts of the company revolves around the issue whether or not patenting of such gene is justified in our jurisdiction? Please guide and advice. </FormLabel>
                                         <TextField required id="outlined-required" label="Answer" name='Answer1' fullWidth />
                                     </FormControl>
                                 </Grid>
@@ -354,11 +351,11 @@ The company wants to file for patent protection in India for its process of “d
                             <Link className='back-link' to="/">Back</Link>
                             <Button className="blue-btn">Next</Button>
                         </Box>
+                    </div>
                 </div>
             </div>
-        </div>
-    </>
-  )
+        </>
+    )
 }
 
 export default FinalStep

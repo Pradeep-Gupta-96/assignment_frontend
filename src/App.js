@@ -9,6 +9,7 @@ import Successpage from './forms/Successpage';
 import Dashboard from './Dashboard/Dashboard';
 import FinalStep from './Secondtest/FinalStep';
 import Finalsuccess from './Secondtest/Finalsuccess';
+import Practices from './Secondtest/Practices';
 
 
 
@@ -25,6 +26,7 @@ function App() {
     { path: "/dashboard", element: <Dashboard/> },
     { path: "/finalStep", element: <FinalStep/> },
     { path: "/finalsuccess", element: <Finalsuccess/> },
+    { path: "/Practices", element: <Practices/> },
   
   ]
   

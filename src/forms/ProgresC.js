@@ -22,7 +22,7 @@ const steps = [
     'Experience',
     'Step 3',
 ];
-  const Textarea = styled(BaseTextareaAutosize)(
+const Textarea = styled(BaseTextareaAutosize)(
     ({ theme }) => `
     width: 100%;
     font-family: 'Montserrat', sans-serif !important;
@@ -43,7 +43,7 @@ const steps = [
       outline: 0;
     }
   `,
-  );
+);
 
 
 
@@ -66,7 +66,7 @@ const ProgresC = () => {
     };
 
     const id = localStorage.getItem('id');
-    console.log("C",id)
+    console.log("C", id)
 
     const handleSubmit = async (event) => {
         try {
@@ -118,7 +118,7 @@ const ProgresC = () => {
             setTimerTargetTime(timestamp + fortyFiveMinutes);
 
             if (now - timestamp >= fortyFiveMinutes) {
-               
+
                 handleSubmit()
             }
         } catch (error) {
@@ -150,7 +150,7 @@ const ProgresC = () => {
                 <video className='background-video' autoPlay loop muted > <source src={videobg} type="video/mp4" /> </video>
                 <div className="bound">
                     <div className="form-box">
-                    <TimmerCompo targetTime={timerTargetTime} onTimeout={() => navigate(`/progresc/${id}`)} />
+                        <TimmerCompo targetTime={timerTargetTime} onTimeout={() => navigate(`/progresc/${id}`)} />
                         <Link className="back-link" to="/">Back to Job Posting</Link>
                         <h3>Assessment Intern</h3>
                         <Box className="prog-bar" sx={{ width: '100%' }}>
@@ -165,19 +165,61 @@ const ProgresC = () => {
                         <Box className='top-form' component="form" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={12}>
-                                    <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important"}} fullWidth>
-                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Why Areness? Where do you envision your legal career in 5 years, and what steps do you plan to take to achieve your professional goals during that time? <span style={{ fontSize: "12px" }}>(Max Word Limit 250)</span></FormLabel>
-                                        <Textarea required id="outlined-required" label="Answer" name='Answer1' value={formData.Answer1} onChange={handleChange} aria-label="minimum height" minRows={3} placeholder="Minimum 250 Word" />
+                                    <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
+                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">
+                                            Why Areness? Where do you envision your legal career in 5 years, and what steps do you plan to take to achieve your professional goals during that time?
+                                            <span style={{ fontSize: "12px" }}>(Max Word Limit 250)</span>
+                                        </FormLabel>
+                                        <Textarea
+                                            required
+                                            id="outlined-required"
+                                            label="Answer"
+                                            name='Answer1'
+                                            value={formData.Answer1}
+                                            onChange={handleChange}
+                                            aria-label="maximum height"
+                                            minRows={3}
+                                            placeholder="maximum 250 Word"
+                                            onPaste={(e) => e.preventDefault()}
+                                        />
                                     </FormControl>
-                                    <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important"}} fullWidth>
-                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">What strategies and adaptations should legal practitioners consider in order to thrive and remain competitive in the face of significant transformations within the legal profession?</FormLabel>
-                                        <Textarea required id="outlined-required" label="Answer" name='Answer2' value={formData.Answer2} onChange={handleChange}  aria-label="minimum height" minRows={3} placeholder="Minimum 250 Word" />
+                                    <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
+                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">
+                                            What strategies and adaptations should legal practitioners consider in order to thrive and remain competitive in the face of significant transformations within the legal profession?
+                                        </FormLabel>
+                                        <Textarea
+                                            required
+                                            id="outlined-required"
+                                            label="Answer"
+                                            name='Answer2'
+                                            value={formData.Answer2}
+                                            onChange={handleChange}
+                                            aria-label="maximum height"
+                                            minRows={3}
+                                            placeholder="maximum 250 Word"
+                                            onPaste={(e) => e.preventDefault()}
+                                        />
                                     </FormControl>
-                                    <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important"}} fullWidth>
-                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Imagine you are representing a client who has entered into a complex international business contract. The other party has failed to fulfill a significant contractual obligation, and your client is seeking to enforce the contract or seek damages. Help me through the steps you would take to assess the situation, advise your client, and develop a legal strategy to achieve a favorable outcome.</FormLabel>
-                                        <Textarea required id="outlined-required" label="Answer" name='Answer3' value={formData.Answer3} onChange={handleChange}  aria-label="minimum height" minRows={3} placeholder="Minimum 250 Word" />
+                                    <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
+                                    situation based ethical problemx`x`
+                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">
+                                            Axis Consultancy is an established law firm that practices law in India. You are appointed as a Senior Lawyer in the firm. Your job profile includes appearances in Court, briefing seniors, drafting pleadings, attending Court proceedings, etc. The Advocates Act makes it evident that persons enrolled with the Bar Council of India are entitled to practice law. However, there is no bar to a foreign lawyer to conduct arbitration in India especially if the matter is governed by an international commercial arbitration agreement. A commercial dispute between Pixar Pvt. Ltd and Fox Pvt. Ltd. were instituted under the Arbitration Act, 1996. Your senior asked you to fraudulently incorporate an international commercial arbitration clause in the agreement between the parties in order to bring a foreign lawyer for making contentions in the matter. How would you handle this situation, balancing your professional obligations and ethical responsibilities?
+                                        </FormLabel>
+                                        <Textarea
+                                            required
+                                            id="outlined-required"
+                                            label="Answer"
+                                            name='Answer3'
+                                            value={formData.Answer3}
+                                            onChange={handleChange}
+                                            aria-label="maximum height"
+                                            minRows={3}
+                                            placeholder="maximum 250 Word"
+                                            onPaste={(e) => e.preventDefault()}
+                                        />
                                     </FormControl>
                                 </Grid>
+
                             </Grid>
                         </Box>
                         <Box sx={{ width: '100%' }} className="bottom-form">

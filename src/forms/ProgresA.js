@@ -18,16 +18,11 @@ import Checkbox from '@mui/material/Checkbox';
 import TimmerCompo from './TimmerCompo';
 import videobg from '../images/background-video.mp4';
 
-
-
-
 const steps = [
     'Preliminary Details',
     'Experience',
     'Step 3',
 ];
-
-
 
 const ProgresA = () => {
     const navigate = useNavigate()
@@ -41,8 +36,8 @@ const ProgresA = () => {
         course: '',
         field_of_interest: '',
         skills: '',
-        last_internship_details: '',
         publications: '',
+        publicationslink: ''
     });
     const [timerTargetTime, setTimerTargetTime] = useState(0); // Initialize target time to 0
 
@@ -103,29 +98,29 @@ const ProgresA = () => {
     const API1 = `http://localhost:4000/api/todo/${id}`;
     const fetchData1 = React.useCallback(async () => {
         try {
-          const response = await fetch(API1);
-          const data = await response.json();
-          const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
-    
-          const now = new Date().getTime();
-          const fortyFiveMinutes = 45 * 60 * 1000; // 45 minutes in milliseconds
-          setTimerTargetTime(timestamp + fortyFiveMinutes);
-    
-          if (now - timestamp >= fortyFiveMinutes) {
-            // Time is up, navigate to the '/progresc/{id}' route
-            onSubmit()
-          }
+            const response = await fetch(API1);
+            const data = await response.json();
+            const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
+
+            const now = new Date().getTime();
+            const fortyFiveMinutes = 45 * 60 * 1000; // 45 minutes in milliseconds
+            setTimerTargetTime(timestamp + fortyFiveMinutes);
+
+            if (now - timestamp >= fortyFiveMinutes) {
+                // Time is up, navigate to the '/progresc/{id}' route
+                onSubmit()
+            }
         } catch (error) {
-          console.log(error);
+            console.log(error);
         }
-      }, [API1, id, navigate]);
-    
-      React.useEffect(() => {
+    }, [API1, id, navigate]);
+
+    React.useEffect(() => {
         fetchData1();
         const interval = setInterval(fetchData1, 1000);
-    
+
         return () => clearInterval(interval);
-      }, [fetchData1]);
+    }, [fetchData1]);
 
 
 
@@ -176,12 +171,42 @@ const ProgresA = () => {
                                             <MenuItem value="">
                                                 <em>College Name</em>
                                             </MenuItem>
-                                            <MenuItem value={"University 1"}>University 1</MenuItem>
-                                            <MenuItem value={"University 2"}>University 2</MenuItem>
-                                            <MenuItem value={"University 3"}>University 3</MenuItem>
-                                            <MenuItem value={"University 4"}>University 4</MenuItem>
-                                            <MenuItem value={"University 5"}>University 5</MenuItem>
-                                            <MenuItem value={"University 6"}>University 6</MenuItem>
+                                            <MenuItem value={"NLSUI- Bangalore"}>NLSUI- Bangalore</MenuItem>
+                                            <MenuItem value={"NALSAR-Hyderabad "}>NALSAR-Hyderabad </MenuItem>
+                                            <MenuItem value={"NUJS- KOLKATA"}>NUJS- KOLKATA</MenuItem>
+                                            <MenuItem value={"NLU-Jodhpur"}>NLU-Jodhpur</MenuItem>
+                                            <MenuItem value={"NLU-Bhopal"}>NLU-Bhopal</MenuItem>
+                                            <MenuItem value={"Chanakya Na- Patna"}>Chanakya Na- Patna</MenuItem>
+                                            <MenuItem value={"Christ- Bangalore"}>Christ- Bangalore</MenuItem>
+                                            <MenuItem value={"Faculty of Law, Delhi"}>Faculty of Law, Delhi</MenuItem>
+                                            <MenuItem value={"NLU- DELHI"}>NLU- DELHI</MenuItem>
+                                            <MenuItem value={"GLC-Bombay"}>GLC-Bombay</MenuItem>
+                                            <MenuItem value={" Faculty of Law- Mumbai"}>Faculty of Law- Mumbai</MenuItem>
+                                            <MenuItem value={"Symbiosis"}>Symbiosis</MenuItem>
+                                            <MenuItem value={"ICFAI-Hyderabad"}>ICFAI-Hyderabad</MenuItem>
+                                            <MenuItem value={"Symbiosis-Hyderabad"}>Symbiosis-Hyderabad</MenuItem>
+                                            <MenuItem value={"Usmaniya- Hyderabad "}>Usmaniya- Hyderabad </MenuItem>
+                                            <MenuItem value={"Global Jindal- Sonipat"}>Global Jindal- Sonipat</MenuItem>
+                                            <MenuItem value={"Amity University- Noida"}>Amity University- Noida</MenuItem>
+                                            <MenuItem value={"Gandhi National Law University"}>Gandhi National Law University</MenuItem>
+                                            <MenuItem value={"KIIT"}>KIIT</MenuItem>
+                                            <MenuItem value={"NLU-Punjab"}>NLU-Punjab</MenuItem>
+                                            <MenuItem value={"Nirma University"}>Nirma University</MenuItem>
+                                            <MenuItem value={"Bennette university"}>Bennette university</MenuItem>
+                                            <MenuItem value={"IIT-Kharagpur"}>IIT-Kharagpur</MenuItem>
+                                            <MenuItem value={"Rajiv Gandhi School of intellectual and property law"}>Rajiv Gandhi School of intellectual and property law</MenuItem>
+                                            <MenuItem value={"Faculty of Jamia Law University"}>Faculty of Jamia Law University</MenuItem>
+                                            <MenuItem value={"ILI-New Delhi"}>ILI-New Delhi</MenuItem>
+                                            <MenuItem value={"Army Institute of law-Mohali"}>Army Institute of law-Mohali</MenuItem>
+                                            <MenuItem value={"Government law college-thiruvanthapura"}>Government law college-thiruvanthapura</MenuItem>
+                                            <MenuItem value={"MNLU-Nagpur"}>MNLU-Nagpur</MenuItem>
+                                            <MenuItem value={"Bangalore Law College- Bang"}>Bangalore Law College- Bang</MenuItem>
+                                            <MenuItem value={"KC Law College- Mumbai"}>KC Law College- Mumbai</MenuItem>
+                                            <MenuItem value={"Faculty of law- Varanasi"}>Faculty of law- Varanasi</MenuItem>
+                                            <MenuItem value={"G J Advani law college"}>G J Advani law college</MenuItem>
+                                            <MenuItem value={"GGSIP University"}>GGSIP University</MenuItem>
+                                            <MenuItem value={"KC Law College- Mumbai"}>KC Law College- Mumbai</MenuItem>
+                                            <MenuItem value={"other university"}>other university</MenuItem>
                                         </Select>
                                     </FormControl>
                                     <FormControl sx={{ marginBottom: "25px" }} fullWidth>
@@ -197,12 +222,38 @@ const ProgresA = () => {
                                             <MenuItem value="">
                                                 <em>College Name</em>
                                             </MenuItem>
-                                            <MenuItem value={2022}>College 1</MenuItem>
-                                            <MenuItem value={2021}>College 2</MenuItem>
-                                            <MenuItem value={2020}>College 3</MenuItem>
-                                            <MenuItem value={2019}>College 4</MenuItem>
-                                            <MenuItem value={2018}>College 5</MenuItem>
-                                            <MenuItem value={2017}>College 6</MenuItem>
+                                            <MenuItem value={"NLSUI- Bangalore"}>NLSUI- Bangalore</MenuItem>
+                                            <MenuItem value={"NALSAR-Hyderabad "}>NALSAR-Hyderabad </MenuItem>
+                                            <MenuItem value={"NUJS- KOLKATA"}>NUJS- KOLKATA</MenuItem>
+                                            <MenuItem value={"NLU-Jodhpur"}>NLU-Jodhpur</MenuItem>
+                                            <MenuItem value={"NLU-Bhopal"}>NLU-Bhopal</MenuItem>
+                                            <MenuItem value={"Chanakya Na- Patna"}>Chanakya Na- Patna</MenuItem>
+                                            <MenuItem value={"Christ- Bangalore"}>Christ- Bangalore</MenuItem>
+                                            <MenuItem value={"Faculty of Law, Delhi"}>Faculty of Law, Delhi</MenuItem>
+                                            <MenuItem value={"NLU- DELHI"}>NLU- DELHI</MenuItem>
+                                            <MenuItem value={"GLC-Bombay"}>GLC-Bombay</MenuItem>
+                                            <MenuItem value={" Faculty of Law- Mumbai"}>Faculty of Law- Mumbai</MenuItem>
+                                            <MenuItem value={"Symbiosis"}>Symbiosis</MenuItem>
+                                            <MenuItem value={"ICFAI-Hyderabad"}>ICFAI-Hyderabad</MenuItem>
+                                            <MenuItem value={"Symbiosis-Hyderabad"}>Symbiosis-Hyderabad</MenuItem>
+                                            <MenuItem value={"Usmaniya- Hyderabad "}>Usmaniya- Hyderabad </MenuItem>
+                                            <MenuItem value={"Global Jindal- Sonipat"}>Global Jindal- Sonipat</MenuItem>
+                                            <MenuItem value={"Amity University- Noida"}>Amity University- Noida</MenuItem>
+                                            <MenuItem value={"Gandhi National Law University"}>Gandhi National Law University</MenuItem>
+                                            <MenuItem value={"KIIT"}>KIIT</MenuItem>
+                                            <MenuItem value={"NLU-Punjab"}>NLU-Punjab</MenuItem>
+                                            <MenuItem value={"Nirma University"}>Nirma University</MenuItem>
+                                            <MenuItem value={"Bennette university"}>Bennette university</MenuItem>
+                                            <MenuItem value={"IIT-Kharagpur"}>IIT-Kharagpur</MenuItem>
+                                            <MenuItem value={"Rajiv Gandhi School of intellectual and property law"}>Rajiv Gandhi School of intellectual and property law</MenuItem>
+                                            <MenuItem value={"Faculty of Jamia Law University"}>Faculty of Jamia Law University</MenuItem>
+                                            <MenuItem value={"ILI-New Delhi"}>ILI-New Delhi</MenuItem>
+                                            <MenuItem value={"Army Institute of law-Mohali"}>Army Institute of law-Mohali</MenuItem>
+                                            <MenuItem value={"Government law college-thiruvanthapura"}>Government law college-thiruvanthapura</MenuItem>
+                                            <MenuItem value={"MNLU-Nagpur"}>MNLU-Nagpur</MenuItem>
+                                            <MenuItem value={"Bangalore Law College- Bang"}>Bangalore Law College- Bang</MenuItem>
+                                            <MenuItem value={"KC Law College- Mumbai"}>KC Law College- Mumbai</MenuItem>
+                                            <MenuItem value={"other colleges"}>other colleges</MenuItem>
                                         </Select>
                                     </FormControl>
                                     <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
