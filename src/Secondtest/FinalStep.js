@@ -344,9 +344,6 @@ const FinalStep = () => {
                                         <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	Person for the ethical treatment of animals" />
                                         <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	People for the empathised treatment of animals " />
                                     </FormControl>
-
-
-    
                                 </Grid>
                             </Grid>
                         </Box>
