@@ -61,9 +61,8 @@ const FinalStep = () => {
                                             <ul className="op-row">
                                                 <li className="op1">Committee of Creditors Essar Steel India Limited v. Satish Kumar Gupta</li>  
                                                 <li className="op1">Bank of Baroda v. MBL Infrastructure Limited an Ors.</li>
-                                                <li className="op1">Mobilox Innovations Private Limited</li>
+                                                <li className="op1">Mobilox Innovations Private Limited v. Kirusa Software Private Limited</li>
                                                 <li className="op1">K. Sashidhar v. Indian Overseas Bank</li>
-                                                <li className="op1">Kirusa Software Private Limited</li>
                                             </ul>
                                             <ul className="ans-row">
                                                 <li className="ans1">Resolution Applicants could be disqualified from submitting a Resolution Plan being inconsistent with Section 29A of the Insolvency and Bankruptcy Code, 2016.</li>
@@ -72,10 +71,10 @@ const FinalStep = () => {
                                                 <li className="ans1">Whether decision taken by the Committee of Creditor (CoC) on approval of a resolution plan be scrutinized by judiciary.</li>
                                             </ul>
                                         </div>
-                                        <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="a)	i – (a); ii - (b); iii. - (c); iv - (d); v. – (e)" />
-                                        <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="b)	i. – (b); ii. – (a); iii. – (c); iv – (e); v. – (d) " />
-                                        <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="c)	i. – (a); ii. – (e); iii. – (b); iv. – (c); v. – (d)" />
-                                        <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="d)	i. – (b); ii. – (a); iii. – (d); iv. – (c); v. – (e)" />
+                                        <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A.	i – (a); ii - (b); iii. - (c); iv - (d)" />
+                                        <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	i. – (b); ii. – (a); iii. – (c); iv – (d)" />
+                                        <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	i. – (a); ii. – (d); iii. – (b); iv. – (c)" />
+                                        <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	i. – (b); ii. – (a); iii. – (d); iv. – (c) " />
                                     </FormControl>
                                     <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Q 2. Choose the most appropriate answer <br />Which of the following activity/activities are invalid under Section 3 of the anti-competitive agreement of the Competition Act, 2002  </FormLabel>

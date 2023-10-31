@@ -94,7 +94,7 @@ const Practices = () => {
                                         {sectionA1.map((questionData, index) => (
                                             <FormControl key={index} className="question-row" sx={{ marginBottom: "25px" }} fullWidth>
                                                 <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                                    {index + 1}:- {questionData.question}
+                                                    Q {index + 1}:- {questionData.question}
                                                 </FormLabel>
                                                 {questionData.options.map((option, optionIndex) => (
                                                     <FormControlLabel
@@ -114,7 +114,7 @@ const Practices = () => {
                                         {sectionB.map((question, index) => (
                                             <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
                                                 <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                                    {index + 1}:- {question}
+                                                    Q {index + 1}:- {question}
                                                 </FormLabel>
                                                 <Textarea
                                                     required
@@ -136,7 +136,7 @@ const Practices = () => {
                                         {sectionC.map((question, index) => (
                                             <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
                                                 <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                                    {index + 1}:- {question}
+                                                    Q {index + 1}:- {question}
                                                 </FormLabel>
                                                 <Textarea
                                                     required
@@ -158,7 +158,7 @@ const Practices = () => {
                                         {sectionD.map((questionData, index) => (
                                             <FormControl key={index} className="question-row" sx={{ marginBottom: "25px" }} fullWidth>
                                                 <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                                    {index + 1}:-  {questionData.question}
+                                                    Q {index + 1}:-  {questionData.question}
                                                 </FormLabel>
                                                 {questionData.options.map((option, optionIndex) => (
                                                     <FormControlLabel
