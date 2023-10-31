@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
+import logo from '../images/logo.png'
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import { Button} from '@mui/material';
 import { FormControl, FormLabel } from '@mui/material';
+import { Link } from 'react-router-dom';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
 
@@ -65,76 +72,97 @@ const Practices = () => {
 
     return (
         <>
-            <div>
-                <h2>section A</h2>
-                <div className='section A'>
-                    {sectionA.map((question, index) => (
-                        <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
-                            <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                {question}
-                            </FormLabel>
-                            <Textarea
-                                required
-                                id={`outlined-required-${index}`}
-                                label="Answer"
-                                name={`Answer${index + 1}`}
-                                value={formData[`Answer${index + 1}`]}
-                                onChange={handleChange}
-                                aria-label="maximum height"
-                                minRows={3}
-                                placeholder="maximum 250 Word"
-                                onPaste={(e) => e.preventDefault()}
-                            />
-                        </FormControl>
-                    ))}
+            <div className="header">
+                <div className="bound">
+                    <div className="topsec">
+                        <div className="logo"><Link className="nav-Link" to="/"><img src={logo} alt="Logo" /></Link></div>
+                        <div className="menu">
+                            <Link to="https://www.arenesslaw.com/career/" className='toggle-menu'>Search More Jobs</Link>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div>
-                <h2>section B</h2>
-                <div className='section B'>
-                    {sectionB.map((question, index) => (
-                        <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
-                            <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                {question}
-                            </FormLabel>
-                            <Textarea
-                                required
-                                id={`outlined-required-${index}`}
-                                label="Answer"
-                                name={`Answer${index + sectionA.length + 1}`}
-                                value={formData[`Answer${index + sectionA.length + 1}`]}
-                                onChange={handleChange}
-                                aria-label="maximum height"
-                                minRows={3}
-                                placeholder="maximum 250 Word"
-                                onPaste={(e) => e.preventDefault()}
-                            />
-                        </FormControl>
-                    ))}
-                </div>
-            </div>
-            <div>
-                <h2>section C</h2>
-                <div className='section C'>
-                    {sectionC.map((question, index) => (
-                        <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
-                            <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                {question}
-                            </FormLabel>
-                            <Textarea
-                                required
-                                id={`outlined-required-${index}`}
-                                label="Answer"
-                                name={`Answer${index + sectionA.length + sectionB.length + 1}`}
-                                value={formData[`Answer${index + sectionA.length + sectionB.length + 1}`]}
-                                onChange={handleChange}
-                                aria-label="maximum height"
-                                minRows={3}
-                                placeholder="maximum 250 Word"
-                                onPaste={(e) => e.preventDefault()}
-                            />
-                        </FormControl>
-                    ))}
+            <div className="form-sce">
+                <div className="bound">
+                    <div className="form-box">
+                        <h3>Assessment Intern</h3>
+                        <Box className='top-form' component="form" >
+                            <Grid container spacing={2}>
+                                <Grid item xs={12} sm={12}>
+                                    <div className='section A'>
+                                        <h3>PART A</h3>
+                                        {sectionA.map((question, index) => (
+                                            <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
+                                                <FormLabel sx={{ marginBottom: "15px" }} component="legend">
+                                                    {question}
+                                                </FormLabel>
+                                                <Textarea
+                                                    required
+                                                    id={`outlined-required-${index}`}
+                                                    label="Answer"
+                                                    name={`Answer${index + 1}`}
+                                                    value={formData[`Answer${index + 1}`]}
+                                                    onChange={handleChange}
+                                                    aria-label="maximum height"
+                                                    minRows={3}
+                                                    placeholder="maximum 250 Word"
+                                                    onPaste={(e) => e.preventDefault()}
+                                                />
+                                            </FormControl>
+                                        ))}
+                                    </div>
+                                    <div className='section B'>
+                                        <h3>PART B</h3>
+                                        {sectionB.map((question, index) => (
+                                            <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
+                                                <FormLabel sx={{ marginBottom: "15px" }} component="legend">
+                                                    {question}
+                                                </FormLabel>
+                                                <Textarea
+                                                    required
+                                                    id={`outlined-required-${index}`}
+                                                    label="Answer"
+                                                    name={`Answer${index + sectionA.length + 1}`}
+                                                    value={formData[`Answer${index + sectionA.length + 1}`]}
+                                                    onChange={handleChange}
+                                                    aria-label="maximum height"
+                                                    minRows={3}
+                                                    placeholder="maximum 250 Word"
+                                                    onPaste={(e) => e.preventDefault()}
+                                                />
+                                            </FormControl>
+                                        ))}
+                                    </div>
+                                    <div className='section C'>
+                                        <h3>PART C</h3>
+                                        {sectionC.map((question, index) => (
+                                            <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
+                                                <FormLabel sx={{ marginBottom: "15px" }} component="legend">
+                                                    {question}
+                                                </FormLabel>
+                                                <Textarea
+                                                    required
+                                                    id={`outlined-required-${index}`}
+                                                    label="Answer"
+                                                    name={`Answer${index + sectionA.length + sectionB.length + 1}`}
+                                                    value={formData[`Answer${index + sectionA.length + sectionB.length + 1}`]}
+                                                    onChange={handleChange}
+                                                    aria-label="maximum height"
+                                                    minRows={3}
+                                                    placeholder="maximum 250 Word"
+                                                    onPaste={(e) => e.preventDefault()}
+                                                />
+                                            </FormControl>
+                                        ))}
+                                    </div>
+
+                                </Grid>
+                            </Grid>
+                        </Box>
+                        <Box sx={{ width: '100%' }} className="bottom-form">
+                            <Button className="blue-btn">Submit</Button>
+                        </Box>
+                    </div>
                 </div>
             </div>
         </>
