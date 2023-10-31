@@ -93,7 +93,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
-        question: (<div>
+        question: (<div style={{display: "inline"}}>
             Match the provisions from the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest (SARFAESI) Act 2002 correctly.
             <div className="four-op">
                 <ul className="op-row">
@@ -121,7 +121,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
-        question: (<div>
+        question: (<div style={{display: "inline"}}>
             Identify the arrangement of provisions under the Companies Act, 2013 to match the following correctly
             <div className="four-op">
                 <ul className="op-row">
@@ -149,7 +149,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
-        question: (<div>
+        question: (<div style={{display: "inline"}}>
             Match the provisions from the Insolvency and Bankruptcy Code, 2016:
             <div className="four-op">
                 <ul className="op-row">
@@ -177,7 +177,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
-        question: (<div>
+        question: (<div style={{display: "inline"}}>
             Match the provisions of the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest (SARFAESI) Act 2002 correctly.
             <div className="four-op">
                 <ul className="op-row">
@@ -205,15 +205,14 @@ export const allQuestionsA1 = [
         ],
     },
     {
-        question: (<div>
+        question: (<div style={{display: "inline"}}>
             Match the following case laws with issues that were adjudicated in them.
             <div className="four-op">
                 <ul className="op-row">
                     <li className="op1">Committee of Creditors Essar Steel India Limited v. Satish Kumar Gupta</li>
                     <li className="op1">Bank of Baroda v. MBL Infrastructure Limited an Ors.</li>
-                    <li className="op1">Mobilox Innovations Private Limited</li>
+                    <li className="op1">Mobilox Innovations Private Limited v. Kirusa Software Private Limited</li>
                     <li className="op1">K. Sashidhar v. Indian Overseas Bank</li>
-                    <li className="op1">Kirusa Software Private Limited</li>
                 </ul>
                 <ul className="ans-row">
                     <li className="ans1">Resolution Applicants could be disqualified from submitting a Resolution Plan being inconsistent with Section 29A of the Insolvency and Bankruptcy Code, 2016.</li>
@@ -225,10 +224,10 @@ export const allQuestionsA1 = [
         </div>
         ),
         options: [
-            "a) i – (a); ii - (b); iii. - (c); iv - (d); v. – (e)",
-            "b) i. – (b); ii. – (a); iii. – (c); iv – (e); v. – (d)",
-            "c) i. – (a); ii. – (e); iii. – (b); iv. – (c); v. – (d)",
-            "d) i. – (b); ii. – (a); iii. – (d); iv. – (c); v. – (e)"
+            "A. i – (a); ii - (b); iii. - (c); iv - (d)",
+            "B. i. – (b); ii. – (a); iii. – (c); iv – (d)",
+            "C. i. – (a); ii. – (d); iii. – (b); iv. – (c)",
+            "D. i. – (b); ii. – (a); iii. – (d); iv. – (c)"
         ],
     }
 ];

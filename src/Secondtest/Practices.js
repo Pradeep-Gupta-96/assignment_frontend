@@ -11,6 +11,7 @@ import { allQuestionsC } from './Questionpart/PartC';
 import { allQuestionsD } from './Questionpart/PartD';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
+import videobg from '../images/background-video.mp4';
 
 const Textarea = styled(BaseTextareaAutosize)(
     ({ theme }) => `
@@ -83,6 +84,7 @@ const Practices = () => {
                 </div>
             </div>
             <div className="form-sce">
+                <video className='background-video' autoPlay loop muted > <source src={videobg} type="video/mp4" /> </video>
                 <div className="bound">
                     <div className="form-box">
                         <h3>Assessment Intern</h3>
