@@ -25,7 +25,6 @@ const steps = [
 ];
 
 
-
 const ProgresB = () => {
     const navigate = useNavigate()
     const [formData, setFormData] = useState({
@@ -149,7 +148,7 @@ const ProgresB = () => {
                 <video className='background-video' autoPlay loop muted > <source src={videobg} type="video/mp4" /> </video>
                 <div className="bound">
                     <div className="form-box">
-                    <TimmerCompo targetTime={timerTargetTime} onTimeout={() => navigate(`/progresc/${id}`)} />
+                        <TimmerCompo targetTime={timerTargetTime} onTimeout={() => navigate(`/progresc/${id}`)} />
                         <Link className="back-link" to="/">Back to Job Posting</Link>
                         <h3>Assessment Intern</h3>
                         <Box className="prog-bar" sx={{ width: '100%' }}>
@@ -192,15 +191,15 @@ const ProgresB = () => {
                                                 <FormControl fullWidth>
                                                     <InputLabel id="10th-board">Percentage</InputLabel>
                                                     <Select
-                                                         required 
-                                                         id="outlined-required" 
-                                                         label="Percentage" 
-                                                         name='Class10_percentage' 
-                                                         value={formData.Class10_percentage} 
-                                                         onChange={handleChange} fullWidth
+                                                        required
+                                                        id="outlined-required"
+                                                        label="Percentage"
+                                                        name='Class10_percentage'
+                                                        value={formData.Class10_percentage}
+                                                        onChange={handleChange} fullWidth
                                                     >
-                                                        <MenuItem value={"Below-75"}> Below 75%</MenuItem>
-                                                        <MenuItem value={"Above-75"}>Above 75%</MenuItem>
+                                                        <MenuItem value={"x`x`"}>Below 75%</MenuItem>
+                                                        <MenuItem value={"Above 75"}>Above 75%</MenuItem>
                                                     </Select>
                                                 </FormControl>
                                             </div>
@@ -233,12 +232,12 @@ const ProgresB = () => {
                                                 <FormControl fullWidth>
                                                     <InputLabel id="10th-board">Percentage</InputLabel>
                                                     <Select
-                                                         required 
-                                                         id="outlined-required" 
-                                                         label="Percentage" 
-                                                         name='Class12_percentage' 
-                                                         value={formData.Class12_percentage} 
-                                                         onChange={handleChange} fullWidth
+                                                        required
+                                                        id="outlined-required"
+                                                        label="Percentage"
+                                                        name='Class12_percentage'
+                                                        value={formData.Class12_percentage}
+                                                        onChange={handleChange} fullWidth
                                                     >
                                                         <MenuItem value={"Below-75"}>Below 75%</MenuItem>
                                                         <MenuItem value={"Above-75"}>Above 75%</MenuItem>
@@ -254,7 +253,21 @@ const ProgresB = () => {
                                                 <label>Graduation</label>
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="University" name='graduation_university' value={formData.graduation_university} onChange={handleChange} fullWidth />
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="12th-board">Board</InputLabel>
+                                                    <Select
+                                                        labelId="12th_board"
+                                                        id="demo-simple-select-helper"
+                                                        label="Education Board"
+                                                        name='graduation_university'
+                                                        value={formData.graduation_university}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <MenuItem value={"graduation_university 1"}>graduation_university 1</MenuItem>
+                                                        <MenuItem value={"graduation_university 2"}>graduation_university 2</MenuItem>
+                                                        <MenuItem value={"graduation_university 3"}>graduation_university 3</MenuItem>
+                                                    </Select>
+                                                </FormControl>
                                             </div>
                                             <div className="class-box">
                                                 <TextField required id="outlined-required" label="Percentage" name='graduation_percentage' value={formData.graduation_percentage} onChange={handleChange} fullWidth />
@@ -307,9 +320,7 @@ const ProgresB = () => {
                         <Box sx={{ width: '100%' }} className="bottom-form">
                             <Link className='back-link' to="/progresa">Back</Link>
                             <Button className="blue-btn" onClick={onSubmit}>Next</Button>
-
                         </Box>
-
                     </div>
                 </div>
             </div>
