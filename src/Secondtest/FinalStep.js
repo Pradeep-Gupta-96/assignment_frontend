@@ -265,11 +265,11 @@ const FinalStep = () => {
                                         <Textarea required id="outlined-required" label="Answer" name='Answer1' value={''} aria-label="minimum height" minRows={3} placeholder="Answer..." />
                                     </FormControl>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important"}} fullWidth>
-                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 2. A company called “Calico” (hereinafter the company) is a traditional biotechnology company. The company ambitiously works on the mission of patenting the biological process of controlling aging and life span of human beings. The company filed for a patent in many jurisdictions for inventing a new gene that enables people to stay young and health. The new gene invented by the company supports life expectancy in human beings. The company successfully developed interventions in gene formation that enable people to live longer and healthier lives. The company has obtained patent protection on the invented gene from almost 123+ countries around the world. It was granted protection on the basis of inventing state-of-the-art technology of nurturing human beings.</FormLabel>
+                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 2. A company called “Calico” (hereinafter the company) is a traditional biotechnology company. The company ambitiously works on the mission of patenting the biological process of controlling aging and life span of human beings. The company filed for a patent in many jurisdictions for inventing a new gene that enables people to stay young and health. The new gene invented by the company supports life expectancy in human beings. The company successfully developed interventions in gene formation that enable people to live longer and healthier lives. The company has obtained patent protection on the invented gene from almost 123+ countries around the world. It was granted protection on the basis of inventing state-of-the-art technology of nurturing human beings. <br /><br />The company wants to file for patent protection in India for its process of “de novo gene formation”. The “de novo gene formation” proved effective in (a) anti-aging and (b) disease associated with ageing process of human beings. The question posed by legal experts of the company revolves around the issue of whether or not patenting such a gene is justified in our jurisdiction. Please guide and advice.</FormLabel>
                                         <Textarea required id="outlined-required" label="Answer" name='Answer1' value={''} aria-label="minimum height" minRows={3} placeholder="Answer..." />
                                     </FormControl>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important"}} fullWidth>
-                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 3. The company wants to file for patent protection in India for its process of “de novo gene formation”. The “de novo gene formation” proved effective in (a) anti-aging and (b) disease associated with ageing process of human beings. The question posed by legal experts of the company revolves around the issue of whether or not patenting such a gene is justified in our jurisdiction. Please guide and advice.</FormLabel>
+                                        <FormLabel sx={{ marginBottom: "15px" }} component="legend">Q 3. In 2014, Mickey and Minnie incorporate a company under the provisions of the Companies Act, 2013, namely, “Toon town”. The company was incorporated to purchase land for opening an amusement park for youngster in the locality. Subsequently, legal action against promoters and directors (i.e., Mickey and Minnie) of “Toon town” was initiated by the shareholders to recover loss of profit alleging that multiple mortgages were wrongly granted over the property of the company. Identify the liabilities, if any under the Companies Act, 2013.</FormLabel>
                                         <Textarea required id="outlined-required" label="Answer" name='Answer1' value={''} aria-label="minimum height" minRows={3} placeholder="Answer..." />
                                     </FormControl>
 
@@ -288,7 +288,7 @@ const FinalStep = () => {
                                         <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	The Chief Justice of India and other 21 Judges." />
                                         <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	The Chief Justice of India and other 33 Judges." />
                                     </FormControl>
-                                    <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
+                                    {/* <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Q 3. The deputy Speaker of Lok Sabha is appointed/elected by   GK</FormLabel>
                                         <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A.	Appointed by the President" />
                                         <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	Appointed by the Speaker" />
@@ -301,49 +301,82 @@ const FinalStep = () => {
                                         <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B. State Bank of India" />
                                         <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	HDFC India" />
                                         <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	Canara Bank" />
-                                    </FormControl>
+                                    </FormControl> */}
                                     <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
-                                        <FormLabel component="legend">Q 5. Who was the first law minister of independent India?</FormLabel>
+                                        <FormLabel component="legend">Q 3. Who was the first law minister of independent India?</FormLabel>
                                         <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A.	B.R. Ambedkar" />
                                         <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	Dr. Rajendra Prasad" />
                                         <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	Sardar Vallabai Patel" />
                                         <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	Jawaharlal Nehru" />
                                     </FormControl>
                                     <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
-                                        <FormLabel component="legend">Q 6. 'Persona non- grata' in legal terms means ______________ ?</FormLabel>
+                                        <FormLabel component="legend">Q 4. 'Persona non- grata' in legal terms means ______________ ?</FormLabel>
                                         <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A.	Non-person" />
                                         <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	An unacceptable person" />
                                         <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	Non-performance of promise" />
                                         <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	Ungrateful person" />
                                     </FormControl>
                                     <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
-                                        <FormLabel component="legend">Q 7. 'Obiter dicta' in legal terms means ______________ ?</FormLabel>
+                                        <FormLabel component="legend">Q 5. 'Obiter dicta' in legal terms means ______________ ?</FormLabel>
                                         <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A.	Direction by a judge." />
                                         <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	Basis of judicial decision." />
                                         <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	Judgment of a court in the case before it." />
                                         <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	An opinion given by the court not necessary for the decision." />
                                     </FormControl>
                                     <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
-                                        <FormLabel component="legend">Q 8. Which among the following was described by Dr B.R. Ambedkar as the "heart and soul of the Constitution of India"? </FormLabel>
+                                        <FormLabel component="legend">Q 6. Which among the following was described by Dr B.R. Ambedkar as the "heart and soul of the Constitution of India"? </FormLabel>
                                         <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A.	Right to Constitutional Remedies" />
                                         <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	Right to equality" />
                                         <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	Freedom of Religion" />
                                         <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	Right to move throughout the territory of India" />
                                     </FormControl>
-                                    <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
+                                    {/* <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Q 9. The oath is administered to the president of India by</FormLabel>
                                         <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A.	Speaker of Lok Sabha" />
                                         <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	Prime Minister of India" />
                                         <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	Attorney General of India" />
                                         <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	Chief Justice of India" />
-                                    </FormControl>
-                                    <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
-                                        <FormLabel component="legend">Q 10. The abbreviation of PETA, stands for</FormLabel>
+                                    </FormControl> */}
+                                    {/* <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
+                                        <FormLabel component="legend">Q 7. The abbreviation of PETA, stands for</FormLabel>
                                         <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A.	People for the ethical treatment of animals" />
                                         <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	Public for the ethical treatment of animals" />
                                         <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	Person for the ethical treatment of animals" />
                                         <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	People for the empathised treatment of animals " />
+                                    </FormControl> */}
+                                    <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
+                                        <FormLabel component="legend">Q 7. Choose the correct statement:<br />
+                                        <b>Statement A:</b> According to RBI data, India’s household savings have touched decade low at a 5.1% loop in FY 2023.<br/> 
+                                        <b>Statement B:</b> Household savings have been estimated by subtracting aggregate financial liabilities from total financial assets. </FormLabel>
+                                        <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A.	Only A is true" />
+                                        <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	Both are true" />
+                                        <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	Both are incorrect" />
+                                        <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	Only B is correct" />
                                     </FormControl>
+                                    <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
+                                        <FormLabel component="legend">Q 8. Which of the following options correctly describes the term’ Regulatory Sandbox’</FormLabel>
+                                        <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A.	They are rules and regulations to be followed by all the insurance service offering companies" />
+                                        <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	It is a framework for testing of innovative financial services products in a controlled manner" />
+                                        <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	It is a window system to get all the licenses for retail startups" />
+                                        <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	They are a basket of central Banks's regulatory laws that needs to be followed by cooperative banks" />
+                                    </FormControl>
+                                    <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
+                                        <FormLabel component="legend">Q 9. Choose the correct statement: <br />
+                                        <b>Statement A:</b> An OIS (Overnight index swap) is an interest rate derivative contract in which two entities agree to swap/switch a fixed interest change (OIS rate) for a floating interest payment <br/> 
+                                        <b>Statement B:</b> Disadvantages of OIS; hedging interest rate risk, reduction of credit risk, effective management of debt portfolio by financial institution etc.</FormLabel>
+                                        <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A.	Statement A is correct" />
+                                        <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	Both A and B are incorrect" />
+                                        <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	Only B is correct" />
+                                        <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	None of the above  " />
+                                    </FormControl>
+                                    <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
+                                        <FormLabel component="legend">Q 10. What do you understand by Gresham’s law </FormLabel>
+                                        <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A.	It's a fixed rate exchange system ‘bribe money drives out good’. It comes into play when the exchange rate between two currencies is fixed by the govt at a fixed ratio that is different from the market exchange rate" />
+                                        <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	It aids investors/ suggests insurers, pension, and provident funds which are required to invest a particular percentage of the incremental received in corporate bonds" />
+                                        <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	It is a market where fixed income security of various types and features are issued and traded" />
+                                        <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	It provides greater funding avenues to public sector and private sector projects and reduces the pressure on financial institutions and financing " />
+                                    </FormControl>
+
                                 </Grid>
                             </Grid>
                         </Box>
