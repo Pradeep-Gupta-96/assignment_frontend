@@ -42,7 +42,13 @@ const Successpage = () => {
                             </Stepper>
                         </Box>
                         <h3 style={{textAlign:'center', color:'green'}}>Assessment Intern Application Applied Successfully</h3>
-                        <Link style={{textAlign:'center', display:'inherit'}} className="back-link" to="/">Back to Job Posting</Link>
+                        
+                        <p className='terms-cond'><strong>Please read the following terms and conditions:</strong><br />
+                            1. The test time will be 45 minutes.<br />
+                            2. Some questions will be objective and some subjective.<br />
+                            3. It will be mandatory to solve all the questions.</p>
+                        <Link style={{textAlign:'center', display:'inherit'}} className="back-link" to="/practices">Please Click Here for Second Round</Link>
+                        
                     </div>
                 </div>
             </div>

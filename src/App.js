@@ -26,7 +26,7 @@ function App() {
     { path: "/dashboard", element: <Dashboard/> },
     { path: "/finalStep", element: <FinalStep/> },
     { path: "/finalsuccess", element: <Finalsuccess/> },
-    { path: "/Practices", element: <Practices/> },
+    { path: "/practices", element: <Practices/> },
   
   ]
   
