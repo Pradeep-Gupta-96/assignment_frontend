@@ -92,4 +92,143 @@ export const allQuestionsA1 = [
             "D. All of the above",
         ],
     },
+    {
+        question: (<div>
+            Match the provisions from the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest (SARFAESI) Act 2002 correctly.
+            <div className="four-op">
+                <ul className="op-row">
+                    <li className="op1">Section 13</li>
+                    <li className="op1">Section 17</li>
+                    <li className="op1">Section 27</li>
+                    <li className="op1">Section 31</li>
+                    <li className="op1">Section 34</li>
+                </ul>
+                <ul className="ans-row">
+                    <li className="ans1">Enforcement of security interest</li>
+                    <li className="ans1">Application against measures to recover secured debts</li>
+                    <li className="ans1">Penalties</li>
+                    <li className="ans1">Provisions of the Act not to apply in certain cases</li>
+                    <li className="ans1">Civil court not to have jurisdiction</li>
+                </ul>
+            </div>
+        </div>
+        ),
+        options: [
+            "a) i – (a); ii - (b); iii. - (c); iv - (d); v. – (e)",
+            "b) i. – (b); ii. – (a); iii. – (c); iv – (e); v. – (d)",
+            "c) i. – (a); ii. – (e); iii. – (b); iv. – (c); v. – (d)",
+            "d) i. – (b); ii. – (a); iii. – (d); iv. – (c); v. – (e)",
+        ],
+    },
+    {
+        question: (<div>
+            Identify the arrangement of provisions under the Companies Act, 2013 to match the following correctly
+            <div className="four-op">
+                <ul className="op-row">
+                    <li className="op1">Section 7</li>
+                    <li className="op1">Section 24</li>
+                    <li className="op1">Section 43</li>
+                    <li className="op1">Section 166</li>
+                    <li className="op1">Section 232</li>
+                </ul>
+                <ul className="ans-row">
+                    <li className="ans1">Incorporation of company</li>
+                    <li className="ans1">Poer of Securities and Exchange Board to regulate issue and transfer of securities etc.</li>
+                    <li className="ans1">Kinds of share capital</li>
+                    <li className="ans1">Duties of Directors</li>
+                    <li className="ans1">Merger and amalgamation of companies</li>
+                </ul>
+            </div>
+        </div>
+        ),
+        options: [
+            "a) i – (a); ii - (b); iii. - (c); iv - (d); v. – (e)",
+            "b) i. – (b); ii. – (a); iii. – (c); iv – (e); v. – (d)",
+            "c) i. – (a); ii. – (e); iii. – (b); iv. – (c); v. – (d)",
+            "d) i. – (b); ii. – (a); iii. – (d); iv. – (c); v. – (e)",
+        ],
+    },
+    {
+        question: (<div>
+            Match the provisions from the Insolvency and Bankruptcy Code, 2016:
+            <div className="four-op">
+                <ul className="op-row">
+                    <li className="op1">Section 7</li>
+                    <li className="op1">Section 9</li>
+                    <li className="op1">Section 12A</li>
+                    <li className="op1">Section 21</li>
+                    <li className="op1">Section 31</li>
+                </ul>
+                <ul className="ans-row">
+                    <li className="ans1">Initiation of corporate insolvency resolution process by financial creditor</li>
+                    <li className="ans1">Application for initiation of corporate insolvency resolution process by operational creditor</li>
+                    <li className="ans1">Withdrawal of application admitted under Section 7, 9 and 10</li>
+                    <li className="ans1">Committee of creditor</li>
+                    <li className="ans1">Approval of resolution plan</li>
+                </ul>
+            </div>
+        </div>
+        ),
+        options: [
+            "e) i – (a); ii - (b); iii. - (c); iv - (d); v. – (e)",
+            "f) i. – (b); ii. – (a); iii. – (c); iv – (e); v. – (d)",
+            "g) i. – (a); ii. – (e); iii. – (b); iv. – (c); v. – (d)",
+            "h) i. – (b); ii. – (a); iii. – (d); iv. – (c); v. – (e)",
+        ],
+    },
+    {
+        question: (<div>
+            Match the provisions of the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest (SARFAESI) Act 2002 correctly.
+            <div className="four-op">
+                <ul className="op-row">
+                    <li className="op1">Section 13</li>
+                    <li className="op1">Section 17</li>
+                    <li className="op1">Section 27</li>
+                    <li className="op1">Section 31</li>
+                    <li className="op1">Section 34</li>
+                </ul>
+                <ul className="ans-row">
+                    <li className="ans1">Enforcement of security interest</li>
+                    <li className="ans1">Application against measures to recover secured debts</li>
+                    <li className="ans1">Penalties</li>
+                    <li className="ans1">Provisions of the Act not to apply in certain cases</li>
+                    <li className="ans1">Civil court not to have jurisdiction</li>
+                </ul>
+            </div>
+        </div>
+        ),
+        options: [
+            "a) i – (a); ii - (b); iii. - (c); iv - (d); v. – (e)",
+            "b) i. – (b); ii. – (a); iii. – (c); iv – (e); v. – (d)",
+            "c) i. – (a); ii. – (e); iii. – (b); iv. – (c); v. – (d)",
+            "d) i. – (b); ii. – (a); iii. – (d); iv. – (c); v. – (e)"
+        ],
+    },
+    {
+        question: (<div>
+            Match the following case laws with issues that were adjudicated in them.
+            <div className="four-op">
+                <ul className="op-row">
+                    <li className="op1">Committee of Creditors Essar Steel India Limited v. Satish Kumar Gupta</li>
+                    <li className="op1">Bank of Baroda v. MBL Infrastructure Limited an Ors.</li>
+                    <li className="op1">Mobilox Innovations Private Limited</li>
+                    <li className="op1">K. Sashidhar v. Indian Overseas Bank</li>
+                    <li className="op1">Kirusa Software Private Limited</li>
+                </ul>
+                <ul className="ans-row">
+                    <li className="ans1">Resolution Applicants could be disqualified from submitting a Resolution Plan being inconsistent with Section 29A of the Insolvency and Bankruptcy Code, 2016.</li>
+                    <li className="ans1">Whether judicial interpretation by the apex court of our country over Section 29A of the Insolvency and Bankruptcy Code, 2016 as amended by the Act 26 of 2018 was justified or not.</li>
+                    <li className="ans1">Whether the maintainability of an application filed by an Operational Creditor under Section 8(2)(a) of the Insolvency and Bankruptcy Code, 2016 demands interpretation of the expression ‘dispute’ and the ‘existence of dispute’.</li>
+                    <li className="ans1">Whether decision taken by the Committee of Creditor (CoC) on approval of a resolution plan be scrutinized by judiciary.</li>
+                </ul>
+            </div>
+        </div>
+        ),
+        options: [
+            "a) i – (a); ii - (b); iii. - (c); iv - (d); v. – (e)",
+            "b) i. – (b); ii. – (a); iii. – (c); iv – (e); v. – (d)",
+            "c) i. – (a); ii. – (e); iii. – (b); iv. – (c); v. – (d)",
+            "d) i. – (b); ii. – (a); iii. – (d); iv. – (c); v. – (e)"
+        ],
+    }
 ];
