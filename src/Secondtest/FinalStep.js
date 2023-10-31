@@ -3,12 +3,8 @@ import { Link } from 'react-router-dom'
 import logo from '../images/logo.png'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
 import { Button, FormLabel } from '@mui/material';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
@@ -381,7 +377,8 @@ const FinalStep = () => {
                             </Grid>
                         </Box>
                         <Box sx={{ width: '100%' }} className="bottom-form">
-                            <Button className="blue-btn">Submit</Button>
+                            <Link className='back-link' to="/">Back</Link>
+                            <Button className="blue-btn">Next</Button>
                         </Box>
                 </div>
             </div>
