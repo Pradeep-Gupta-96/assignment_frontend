@@ -88,7 +88,7 @@ const HomePage = () => {
                                         <div className="time"><WorkOutlineIcon /> Full time</div>
                                         <div className="other-info">
                                             <div className="date"><AccessTimeIcon /> Posted 7 Days Ago</div>
-                                            <div className="number"><ArticleIcon /> R0026172</div>
+                                            {/* <div className="number"><ArticleIcon /> R0026172</div> */}
                                         </div>
                                     </div>
                                     <div className="c-box-2">

@@ -137,7 +137,7 @@ const Practices = () => {
                                     <div className='section A'>
                                         <h3>PART A</h3>
                                         {sectionA1.map((questionData, index) => (
-                                            <FormControl key={index} className="question-row" sx={{ marginBottom: "25px" }} fullWidth>
+                                            <FormControl key={index} className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
                                                 <FormLabel sx={{ marginBottom: "15px" }} component="legend">
                                                     Q {index + 1}:- {questionData.question}
                                                 </FormLabel>
@@ -201,7 +201,7 @@ const Practices = () => {
                                     <div className='section D'>
                                         <h3>PART D</h3>
                                         {sectionD.map((questionData, index) => (
-                                            <FormControl key={index} className="question-row" sx={{ marginBottom: "25px" }} fullWidth>
+                                            <FormControl key={index} className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
                                                 <FormLabel sx={{ marginBottom: "15px" }} component="legend">
                                                     Q {index + 1}:-  {questionData.question}
                                                 </FormLabel>
@@ -222,7 +222,7 @@ const Practices = () => {
                             </Grid>
                         </Box>
                         <Box sx={{ width: '100%' }} className="bottom-form">
-                            <Button className="blue-btn"></Button>
+                            <Button style={{opacity: "0"}} className="blue-btn"></Button>
                             <Button className="blue-btn" onClick={Submit}>Submit</Button>
                         </Box>
                     </div>

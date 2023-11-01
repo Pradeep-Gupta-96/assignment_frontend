@@ -40,7 +40,7 @@ const Successpage = () => {
                                 ))}
                             </Stepper>
                         </Box>
-                        <h3 style={{textAlign:'center', color:'green'}}>Assessment Intern Application Applied Successfully</h3>
+                        <h3 style={{textAlign:'center', color:'green'}}>Application Applied Successfully</h3>
                         <p className='terms-cond'><strong>Please read the following terms and conditions:</strong><br />
                             1. The test time will be 45 minutes.<br />
                             2. Some questions will be objective and some subjective.<br />
