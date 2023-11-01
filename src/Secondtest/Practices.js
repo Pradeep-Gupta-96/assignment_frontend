@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { Button, Checkbox, FormControlLabel } from '@mui/material';
 import { FormControl, FormLabel } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { allQuestionsA1 } from './Questionpart/PartA';
 import { allQuestionsB } from './Questionpart/PartB';
 import { allQuestionsC } from './Questionpart/PartC';
@@ -12,6 +12,7 @@ import { allQuestionsD } from './Questionpart/PartD';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
 import videobg from '../images/background-video.mp4';
+import TimmerCompo from '../forms/TimmerCompo';
 
 const Textarea = styled(BaseTextareaAutosize)(
     ({ theme }) => `
@@ -54,6 +55,9 @@ const Practices = () => {
     const sectionB = getRandomQuestions(allQuestionsB, 2);
     const sectionC = getRandomQuestions(allQuestionsC, 2);
     const sectionD = getRandomQuestions(allQuestionsD, 6);
+    const [timerTargetTime, setTimerTargetTime] = useState(0); // Initialize target time to 0
+    const id = localStorage.getItem("id");
+    const navigate = useNavigate()
 
     const [formData, setFormData] = useState({
         Answer1: '',
@@ -70,6 +74,44 @@ const Practices = () => {
     };
 
     console.log(formData)
+        // this funtion is for checking timming 
+
+        const Submit=async()=>{
+            try {
+                navigate('/finalsuccess')
+            } catch (error) {
+                console.error(error)
+            }
+        }
+
+        const API1 = `http://localhost:4000/api/todo/${id}`;
+        const fetchData1 = React.useCallback(async () => {
+            try {
+                const response = await fetch(API1);
+                const data = await response.json();
+                const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
+    
+                const now = new Date().getTime();
+                const fortyFiveMinutes = 45 * 60 * 1000; // 45 minutes in milliseconds
+                setTimerTargetTime(timestamp + fortyFiveMinutes);
+    
+                if (now - timestamp >= fortyFiveMinutes) {
+                    navigate('/')
+                    // Time is up, navigate to the '/progresc/{id}' route
+                    // onSubmit()
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }, [API1, id, navigate]);
+    
+        React.useEffect(() => {
+            fetchData1();
+            const interval = setInterval(fetchData1, 1000);
+    
+            return () => clearInterval(interval);
+        }, [fetchData1]);
+    
 
     return (
         <>
@@ -89,6 +131,7 @@ const Practices = () => {
                     <div className="form-box">
                         <h3>Assessment Intern</h3>
                         <Box className='top-form' component="form" >
+                        <TimmerCompo targetTime={timerTargetTime} onTimeout={() => navigate(`/progresc/${id}`)} />
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={12}>
                                     <div className='section A'>
@@ -180,7 +223,7 @@ const Practices = () => {
                         </Box>
                         <Box sx={{ width: '100%' }} className="bottom-form">
                             <Button className="blue-btn"></Button>
-                            <Button className="blue-btn">Submit</Button>
+                            <Button className="blue-btn" onClick={Submit}>Submit</Button>
                         </Box>
                     </div>
                 </div>

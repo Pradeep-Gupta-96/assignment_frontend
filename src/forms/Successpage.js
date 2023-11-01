@@ -31,7 +31,6 @@ const Successpage = () => {
                 <video className='background-video' autoPlay loop muted > <source src={videobg} type="video/mp4" /> </video>
                 <div className="bound">
                     <div className="form-box">
-                        
                         <Box className="prog-bar" sx={{ width: '100%' }}>
                             <Stepper activeStep={3} alternativeLabel>
                                 {steps.map((label) => (
@@ -42,13 +41,11 @@ const Successpage = () => {
                             </Stepper>
                         </Box>
                         <h3 style={{textAlign:'center', color:'green'}}>Assessment Intern Application Applied Successfully</h3>
-                        
                         <p className='terms-cond'><strong>Please read the following terms and conditions:</strong><br />
                             1. The test time will be 45 minutes.<br />
                             2. Some questions will be objective and some subjective.<br />
                             3. It will be mandatory to solve all the questions.</p>
                         <Link style={{textAlign:'center', display:'inherit'}} className="back-link" to="/practices">Please Click Here for Second Round</Link>
-                        
                     </div>
                 </div>
             </div>
