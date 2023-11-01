@@ -114,10 +114,10 @@ export const allQuestionsA1 = [
         </div>
         ),
         options: [
-            "a) i – (a); ii - (b); iii. - (c); iv - (d); v. – (e)",
-            "b) i. – (b); ii. – (a); iii. – (c); iv – (e); v. – (d)",
-            "c) i. – (a); ii. – (e); iii. – (b); iv. – (c); v. – (d)",
-            "d) i. – (b); ii. – (a); iii. – (d); iv. – (c); v. – (e)",
+            "A. i – (a), ii - (b), iii - (c), iv - (d), v – (e)",
+            "B. i – (b), ii – (a), iii – (c), iv – (e), v – (d)",
+            "C. i – (a), ii – (e), iii – (b), iv – (c), v – (d)",
+            "D. i – (b), ii – (a), iii – (d), iv – (c), v – (e)",
         ],
     },
     {
@@ -142,10 +142,10 @@ export const allQuestionsA1 = [
         </div>
         ),
         options: [
-            "a) i – (a); ii - (b); iii. - (c); iv - (d); v. – (e)",
-            "b) i. – (b); ii. – (a); iii. – (c); iv – (e); v. – (d)",
-            "c) i. – (a); ii. – (e); iii. – (b); iv. – (c); v. – (d)",
-            "d) i. – (b); ii. – (a); iii. – (d); iv. – (c); v. – (e)",
+            "A. i – (a), ii - (b), iii - (c), iv - (d), v – (e)",
+            "B. i – (b), ii – (a), iii – (c), iv – (e), v – (d)",
+            "C. i – (a), ii – (e), iii – (b), iv – (c), v – (d)",
+            "D. i – (b), ii – (a), iii – (d), iv – (c), v – (e)",
         ],
     },
     {
@@ -170,10 +170,10 @@ export const allQuestionsA1 = [
         </div>
         ),
         options: [
-            "e) i – (a); ii - (b); iii. - (c); iv - (d); v. – (e)",
-            "f) i. – (b); ii. – (a); iii. – (c); iv – (e); v. – (d)",
-            "g) i. – (a); ii. – (e); iii. – (b); iv. – (c); v. – (d)",
-            "h) i. – (b); ii. – (a); iii. – (d); iv. – (c); v. – (e)",
+            "A. i – (a), ii - (b), iii - (c), iv - (d), v – (e)",
+            "B. i – (b), ii – (a), iii – (c), iv – (e), v – (d)",
+            "C. i – (a), ii – (e), iii – (b), iv – (c), v – (d)",
+            "D. i – (b), ii – (a), iii – (d), iv – (c), v – (e)",
         ],
     },
     {
@@ -198,10 +198,10 @@ export const allQuestionsA1 = [
         </div>
         ),
         options: [
-            "a) i – (a); ii - (b); iii. - (c); iv - (d); v. – (e)",
-            "b) i. – (b); ii. – (a); iii. – (c); iv – (e); v. – (d)",
-            "c) i. – (a); ii. – (e); iii. – (b); iv. – (c); v. – (d)",
-            "d) i. – (b); ii. – (a); iii. – (d); iv. – (c); v. – (e)"
+            "A. i – (a), ii - (b), iii - (c), iv - (d), v – (e)",
+            "B. i – (b), ii – (a), iii – (c), iv – (e), v – (d)",
+            "C. i – (a), ii – (e), iii – (b), iv – (c), v – (d)",
+            "D. i – (b), ii – (a), iii – (d), iv – (c), v – (e)"
         ],
     },
     {
@@ -224,10 +224,10 @@ export const allQuestionsA1 = [
         </div>
         ),
         options: [
-            "A. i – (a); ii - (b); iii. - (c); iv - (d)",
-            "B. i. – (b); ii. – (a); iii. – (c); iv – (d)",
-            "C. i. – (a); ii. – (d); iii. – (b); iv. – (c)",
-            "D. i. – (b); ii. – (a); iii. – (d); iv. – (c)"
+            "A. i – (a), ii - (b), iii - (c), iv - (d)",
+            "B. i – (b), ii – (a), iii – (c), iv – (d)",
+            "C. i – (a), ii – (d), iii – (b), iv – (c)",
+            "D. i – (b), ii – (a), iii – (d), ivs – (c)"
         ],
     }
 ];
