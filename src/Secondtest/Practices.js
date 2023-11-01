@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../images/logo.png'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -51,67 +51,126 @@ const getRandomQuestions = (questions, count) => {
 };
 
 const Practices = () => {
-    const sectionA1 = getRandomQuestions(allQuestionsA1, 5);
-    const sectionB = getRandomQuestions(allQuestionsB, 2);
-    const sectionC = getRandomQuestions(allQuestionsC, 2);
-    const sectionD = getRandomQuestions(allQuestionsD, 6);
-    const [timerTargetTime, setTimerTargetTime] = useState(0); // Initialize target time to 0
+    const [sectionA1] = useState(() => getRandomQuestions(allQuestionsA1, 5));
+    const [sectionB] = useState(() => getRandomQuestions(allQuestionsB, 2));
+    const [sectionC] = useState(() => getRandomQuestions(allQuestionsC, 2));
+    const [sectionD] = useState(() => getRandomQuestions(allQuestionsD, 6));
+
     const id = localStorage.getItem("id");
     const navigate = useNavigate()
 
-    const [formData, setFormData] = useState({
-        Answer1: '',
-        Answer2: '',
-        Answer3: '',
-        Answer4: '',
-        Answer5: '',
-        Answer6: '',
-        Answer7: '',
+    const [formDataPartA, setFormDataPartA] = useState({
+        Answer1_PartA: '',
+        Answer2_PartA: '',
+        Answer3_PartA: '',
+        Answer4_PartA: '',
+        Answer5_PartA: '',
+        Answer6_PartA: '',
+        Answer7_PartA: '',
+        Answer8_PartA: '',
+        Answer9_PartA: '',
+        Answer10_PartA: '',
+        Answer11_PartA: '',
+        Answer12_PartA: '',
+        Answer13_PartA: '',
+        Answer14_PartA: '',
+        // ... other PartA questions
     });
 
-    const handleChange = (event) => {
-        setFormData({ ...formData, [event.target.name]: event.target.value });
+    const [formDataPartB, setFormDataPartB] = useState({
+        Answer1_PartB: '',
+        Answer2_PartB: '',
+        Answer3_PartB: '',
+        // ... other PartB questions
+    });
+
+    const [formDataPartC, setFormDataPartC] = useState({
+        Answer1_PartC: '',
+        Answer2_PartC: '',
+        Answer3_PartC: '',
+        // ... other PartC questions
+    });
+
+    const [formDataPartD, setFormDataPartD] = useState({
+        Answer1_PartD: '',
+        Answer2_PartD: '',
+        Answer3_PartD: '',
+        Answer4_PartD: '',
+        Answer5_PartD: '',
+        Answer6_PartD: '',
+        Answer7_PartD: '',
+        Answer8_PartD: '',
+        Answer9_PartD: '',
+        Answer10_PartD: '',
+        // ... other PartD questions
+    });
+
+
+    const handleChangePartA = (event) => {
+        const { name, value } = event.target;
+        setFormDataPartA({
+            ...formDataPartA,
+            [name]: value,
+        });
     };
 
-    console.log(formData)
-        // this funtion is for checking timming 
+    const handleChangePartB = (event) => {
+        const { name, value } = event.target;
+        setFormDataPartB({
+            ...formDataPartB,
+            [name]: value,
+        });
+    };
 
-        const Submit=async()=>{
-            try {
-                navigate('/finalsuccess')
-            } catch (error) {
-                console.error(error)
-            }
+    const handleChangePartC = (event) => {
+        const { name, value } = event.target;
+        setFormDataPartC({
+            ...formDataPartC,
+            [name]: value,
+        });
+    };
+
+    const handleChangePartD = (event) => {
+        const { name, value } = event.target;
+        setFormDataPartD({
+            ...formDataPartD,
+            [name]: value,
+        });
+    };
+
+    // console.log(formData)
+    // this funtion is for checking timming 
+
+    const Submit = async () => {
+        try {
+            navigate('/finalsuccess')
+        } catch (error) {
+            console.error(error)
         }
+    }
 
-        const API1 = `http://localhost:4000/api/todo/${id}`;
-        const fetchData1 = React.useCallback(async () => {
-            try {
-                const response = await fetch(API1);
-                const data = await response.json();
-                const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
-    
-                const now = new Date().getTime();
-                const fortyFiveMinutes = 45 * 60 * 1000; // 45 minutes in milliseconds
-                setTimerTargetTime(timestamp + fortyFiveMinutes);
-    
-                if (now - timestamp >= fortyFiveMinutes) {
-                    navigate('/')
-                    // Time is up, navigate to the '/progresc/{id}' route
-                    // onSubmit()
-                }
-            } catch (error) {
-                console.log(error);
-            }
-        }, [API1, id, navigate]);
-    
-        React.useEffect(() => {
-            fetchData1();
-            const interval = setInterval(fetchData1, 1000);
-    
-            return () => clearInterval(interval);
-        }, [fetchData1]);
-    
+    // Function to get the saved current time from local storage
+    const getSavedCurrentTime = () => {
+        const storedStartTime = localStorage.getItem('currentStartTime');
+        return storedStartTime ? parseInt(storedStartTime, 10) : null;
+    };
+
+    // Get the saved current time from local storage
+    const currentStartTime = getSavedCurrentTime();
+
+    // Calculate target time based on current time
+    const targetTime = currentStartTime ? currentStartTime + 45 * 60 * 1000 : 0;
+
+    useEffect(() => {
+        // Start the timer when this component mounts
+        if (currentStartTime) {
+            // The targetTime variable is calculated based on the current time.
+            // You can use this targetTime to start the countdown timer as needed.
+            // If you want to use the countdown timer, call the startTimer function here.
+            // startTimer();
+        }
+    }, [currentStartTime]);
+
 
     return (
         <>
@@ -131,7 +190,7 @@ const Practices = () => {
                     <div className="form-box">
                         <h3>Assessment Intern</h3>
                         <Box className='top-form' component="form" >
-                        <TimmerCompo targetTime={timerTargetTime} onTimeout={() => navigate(`/progresc/${id}`)} />
+                            <TimmerCompo targetTime={targetTime} onTimeout={Submit} />
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={12}>
                                     <div className='section A'>
@@ -144,10 +203,13 @@ const Practices = () => {
                                                 {questionData.options.map((option, optionIndex) => (
                                                     <FormControlLabel
                                                         key={optionIndex}
-                                                        name={`Answer${index + optionIndex + 1}`}
-                                                        value={(optionIndex + 1).toString()}
-                                                        onChange={handleChange}
-                                                        control={<Checkbox />}
+                                                        control={
+                                                            <Checkbox
+                                                                name={questionData.PartA}
+                                                                value={(optionIndex + 1).toString()} // Set the value to the selected option (e.g., "1" for option A)
+                                                                onChange={handleChangePartA}
+                                                            />
+                                                        }
                                                         label={option}
                                                     />
                                                 ))}
@@ -159,15 +221,15 @@ const Practices = () => {
                                         {sectionB.map((question, index) => (
                                             <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
                                                 <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                                    Q {index + 1}:- {question}
+                                                    Q {index + 1}:- {question.Question}
                                                 </FormLabel>
                                                 <Textarea
                                                     required
                                                     id={`outlined-required-${index}`}
                                                     label="Answer"
-                                                    name={`Answer${index + sectionA1.length + 1}`}
-                                                    value={formData[`Answer${index + sectionA1.length + 1}`]}
-                                                    onChange={handleChange}
+                                                    name={question.PartB}
+                                                    value={formDataPartB[question.PartB]}
+                                                    onChange={handleChangePartB}
                                                     aria-label="maximum height"
                                                     minRows={3}
                                                     placeholder="maximum 250 Word"
@@ -181,15 +243,15 @@ const Practices = () => {
                                         {sectionC.map((question, index) => (
                                             <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
                                                 <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                                    Q {index + 1}:- {question}
+                                                    Q {index + 1}:- {question.Question}
                                                 </FormLabel>
                                                 <Textarea
                                                     required
                                                     id={`outlined-required-${index}`}
                                                     label="Answer"
-                                                    name={`Answer${index + sectionA1.length + sectionB.length + 1}`}
-                                                    value={formData[`Answer${index + sectionA1.length + sectionB.length + 1}`]}
-                                                    onChange={handleChange}
+                                                    name={question.PartC}
+                                                    value={formDataPartC[question.PartC]}
+                                                    onChange={handleChangePartC}
                                                     aria-label="maximum height"
                                                     minRows={3}
                                                     placeholder="maximum 250 Word"
@@ -203,20 +265,24 @@ const Practices = () => {
                                         {sectionD.map((questionData, index) => (
                                             <FormControl key={index} className="question-row" sx={{ marginBottom: "25px" }} fullWidth>
                                                 <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                                    Q {index + 1}:-  {questionData.question}
+                                                    Q {index + 1}:- {questionData.question}
                                                 </FormLabel>
                                                 {questionData.options.map((option, optionIndex) => (
                                                     <FormControlLabel
                                                         key={optionIndex}
-                                                        name={`Answer${index + sectionA1.length + sectionB.length + sectionC.length + optionIndex + 1}`}
-                                                        value={(optionIndex + 1).toString()}
-                                                        onChange={handleChange}
-                                                        control={<Checkbox />}
+                                                        control={
+                                                            <Checkbox
+                                                                name={questionData.PartD}
+                                                                value={(optionIndex + 1).toString()} // Set the value to the selected option (e.g., "1" for option A)
+                                                                onChange={handleChangePartD}
+                                                            />
+                                                        }
                                                         label={option}
                                                     />
                                                 ))}
                                             </FormControl>
                                         ))}
+
                                     </div>
                                 </Grid>
                             </Grid>

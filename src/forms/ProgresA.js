@@ -93,6 +93,33 @@ const ProgresA = () => {
     }, [])
 
 
+    // const API1 = `http://localhost:4000/api/todo/${id}`;
+    // const fetchData1 = React.useCallback(async () => {
+    //     try {
+    //         const response = await fetch(API1);
+    //         const data = await response.json();
+    //         const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
+
+    //         const now = new Date().getTime();
+    //         const fortyFiveMinutes = 45 * 60 * 1000; // 45 minutes in milliseconds
+    //         setTimerTargetTime(timestamp + fortyFiveMinutes);
+
+    //         if (now - timestamp >= fortyFiveMinutes) {
+    //             navigate('/')
+    //             // Time is up, navigate to the '/progresc/{id}' route
+    //             // onSubmit()
+    //         }
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }, [API1, id, navigate]);
+
+    // React.useEffect(() => {
+    //     fetchData1();
+    //     const interval = setInterval(fetchData1, 1000);
+
+    //     return () => clearInterval(interval);
+    // }, [fetchData1]);
 
 
 

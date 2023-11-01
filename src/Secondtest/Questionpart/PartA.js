@@ -1,5 +1,6 @@
 export const allQuestionsA1 = [
     {
+        PartA: "Answer1_PartA",
         question: "An arbitral agreement should NOT have the following",
         options: [
             "A. An Arbitration agreement may not be in writing.",
@@ -9,6 +10,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
+        PartA: "Answer2_PartA",
         question: "Where the place of arbitration is situated in India, the arbitration other than an international commercial arbitration, the arbitral tribunal shall decide the dispute submitted to arbitration:",
         options: [
             "A. In accordance with the special law for the time being in force in India.",
@@ -18,6 +20,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
+        PartA: "Answer3_PartA",
         question: "Chapters I of Part II of the Arbitration and Conciliation Act, 1996 deal with the enforcement of certain foreign awards made under:",
         options: [
             "A. The Geneva Convention",
@@ -27,6 +30,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
+        PartA: "Answer4_PartA",
         question: "An arbitral tribunal shall be deemed to have entered upon the reference on the date on which the arbitrator):",
         options: [
             "A. have received notice, in writing, of their appointment",
@@ -36,6 +40,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
+        PartA: "Answer5_PartA",
         question: "An appeal shall lie from the orders (and from no others) to the court authorized by law to hear appeals from original decrees of the court passing the order:",
         options: [
             "A. Setting aside or refusing to set aside an arbitral award under Section 34",
@@ -45,6 +50,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
+        PartA: "Answer6_PartA",
         question: "'In Extradition Treaty, extradition means ______________?",
         options: [
             "A. Order of Indian Court will apply to Indians living elsewhere than India",
@@ -54,6 +60,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
+        PartA: "Answer7_PartA",
         question: `Choose the most appropriate answer
         Which of the following acts governs the capital market and securities?`,
         options: [
@@ -65,6 +72,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
+        PartA: "Answer8_PartA",
         question: `Choose the most appropriate answer
         Which of the following activity/activities are invalid under Section 3 of the anti-competitive agreement of the Competition Act, 2002`,
         options: [
@@ -79,6 +87,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
+        PartA: "Answer9_PartA",
         question: ` Choose the most appropriate answer
         Which of the following activity/activities are invalid under Section 3 of the anti-competitive agreement of the Competition Act, 2002
         
@@ -93,6 +102,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
+        PartA: "Answer10_PartA",
         question: (<div style={{display: "inline"}}>
             Match the provisions from the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest (SARFAESI) Act 2002 correctly.
             <div className="four-op">
@@ -121,6 +131,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
+        PartA: "Answer11_PartA",
         question: (<div style={{display: "inline"}}>
             Identify the arrangement of provisions under the Companies Act, 2013 to match the following correctly
             <div className="four-op">
@@ -149,6 +160,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
+        PartA: "Answer12_PartA",
         question: (<div style={{display: "inline"}}>
             Match the provisions from the Insolvency and Bankruptcy Code, 2016:
             <div className="four-op">
@@ -177,6 +189,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
+        PartA: "Answer13_PartA",
         question: (<div style={{display: "inline"}}>
             Match the provisions of the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest (SARFAESI) Act 2002 correctly.
             <div className="four-op">
@@ -205,6 +218,7 @@ export const allQuestionsA1 = [
         ],
     },
     {
+        PartA: "Answer14_PartA",
         question: (<div style={{display: "inline"}}>
             Match the following case laws with issues that were adjudicated in them.
             <div className="four-op">

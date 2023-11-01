@@ -9,14 +9,21 @@ import Footer from '../components/Footer';
 import videobg from '../images/background-video.mp4';
 
 const steps = [
-  'Preliminary Details',
-  'Experience',
-  'Step 3',
+    'Preliminary Details',
+    'Experience',
+    'Step 3',
 ];
 
 const Successpage = () => {
-  return (
-    <>
+
+    const saveCurrentTime = () => {
+        // Save the current time in local storage
+        const currentTime = new Date().getTime();
+        localStorage.setItem('currentStartTime', currentTime.toString());
+      };
+      
+    return (
+        <>
             <div className="header">
                 <div className="bound">
                     <div className="topsec">
@@ -40,18 +47,25 @@ const Successpage = () => {
                                 ))}
                             </Stepper>
                         </Box>
-                        <h3 style={{textAlign:'center', color:'green'}}>Assessment Intern Application Applied Successfully</h3>
+                        <h3 style={{ textAlign: 'center', color: 'green' }}>Assessment Intern Application Applied Successfully</h3>
                         <p className='terms-cond'><strong>Please read the following terms and conditions:</strong><br />
                             1. The test time will be 45 minutes.<br />
                             2. Some questions will be objective and some subjective.<br />
                             3. It will be mandatory to solve all the questions.</p>
-                        <Link style={{textAlign:'center', display:'inherit'}} className="back-link" to="/practices">Please Click Here for Second Round</Link>
+                        <Link
+                            style={{ textAlign: 'center', display: 'inherit' }}
+                            className="back-link"
+                            onClick={saveCurrentTime}
+                            to="/practices"
+                        >
+                            Please Click Here for Second Round
+                        </Link>
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </>
-  )
+    )
 }
 
 export default Successpage
