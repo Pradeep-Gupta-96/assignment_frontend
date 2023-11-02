@@ -8,14 +8,11 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import { Button, FormLabel } from '@mui/material';
 import { useNavigate } from "react-router-dom"
-import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 import TimmerCompo from './TimmerCompo';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
 import videobg from '../images/background-video.mp4'
-
-
 
 const steps = [
     'Preliminary Details',

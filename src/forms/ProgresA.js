@@ -7,15 +7,43 @@ import TextField from '@mui/material/TextField';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-import { Button, FormLabel } from '@mui/material';
+import { Button, FormLabel, ListItemText } from '@mui/material';
 import { useNavigate } from "react-router-dom"
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import OutlinedInput from '@mui/material/OutlinedInput';
 import Checkbox from '@mui/material/Checkbox';
 import videobg from '../images/background-video.mp4';
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
+
+
+const skillsOptions = [
+  "Negotiation",
+  "Drafting",
+  "Communication",
+  "Excel",
+  "Data Analytics",
+  "Business Development",
+  "Client Management",
+  "Knowledge Management",
+  "Account Management",
+  "Legal Research",
+  "Public Policy",
+  "Digital Governance"
+];
 
 const steps = [
     'Preliminary Details',
@@ -35,7 +63,7 @@ const ProgresA = () => {
         college: '',
         course_duration: '',
         course: '',
-        skills: '',
+
         publications: '',
         publicationslink: '',
         Class10Education: "",
@@ -54,6 +82,17 @@ const ProgresA = () => {
         PreferredLocation: "",
     });
     const [avatar, setAvatar] = useState(null);
+    const [skills, setSkills] = React.useState([]);
+
+  const handleChange1 = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setSkills(
+      // On autofill we get a stringified value.
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
 
 
 
@@ -412,6 +451,77 @@ const ProgresA = () => {
                                             onChange={handleChange}
                                         />
                                     </FormControl>
+
+                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
+                                        <InputLabel id="course">Course</InputLabel>
+                                        <Select
+                                            labelId="course"
+                                            id="demo-simple-select-helper"
+                                            name="course"
+                                            value={formData.course}
+                                            label="Course"
+                                            onChange={handleChange}
+                                        >
+                                            <MenuItem value="">
+                                                <em>None</em>
+                                            </MenuItem>
+                                            <MenuItem value={"BBA LLB"}>BBA LLB</MenuItem>
+                                            <MenuItem value={"B.com LLB"}>B.com LLB</MenuItem>
+                                            <MenuItem value={"BA LLB"}>BA LLB</MenuItem>
+                                            <MenuItem value={"BCA LLB"}>BCA LLB</MenuItem>
+                                            <MenuItem value={"B.Tech LLB"}>B.Tech LLB</MenuItem>
+                                            <MenuItem value={"B.Sc LLB"}>B.Sc LLB</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                   
+                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
+                                        <InputLabel id="skills">Skills</InputLabel>
+                                        <Select
+                                            labelId="skills"
+                                            id="demo-simple-select-helper"
+                                            name='skills'
+                                            value={formData.skills}
+                                            label="Skills"
+                                            onChange={handleChange}
+                                        >
+                                            <MenuItem value="">
+                                                <em>None</em>
+                                            </MenuItem>
+                                            <MenuItem value={"Negotiation"}>Negotiation</MenuItem>
+                                            <MenuItem value={"Drafting"}>Drafting</MenuItem>
+                                            <MenuItem value={"Communication"}>Communication</MenuItem>
+                                            <MenuItem value={"Excel"}>Excel</MenuItem>
+                                            <MenuItem value={"Data Analytics"}>Data Analytics</MenuItem>
+                                            <MenuItem value={"Business Development"}>Business Development</MenuItem>
+                                            <MenuItem value={"Client Management"}>Client Management</MenuItem>
+                                            <MenuItem value={"Knowledge Management"}>Knowledge Management</MenuItem>
+                                            <MenuItem value={"Account Management"}>Account Management</MenuItem>
+                                            <MenuItem value={"Legal Research"}>Legal Research</MenuItem>
+                                            <MenuItem value={"Public Policy"}>Public Policy</MenuItem>
+                                            <MenuItem value={"Digital Governance"}>Digital Governance</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                    <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
+                                        <FormLabel component="legend">Publications, if any:</FormLabel>
+                                        <FormControlLabel
+                                            control={<Checkbox />}
+                                            label="Yes"
+                                            name="publications"
+                                            value="Yes"
+                                            checked={formData.publications === 'Yes'}
+                                            onChange={handleChange}
+                                        />
+                                        <FormControlLabel
+                                            control={<Checkbox />}
+                                            label="No"
+                                            name="publications"
+                                            value="No"
+                                            checked={formData.publications === 'No'}
+                                            onChange={handleChange}
+                                        />
+                                    </FormControl>
+                                    <TextField required id="outlined-required" label="Publications Link" name='publicationslink' value={formData.publicationslink} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                    
                                     <div className="eduction">
                                         <label style={{ marginBottom: "10px", display: "inline-block" }} htmlFor="">Education Details</label>
                                         <div className="edu-class">
