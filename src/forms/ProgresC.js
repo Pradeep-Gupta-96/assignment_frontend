@@ -8,14 +8,11 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import { Button, FormLabel } from '@mui/material';
 import { useNavigate } from "react-router-dom"
-import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 import TimmerCompo from './TimmerCompo';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
 import videobg from '../images/background-video.mp4'
-
-
 
 const steps = [
     'Preliminary Details',
@@ -106,32 +103,32 @@ const ProgresC = () => {
     }, [])
 
     // this funtion is for checking timming 
-    const API1 = `http://localhost:4000/api/todo/${id}`;
-    const fetchData1 = React.useCallback(async () => {
-        try {
-            const response = await fetch(API1);
-            const data = await response.json();
-            const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
+    // const API1 = `http://localhost:4000/api/todo/${id}`;
+    // const fetchData1 = React.useCallback(async () => {
+    //     try {
+    //         const response = await fetch(API1);
+    //         const data = await response.json();
+    //         const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
 
-            const now = new Date().getTime();
-            const fortyFiveMinutes = 45 * 60 * 1000; // 45 minutes in milliseconds
-            setTimerTargetTime(timestamp + fortyFiveMinutes);
+    //         const now = new Date().getTime();
+    //         const fortyFiveMinutes = 45 * 60 * 1000; // 45 minutes in milliseconds
+    //         setTimerTargetTime(timestamp + fortyFiveMinutes);
 
-            if (now - timestamp >= fortyFiveMinutes) {
+    //         if (now - timestamp >= fortyFiveMinutes) {
 
-                handleSubmit()
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    }, [API1, id, navigate]);
+    //             handleSubmit()
+    //         }
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }, [API1, id, navigate]);
 
-    React.useEffect(() => {
-        fetchData1();
-        const interval = setInterval(fetchData1, 1000);
+    // React.useEffect(() => {
+    //     fetchData1();
+    //     const interval = setInterval(fetchData1, 1000);
 
-        return () => clearInterval(interval);
-    }, [fetchData1]);
+    //     return () => clearInterval(interval);
+    // }, [fetchData1]);
 
 
     return (

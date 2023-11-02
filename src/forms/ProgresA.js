@@ -7,15 +7,43 @@ import TextField from '@mui/material/TextField';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-import { Button, FormLabel } from '@mui/material';
+import { Button, FormLabel, ListItemText } from '@mui/material';
 import { useNavigate } from "react-router-dom"
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import OutlinedInput from '@mui/material/OutlinedInput';
 import Checkbox from '@mui/material/Checkbox';
 import videobg from '../images/background-video.mp4';
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
+
+
+const skillsOptions = [
+  "Negotiation",
+  "Drafting",
+  "Communication",
+  "Excel",
+  "Data Analytics",
+  "Business Development",
+  "Client Management",
+  "Knowledge Management",
+  "Account Management",
+  "Legal Research",
+  "Public Policy",
+  "Digital Governance"
+];
 
 const steps = [
     'Preliminary Details',
@@ -30,12 +58,12 @@ const ProgresA = () => {
         email: '',
         phone: '',
         field_of_interest: '',
-        LinkedinURL:'',
+        LinkedinURL: '',
         university: '',
         college: '',
         course_duration: '',
         course: '',
-        skills: '',
+
         publications: '',
         publicationslink: '',
         Class10Education: "",
@@ -54,8 +82,19 @@ const ProgresA = () => {
         PreferredLocation: "",
     });
     const [avatar, setAvatar] = useState(null);
+    const [skills, setSkills] = React.useState([]);
 
-   
+  const handleChange1 = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setSkills(
+      // On autofill we get a stringified value.
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
+
+
 
     const handleAvatarChange = (event) => {
         const file = event.target.files[0];
@@ -382,32 +421,25 @@ const ProgresA = () => {
                                             <MenuItem value={"B.Sc LLB"}>B.Sc LLB</MenuItem>
                                         </Select>
                                     </FormControl>
-                                   
-                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
-                                        <InputLabel id="skills">Skills</InputLabel>
+
+                                    <FormControl sx={{ m: 1, width: 300 }}>
+                                        <InputLabel id="demo-multiple-checkbox-label">Skills</InputLabel>
                                         <Select
-                                            labelId="skills"
-                                            id="demo-simple-select-helper"
-                                            name='skills'
-                                            value={formData.skills}
-                                            label="Skills"
-                                            onChange={handleChange}
+                                            labelId="demo-multiple-checkbox-label"
+                                            id="demo-multiple-checkbox"
+                                            multiple
+                                            value={skills}
+                                            onChange={handleChange1}
+                                            input={<OutlinedInput label="Tag" />}
+                                            renderValue={(selected) => selected.join(', ')}
+                                            MenuProps={MenuProps}
                                         >
-                                            <MenuItem value="">
-                                                <em>None</em>
-                                            </MenuItem>
-                                            <MenuItem value={"Negotiation"}>Negotiation</MenuItem>
-                                            <MenuItem value={"Drafting"}>Drafting</MenuItem>
-                                            <MenuItem value={"Communication"}>Communication</MenuItem>
-                                            <MenuItem value={"Excel"}>Excel</MenuItem>
-                                            <MenuItem value={"Data Analytics"}>Data Analytics</MenuItem>
-                                            <MenuItem value={"Business Development"}>Business Development</MenuItem>
-                                            <MenuItem value={"Client Management"}>Client Management</MenuItem>
-                                            <MenuItem value={"Knowledge Management"}>Knowledge Management</MenuItem>
-                                            <MenuItem value={"Account Management"}>Account Management</MenuItem>
-                                            <MenuItem value={"Legal Research"}>Legal Research</MenuItem>
-                                            <MenuItem value={"Public Policy"}>Public Policy</MenuItem>
-                                            <MenuItem value={"Digital Governance"}>Digital Governance</MenuItem>
+                                            {skillsOptions.map((name) => (
+                                                <MenuItem key={name} value={name}>
+                                                    <Checkbox checked={skills.indexOf(name) > -1} />
+                                                    <ListItemText primary={name} />
+                                                </MenuItem>
+                                            ))}
                                         </Select>
                                     </FormControl>
                                     <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
@@ -429,8 +461,9 @@ const ProgresA = () => {
                                             onChange={handleChange}
                                         />
                                     </FormControl>
-                                    <TextField required id="outlined-required" label="Publications Link" name='publicationslink' value={formData.publicationslink} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
-                                    
+                                    {formData.publications === 'Yes' && (
+                                        <TextField required id="outlined-required" label="Publications Link" name='publicationslink' value={formData.publicationslink} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                    )}
                                     <div className="eduction">
                                         <label style={{ marginBottom: "10px", display: "inline-block" }} htmlFor="">Education Details</label>
                                         <div className="edu-class">
@@ -532,7 +565,7 @@ const ProgresA = () => {
                                         </div>
                                     </div>
                                     <TextField required id="outlined-required" label="Last Internship Details " name='LastInternshipDetails' value={formData.LastInternshipDetails} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
-                            
+
                                     <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Preferred Location:</FormLabel>
                                         <FormControlLabel name='PreferredLocation' value={"Delhi"} checked={formData.PreferredLocation === 'Delhi'} onChange={handleChange} control={<Checkbox />} label="Delhi" />
