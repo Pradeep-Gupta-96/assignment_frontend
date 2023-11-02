@@ -74,8 +74,8 @@ const Dashboard = () => {
     const clickForDelete = async (id) => {
         const API2 = `http://localhost:4000/api/deletetodo/${id}`;
         try {
-            const response = await fetch(`${API2}`,{
-                method:"DELETE"
+            const response = await fetch(`${API2}`, {
+                method: "DELETE"
             });
             await response.json();
             window.location.reload()
@@ -134,8 +134,39 @@ const Dashboard = () => {
                                     <TableCell>Answer 2</TableCell>
                                     <TableCell>Answer 3</TableCell>
                                     <TableCell>Resume</TableCell>
+                                    <TableCell> answer1_parta</TableCell>
+                                    <TableCell> answer2_parta</TableCell>
+                                    <TableCell> answer3_parta</TableCell>
+                                    <TableCell> answer4_parta</TableCell>
+                                    <TableCell> answer5_parta</TableCell>
+                                    <TableCell> answer6_parta</TableCell>
+                                    <TableCell> answer7_parta</TableCell>
+                                    <TableCell> answer8_parta</TableCell>
+                                    <TableCell> answer9_parta</TableCell>
+                                    <TableCell> answer10_parta</TableCell>
+                                    <TableCell> answer11_parta</TableCell>
+                                    <TableCell> answer12_parta</TableCell>
+                                    <TableCell> answer13_parta</TableCell>
+                                    <TableCell> answer14_parta</TableCell>
+                                    <TableCell> answer1_partb</TableCell>
+                                    <TableCell> answer2_partb</TableCell>
+                                    <TableCell> answer3_partb</TableCell>
+                                    <TableCell> answer1_partc</TableCell>
+                                    <TableCell> answer2_partc</TableCell>
+                                    <TableCell> answer3_partc</TableCell>
+                                    <TableCell> answer1_partd</TableCell>
+                                    <TableCell> answer2_partd</TableCell>
+                                    <TableCell> answer3_partd</TableCell>
+                                    <TableCell> answer4_partd</TableCell>
+                                    <TableCell> answer5_partd</TableCell>
+                                    <TableCell> answer6_partd</TableCell>
+                                    <TableCell> answer7_partd</TableCell>
+                                    <TableCell> answer8_partd</TableCell>
+                                    <TableCell> answer9_partd</TableCell>
+                                    <TableCell> answer10_partd</TableCell>
                                     <TableCell>created at</TableCell>
                                     <TableCell>Delete</TableCell>
+
                                 </TableHead>
                                 <TableBody>
                                     {todos
@@ -143,7 +174,7 @@ const Dashboard = () => {
                                             const isDialogOpen = openDialogIndex === index;
                                             return (
                                                 <TableRow hover role="checkbox" tabIndex={-1} key={index}>
-                                                    <TableCell>{index+1}</TableCell>
+                                                    <TableCell>{index + 1}</TableCell>
                                                     <TableCell>{item.name}</TableCell>
                                                     <TableCell>{item.email}</TableCell>
                                                     <TableCell>{item.phone}</TableCell>
@@ -200,9 +231,39 @@ const Dashboard = () => {
                                                             <ArticleIcon />
                                                         </a>
                                                     </TableCell>
+                                                    <TableCell> {item.answer1_parta}</TableCell>
+                                                    <TableCell> {item.answer2_parta}</TableCell>
+                                                    <TableCell> {item.answer3_parta}</TableCell>
+                                                    <TableCell> {item.answer4_parta}</TableCell>
+                                                    <TableCell> {item.answer5_parta}</TableCell>
+                                                    <TableCell> {item.answer6_parta}</TableCell>
+                                                    <TableCell> {item.answer7_parta}</TableCell>
+                                                    <TableCell> {item.answer8_parta}</TableCell>
+                                                    <TableCell> {item.answer9_parta}</TableCell>
+                                                    <TableCell> {item.answer10_parta}</TableCell>
+                                                    <TableCell> {item.answer11_parta}</TableCell>
+                                                    <TableCell> {item.answer12_parta}</TableCell>
+                                                    <TableCell> {item.answer13_parta}</TableCell>
+                                                    <TableCell> {item.answer14_parta}</TableCell>
+                                                    <TableCell> {item.answer1_partb}</TableCell>
+                                                    <TableCell> {item.answer2_partb}</TableCell>
+                                                    <TableCell> {item.answer3_partb}</TableCell>
+                                                    <TableCell> {item.answer1_partc}</TableCell>
+                                                    <TableCell> {item.answer2_partc}</TableCell>
+                                                    <TableCell> {item.answer3_partc}</TableCell>
+                                                    <TableCell> {item.answer1_partd}</TableCell>
+                                                    <TableCell> {item.answer2_partd}</TableCell>
+                                                    <TableCell> {item.answer3_partd}</TableCell>
+                                                    <TableCell> {item.answer4_partd}</TableCell>
+                                                    <TableCell> {item.answer5_partd}</TableCell>
+                                                    <TableCell> {item.answer6_partd}</TableCell>
+                                                    <TableCell> {item.answer7_partd}</TableCell>
+                                                    <TableCell> {item.answer8_partd}</TableCell>
+                                                    <TableCell> {item.answer9_partd}</TableCell>
+                                                    <TableCell> {item.answer10_partd}</TableCell>
 
                                                     <TableCell>{formatDate(item.created_at)}</TableCell>
-                                                    <TableCell><DeleteIcon onClick={()=>{clickForDelete(item.id)}}/></TableCell>
+                                                    <TableCell><DeleteIcon onClick={() => { clickForDelete(item.id) }} /></TableCell>
 
                                                     <Dialog open={isDialogOpen} onClose={handleClose} aria-labelledby="responsive-dialog-title">
                                                         <DialogContent>

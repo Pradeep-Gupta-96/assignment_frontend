@@ -29,16 +29,38 @@ const ProgresA = () => {
         name: '',
         email: '',
         phone: '',
+        field_of_interest: '',
+        LinkedinURL:'',
         university: '',
         college: '',
         course_duration: '',
         course: '',
-        field_of_interest: '',
         skills: '',
         publications: '',
-        publicationslink: ''
+        publicationslink: '',
+        Class10Education: "",
+        Class10_percentage: "",
+        Class10_year_of_passing: "",
+        Class12Education: "",
+        Class12_percentage: "",
+        Class12_year_of_passing: "",
+        graduation_university: "",
+        graduation_percentage: "",
+        graduation_year_of_passing: "",
+        masters_university: "",
+        masters_percentage: "",
+        masters_year_of_passing: "",
+        LastInternshipDetails: "",
+        PreferredLocation: "",
     });
+    const [avatar, setAvatar] = useState(null);
 
+   
+
+    const handleAvatarChange = (event) => {
+        const file = event.target.files[0];
+        setAvatar(file);
+    };
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -49,6 +71,7 @@ const ProgresA = () => {
     };
 
     const id = localStorage.getItem("id");
+
     const onSubmit = async (event) => {
         try {
             if (event) {
@@ -70,8 +93,6 @@ const ProgresA = () => {
             if (response.ok) {
                 // Handle successful response
                 const data = await response.json();
-
-
                 localStorage.setItem("yashodanandB", "yashodanandB")
                 // Redirect to another page or perform other actions
                 navigate(`/progresb/${id}`);
@@ -91,6 +112,42 @@ const ProgresA = () => {
             navigate('/')
         }
     }, [])
+
+
+    // const onSubmit1 = async () => {
+    //     try {
+    //         const API = `http://localhost:4000/api/updateTodo2/${id}`; // Include the ID in the API URL
+
+    //         const formDataObject = new FormData();
+    //         for (const key in formData) {
+    //             formDataObject.append(key, formData[key]);
+    //         }
+
+    //         if (avatar) {
+    //             formDataObject.append('UploadResume', avatar); // Append the avatar file
+    //         }
+
+    //         // Make the HTTP PUT request
+    //         const response = await fetch(API, {
+    //             method: 'PUT',
+    //             body: formDataObject, // Send the FormData object
+    //         });
+
+    //         if (response.ok) {
+    //             // Handle successful response
+    //             await response.json();
+    //             localStorage.setItem("yashodanandC", "yashodanandC")
+    //             navigate(`/progresc/${id}`);
+    //         } else {
+    //             // Handle error response
+    //             console.error('Error:', response.statusText);
+    //         }
+    //     } catch (error) {
+    //         // Handle any errors that occur during the request
+    //         console.error('Update error:', error);
+    //     }
+    // };
+
 
 
     // const API1 = `http://localhost:4000/api/todo/${id}`;
@@ -156,6 +213,36 @@ const ProgresA = () => {
                                     <TextField required id="outlined-required" label="Name" name='name' value={formData.name} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
                                     <TextField required id="outlined-required" label="Email" name='email' value={formData.email} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
                                     <TextField required id="outlined-required" label="Phone" name='phone' value={formData.phone} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
+                                        <InputLabel id="field-of-interest">Interest Area</InputLabel>
+                                        <Select
+                                            labelId="field-of-interest"
+                                            id="demo-simple-select-helper"
+                                            name="field_of_interest"
+                                            value={formData.field_of_interest}
+                                            label="Field of Interest"
+                                            onChange={handleChange}
+                                        >
+                                            <MenuItem value="">
+                                                <em>None</em>
+                                            </MenuItem>
+                                            <MenuItem value={"Insolvency and Bankruptcy Code"}>Insolvency and Bankruptcy Code</MenuItem>
+                                            <MenuItem value={"Corporate Restructuring"}>Corporate Restructuring</MenuItem>
+                                            <MenuItem value={"Banking"}>Banking</MenuItem>
+                                            <MenuItem value={"Finance"}>Finance</MenuItem>
+                                            <MenuItem value={"Intellectual Property Rights"}>Intellectual Property Rights</MenuItem>
+                                            <MenuItem value={"Data Privacy"}>Data Privacy</MenuItem>
+                                            <MenuItem value={"Litigation"}>Litigation</MenuItem>
+                                            <MenuItem value={"Sports Law"}>Sports Law</MenuItem>
+                                            <MenuItem value={"Arbitration"}>Arbitration</MenuItem>
+                                            <MenuItem value={"Aviation"}>Aviation</MenuItem>
+                                            <MenuItem value={"Employment and Labour Laws"}>Employment and Labour Laws</MenuItem>
+                                            <MenuItem value={"Mergers and Acquisition"}>Mergers and Acquisition</MenuItem>
+                                            <MenuItem value={"Public Policy"}>Public Policy</MenuItem>
+                                            <MenuItem value={"White Collar Crimes"}>White Collar Crimes</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                    <TextField required id="outlined-required" label="Linkedin URL" name='LinkedinURL' value={formData.LinkedinURL} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
                                     <FormControl sx={{ marginBottom: "25px" }} fullWidth>
                                         <InputLabel id="university">University</InputLabel>
                                         <Select
@@ -295,35 +382,7 @@ const ProgresA = () => {
                                             <MenuItem value={"B.Sc LLB"}>B.Sc LLB</MenuItem>
                                         </Select>
                                     </FormControl>
-                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
-                                        <InputLabel id="field-of-interest">Field of Interest</InputLabel>
-                                        <Select
-                                            labelId="field-of-interest"
-                                            id="demo-simple-select-helper"
-                                            name="field_of_interest"
-                                            value={formData.field_of_interest}
-                                            label="Field of Interest"
-                                            onChange={handleChange}
-                                        >
-                                            <MenuItem value="">
-                                                <em>None</em>
-                                            </MenuItem>
-                                            <MenuItem value={"Insolvency and Bankruptcy Code"}>Insolvency and Bankruptcy Code</MenuItem>
-                                            <MenuItem value={"Corporate Restructuring"}>Corporate Restructuring</MenuItem>
-                                            <MenuItem value={"Banking"}>Banking</MenuItem>
-                                            <MenuItem value={"Finance"}>Finance</MenuItem>
-                                            <MenuItem value={"Intellectual Property Rights"}>Intellectual Property Rights</MenuItem>
-                                            <MenuItem value={"Data Privacy"}>Data Privacy</MenuItem>
-                                            <MenuItem value={"Litigation"}>Litigation</MenuItem>
-                                            <MenuItem value={"Sports Law"}>Sports Law</MenuItem>
-                                            <MenuItem value={"Arbitration"}>Arbitration</MenuItem>
-                                            <MenuItem value={"Aviation"}>Aviation</MenuItem>
-                                            <MenuItem value={"Employment and Labour Laws"}>Employment and Labour Laws</MenuItem>
-                                            <MenuItem value={"Mergers and Acquisition"}>Mergers and Acquisition</MenuItem>
-                                            <MenuItem value={"Public Policy"}>Public Policy</MenuItem>
-                                            <MenuItem value={"White Collar Crimes"}>White Collar Crimes</MenuItem>
-                                        </Select>
-                                    </FormControl>
+                                   
                                     <FormControl sx={{ marginBottom: "25px" }} fullWidth>
                                         <InputLabel id="skills">Skills</InputLabel>
                                         <Select
@@ -371,6 +430,126 @@ const ProgresA = () => {
                                         />
                                     </FormControl>
                                     <TextField required id="outlined-required" label="Publications Link" name='publicationslink' value={formData.publicationslink} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                    
+                                    <div className="eduction">
+                                        <label style={{ marginBottom: "10px", display: "inline-block" }} htmlFor="">Education Details</label>
+                                        <div className="edu-class">
+                                            <div className="class-box">
+                                                <label>Class X</label>
+                                            </div>
+                                            <div className="class-box">
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="10th-board">Board</InputLabel>
+                                                    <Select
+                                                        labelId="10th_board"
+                                                        id="demo-simple-select-helper"
+                                                        name='Class10Education'
+                                                        value={formData.Class10Education}
+                                                        label="Education Board"
+                                                        onChange={handleChange}
+                                                    >
+                                                        <MenuItem value={"IB"}>IB</MenuItem>
+                                                        <MenuItem value={"CBSC"}>CBSE</MenuItem>
+                                                        <MenuItem value={"ICSC"}>ICSE</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+
+                                            </div>
+                                            <div className="class-box">
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="10th-board">Percentage</InputLabel>
+                                                    <Select
+                                                        required
+                                                        id="outlined-required"
+                                                        label="Percentage"
+                                                        name='Class10_percentage'
+                                                        value={formData.Class10_percentage}
+                                                        onChange={handleChange} fullWidth
+                                                    >
+                                                        <MenuItem value={"x`x`"}>Below 75%</MenuItem>
+                                                        <MenuItem value={"Above 75"}>Above 75%</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Year of Passing" name='Class10_year_of_passing' value={formData.Class10_year_of_passing} onChange={handleChange} fullWidth />
+                                            </div>
+                                        </div>
+                                        <div className="edu-class">
+                                            <div className="class-box">
+                                                <label>Class XII</label>
+                                            </div>
+                                            <div className="class-box">
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="12th-board">Board</InputLabel>
+                                                    <Select
+                                                        labelId="12th_board"
+                                                        id="demo-simple-select-helper"
+                                                        label="Education Board"
+                                                        name='Class12Education'
+                                                        value={formData.Class12Education}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <MenuItem value={"IB"}>IB</MenuItem>
+                                                        <MenuItem value={"CBSC"}>CBSE</MenuItem>
+                                                        <MenuItem value={"ICSC"}>ICSE</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </div>
+                                            <div className="class-box">
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="10th-board">Percentage</InputLabel>
+                                                    <Select
+                                                        required
+                                                        id="outlined-required"
+                                                        label="Percentage"
+                                                        name='Class12_percentage'
+                                                        value={formData.Class12_percentage}
+                                                        onChange={handleChange} fullWidth
+                                                    >
+                                                        <MenuItem value={"Below-75"}>Below 75%</MenuItem>
+                                                        <MenuItem value={"Above-75"}>Above 75%</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Year of Passing" name='Class12_year_of_passing' value={formData.Class12_year_of_passing} onChange={handleChange} fullWidth />
+                                            </div>
+                                        </div>
+                                        <div className="edu-class">
+                                            <div className="class-box">
+                                                <label>LLB</label>
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="University" name='masters_university' value={formData.masters_university} onChange={handleChange} fullWidth />
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Percentage" name='masters_percentage' value={formData.masters_percentage} onChange={handleChange} fullWidth />
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Year of Passing" name='masters_year_of_passing' value={formData.masters_year_of_passing} onChange={handleChange} fullWidth />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <TextField required id="outlined-required" label="Last Internship Details " name='LastInternshipDetails' value={formData.LastInternshipDetails} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                            
+                                    <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
+                                        <FormLabel component="legend">Preferred Location:</FormLabel>
+                                        <FormControlLabel name='PreferredLocation' value={"Delhi"} checked={formData.PreferredLocation === 'Delhi'} onChange={handleChange} control={<Checkbox />} label="Delhi" />
+                                        <FormControlLabel name='PreferredLocation' value={"Gurugram"} checked={formData.PreferredLocation === 'Gurugram'} onChange={handleChange} control={<Checkbox />} label="Gurugram" />
+                                    </FormControl>
+                                    <FormControl className="checkbox-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
+                                        <FormLabel sx={{ paddingBottom: "10px" }} component="legend">Upload Resume:</FormLabel>
+                                        <TextField
+                                            required
+                                            id="outlined-required"
+                                            type='file'
+                                            fullWidth
+                                            sx={{ marginBottom: "25px" }}
+                                            onChange={handleAvatarChange}
+                                            accept="application/pdf" // Change to allow PDF files
+                                        />
+                                    </FormControl>
                                 </Grid>
                             </Grid>
                         </Box>
