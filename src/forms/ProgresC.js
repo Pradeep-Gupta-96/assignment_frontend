@@ -55,7 +55,7 @@ const ProgresC = () => {
         "Answer2": "",
         "Answer3": "",
     });
-    const [timerTargetTime, setTimerTargetTime] = useState(0); // Initialize target time to 0
+    //const [timerTargetTime, setTimerTargetTime] = useState(0); // Initialize target time to 0
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -106,32 +106,32 @@ const ProgresC = () => {
     }, [])
 
     // this funtion is for checking timming 
-    const API1 = `http://localhost:4000/api/todo/${id}`;
-    const fetchData1 = React.useCallback(async () => {
-        try {
-            const response = await fetch(API1);
-            const data = await response.json();
-            const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
+    // const API1 = `http://localhost:4000/api/todo/${id}`;
+    // const fetchData1 = React.useCallback(async () => {
+    //     try {
+    //         const response = await fetch(API1);
+    //         const data = await response.json();
+    //         const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
 
-            const now = new Date().getTime();
-            const fortyFiveMinutes = 45 * 60 * 1000; // 45 minutes in milliseconds
-            setTimerTargetTime(timestamp + fortyFiveMinutes);
+    //         const now = new Date().getTime();
+    //         const fortyFiveMinutes = 45 * 60 * 1000; // 45 minutes in milliseconds
+    //         setTimerTargetTime(timestamp + fortyFiveMinutes);
 
-            if (now - timestamp >= fortyFiveMinutes) {
+    //         if (now - timestamp >= fortyFiveMinutes) {
 
-                handleSubmit()
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    }, [API1, id, navigate]);
+    //             handleSubmit()
+    //         }
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }, [API1, id, navigate]);
 
-    React.useEffect(() => {
-        fetchData1();
-        const interval = setInterval(fetchData1, 1000);
+    // React.useEffect(() => {
+    //     fetchData1();
+    //     const interval = setInterval(fetchData1, 1000);
 
-        return () => clearInterval(interval);
-    }, [fetchData1]);
+    //     return () => clearInterval(interval);
+    // }, [fetchData1]);
 
 
     return (
@@ -150,7 +150,7 @@ const ProgresC = () => {
                 <video className='background-video' autoPlay loop muted > <source src={videobg} type="video/mp4" /> </video>
                 <div className="bound">
                     <div className="form-box">
-                        <TimmerCompo targetTime={timerTargetTime} onTimeout={() => navigate(`/progresc/${id}`)} />
+                        {/* <TimmerCompo targetTime={timerTargetTime} onTimeout={() => navigate(`/progresc/${id}`)} /> */}
                         <Link className="back-link" to="/">Back to Job Posting</Link>
                         <h3>Assessment Intern</h3>
                         <Box className="prog-bar" sx={{ width: '100%' }}>

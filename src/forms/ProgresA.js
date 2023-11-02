@@ -30,7 +30,7 @@ const ProgresA = () => {
         email: '',
         phone: '',
         field_of_interest: '',
-        LinkedinURL:'',
+        LinkedinURL: '',
         university: '',
         college: '',
         course_duration: '',
@@ -55,7 +55,7 @@ const ProgresA = () => {
     });
     const [avatar, setAvatar] = useState(null);
 
-   
+
 
     const handleAvatarChange = (event) => {
         const file = event.target.files[0];
@@ -210,137 +210,189 @@ const ProgresA = () => {
                         <Box className='top-form' component="form" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={12}>
-                                    <TextField required id="outlined-required" label="Name" name='name' value={formData.name} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
-                                    <TextField required id="outlined-required" label="Email" name='email' value={formData.email} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
-                                    <TextField required id="outlined-required" label="Phone" name='phone' value={formData.phone} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
-                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
-                                        <InputLabel id="field-of-interest">Interest Area</InputLabel>
-                                        <Select
-                                            labelId="field-of-interest"
-                                            id="demo-simple-select-helper"
-                                            name="field_of_interest"
-                                            value={formData.field_of_interest}
-                                            label="Field of Interest"
-                                            onChange={handleChange}
-                                        >
-                                            <MenuItem value="">
-                                                <em>None</em>
-                                            </MenuItem>
-                                            <MenuItem value={"Insolvency and Bankruptcy Code"}>Insolvency and Bankruptcy Code</MenuItem>
-                                            <MenuItem value={"Corporate Restructuring"}>Corporate Restructuring</MenuItem>
-                                            <MenuItem value={"Banking"}>Banking</MenuItem>
-                                            <MenuItem value={"Finance"}>Finance</MenuItem>
-                                            <MenuItem value={"Intellectual Property Rights"}>Intellectual Property Rights</MenuItem>
-                                            <MenuItem value={"Data Privacy"}>Data Privacy</MenuItem>
-                                            <MenuItem value={"Litigation"}>Litigation</MenuItem>
-                                            <MenuItem value={"Sports Law"}>Sports Law</MenuItem>
-                                            <MenuItem value={"Arbitration"}>Arbitration</MenuItem>
-                                            <MenuItem value={"Aviation"}>Aviation</MenuItem>
-                                            <MenuItem value={"Employment and Labour Laws"}>Employment and Labour Laws</MenuItem>
-                                            <MenuItem value={"Mergers and Acquisition"}>Mergers and Acquisition</MenuItem>
-                                            <MenuItem value={"Public Policy"}>Public Policy</MenuItem>
-                                            <MenuItem value={"White Collar Crimes"}>White Collar Crimes</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                    <TextField required id="outlined-required" label="Linkedin URL" name='LinkedinURL' value={formData.LinkedinURL} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
-                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
-                                        <InputLabel id="university">University</InputLabel>
-                                        <Select
-                                            labelId="university"
-                                            id="demo-simple-select-helper"
-                                            name="university"
-                                            value={formData.university}
-                                            label="University"
-                                            onChange={handleChange}
-                                        >
-                                            <MenuItem value="">
-                                                <em>College Name</em>
-                                            </MenuItem>
-                                            <MenuItem value={"NLSUI- Bangalore"}>NLSUI- Bangalore</MenuItem>
-                                            <MenuItem value={"NALSAR-Hyderabad "}>NALSAR-Hyderabad </MenuItem>
-                                            <MenuItem value={"NUJS- KOLKATA"}>NUJS- KOLKATA</MenuItem>
-                                            <MenuItem value={"NLU-Jodhpur"}>NLU-Jodhpur</MenuItem>
-                                            <MenuItem value={"NLU-Bhopal"}>NLU-Bhopal</MenuItem>
-                                            <MenuItem value={"Chanakya Na- Patna"}>Chanakya Na- Patna</MenuItem>
-                                            <MenuItem value={"Christ- Bangalore"}>Christ- Bangalore</MenuItem>
-                                            <MenuItem value={"Faculty of Law, Delhi"}>Faculty of Law, Delhi</MenuItem>
-                                            <MenuItem value={"NLU- DELHI"}>NLU- DELHI</MenuItem>
-                                            <MenuItem value={"GLC-Bombay"}>GLC-Bombay</MenuItem>
-                                            <MenuItem value={" Faculty of Law- Mumbai"}>Faculty of Law- Mumbai</MenuItem>
-                                            <MenuItem value={"Symbiosis"}>Symbiosis</MenuItem>
-                                            <MenuItem value={"ICFAI-Hyderabad"}>ICFAI-Hyderabad</MenuItem>
-                                            <MenuItem value={"Symbiosis-Hyderabad"}>Symbiosis-Hyderabad</MenuItem>
-                                            <MenuItem value={"Usmaniya- Hyderabad "}>Usmaniya- Hyderabad </MenuItem>
-                                            <MenuItem value={"Global Jindal- Sonipat"}>Global Jindal- Sonipat</MenuItem>
-                                            <MenuItem value={"Amity University- Noida"}>Amity University- Noida</MenuItem>
-                                            <MenuItem value={"Gandhi National Law University"}>Gandhi National Law University</MenuItem>
-                                            <MenuItem value={"KIIT"}>KIIT</MenuItem>
-                                            <MenuItem value={"NLU-Punjab"}>NLU-Punjab</MenuItem>
-                                            <MenuItem value={"Nirma University"}>Nirma University</MenuItem>
-                                            <MenuItem value={"Bennette university"}>Bennette university</MenuItem>
-                                            <MenuItem value={"IIT-Kharagpur"}>IIT-Kharagpur</MenuItem>
-                                            <MenuItem value={"Rajiv Gandhi School of intellectual and property law"}>Rajiv Gandhi School of intellectual and property law</MenuItem>
-                                            <MenuItem value={"Faculty of Jamia Law University"}>Faculty of Jamia Law University</MenuItem>
-                                            <MenuItem value={"ILI-New Delhi"}>ILI-New Delhi</MenuItem>
-                                            <MenuItem value={"Army Institute of law-Mohali"}>Army Institute of law-Mohali</MenuItem>
-                                            <MenuItem value={"Government law college-thiruvanthapura"}>Government law college-thiruvanthapura</MenuItem>
-                                            <MenuItem value={"MNLU-Nagpur"}>MNLU-Nagpur</MenuItem>
-                                            <MenuItem value={"Bangalore Law College- Bang"}>Bangalore Law College- Bang</MenuItem>
-                                            <MenuItem value={"KC Law College- Mumbai"}>KC Law College- Mumbai</MenuItem>
-                                            <MenuItem value={"Faculty of law- Varanasi"}>Faculty of law- Varanasi</MenuItem>
-                                            <MenuItem value={"G J Advani law college"}>G J Advani law college</MenuItem>
-                                            <MenuItem value={"GGSIP University"}>GGSIP University</MenuItem>
-                                            <MenuItem value={"KC Law College- Mumbai"}>KC Law College- Mumbai</MenuItem>
-                                            <MenuItem value={"other university"}>other university</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
-                                        <InputLabel id="year-of-passing">College</InputLabel>
-                                        <Select
-                                            labelId="college"
-                                            id="demo-simple-select-helper"
-                                            name="college"
-                                            value={formData.college}
-                                            label="College"
-                                            onChange={handleChange}
-                                        >
-                                            <MenuItem value="">
-                                                <em>College Name</em>
-                                            </MenuItem>
-                                            <MenuItem value={"NLSUI- Bangalore"}>NLSUI- Bangalore</MenuItem>
-                                            <MenuItem value={"NALSAR-Hyderabad "}>NALSAR-Hyderabad </MenuItem>
-                                            <MenuItem value={"NUJS- KOLKATA"}>NUJS- KOLKATA</MenuItem>
-                                            <MenuItem value={"NLU-Jodhpur"}>NLU-Jodhpur</MenuItem>
-                                            <MenuItem value={"NLU-Bhopal"}>NLU-Bhopal</MenuItem>
-                                            <MenuItem value={"Chanakya Na- Patna"}>Chanakya Na- Patna</MenuItem>
-                                            <MenuItem value={"Christ- Bangalore"}>Christ- Bangalore</MenuItem>
-                                            <MenuItem value={"Faculty of Law, Delhi"}>Faculty of Law, Delhi</MenuItem>
-                                            <MenuItem value={"NLU- DELHI"}>NLU- DELHI</MenuItem>
-                                            <MenuItem value={"GLC-Bombay"}>GLC-Bombay</MenuItem>
-                                            <MenuItem value={" Faculty of Law- Mumbai"}>Faculty of Law- Mumbai</MenuItem>
-                                            <MenuItem value={"Symbiosis"}>Symbiosis</MenuItem>
-                                            <MenuItem value={"ICFAI-Hyderabad"}>ICFAI-Hyderabad</MenuItem>
-                                            <MenuItem value={"Symbiosis-Hyderabad"}>Symbiosis-Hyderabad</MenuItem>
-                                            <MenuItem value={"Usmaniya- Hyderabad "}>Usmaniya- Hyderabad </MenuItem>
-                                            <MenuItem value={"Global Jindal- Sonipat"}>Global Jindal- Sonipat</MenuItem>
-                                            <MenuItem value={"Amity University- Noida"}>Amity University- Noida</MenuItem>
-                                            <MenuItem value={"Gandhi National Law University"}>Gandhi National Law University</MenuItem>
-                                            <MenuItem value={"KIIT"}>KIIT</MenuItem>
-                                            <MenuItem value={"NLU-Punjab"}>NLU-Punjab</MenuItem>
-                                            <MenuItem value={"Nirma University"}>Nirma University</MenuItem>
-                                            <MenuItem value={"Bennette university"}>Bennette university</MenuItem>
-                                            <MenuItem value={"IIT-Kharagpur"}>IIT-Kharagpur</MenuItem>
-                                            <MenuItem value={"Rajiv Gandhi School of intellectual and property law"}>Rajiv Gandhi School of intellectual and property law</MenuItem>
-                                            <MenuItem value={"Faculty of Jamia Law University"}>Faculty of Jamia Law University</MenuItem>
-                                            <MenuItem value={"ILI-New Delhi"}>ILI-New Delhi</MenuItem>
-                                            <MenuItem value={"Army Institute of law-Mohali"}>Army Institute of law-Mohali</MenuItem>
-                                            <MenuItem value={"Government law college-thiruvanthapura"}>Government law college-thiruvanthapura</MenuItem>
-                                            <MenuItem value={"MNLU-Nagpur"}>MNLU-Nagpur</MenuItem>
-                                            <MenuItem value={"Bangalore Law College- Bang"}>Bangalore Law College- Bang</MenuItem>
-                                            <MenuItem value={"KC Law College- Mumbai"}>KC Law College- Mumbai</MenuItem>
-                                            <MenuItem value={"other colleges"}>other colleges</MenuItem>
-                                        </Select>
-                                    </FormControl>
+                                    <div className="eduction p-details">
+                                        <label style={{ marginBottom: "10px", display: "inline-block" }} htmlFor="">Preliminary Details</label>
+                                        <div className="edu-class">
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Name" name='name' value={formData.name} onChange={handleChange} fullWidth />
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Email" name='email' value={formData.email} onChange={handleChange} fullWidth />
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Phone" name='phone' value={formData.phone} onChange={handleChange} fullWidth />
+                                            </div>
+                                        </div>
+                                        <div className="edu-class">
+                                            <div className="class-box">
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="field-of-interest">Interest Area</InputLabel>
+                                                    <Select
+                                                        labelId="field-of-interest"
+                                                        id="demo-simple-select-helper"
+                                                        name="field_of_interest"
+                                                        value={formData.field_of_interest}
+                                                        label="Field of Interest"
+                                                        onChange={handleChange}
+                                                    >
+                                                        <MenuItem value="">
+                                                            <em>None</em>
+                                                        </MenuItem>
+                                                        <MenuItem value={"Insolvency and Bankruptcy Code"}>Insolvency and Bankruptcy Code</MenuItem>
+                                                        <MenuItem value={"Corporate Restructuring"}>Corporate Restructuring</MenuItem>
+                                                        <MenuItem value={"Banking"}>Banking</MenuItem>
+                                                        <MenuItem value={"Finance"}>Finance</MenuItem>
+                                                        <MenuItem value={"Intellectual Property Rights"}>Intellectual Property Rights</MenuItem>
+                                                        <MenuItem value={"Data Privacy"}>Data Privacy</MenuItem>
+                                                        <MenuItem value={"Litigation"}>Litigation</MenuItem>
+                                                        <MenuItem value={"Sports Law"}>Sports Law</MenuItem>
+                                                        <MenuItem value={"Arbitration"}>Arbitration</MenuItem>
+                                                        <MenuItem value={"Aviation"}>Aviation</MenuItem>
+                                                        <MenuItem value={"Employment and Labour Laws"}>Employment and Labour Laws</MenuItem>
+                                                        <MenuItem value={"Mergers and Acquisition"}>Mergers and Acquisition</MenuItem>
+                                                        <MenuItem value={"Public Policy"}>Public Policy</MenuItem>
+                                                        <MenuItem value={"White Collar Crimes"}>White Collar Crimes</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </div>
+                                            <div className="class-box">
+                                                <TextField required id="outlined-required" label="Linkedin URL" name='LinkedinURL' value={formData.LinkedinURL} onChange={handleChange} fullWidth />
+                                            </div>
+                                            <div className="class-box">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="eduction p-details">
+                                        <label style={{ marginBottom: "10px", display: "inline-block" }} htmlFor="">Course Details</label>
+                                        <div className="edu-class">
+                                            <div className="class-box">
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="course">Course</InputLabel>
+                                                    <Select
+                                                        labelId="course"
+                                                        id="demo-simple-select-helper"
+                                                        name="course"
+                                                        value={formData.course}
+                                                        label="Course"
+                                                        onChange={handleChange}
+                                                    >
+                                                        <MenuItem value="">
+                                                            <em>None</em>
+                                                        </MenuItem>
+                                                        <MenuItem value={"BBA LLB"}>BBA LLB</MenuItem>
+                                                        <MenuItem value={"B.com LLB"}>B.com LLB</MenuItem>
+                                                        <MenuItem value={"BA LLB"}>BA LLB</MenuItem>
+                                                        <MenuItem value={"BCA LLB"}>BCA LLB</MenuItem>
+                                                        <MenuItem value={"B.Tech LLB"}>B.Tech LLB</MenuItem>
+                                                        <MenuItem value={"B.Sc LLB"}>B.Sc LLB</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </div>
+                                            <div className="class-box">
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="year-of-passing">College</InputLabel>
+                                                    <Select
+                                                        labelId="college"
+                                                        id="demo-simple-select-helper"
+                                                        name="college"
+                                                        value={formData.college}
+                                                        label="College"
+                                                        onChange={handleChange}
+                                                    >
+                                                        <MenuItem value="">
+                                                            <em>College Name</em>
+                                                        </MenuItem>
+                                                        <MenuItem value={"NLSUI- Bangalore"}>NLSUI- Bangalore</MenuItem>
+                                                        <MenuItem value={"NALSAR-Hyderabad "}>NALSAR-Hyderabad </MenuItem>
+                                                        <MenuItem value={"NUJS- KOLKATA"}>NUJS- KOLKATA</MenuItem>
+                                                        <MenuItem value={"NLU-Jodhpur"}>NLU-Jodhpur</MenuItem>
+                                                        <MenuItem value={"NLU-Bhopal"}>NLU-Bhopal</MenuItem>
+                                                        <MenuItem value={"Chanakya Na- Patna"}>Chanakya Na- Patna</MenuItem>
+                                                        <MenuItem value={"Christ- Bangalore"}>Christ- Bangalore</MenuItem>
+                                                        <MenuItem value={"Faculty of Law, Delhi"}>Faculty of Law, Delhi</MenuItem>
+                                                        <MenuItem value={"NLU- DELHI"}>NLU- DELHI</MenuItem>
+                                                        <MenuItem value={"GLC-Bombay"}>GLC-Bombay</MenuItem>
+                                                        <MenuItem value={" Faculty of Law- Mumbai"}>Faculty of Law- Mumbai</MenuItem>
+                                                        <MenuItem value={"Symbiosis"}>Symbiosis</MenuItem>
+                                                        <MenuItem value={"ICFAI-Hyderabad"}>ICFAI-Hyderabad</MenuItem>
+                                                        <MenuItem value={"Symbiosis-Hyderabad"}>Symbiosis-Hyderabad</MenuItem>
+                                                        <MenuItem value={"Usmaniya- Hyderabad "}>Usmaniya- Hyderabad </MenuItem>
+                                                        <MenuItem value={"Global Jindal- Sonipat"}>Global Jindal- Sonipat</MenuItem>
+                                                        <MenuItem value={"Amity University- Noida"}>Amity University- Noida</MenuItem>
+                                                        <MenuItem value={"Gandhi National Law University"}>Gandhi National Law University</MenuItem>
+                                                        <MenuItem value={"KIIT"}>KIIT</MenuItem>
+                                                        <MenuItem value={"NLU-Punjab"}>NLU-Punjab</MenuItem>
+                                                        <MenuItem value={"Nirma University"}>Nirma University</MenuItem>
+                                                        <MenuItem value={"Bennette university"}>Bennette university</MenuItem>
+                                                        <MenuItem value={"IIT-Kharagpur"}>IIT-Kharagpur</MenuItem>
+                                                        <MenuItem value={"Rajiv Gandhi School of intellectual and property law"}>Rajiv Gandhi School of intellectual and property law</MenuItem>
+                                                        <MenuItem value={"Faculty of Jamia Law University"}>Faculty of Jamia Law University</MenuItem>
+                                                        <MenuItem value={"ILI-New Delhi"}>ILI-New Delhi</MenuItem>
+                                                        <MenuItem value={"Army Institute of law-Mohali"}>Army Institute of law-Mohali</MenuItem>
+                                                        <MenuItem value={"Government law college-thiruvanthapura"}>Government law college-thiruvanthapura</MenuItem>
+                                                        <MenuItem value={"MNLU-Nagpur"}>MNLU-Nagpur</MenuItem>
+                                                        <MenuItem value={"Bangalore Law College- Bang"}>Bangalore Law College- Bang</MenuItem>
+                                                        <MenuItem value={"KC Law College- Mumbai"}>KC Law College- Mumbai</MenuItem>
+                                                        <MenuItem value={"other colleges"}>other colleges</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </div>
+                                            <div className="class-box">
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="university">University</InputLabel>
+                                                    <Select
+                                                        labelId="university"
+                                                        id="demo-simple-select-helper"
+                                                        name="university"
+                                                        value={formData.university}
+                                                        label="University"
+                                                        onChange={handleChange}
+                                                    >
+                                                        <MenuItem value="">
+                                                            <em>University Name</em>
+                                                        </MenuItem>
+                                                        <MenuItem value={"NLSUI- Bangalore"}>NLSUI- Bangalore</MenuItem>
+                                                        <MenuItem value={"NALSAR-Hyderabad "}>NALSAR-Hyderabad </MenuItem>
+                                                        <MenuItem value={"NUJS- KOLKATA"}>NUJS- KOLKATA</MenuItem>
+                                                        <MenuItem value={"NLU-Jodhpur"}>NLU-Jodhpur</MenuItem>
+                                                        <MenuItem value={"NLU-Bhopal"}>NLU-Bhopal</MenuItem>
+                                                        <MenuItem value={"Chanakya Na- Patna"}>Chanakya Na- Patna</MenuItem>
+                                                        <MenuItem value={"Christ- Bangalore"}>Christ- Bangalore</MenuItem>
+                                                        <MenuItem value={"Faculty of Law, Delhi"}>Faculty of Law, Delhi</MenuItem>
+                                                        <MenuItem value={"NLU- DELHI"}>NLU- DELHI</MenuItem>
+                                                        <MenuItem value={"GLC-Bombay"}>GLC-Bombay</MenuItem>
+                                                        <MenuItem value={" Faculty of Law- Mumbai"}>Faculty of Law- Mumbai</MenuItem>
+                                                        <MenuItem value={"Symbiosis"}>Symbiosis</MenuItem>
+                                                        <MenuItem value={"ICFAI-Hyderabad"}>ICFAI-Hyderabad</MenuItem>
+                                                        <MenuItem value={"Symbiosis-Hyderabad"}>Symbiosis-Hyderabad</MenuItem>
+                                                        <MenuItem value={"Usmaniya- Hyderabad "}>Usmaniya- Hyderabad </MenuItem>
+                                                        <MenuItem value={"Global Jindal- Sonipat"}>Global Jindal- Sonipat</MenuItem>
+                                                        <MenuItem value={"Amity University- Noida"}>Amity University- Noida</MenuItem>
+                                                        <MenuItem value={"Gandhi National Law University"}>Gandhi National Law University</MenuItem>
+                                                        <MenuItem value={"KIIT"}>KIIT</MenuItem>
+                                                        <MenuItem value={"NLU-Punjab"}>NLU-Punjab</MenuItem>
+                                                        <MenuItem value={"Nirma University"}>Nirma University</MenuItem>
+                                                        <MenuItem value={"Bennette university"}>Bennette university</MenuItem>
+                                                        <MenuItem value={"IIT-Kharagpur"}>IIT-Kharagpur</MenuItem>
+                                                        <MenuItem value={"Rajiv Gandhi School of intellectual and property law"}>Rajiv Gandhi School of intellectual and property law</MenuItem>
+                                                        <MenuItem value={"Faculty of Jamia Law University"}>Faculty of Jamia Law University</MenuItem>
+                                                        <MenuItem value={"ILI-New Delhi"}>ILI-New Delhi</MenuItem>
+                                                        <MenuItem value={"Army Institute of law-Mohali"}>Army Institute of law-Mohali</MenuItem>
+                                                        <MenuItem value={"Government law college-thiruvanthapura"}>Government law college-thiruvanthapura</MenuItem>
+                                                        <MenuItem value={"MNLU-Nagpur"}>MNLU-Nagpur</MenuItem>
+                                                        <MenuItem value={"Bangalore Law College- Bang"}>Bangalore Law College- Bang</MenuItem>
+                                                        <MenuItem value={"KC Law College- Mumbai"}>KC Law College- Mumbai</MenuItem>
+                                                        <MenuItem value={"Faculty of law- Varanasi"}>Faculty of law- Varanasi</MenuItem>
+                                                        <MenuItem value={"G J Advani law college"}>G J Advani law college</MenuItem>
+                                                        <MenuItem value={"GGSIP University"}>GGSIP University</MenuItem>
+                                                        <MenuItem value={"KC Law College- Mumbai"}>KC Law College- Mumbai</MenuItem>
+                                                        <MenuItem value={"other university"}>other university</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Course Duration:</FormLabel>
                                         <FormControlLabel
@@ -360,77 +412,6 @@ const ProgresA = () => {
                                             onChange={handleChange}
                                         />
                                     </FormControl>
-
-                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
-                                        <InputLabel id="course">Course</InputLabel>
-                                        <Select
-                                            labelId="course"
-                                            id="demo-simple-select-helper"
-                                            name="course"
-                                            value={formData.course}
-                                            label="Course"
-                                            onChange={handleChange}
-                                        >
-                                            <MenuItem value="">
-                                                <em>None</em>
-                                            </MenuItem>
-                                            <MenuItem value={"BBA LLB"}>BBA LLB</MenuItem>
-                                            <MenuItem value={"B.com LLB"}>B.com LLB</MenuItem>
-                                            <MenuItem value={"BA LLB"}>BA LLB</MenuItem>
-                                            <MenuItem value={"BCA LLB"}>BCA LLB</MenuItem>
-                                            <MenuItem value={"B.Tech LLB"}>B.Tech LLB</MenuItem>
-                                            <MenuItem value={"B.Sc LLB"}>B.Sc LLB</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                   
-                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
-                                        <InputLabel id="skills">Skills</InputLabel>
-                                        <Select
-                                            labelId="skills"
-                                            id="demo-simple-select-helper"
-                                            name='skills'
-                                            value={formData.skills}
-                                            label="Skills"
-                                            onChange={handleChange}
-                                        >
-                                            <MenuItem value="">
-                                                <em>None</em>
-                                            </MenuItem>
-                                            <MenuItem value={"Negotiation"}>Negotiation</MenuItem>
-                                            <MenuItem value={"Drafting"}>Drafting</MenuItem>
-                                            <MenuItem value={"Communication"}>Communication</MenuItem>
-                                            <MenuItem value={"Excel"}>Excel</MenuItem>
-                                            <MenuItem value={"Data Analytics"}>Data Analytics</MenuItem>
-                                            <MenuItem value={"Business Development"}>Business Development</MenuItem>
-                                            <MenuItem value={"Client Management"}>Client Management</MenuItem>
-                                            <MenuItem value={"Knowledge Management"}>Knowledge Management</MenuItem>
-                                            <MenuItem value={"Account Management"}>Account Management</MenuItem>
-                                            <MenuItem value={"Legal Research"}>Legal Research</MenuItem>
-                                            <MenuItem value={"Public Policy"}>Public Policy</MenuItem>
-                                            <MenuItem value={"Digital Governance"}>Digital Governance</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                    <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
-                                        <FormLabel component="legend">Publications, if any:</FormLabel>
-                                        <FormControlLabel
-                                            control={<Checkbox />}
-                                            label="Yes"
-                                            name="publications"
-                                            value="Yes"
-                                            checked={formData.publications === 'Yes'}
-                                            onChange={handleChange}
-                                        />
-                                        <FormControlLabel
-                                            control={<Checkbox />}
-                                            label="No"
-                                            name="publications"
-                                            value="No"
-                                            checked={formData.publications === 'No'}
-                                            onChange={handleChange}
-                                        />
-                                    </FormControl>
-                                    <TextField required id="outlined-required" label="Publications Link" name='publicationslink' value={formData.publicationslink} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
-                                    
                                     <div className="eduction">
                                         <label style={{ marginBottom: "10px", display: "inline-block" }} htmlFor="">Education Details</label>
                                         <div className="edu-class">
@@ -531,8 +512,63 @@ const ProgresA = () => {
                                             </div>
                                         </div>
                                     </div>
+
+
+
+
+
+                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
+                                        <InputLabel id="skills">Skills</InputLabel>
+                                        <Select
+                                            labelId="skills"
+                                            id="demo-simple-select-helper"
+                                            name='skills'
+                                            value={formData.skills}
+                                            label="Skills"
+                                            onChange={handleChange}
+                                        >
+                                            <MenuItem value="">
+                                                <em>None</em>
+                                            </MenuItem>
+                                            <MenuItem value={"Negotiation"}>Negotiation</MenuItem>
+                                            <MenuItem value={"Drafting"}>Drafting</MenuItem>
+                                            <MenuItem value={"Communication"}>Communication</MenuItem>
+                                            <MenuItem value={"Excel"}>Excel</MenuItem>
+                                            <MenuItem value={"Data Analytics"}>Data Analytics</MenuItem>
+                                            <MenuItem value={"Business Development"}>Business Development</MenuItem>
+                                            <MenuItem value={"Client Management"}>Client Management</MenuItem>
+                                            <MenuItem value={"Knowledge Management"}>Knowledge Management</MenuItem>
+                                            <MenuItem value={"Account Management"}>Account Management</MenuItem>
+                                            <MenuItem value={"Legal Research"}>Legal Research</MenuItem>
+                                            <MenuItem value={"Public Policy"}>Public Policy</MenuItem>
+                                            <MenuItem value={"Digital Governance"}>Digital Governance</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                    <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
+                                        <FormLabel component="legend">Publications, if any:</FormLabel>
+                                        <FormControlLabel
+                                            control={<Checkbox />}
+                                            label="Yes"
+                                            name="publications"
+                                            value="Yes"
+                                            checked={formData.publications === 'Yes'}
+                                            onChange={handleChange}
+                                        />
+                                        <FormControlLabel
+                                            control={<Checkbox />}
+                                            label="No"
+                                            name="publications"
+                                            value="No"
+                                            checked={formData.publications === 'No'}
+                                            onChange={handleChange}
+                                        />
+                                    </FormControl>
+                                    {formData.publications === 'Yes' && (
+                                        <TextField required id="outlined-required" label="Publications Link" name='publicationslink' value={formData.publicationslink} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                    )}
+                                    
                                     <TextField required id="outlined-required" label="Last Internship Details " name='LastInternshipDetails' value={formData.LastInternshipDetails} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
-                            
+
                                     <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Preferred Location:</FormLabel>
                                         <FormControlLabel name='PreferredLocation' value={"Delhi"} checked={formData.PreferredLocation === 'Delhi'} onChange={handleChange} control={<Checkbox />} label="Delhi" />
