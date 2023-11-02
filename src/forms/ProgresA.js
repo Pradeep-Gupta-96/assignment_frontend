@@ -250,7 +250,7 @@ const ProgresA = () => {
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={12}>
                                     <div className="eduction p-details">
-                                        <label style={{ marginBottom: "10px", display: "inline-block" }} htmlFor="">Preliminary Details</label>
+                                        <label style={{ marginBottom: "10px", display: "inline-block" }} htmlFor="">Basic Details</label>
                                         <div className="edu-class">
                                             <div className="class-box">
                                                 <TextField required id="outlined-required" label="Name" name='name' value={formData.name} onChange={handleChange} fullWidth />
@@ -452,76 +452,6 @@ const ProgresA = () => {
                                         />
                                     </FormControl>
 
-                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
-                                        <InputLabel id="course">Course</InputLabel>
-                                        <Select
-                                            labelId="course"
-                                            id="demo-simple-select-helper"
-                                            name="course"
-                                            value={formData.course}
-                                            label="Course"
-                                            onChange={handleChange}
-                                        >
-                                            <MenuItem value="">
-                                                <em>None</em>
-                                            </MenuItem>
-                                            <MenuItem value={"BBA LLB"}>BBA LLB</MenuItem>
-                                            <MenuItem value={"B.com LLB"}>B.com LLB</MenuItem>
-                                            <MenuItem value={"BA LLB"}>BA LLB</MenuItem>
-                                            <MenuItem value={"BCA LLB"}>BCA LLB</MenuItem>
-                                            <MenuItem value={"B.Tech LLB"}>B.Tech LLB</MenuItem>
-                                            <MenuItem value={"B.Sc LLB"}>B.Sc LLB</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                   
-                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
-                                        <InputLabel id="skills">Skills</InputLabel>
-                                        <Select
-                                            labelId="skills"
-                                            id="demo-simple-select-helper"
-                                            name='skills'
-                                            value={formData.skills}
-                                            label="Skills"
-                                            onChange={handleChange}
-                                        >
-                                            <MenuItem value="">
-                                                <em>None</em>
-                                            </MenuItem>
-                                            <MenuItem value={"Negotiation"}>Negotiation</MenuItem>
-                                            <MenuItem value={"Drafting"}>Drafting</MenuItem>
-                                            <MenuItem value={"Communication"}>Communication</MenuItem>
-                                            <MenuItem value={"Excel"}>Excel</MenuItem>
-                                            <MenuItem value={"Data Analytics"}>Data Analytics</MenuItem>
-                                            <MenuItem value={"Business Development"}>Business Development</MenuItem>
-                                            <MenuItem value={"Client Management"}>Client Management</MenuItem>
-                                            <MenuItem value={"Knowledge Management"}>Knowledge Management</MenuItem>
-                                            <MenuItem value={"Account Management"}>Account Management</MenuItem>
-                                            <MenuItem value={"Legal Research"}>Legal Research</MenuItem>
-                                            <MenuItem value={"Public Policy"}>Public Policy</MenuItem>
-                                            <MenuItem value={"Digital Governance"}>Digital Governance</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                    <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
-                                        <FormLabel component="legend">Publications, if any:</FormLabel>
-                                        <FormControlLabel
-                                            control={<Checkbox />}
-                                            label="Yes"
-                                            name="publications"
-                                            value="Yes"
-                                            checked={formData.publications === 'Yes'}
-                                            onChange={handleChange}
-                                        />
-                                        <FormControlLabel
-                                            control={<Checkbox />}
-                                            label="No"
-                                            name="publications"
-                                            value="No"
-                                            checked={formData.publications === 'No'}
-                                            onChange={handleChange}
-                                        />
-                                    </FormControl>
-                                    <TextField required id="outlined-required" label="Publications Link" name='publicationslink' value={formData.publicationslink} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
-                                    
                                     <div className="eduction">
                                         <label style={{ marginBottom: "10px", display: "inline-block" }} htmlFor="">Education Details</label>
                                         <div className="edu-class">
