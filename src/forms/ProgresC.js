@@ -146,7 +146,7 @@ const ProgresC = () => {
                                             onChange={handleChange}
                                             aria-label="maximum height"
                                             minRows={3}
-                                            placeholder="maximum 250 Word"
+                                            placeholder="Maximum 250 Words"
                                             onPaste={(e) => e.preventDefault()}
                                         />
                                     </FormControl>
@@ -163,14 +163,14 @@ const ProgresC = () => {
                                             onChange={handleChange}
                                             aria-label="maximum height"
                                             minRows={3}
-                                            placeholder="maximum 250 Word"
+                                            placeholder="Maximum 250 Words"
                                             onPaste={(e) => e.preventDefault()}
                                         />
                                     </FormControl>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
-                                    situation based ethical problemx`x`
+                                    <strong>Situation Based Ethical Problemx</strong>
                                         <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                            Axis Consultancy is an established law firm that practices law in India. You are appointed as a Senior Lawyer in the firm. Your job profile includes appearances in Court, briefing seniors, drafting pleadings, attending Court proceedings, etc. The Advocates Act makes it evident that persons enrolled with the Bar Council of India are entitled to practice law. However, there is no bar to a foreign lawyer to conduct arbitration in India especially if the matter is governed by an international commercial arbitration agreement. A commercial dispute between Pixar Pvt. Ltd and Fox Pvt. Ltd. were instituted under the Arbitration Act, 1996. Your senior asked you to fraudulently incorporate an international commercial arbitration clause in the agreement between the parties in order to bring a foreign lawyer for making contentions in the matter. How would you handle this situation, balancing your professional obligations and ethical responsibilities?
+                                        ABC Consultancy is an established law firm that practices law in India. You are appointed as an Associate in the firm. Your job profile includes appearances in Court, briefing seniors, drafting pleadings, attending Court proceedings, etc. The Advocates Act, 1961 makes it evident that persons enrolled with the Bar Council of India are entitled to practice law. However, there is no bar to a foreign lawyer to conduct arbitration in India especially if the matter is governed by an international commercial arbitration agreement. A commercial dispute between DEF Pvt. Ltd and GHI Pvt. Ltd. were instituted under the Arbitration and Conciliation Act, 1996. Your senior asked you to fraudulently incorporate an international commercial arbitration clause in the agreement between the parties in order to bring a foreign lawyer for making contentions in the matter. How would you handle the above situation as far as balancing your professional obligations and ethical responsibilities is concerned ? 
                                         </FormLabel>
                                         <Textarea
                                             required
@@ -181,7 +181,7 @@ const ProgresC = () => {
                                             onChange={handleChange}
                                             aria-label="maximum height"
                                             minRows={3}
-                                            placeholder="maximum 250 Word"
+                                            placeholder="Maximum 250 Words"
                                             onPaste={(e) => e.preventDefault()}
                                         />
                                     </FormControl>

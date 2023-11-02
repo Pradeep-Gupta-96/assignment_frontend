@@ -35,7 +35,7 @@ button.blue-btn:hover,.blue-btn:hover {color: #1976d2;}
     background-color: rgb(255, 255, 255);
     box-sizing: border-box; padding: 24px 40px;background: #ededed;}
 .back-link {color: #1976d2; text-decoration: underline;}
-.prog-bar {position: -webkit-sticky;position: sticky;top: -1px;background: #fff;z-index: 9;padding: 10px 0px 50px;background: #ededed;}
+.prog-bar {/*position: -webkit-sticky;position: sticky;*/ top: -1px;background: #fff;z-index: 9;padding: 10px 0px 50px;background: #ededed;}
 .Mui-completed svg, .Mui-completed > span {color: green !important; border-color:  green !important;}
 .prog-bar .MuiStepLabel-alternativeLabel { font-family: 'Montserrat', sans-serif !important;font-weight: 500;}
 form.top-form {padding-bottom: 100px;min-height: 450px;padding-top: 10px;}

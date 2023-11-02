@@ -21,7 +21,7 @@ export const allQuestionsA1 = [
     },
     {
         PartA: "Answer3_PartA",
-        question: "Chapters I of Part II of the Arbitration and Conciliation Act, 1996 deal with the enforcement of certain foreign awards made under:",
+        question: "Chapters I of Part II of the Arbitration and Conciliation Act, 1996 deals with the enforcement of certain foreign awards made under:",
         options: [
             "A. The Geneva Convention",
             "B. The New York and Geneva Conventions",
@@ -144,7 +144,7 @@ export const allQuestionsA1 = [
                 </ul>
                 <ul className="ans-row">
                     <li className="ans1">Incorporation of company</li>
-                    <li className="ans1">Poer of Securities and Exchange Board to regulate issue and transfer of securities etc.</li>
+                    <li className="ans1">Power of Securities and Exchange Board to regulate issue and transfer of securities etc.</li>
                     <li className="ans1">Kinds of share capital</li>
                     <li className="ans1">Duties of Directors</li>
                     <li className="ans1">Merger and amalgamation of companies</li>
@@ -220,7 +220,7 @@ export const allQuestionsA1 = [
     {
         PartA: "Answer14_PartA",
         question: (<div style={{display: "inline"}}>
-            Match the following case laws with issues that were adjudicated in them.
+            Match the following case laws with issues adjudicated in them.
             <div className="four-op">
                 <ul className="op-row">
                     <li className="op1">Committee of Creditors Essar Steel India Limited v. Satish Kumar Gupta</li>
