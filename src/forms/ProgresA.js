@@ -298,6 +298,26 @@ const ProgresA = () => {
                                                 <TextField required id="outlined-required" label="Linkedin URL" name='LinkedinURL' value={formData.LinkedinURL} onChange={handleChange} fullWidth />
                                             </div>
                                             <div className="class-box">
+                                                <FormControl fullWidth >
+                                                    <InputLabel id="demo-multiple-checkbox-label">Skills</InputLabel>
+                                                    <Select
+                                                        labelId="demo-multiple-checkbox-label"
+                                                        id="demo-multiple-checkbox"
+                                                        multiple
+                                                        value={skills}
+                                                        onChange={handleChange1}
+                                                        input={<OutlinedInput label="Skills" />}
+                                                        renderValue={(selected) => selected.join(', ')}
+                                                        MenuProps={MenuProps}
+                                                    >
+                                                        {skillsOptions.map((name) => (
+                                                            <MenuItem key={name} value={name}>
+                                                                <Checkbox checked={skills.indexOf(name) > -1} />
+                                                                <ListItemText primary={name} />
+                                                            </MenuItem>
+                                                        ))}
+                                                    </Select>
+                                                </FormControl>
                                             </div>
                                         </div>
                                     </div>
@@ -553,26 +573,7 @@ const ProgresA = () => {
                                         </div>
                                     </div>
 
-                                    <FormControl sx={{ m: 1, width: 300 }}>
-                                        <InputLabel id="demo-multiple-checkbox-label">Tag</InputLabel>
-                                        <Select
-                                            labelId="demo-multiple-checkbox-label"
-                                            id="demo-multiple-checkbox"
-                                            multiple
-                                            value={skills}
-                                            onChange={handleChange1}
-                                            input={<OutlinedInput label="Tag" />}
-                                            renderValue={(selected) => selected.join(', ')}
-                                            MenuProps={MenuProps}
-                                        >
-                                            {skillsOptions.map((name) => (
-                                                <MenuItem key={name} value={name}>
-                                                    <Checkbox checked={skills.indexOf(name) > -1} />
-                                                    <ListItemText primary={name} />
-                                                </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormControl>
+
                                     <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Publications, if any:</FormLabel>
                                         <FormControlLabel
