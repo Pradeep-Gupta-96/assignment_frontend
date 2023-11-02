@@ -138,16 +138,44 @@ const Practices = () => {
         });
     };
 
-    // console.log(formData)
-    // this funtion is for checking timming 
-
-    const Submit = async () => {
+    const Submit = async (event) => {
         try {
-            navigate('/finalsuccess')
+            if (event) {
+                event.preventDefault();
+            }
+            const API = `http://localhost:4000/api/lastround/${id}`; // Include the ID in the API URL
+
+            // Merge all form data objects into one
+            const formData = {
+                ...formDataPartA,
+                ...formDataPartB,
+                ...formDataPartC,
+                ...formDataPartD,
+            };
+
+            // Make the HTTP POST request
+            const response = await fetch(API, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json', // Set the content type
+                },
+                body: JSON.stringify(formData), // Convert to JSON
+            });
+
+            if (response.ok) {
+                // Handle successful response
+                await response.json();
+                // Redirect to another page or perform other actions
+                navigate('/finalsuccess');
+            } else {
+                // Handle error response
+                console.error('Error:', response.statusText);
+            }
         } catch (error) {
-            console.error(error)
+            // Handle any errors that occur during the request
+            console.error('Form submission error:', error);
         }
-    }
+    };
 
     // Function to get the saved current time from local storage
     const getSavedCurrentTime = () => {
@@ -288,7 +316,7 @@ const Practices = () => {
                             </Grid>
                         </Box>
                         <Box sx={{ width: '100%' }} className="bottom-form">
-                            <Button style={{opacity: "0"}} className="blue-btn"></Button>
+                            <Button style={{ opacity: "0" }} className="blue-btn"></Button>
                             <Button className="blue-btn" onClick={Submit}>Submit</Button>
                         </Box>
                     </div>

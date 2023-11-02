@@ -62,7 +62,6 @@ const ProgresC = () => {
     };
 
     const id = localStorage.getItem('id');
-    console.log("C", id)
 
     const handleSubmit = async (event) => {
         try {
