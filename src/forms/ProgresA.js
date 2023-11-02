@@ -21,28 +21,28 @@ import videobg from '../images/background-video.mp4';
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
+    PaperProps: {
+        style: {
+            maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+            width: 250,
+        },
     },
-  },
 };
 
 
 const skillsOptions = [
-  "Negotiation",
-  "Drafting",
-  "Communication",
-  "Excel",
-  "Data Analytics",
-  "Business Development",
-  "Client Management",
-  "Knowledge Management",
-  "Account Management",
-  "Legal Research",
-  "Public Policy",
-  "Digital Governance"
+    "Negotiation",
+    "Drafting",
+    "Communication",
+    "Excel",
+    "Data Analytics",
+    "Business Development",
+    "Client Management",
+    "Knowledge Management",
+    "Account Management",
+    "Legal Research",
+    "Public Policy",
+    "Digital Governance"
 ];
 
 const steps = [
@@ -84,15 +84,15 @@ const ProgresA = () => {
     const [avatar, setAvatar] = useState(null);
     const [skills, setSkills] = React.useState([]);
 
-  const handleChange1 = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setSkills(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
-  };
+    const handleChange1 = (event) => {
+        const {
+            target: { value },
+        } = event;
+        setSkills(
+            // On autofill we get a stringified value.
+            typeof value === 'string' ? value.split(',') : value,
+        );
+    };
 
 
 
@@ -553,35 +553,24 @@ const ProgresA = () => {
                                         </div>
                                     </div>
 
-
-
-
-
-                                    <FormControl sx={{ marginBottom: "25px" }} fullWidth>
-                                        <InputLabel id="skills">Skills</InputLabel>
+                                    <FormControl sx={{ m: 1, width: 300 }}>
+                                        <InputLabel id="demo-multiple-checkbox-label">Tag</InputLabel>
                                         <Select
-                                            labelId="skills"
-                                            id="demo-simple-select-helper"
-                                            name='skills'
-                                            value={formData.skills}
-                                            label="Skills"
-                                            onChange={handleChange}
+                                            labelId="demo-multiple-checkbox-label"
+                                            id="demo-multiple-checkbox"
+                                            multiple
+                                            value={skills}
+                                            onChange={handleChange1}
+                                            input={<OutlinedInput label="Tag" />}
+                                            renderValue={(selected) => selected.join(', ')}
+                                            MenuProps={MenuProps}
                                         >
-                                            <MenuItem value="">
-                                                <em>None</em>
-                                            </MenuItem>
-                                            <MenuItem value={"Negotiation"}>Negotiation</MenuItem>
-                                            <MenuItem value={"Drafting"}>Drafting</MenuItem>
-                                            <MenuItem value={"Communication"}>Communication</MenuItem>
-                                            <MenuItem value={"Excel"}>Excel</MenuItem>
-                                            <MenuItem value={"Data Analytics"}>Data Analytics</MenuItem>
-                                            <MenuItem value={"Business Development"}>Business Development</MenuItem>
-                                            <MenuItem value={"Client Management"}>Client Management</MenuItem>
-                                            <MenuItem value={"Knowledge Management"}>Knowledge Management</MenuItem>
-                                            <MenuItem value={"Account Management"}>Account Management</MenuItem>
-                                            <MenuItem value={"Legal Research"}>Legal Research</MenuItem>
-                                            <MenuItem value={"Public Policy"}>Public Policy</MenuItem>
-                                            <MenuItem value={"Digital Governance"}>Digital Governance</MenuItem>
+                                            {skillsOptions.map((name) => (
+                                                <MenuItem key={name} value={name}>
+                                                    <Checkbox checked={skills.indexOf(name) > -1} />
+                                                    <ListItemText primary={name} />
+                                                </MenuItem>
+                                            ))}
                                         </Select>
                                     </FormControl>
                                     <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
@@ -606,7 +595,7 @@ const ProgresA = () => {
                                     {formData.publications === 'Yes' && (
                                         <TextField required id="outlined-required" label="Publications Link" name='publicationslink' value={formData.publicationslink} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
                                     )}
-                                    
+
                                     <TextField required id="outlined-required" label="Last Internship Details " name='LastInternshipDetails' value={formData.LastInternshipDetails} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
 
                                     <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
