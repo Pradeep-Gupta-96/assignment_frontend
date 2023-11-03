@@ -63,7 +63,6 @@ const ProgresA = () => {
         college: '',
         course_duration: '',
         course: '',
-
         publications: '',
         publicationslink: '',
         Class10Education: "",
@@ -111,39 +110,39 @@ const ProgresA = () => {
 
     const id = localStorage.getItem("id");
 
-    const onSubmit = async (event) => {
-        try {
-            if (event) {
-                event.preventDefault();
-            }
-            // Check if 'id' is stored in local storage
+    // const onSubmit = async (event) => {
+    //     try {
+    //         if (event) {
+    //             event.preventDefault();
+    //         }
+    //         // Check if 'id' is stored in local storage
 
-            const API = `http://localhost:4000/api/updateTodo1/${id}`; // Update the API endpoint
+    //         const API = `http://localhost:4000/api/updateTodo1/${id}`; // Update the API endpoint
 
-            // Make the HTTP POST request
-            const response = await fetch(API, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json', // Set the content type
-                },
-                body: JSON.stringify(formData), // Convert to JSON
-            });
+    //         // Make the HTTP POST request
+    //         const response = await fetch(API, {
+    //             method: 'PUT',
+    //             headers: {
+    //                 'Content-Type': 'application/json', // Set the content type
+    //             },
+    //             body: JSON.stringify(formData), // Convert to JSON
+    //         });
 
-            if (response.ok) {
-                // Handle successful response
-                const data = await response.json();
-                localStorage.setItem("yashodanandB", "yashodanandB")
-                // Redirect to another page or perform other actions
-                navigate(`/progresb/${id}`);
-            } else {
-                // Handle error response
-                console.error('Error:', response.statusText);
-            }
-        } catch (error) {
-            // Handle any errors that occur during the request
-            console.error('Form submission error:', error);
-        }
-    };
+    //         if (response.ok) {
+    //             // Handle successful response
+    //             const data = await response.json();
+    //             localStorage.setItem("yashodanandB", "yashodanandB")
+    //             // Redirect to another page or perform other actions
+    //             navigate(`/progresb/${id}`);
+    //         } else {
+    //             // Handle error response
+    //             console.error('Error:', response.statusText);
+    //         }
+    //     } catch (error) {
+    //         // Handle any errors that occur during the request
+    //         console.error('Form submission error:', error);
+    //     }
+    // };
 
 
     useEffect(() => {
@@ -153,39 +152,39 @@ const ProgresA = () => {
     }, [])
 
 
-    // const onSubmit1 = async () => {
-    //     try {
-    //         const API = `http://localhost:4000/api/updateTodo2/${id}`; // Include the ID in the API URL
+    const onSubmit = async () => {
+        try {
+            const API = `http://localhost:4000/api/updateTodo2/${id}`; // Include the ID in the API URL
 
-    //         const formDataObject = new FormData();
-    //         for (const key in formData) {
-    //             formDataObject.append(key, formData[key]);
-    //         }
+            const formDataObject = new FormData();
+            for (const key in formData) {
+                formDataObject.append(key, formData[key]);
+            }
 
-    //         if (avatar) {
-    //             formDataObject.append('UploadResume', avatar); // Append the avatar file
-    //         }
+            if (avatar) {
+                formDataObject.append('UploadResume', avatar); // Append the avatar file
+            }
 
-    //         // Make the HTTP PUT request
-    //         const response = await fetch(API, {
-    //             method: 'PUT',
-    //             body: formDataObject, // Send the FormData object
-    //         });
+            // Make the HTTP PUT request
+            const response = await fetch(API, {
+                method: 'PUT',
+                body: formDataObject, // Send the FormData object
+            });
 
-    //         if (response.ok) {
-    //             // Handle successful response
-    //             await response.json();
-    //             localStorage.setItem("yashodanandC", "yashodanandC")
-    //             navigate(`/progresc/${id}`);
-    //         } else {
-    //             // Handle error response
-    //             console.error('Error:', response.statusText);
-    //         }
-    //     } catch (error) {
-    //         // Handle any errors that occur during the request
-    //         console.error('Update error:', error);
-    //     }
-    // };
+            if (response.ok) {
+                // Handle successful response
+                await response.json();
+                localStorage.setItem("yashodanandC", "yashodanandC")
+                navigate(`/progresc/${id}`);
+            } else {
+                // Handle error response
+                console.error('Error:', response.statusText);
+            }
+        } catch (error) {
+            // Handle any errors that occur during the request
+            console.error('Update error:', error);
+        }
+    };
 
 
 
