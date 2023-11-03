@@ -260,7 +260,7 @@ const Practices = () => {
                                                     onChange={handleChangePartB}
                                                     aria-label="maximum height"
                                                     minRows={3}
-                                                    placeholder="maximum 250 Word"
+                                                    placeholder="Maximum 250 Words"
                                                     onPaste={(e) => e.preventDefault()}
                                                 />
                                             </FormControl>
@@ -282,7 +282,7 @@ const Practices = () => {
                                                     onChange={handleChangePartC}
                                                     aria-label="maximum height"
                                                     minRows={3}
-                                                    placeholder="maximum 250 Word"
+                                                    placeholder="Maximum 250 Words"
                                                     onPaste={(e) => e.preventDefault()}
                                                 />
                                             </FormControl>

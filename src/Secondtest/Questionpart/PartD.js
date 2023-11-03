@@ -72,7 +72,7 @@ export const allQuestionsD = [
     },
     {
          PartD: "Answer8_PartD",
-        question: "Which of the following options correctly describes the term’ Regulatory Sandbox’",
+        question: "Which of the following options correctly describes the term’ Regulatory Sandbox’...?",
         options: [
             "A. They are rules and regulations to be followed by all the insurance service offering companies",
             "B. It is a framework for testing of innovative financial services products in a controlled manner",
@@ -93,7 +93,7 @@ export const allQuestionsD = [
     },
     {
          PartD: "Answer10_PartD",
-        question: "What do you understand by Gresham’s law",
+        question: "What do you understand by Gresham’s law...?",
         options: [
             "A. It's a fixed rate exchange system ‘bribe money drives out good’. It comes into play when the exchange rate between two currencies is fixed by the govt at a fixed ratio that is different from the market exchange rate",
             "B. It aids investors/ suggests insurers, pension, and provident funds which are required to invest a particular percentage of the incremental received in corporate bonds",

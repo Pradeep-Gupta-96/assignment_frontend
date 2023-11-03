@@ -20,7 +20,7 @@ import videobg from '../images/background-video.mp4';
 const steps = [
     'Preliminary Details',
     'Aptitude',
-    'Ethical',
+    'Ethics',
 ];
 
 
@@ -93,35 +93,35 @@ const ProgresB = () => {
                                         <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	Literature, art and music received a setback during the communist regime in Russia." />
                                     </FormControl>
                                     <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
-                                        <FormLabel component="legend">Q 3. The Indian perception of the Soviet Union was always</FormLabel>
+                                        <FormLabel component="legend">Q 3. The Indian perception of the Soviet Union was always...?</FormLabel>
                                         <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A. Neutral" />
                                         <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	Applauding" />
                                         <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	Counter-reactionary" />
                                         <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	Critical" />
                                     </FormControl>
                                     <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
-                                        <FormLabel component="legend">Q 4. The West did not focus on</FormLabel>
+                                        <FormLabel component="legend">Q 4. The West did not focus on...?</FormLabel>
                                         <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A. Massive human rights violation of the Soviet state on its people" />
                                         <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	Rapid growth of nuclear weapons in Russia" />
                                         <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	Deliberate uprooting and mass migration of ethnic people in the name of industrialisation" />
                                         <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	Both (a) and (c)" />
                                     </FormControl>
                                     <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
-                                        <FormLabel component="legend">Q 5. The passage is</FormLabel>
+                                        <FormLabel component="legend">Q 5. The passage is...?</FormLabel>
                                         <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A. Descriptive" />
                                         <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	Thought-provoking" />
                                         <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	Paradoxical" />
                                         <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	Analytical" />
                                     </FormControl>
                                     <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
-                                        <FormLabel component="legend">Q 6.  If TRANSFER is coded as RTNAFSRE, then ELEPHANT would be coded as</FormLabel>
+                                        <FormLabel component="legend">Q 6.  If TRANSFER is coded as RTNAFSRE, then ELEPHANT would be coded as...?</FormLabel>
                                         <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A. LEPEHATN" />
                                         <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	LEEPAHTN" />
                                         <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	LEPEAHTN" />
                                         <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	LEPEAHNT" />
                                     </FormControl>
                                     <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
-                                        <FormLabel component="legend">Q 7.  Out of 130 students appearing in an exam, 62 failed in Science, 52 failed in English, whereas 24 failed in both Science and English. The number of students who passed is</FormLabel>
+                                        <FormLabel component="legend">Q 7.  Out of 130 students appearing in an exam, 62 failed in Science, 52 failed in English, whereas 24 failed in both Science and English. The number of students who passed is...?</FormLabel>
                                         <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A. 50" />
                                         <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	20" />
                                         <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	40" />

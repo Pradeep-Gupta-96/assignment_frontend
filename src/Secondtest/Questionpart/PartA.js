@@ -1,7 +1,7 @@
 export const allQuestionsA1 = [
     {
         PartA: "Answer1_PartA",
-        question: "An arbitral agreement should NOT have the following",
+        question: "An arbitral agreement should NOT have the following?",
         options: [
             "A. An Arbitration agreement may not be in writing.",
             "B. Arbitration agreement by the parties to submit to arbitration all or certain disputes.",

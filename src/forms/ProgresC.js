@@ -17,7 +17,7 @@ import videobg from '../images/background-video.mp4'
 const steps = [
     'Preliminary Details',
     'Aptitude',
-    'Ethical',
+    'Ethics',
 ];
 const Textarea = styled(BaseTextareaAutosize)(
     ({ theme }) => `

@@ -10,8 +10,8 @@ import videobg from '../images/background-video.mp4';
 
 const steps = [
     'Preliminary Details',
-    'Experience',
-    'Step 3',
+    'Aptitude',
+    'Ethics',
 ];
 
 const Successpage = () => {
@@ -51,10 +51,9 @@ const Successpage = () => {
                         <p className='terms-cond'><strong>Please read the following terms and conditions:</strong><br />
                             1. The test time will be 45 minutes.<br />
                             2. Some questions will be objective and some subjective.<br />
-                            3. It will be mandatory to solve all the questions.<br />
-                            4. There are total 4 Parts comprising of Part A, Part B, Part C and Part D<br />
-                            5. All questions are mandatory.<br />
-                            6. There shall be no negative marking.</p>
+                            3. There are total 4 Parts comprising of Part A, Part B, Part C and Part D<br />
+                            4. All questions are mandatory.<br />
+                            5. There shall be no negative marking.</p>
                         <Link
                             style={{ textAlign: 'center', display: 'inherit' }}
                             className="back-link"

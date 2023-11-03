@@ -48,7 +48,7 @@ const skillsOptions = [
 const steps = [
     'Preliminary Details',
     'Aptitude',
-    'Ethical',
+    'Ethics',
 ];
 
 const ProgresA = () => {
@@ -498,18 +498,7 @@ const ProgresA = () => {
                                             </div>
                                             <div className="class-box">
                                                 <FormControl fullWidth>
-                                                    <InputLabel id="10th-board">Percentage</InputLabel>
-                                                    <Select
-                                                        required
-                                                        id="outlined-required"
-                                                        label="Percentage"
-                                                        name='Class10_percentage'
-                                                        value={formData.Class10_percentage}
-                                                        onChange={handleChange} fullWidth
-                                                    >
-                                                        <MenuItem value={"x`x`"}>Below 75%</MenuItem>
-                                                        <MenuItem value={"Above 75"}>Above 75%</MenuItem>
-                                                    </Select>
+                                                    <TextField required id="outlined-required" label="Percentage" name='Class10_percentage' value={formData.Class10_percentage} onChange={handleChange} fullWidth />
                                                 </FormControl>
                                             </div>
                                             <div className="class-box">
@@ -539,18 +528,7 @@ const ProgresA = () => {
                                             </div>
                                             <div className="class-box">
                                                 <FormControl fullWidth>
-                                                    <InputLabel id="10th-board">Percentage</InputLabel>
-                                                    <Select
-                                                        required
-                                                        id="outlined-required"
-                                                        label="Percentage"
-                                                        name='Class12_percentage'
-                                                        value={formData.Class12_percentage}
-                                                        onChange={handleChange} fullWidth
-                                                    >
-                                                        <MenuItem value={"Below-75"}>Below 75%</MenuItem>
-                                                        <MenuItem value={"Above-75"}>Above 75%</MenuItem>
-                                                    </Select>
+                                                    <TextField required id="outlined-required" label="Percentage" name='Class12_percentage' value={formData.Class12_percentage} onChange={handleChange} fullWidth />
                                                 </FormControl>
                                             </div>
                                             <div className="class-box">
