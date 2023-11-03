@@ -47,8 +47,8 @@ const skillsOptions = [
 
 const steps = [
     'Preliminary Details',
-    'Experience',
-    'Step 3',
+    'Aptitude',
+    'Ethical',
 ];
 
 const ProgresA = () => {
