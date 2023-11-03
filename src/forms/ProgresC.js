@@ -9,10 +9,10 @@ import StepLabel from '@mui/material/StepLabel';
 import { Button, FormLabel } from '@mui/material';
 import { useNavigate } from "react-router-dom"
 import FormControl from '@mui/material/FormControl';
-import TimmerCompo from './TimmerCompo';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
 import videobg from '../images/background-video.mp4'
+import TimmerCompo from './TimmerCompo';
 
 const steps = [
     'Preliminary Details',
@@ -133,6 +133,28 @@ const ProgresC = () => {
     //     return () => clearInterval(interval);
     // }, [fetchData1]);
 
+    // Function to get the saved current time from local storage
+    const getSavedCurrentTime = () => {
+        const storedStartTime = localStorage.getItem('currentStartTime');
+        return storedStartTime ? parseInt(storedStartTime, 10) : null;
+    };
+
+    // Get the saved current time from local storage
+    const currentStartTime = getSavedCurrentTime();
+
+    // Calculate target time based on current time
+    const targetTime = currentStartTime ? currentStartTime + 45 * 60 * 1000 : 0;
+
+    useEffect(() => {
+        // Start the timer when this component mounts
+        if (currentStartTime) {
+            // The targetTime variable is calculated based on the current time.
+            // You can use this targetTime to start the countdown timer as needed.
+            // If you want to use the countdown timer, call the startTimer function here.
+            // startTimer();
+        }
+    }, [currentStartTime]);
+
 
     return (
         <>
@@ -150,7 +172,6 @@ const ProgresC = () => {
                 <video className='background-video' autoPlay loop muted > <source src={videobg} type="video/mp4" /> </video>
                 <div className="bound">
                     <div className="form-box">
-                        {/* <TimmerCompo targetTime={timerTargetTime} onTimeout={() => navigate(`/progresc/${id}`)} /> */}
                         <Link className="back-link" to="/">Back to Job Posting</Link>
                         <h3>Assessment Intern</h3>
                         <Box className="prog-bar" sx={{ width: '100%' }}>
@@ -162,6 +183,7 @@ const ProgresC = () => {
                                 ))}
                             </Stepper>
                         </Box>
+                        <TimmerCompo targetTime={targetTime} onTimeout={handleSubmit} />
                         <Box className='top-form' component="form" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={12}>
@@ -201,9 +223,9 @@ const ProgresC = () => {
                                         />
                                     </FormControl>
                                     <FormControl className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
-                                    <strong>Situation Based Ethical Problemx</strong>
+                                        <strong>Situation Based Ethical Problem</strong>
                                         <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                        ABC Consultancy is an established law firm that practices law in India. You are appointed as a Senior Associate in the firm. Your job profile includes appearances in Court, briefing seniors, drafting pleadings, attending Court proceedings, etc. The Advocates Act, 1961 makes it evident that persons enrolled with the Bar Council of India are entitled to practice law, however there is no bar to a foreign lawyer to conduct arbitration in India especially if the matter is governed by an international commercial arbitration agreement. A commercial dispute between DEF Pvt. Ltd and GHI Pvt. Ltd. were instituted under the Arbitration and Conciliation Act, 1996. Your senior asked you to fraudulently incorporate an international commercial arbitration clause in the agreement between the parties in order to bring a foreign lawyer for making contentions in the matter. How would you handle the above situation as far as balancing your professional obligations and ethical responsibilities are concerned ? 
+                                            ABC Consultancy is an established law firm that practices law in India. You are appointed as a Senior Associate in the firm. Your job profile includes appearances in Court, briefing seniors, drafting pleadings, attending Court proceedings, etc. The Advocates Act, 1961 makes it evident that persons enrolled with the Bar Council of India are entitled to practice law, however there is no bar to a foreign lawyer to conduct arbitration in India especially if the matter is governed by an international commercial arbitration agreement. A commercial dispute between DEF Pvt. Ltd and GHI Pvt. Ltd. were instituted under the Arbitration and Conciliation Act, 1996. Your senior asked you to fraudulently incorporate an international commercial arbitration clause in the agreement between the parties in order to bring a foreign lawyer for making contentions in the matter. How would you handle the above situation as far as balancing your professional obligations and ethical responsibilities are concerned ?
                                         </FormLabel>
                                         <Textarea
                                             required

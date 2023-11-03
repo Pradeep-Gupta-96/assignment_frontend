@@ -133,6 +133,9 @@ const ProgresA = () => {
                 // Handle successful response
                 const data = await response.json();
                 localStorage.setItem("yashodanandB", "yashodanandB")
+                // Save the current time in local storage
+                const currentTime = new Date().getTime();
+                localStorage.setItem('currentStartTime', currentTime.toString());
                 // Redirect to another page or perform other actions
                 navigate(`/progresb/${id}`);
             } else {
@@ -392,7 +395,7 @@ const ProgresA = () => {
                                                         <MenuItem value={"MNLU-Nagpur"}>MNLU-Nagpur</MenuItem>
                                                         <MenuItem value={"Bangalore Law College- Bang"}>Bangalore Law College- Bang</MenuItem>
                                                         <MenuItem value={"KC Law College- Mumbai"}>KC Law College- Mumbai</MenuItem>
-                                                        <MenuItem value={"other colleges"}>other colleges</MenuItem>
+                                                        <MenuItem value={"other colleges"}>other </MenuItem>
                                                     </Select>
                                                 </FormControl>
                                             </div>
@@ -445,7 +448,7 @@ const ProgresA = () => {
                                                         <MenuItem value={"G J Advani law college"}>G J Advani law college</MenuItem>
                                                         <MenuItem value={"GGSIP University"}>GGSIP University</MenuItem>
                                                         <MenuItem value={"KC Law College- Mumbai"}>KC Law College- Mumbai</MenuItem>
-                                                        <MenuItem value={"other university"}>other university</MenuItem>
+                                                        <MenuItem value={"other university"}>other </MenuItem>
                                                     </Select>
                                                 </FormControl>
                                             </div>
@@ -597,7 +600,6 @@ const ProgresA = () => {
                                     <p className='terms-cond'><strong>Please Read the Following Terms and Conditions:</strong><br />
                                         1. The test time will be 45 minutes.<br />
                                         2. Some questions will be objective and some subjective.<br />
-                                        3. There are total 4 Parts comprising of Part A, Part B, Part C and Part D<br />
                                         4. All questions are mandatory.<br />
                                         5. There shall be no negative marking.</p>
                                 </Grid>

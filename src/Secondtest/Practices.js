@@ -13,6 +13,7 @@ import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAuto
 import { styled } from '@mui/system';
 import videobg from '../images/background-video.mp4';
 import TimmerCompo from '../forms/TimmerCompo';
+import { egotiation } from './Questionpart/SkillBasedQuestion';
 
 const Textarea = styled(BaseTextareaAutosize)(
     ({ theme }) => `
@@ -51,10 +52,11 @@ const getRandomQuestions = (questions, count) => {
 };
 
 const Practices = () => {
-    const [sectionA1] = useState(() => getRandomQuestions(allQuestionsA1, 5));
+    const [Sillbased] = useState(() => getRandomQuestions(egotiation, 3));
+    const [sectionA1] = useState(() => getRandomQuestions(allQuestionsA1, 3));
     const [sectionB] = useState(() => getRandomQuestions(allQuestionsB, 2));
     const [sectionC] = useState(() => getRandomQuestions(allQuestionsC, 2));
-    const [sectionD] = useState(() => getRandomQuestions(allQuestionsD, 6));
+    const [sectionD] = useState(() => getRandomQuestions(allQuestionsD, 7));
 
     const id = localStorage.getItem("id");
     const navigate = useNavigate()
@@ -165,6 +167,8 @@ const Practices = () => {
             if (response.ok) {
                 // Handle successful response
                 await response.json();
+                // clear localstorage
+                localStorage.clear()
                 // Redirect to another page or perform other actions
                 navigate('/successpage');
             } else {
@@ -203,11 +207,31 @@ const Practices = () => {
     return (
         <>
             <Box className='top-form' component="form" >
-                {/* <TimmerCompo targetTime={targetTime} onTimeout={Submit} /> */}
+                <TimmerCompo targetTime={targetTime} onTimeout={Submit} />
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={12}>
                         <div className='section A'>
                             <h3>PART A</h3>
+                            {Sillbased.map((questionData, index) => (
+                                <FormControl key={index} className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
+                                    <FormLabel sx={{ marginBottom: "15px" }} component="legend">
+                                        Q {index + 1}:- {questionData.question}
+                                    </FormLabel>
+                                    {questionData.options.map((option, optionIndex) => (
+                                        <FormControlLabel
+                                            key={optionIndex}
+                                            control={
+                                                <Checkbox
+                                                    name={questionData.PartA}
+                                                    value={(optionIndex + 1).toString()} // Set the value to the selected option (e.g., "1" for option A)
+                                                    onChange={handleChangePartA}
+                                                />
+                                            }
+                                            label={option}
+                                        />
+                                    ))}
+                                </FormControl>
+                            ))}
                             {sectionA1.map((questionData, index) => (
                                 <FormControl key={index} className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
                                     <FormLabel sx={{ marginBottom: "15px" }} component="legend">
@@ -245,7 +269,7 @@ const Practices = () => {
                                         onChange={handleChangePartB}
                                         aria-label="maximum height"
                                         minRows={3}
-                                        placeholder="maximum 250 Word"
+                                        placeholder="Maximum 250 Words"
                                         onPaste={(e) => e.preventDefault()}
                                     />
                                 </FormControl>
@@ -267,7 +291,7 @@ const Practices = () => {
                                         onChange={handleChangePartC}
                                         aria-label="maximum height"
                                         minRows={3}
-                                        placeholder="maximum 250 Word"
+                                        placeholder="Maximum 250 Words"
                                         onPaste={(e) => e.preventDefault()}
                                     />
                                 </FormControl>
