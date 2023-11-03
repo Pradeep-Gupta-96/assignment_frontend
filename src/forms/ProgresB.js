@@ -21,6 +21,7 @@ const steps = [
     'Preliminary Details',
     'Aptitude',
     'Ethical',
+    'Technical '
 ];
 
 
@@ -42,9 +43,6 @@ const ProgresB = () => {
             navigate(`/progresa`)
         }
     }, [])
-
-
-
 
     return (
         <>

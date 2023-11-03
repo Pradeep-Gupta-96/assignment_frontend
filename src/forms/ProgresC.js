@@ -18,7 +18,9 @@ const steps = [
     'Preliminary Details',
     'Aptitude',
     'Ethical',
+    'Technical '
 ];
+
 const Textarea = styled(BaseTextareaAutosize)(
     ({ theme }) => `
     width: 100%;
@@ -63,7 +65,6 @@ const ProgresC = () => {
     };
 
     const id = localStorage.getItem('id');
-    console.log("C", id)
 
     const handleSubmit = async (event) => {
         try {
@@ -85,7 +86,9 @@ const ProgresC = () => {
                 // Handle successful response
                 await response.json();
                 // Redirect to another page or perform other actions
-                navigate('/successpage');
+                localStorage.setItem("yashodanandD", "yashodanandD")
+                // Redirect to another page or perform other actions
+                navigate(`/progresd/${id}`);
             } else {
                 // Handle error response
                 console.error('Error:', response.statusText);

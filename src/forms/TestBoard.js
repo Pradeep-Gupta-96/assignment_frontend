@@ -2,15 +2,17 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProgresA from './ProgresA';
 import ProgresB from './ProgresB';
+import ProgresC from './ProgresC';
 
 const TestBoard = () => {
     const navigate = useNavigate();
     const sectA = localStorage.getItem('yashodanandA');
     const sectB = localStorage.getItem('yashodanandB');
     const sectC = localStorage.getItem('yashodanandC');
+    const sectD = localStorage.getItem('yashodanandD');
 
-    // Check the presence of sectA, sectB, and sectC and decide what to render
-    if (sectA && sectB && sectC) {
+    // Check the presence of sectA, sectB, sectC and sectD decide what to render
+    if (sectA && sectB && sectC && sectD) {
         return (
             <>
                 <ProgresA   />
@@ -21,6 +23,13 @@ const TestBoard = () => {
             <>
                 <ProgresA />
                 <ProgresB />
+            </>
+        );
+    } else if (sectB && sectC) {
+        return (
+            <>
+                <ProgresB />
+                <ProgresC />
             </>
         );
     } else if (sectA) {

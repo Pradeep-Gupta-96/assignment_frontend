@@ -10,8 +10,9 @@ import videobg from '../images/background-video.mp4';
 
 const steps = [
     'Preliminary Details',
-    'Experience',
-    'Step 3',
+    'Aptitude',
+    'Ethical',
+    'Technical '
 ];
 
 const Successpage = () => {
@@ -39,7 +40,7 @@ const Successpage = () => {
                 <div className="bound">
                     <div className="form-box">
                         <Box className="prog-bar" sx={{ width: '100%' }}>
-                            <Stepper activeStep={3} alternativeLabel>
+                            <Stepper activeStep={4} alternativeLabel>
                                 {steps.map((label) => (
                                     <Step key={label}>
                                         <StepLabel>{label}</StepLabel>

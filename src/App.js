@@ -7,8 +7,8 @@ import ProgresC from './forms/ProgresC';
 import TestBoard from './forms/TestBoard';
 import Successpage from './forms/Successpage';
 import Dashboard from './Dashboard/Dashboard';
-import Finalsuccess from './Secondtest/Finalsuccess';
 import Practices from './Secondtest/Practices';
+import ProgresD from './forms/ProgresD';
 
 
 
@@ -21,9 +21,9 @@ function App() {
     { path: "/progresa", element: <ProgresA/> },
     { path: "/progresb/:id", element: <ProgresB/> },
     { path: "/progresc/:id", element: <ProgresC/> },
+    { path: "/Progresd/:id", element: <ProgresD/> },
     { path: "/successpage", element: <Successpage/> },
     { path: "/dashboard", element: <Dashboard/> },
-    { path: "/finalsuccess", element: <Finalsuccess/> },
     { path: "/practices", element: <Practices/> },
   
   ]
