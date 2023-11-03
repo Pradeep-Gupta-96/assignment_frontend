@@ -20,7 +20,8 @@ import videobg from '../images/background-video.mp4';
 const steps = [
     'Preliminary Details',
     'Aptitude',
-    'Ethics',
+    'Ethical',
+    'Technical '
 ];
 
 
@@ -42,9 +43,6 @@ const ProgresB = () => {
             navigate(`/progresa`)
         }
     }, [])
-
-
-
 
     return (
         <>

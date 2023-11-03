@@ -166,7 +166,7 @@ const Practices = () => {
                 // Handle successful response
                 await response.json();
                 // Redirect to another page or perform other actions
-                navigate('/finalsuccess');
+                navigate('/successpage');
             } else {
                 // Handle error response
                 console.error('Error:', response.statusText);
@@ -202,126 +202,108 @@ const Practices = () => {
 
     return (
         <>
-            <div className="header">
-                <div className="bound">
-                    <div className="topsec">
-                        <div className="logo"><Link className="nav-Link" to="/"><img src={logo} alt="Logo" /></Link></div>
-                        <div className="menu">
-                            <Link to="https://www.arenesslaw.com/career/" className='toggle-menu'>Search More Jobs</Link>
+            <Box className='top-form' component="form" >
+                {/* <TimmerCompo targetTime={targetTime} onTimeout={Submit} /> */}
+                <Grid container spacing={2}>
+                    <Grid item xs={12} sm={12}>
+                        <div className='section A'>
+                            <h3>PART A</h3>
+                            {sectionA1.map((questionData, index) => (
+                                <FormControl key={index} className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
+                                    <FormLabel sx={{ marginBottom: "15px" }} component="legend">
+                                        Q {index + 1}:- {questionData.question}
+                                    </FormLabel>
+                                    {questionData.options.map((option, optionIndex) => (
+                                        <FormControlLabel
+                                            key={optionIndex}
+                                            control={
+                                                <Checkbox
+                                                    name={questionData.PartA}
+                                                    value={(optionIndex + 1).toString()} // Set the value to the selected option (e.g., "1" for option A)
+                                                    onChange={handleChangePartA}
+                                                />
+                                            }
+                                            label={option}
+                                        />
+                                    ))}
+                                </FormControl>
+                            ))}
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div className="form-sce">
-                <video className='background-video' autoPlay loop muted > <source src={videobg} type="video/mp4" /> </video>
-                <div className="bound">
-                    <div className="form-box">
-                        <h3>Assessment Intern</h3>
-                        <Box className='top-form' component="form" >
-                            <TimmerCompo targetTime={targetTime} onTimeout={Submit} />
-                            <Grid container spacing={2}>
-                                <Grid item xs={12} sm={12}>
-                                    <div className='section A'>
-                                        <h3>PART A</h3>
-                                        {sectionA1.map((questionData, index) => (
-                                            <FormControl key={index} className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
-                                                <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                                    Q {index + 1}:- {questionData.question}
-                                                </FormLabel>
-                                                {questionData.options.map((option, optionIndex) => (
-                                                    <FormControlLabel
-                                                        key={optionIndex}
-                                                        control={
-                                                            <Checkbox
-                                                                name={questionData.PartA}
-                                                                value={(optionIndex + 1).toString()} // Set the value to the selected option (e.g., "1" for option A)
-                                                                onChange={handleChangePartA}
-                                                            />
-                                                        }
-                                                        label={option}
-                                                    />
-                                                ))}
-                                            </FormControl>
-                                        ))}
-                                    </div>
-                                    <div className='section B'>
-                                        <h3>PART B</h3>
-                                        {sectionB.map((question, index) => (
-                                            <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
-                                                <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                                    Q {index + 1}:- {question.Question}
-                                                </FormLabel>
-                                                <Textarea
-                                                    required
-                                                    id={`outlined-required-${index}`}
-                                                    label="Answer"
-                                                    name={question.PartB}
-                                                    value={formDataPartB[question.PartB]}
-                                                    onChange={handleChangePartB}
-                                                    aria-label="maximum height"
-                                                    minRows={3}
-                                                    placeholder="Maximum 250 Words"
-                                                    onPaste={(e) => e.preventDefault()}
+                        <div className='section B'>
+                            <h3>PART B</h3>
+                            {sectionB.map((question, index) => (
+                                <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
+                                    <FormLabel sx={{ marginBottom: "15px" }} component="legend">
+                                        Q {index + 1}:- {question.Question}
+                                    </FormLabel>
+                                    <Textarea
+                                        required
+                                        id={`outlined-required-${index}`}
+                                        label="Answer"
+                                        name={question.PartB}
+                                        value={formDataPartB[question.PartB]}
+                                        onChange={handleChangePartB}
+                                        aria-label="maximum height"
+                                        minRows={3}
+                                        placeholder="maximum 250 Word"
+                                        onPaste={(e) => e.preventDefault()}
+                                    />
+                                </FormControl>
+                            ))}
+                        </div>
+                        <div className='section C'>
+                            <h3>PART C</h3>
+                            {sectionC.map((question, index) => (
+                                <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
+                                    <FormLabel sx={{ marginBottom: "15px" }} component="legend">
+                                        Q {index + 1}:- {question.Question}
+                                    </FormLabel>
+                                    <Textarea
+                                        required
+                                        id={`outlined-required-${index}`}
+                                        label="Answer"
+                                        name={question.PartC}
+                                        value={formDataPartC[question.PartC]}
+                                        onChange={handleChangePartC}
+                                        aria-label="maximum height"
+                                        minRows={3}
+                                        placeholder="maximum 250 Word"
+                                        onPaste={(e) => e.preventDefault()}
+                                    />
+                                </FormControl>
+                            ))}
+                        </div>
+                        <div className='section D'>
+                            <h3>PART D</h3>
+                            {sectionD.map((questionData, index) => (
+                                <FormControl key={index} className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
+                                    <FormLabel sx={{ marginBottom: "15px" }} component="legend">
+                                        Q {index + 1}:- {questionData.question}
+                                    </FormLabel>
+                                    {questionData.options.map((option, optionIndex) => (
+                                        <FormControlLabel
+                                            key={optionIndex}
+                                            control={
+                                                <Checkbox
+                                                    name={questionData.PartD}
+                                                    value={(optionIndex + 1).toString()} // Set the value to the selected option (e.g., "1" for option A)
+                                                    onChange={handleChangePartD}
                                                 />
-                                            </FormControl>
-                                        ))}
-                                    </div>
-                                    <div className='section C'>
-                                        <h3>PART C</h3>
-                                        {sectionC.map((question, index) => (
-                                            <FormControl key={index} className="question-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
-                                                <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                                    Q {index + 1}:- {question.Question}
-                                                </FormLabel>
-                                                <Textarea
-                                                    required
-                                                    id={`outlined-required-${index}`}
-                                                    label="Answer"
-                                                    name={question.PartC}
-                                                    value={formDataPartC[question.PartC]}
-                                                    onChange={handleChangePartC}
-                                                    aria-label="maximum height"
-                                                    minRows={3}
-                                                    placeholder="Maximum 250 Words"
-                                                    onPaste={(e) => e.preventDefault()}
-                                                />
-                                            </FormControl>
-                                        ))}
-                                    </div>
-                                    <div className='section D'>
-                                        <h3>PART D</h3>
-                                        {sectionD.map((questionData, index) => (
-                                            <FormControl key={index} className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
-                                                <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                                    Q {index + 1}:- {questionData.question}
-                                                </FormLabel>
-                                                {questionData.options.map((option, optionIndex) => (
-                                                    <FormControlLabel
-                                                        key={optionIndex}
-                                                        control={
-                                                            <Checkbox
-                                                                name={questionData.PartD}
-                                                                value={(optionIndex + 1).toString()} // Set the value to the selected option (e.g., "1" for option A)
-                                                                onChange={handleChangePartD}
-                                                            />
-                                                        }
-                                                        label={option}
-                                                    />
-                                                ))}
-                                            </FormControl>
-                                        ))}
+                                            }
+                                            label={option}
+                                        />
+                                    ))}
+                                </FormControl>
+                            ))}
 
-                                    </div>
-                                </Grid>
-                            </Grid>
-                        </Box>
-                        <Box sx={{ width: '100%' }} className="bottom-form">
-                            <Button style={{ opacity: "0" }} className="blue-btn"></Button>
-                            <Button className="blue-btn" onClick={Submit}>Submit</Button>
-                        </Box>
-                    </div>
-                </div>
-            </div>
+                        </div>
+                    </Grid>
+                </Grid>
+            </Box>
+            <Box sx={{ width: '100%' }} className="bottom-form">
+                <Link className='back-link' to={`/progresc/${id}`}>Back</Link>
+                <Button className="blue-btn" onClick={Submit}>Submit</Button>
+            </Box>
         </>
     );
 };

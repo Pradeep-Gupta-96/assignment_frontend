@@ -48,7 +48,8 @@ const skillsOptions = [
 const steps = [
     'Preliminary Details',
     'Aptitude',
-    'Ethics',
+    'Ethical',
+    'Technical '
 ];
 
 const ProgresA = () => {
@@ -63,7 +64,6 @@ const ProgresA = () => {
         college: '',
         course_duration: '',
         course: '',
-
         publications: '',
         publicationslink: '',
         Class10Education: "",
@@ -153,7 +153,7 @@ const ProgresA = () => {
     }, [])
 
 
-    // const onSubmit1 = async () => {
+    // const onSubmit = async () => {
     //     try {
     //         const API = `http://localhost:4000/api/updateTodo2/${id}`; // Include the ID in the API URL
 
