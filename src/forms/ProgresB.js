@@ -19,8 +19,8 @@ import videobg from '../images/background-video.mp4';
 
 const steps = [
     'Preliminary Details',
-    'Experience',
-    'Step 3',
+    'Aptitude',
+    'Ethical',
 ];
 
 
