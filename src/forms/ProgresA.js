@@ -594,6 +594,12 @@ const ProgresA = () => {
                                             accept="application/pdf" // Change to allow PDF files
                                         />
                                     </FormControl>
+                                    <p className='terms-cond'><strong>Please Read the Following Terms and Conditions:</strong><br />
+                                        1. The test time will be 45 minutes.<br />
+                                        2. Some questions will be objective and some subjective.<br />
+                                        3. There are total 4 Parts comprising of Part A, Part B, Part C and Part D<br />
+                                        4. All questions are mandatory.<br />
+                                        5. There shall be no negative marking.</p>
                                 </Grid>
                             </Grid>
                         </Box>

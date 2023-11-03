@@ -49,20 +49,11 @@ const Successpage = () => {
                             </Stepper>
                         </Box>
                         <h3 style={{textAlign:'center', color:'green'}}>Application Applied Successfully</h3>
-                        <p className='terms-cond'><strong>Please read the following terms and conditions:</strong><br />
-                            1. The test time will be 45 minutes.<br />
-                            2. Some questions will be objective and some subjective.<br />
-                            3. There are total 4 Parts comprising of Part A, Part B, Part C and Part D<br />
-                            4. All questions are mandatory.<br />
-                            5. There shall be no negative marking.</p>
                         <Link
                             style={{ textAlign: 'center', display: 'inherit' }}
                             className="back-link"
                             onClick={saveCurrentTime}
-                            to="/practices"
-                        >
-                            Please Click Here for Second Round Assessment Test
-                        </Link>
+                            to="/" >Go to Home Page</Link>
                     </div>
                 </div>
             </div>
