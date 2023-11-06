@@ -88,12 +88,14 @@ export const allQuestionsA1 = [
     },
     {
         PartA: "Answer9_PartA",
-        question: ` Choose the most appropriate answer
-        Which of the following activity/activities are invalid under Section 3 of the anti-competitive agreement of the Competition Act, 2002
+        question: (<div>
+            Choose the most appropriate answer<br />
+        Which of the following activity/activities are invalid under Section 3 of the anti-competitive agreement of the Competition Act, 2002<br />
         
-        A. An agreement containing a clause regarding services not likely to cause an appreciable adverse effect on competition in India
-        B. An agreement containing a clause that there will be a discontinuation in the supply of goods if the dealer is also dealing in products of the supplier’s competition.
-        C. An agreement containing a clause that determines purchase or sale prices`,
+        A. An agreement containing a clause regarding services not likely to cause an appreciable adverse effect on competition in India<br />
+        B. An agreement containing a clause that there will be a discontinuation in the supply of goods if the dealer is also dealing in products of the supplier’s competition.<br />
+        C. An agreement containing a clause that determines purchase or sale prices
+        </div>),
         options: [
             "A. A and B are correct",
             "B. (B) and (C) are correct",

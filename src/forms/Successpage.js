@@ -53,7 +53,7 @@ const Successpage = () => {
                             style={{ textAlign: 'center', display: 'inherit' }}
                             className="back-link"
                             onClick={saveCurrentTime}
-                            to="/" >Go to Home Page</Link>
+                            to="/" >Back to Job Posting</Link>
                     </div>
                 </div>
             </div>

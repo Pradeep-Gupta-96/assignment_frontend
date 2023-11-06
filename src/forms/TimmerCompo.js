@@ -25,7 +25,7 @@ const TimmerCompo = ({ targetTime, onTimeout }) => {
   return (
     <div>
       <div className="timmer">
-      <h3>Countdown Timer</h3>
+      {/* <h3>Countdown Timer</h3> */}
         Time Left: <strong>{minutes} : {seconds}</strong>
       </div>
     </div>

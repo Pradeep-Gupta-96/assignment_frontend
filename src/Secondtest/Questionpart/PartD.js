@@ -77,7 +77,7 @@ export const allQuestionsD = [
             "A. They are rules and regulations to be followed by all the insurance service offering companies",
             "B. It is a framework for testing of innovative financial services products in a controlled manner",
             "C. It is a window system to get all the licenses for retail startups",
-            "D. They are a basket of central Banks's regulatory laws that needs to be followed by cooperative banks",
+            "D. They are a basket of central banks's regulatory laws that needs to be followed by cooperative banks",
         ],
     },
     {
