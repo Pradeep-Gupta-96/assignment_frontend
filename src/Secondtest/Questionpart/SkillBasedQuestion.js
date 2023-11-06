@@ -1,32 +1,32 @@
  export const egotiation=[
     {
         PartA: "Answer1_PartA",
-        question: "An arbitral agreement should NOT have the following?",
+        question: "Which of the following acts provides for the certification of films for exhibition in India?",
         options: [
-            "A. An Arbitration agreement may not be in writing.",
-            "B. Arbitration agreement by the parties to submit to arbitration all or certain disputes.",
-            "C. The arbitration agreement should have mentioned a place.",
-            "D. Arbitration Agreement should bear a date.",
+            "A. Copyright Act, 1957",
+            "B. Cinematograph Act, 1952",
+            "C. Prasar Bharti Act, 1990",
+            "D. Cable Networks Act, 1995",
         ],
     },
     {
         PartA: "Answer2_PartA",
-        question: "Where the place of arbitration is situated in India, the arbitration other than an international commercial arbitration, the arbitral tribunal shall decide the dispute submitted to arbitration:",
+        question: "Which of the following acts protects the copyright of literary, dramatic, musical, and artistic works, including cinematograph films, in India?",
         options: [
-            "A. In accordance with the special law for the time being in force in India.",
-            "B. In accordance with the substantive law for the time being in force in India.",
-            "C. In accordance with the general law for the time being in force in India.",
-            "D. In accordance with the common law for the time being in force in India.",
+            "A. Copyright Act, 1957",
+            "B. Cinematograph Act, 1952",
+            "C. Prasar Bharti Act, 1990",
+            "D. Cable Networks Act, 1995 ",
         ],
     },
     {
         PartA: "Answer3_PartA",
-        question: "Chapters I of Part II of the Arbitration and Conciliation Act, 1996 deals with the enforcement of certain foreign awards made under:",
+        question: "Which of the following act regulates the broadcasting of television and radio programs in India? ",
         options: [
-            "A. The Geneva Convention",
-            "B. The New York and Geneva Conventions",
-            "C. The New York Convention",
-            "D. None of the above."
+            "A. Copyright Act, 1957",
+            "B. Cinematograph Act, 1952",
+            "C. Prasar Bharti Act, 1990",
+            "D. Cable Networks Act, 1995",
         ],
     },
     {
