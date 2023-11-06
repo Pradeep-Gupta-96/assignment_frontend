@@ -278,20 +278,6 @@ const ProgresA = () => {
                                                         <MenuItem value="">
                                                             <em>None</em>
                                                         </MenuItem>
-                                                        <MenuItem value={"Insolvency and Bankruptcy Code"}>Insolvency and Bankruptcy Code</MenuItem>
-                                                        <MenuItem value={"Corporate Restructuring"}>Corporate Restructuring</MenuItem>
-                                                        <MenuItem value={"Banking"}>Banking</MenuItem>
-                                                        <MenuItem value={"Finance"}>Finance</MenuItem>
-                                                        <MenuItem value={"Intellectual Property Rights"}>Intellectual Property Rights</MenuItem>
-                                                        <MenuItem value={"Data Privacy"}>Data Privacy</MenuItem>
-                                                        <MenuItem value={"Litigation"}>Litigation</MenuItem>
-                                                        <MenuItem value={"Sports Law"}>Sports Law</MenuItem>
-                                                        <MenuItem value={"Arbitration"}>Arbitration</MenuItem>
-                                                        <MenuItem value={"Aviation"}>Aviation</MenuItem>
-                                                        <MenuItem value={"Employment and Labour Laws"}>Employment and Labour Laws</MenuItem>
-                                                        <MenuItem value={"Mergers and Acquisition"}>Mergers and Acquisition</MenuItem>
-                                                        <MenuItem value={"Public Policy"}>Public Policy</MenuItem>
-                                                        <MenuItem value={"White Collar Crimes"}>White Collar Crimes</MenuItem>
                                                         <MenuItem value={"Entertainment_and_Media_Law"}>Entertainment and Media Law </MenuItem>
                                                         <MenuItem value={"Capital_Market_Securities"}>Capital Market Securities </MenuItem>
                                                         <MenuItem value={"Banking_Law"}>Banking Law </MenuItem>
@@ -310,7 +296,22 @@ const ProgresA = () => {
                                                         <MenuItem value={"Competitive_and_Anti_Trust"}>Competitive and Anti Trust </MenuItem>
                                                         <MenuItem value={"AVIATION_LAW"}>AVIATION LAW </MenuItem>
                                                         <MenuItem value={"Environment"}>Environment </MenuItem>
-
+                                                        <MenuItem value={"Public_Policy"}>Public Policy </MenuItem>
+{/* 
+                                                        <MenuItem value={"Insolvency and Bankruptcy Code"}>Insolvency and Bankruptcy Code</MenuItem>
+                                                        <MenuItem value={"Corporate Restructuring"}>Corporate Restructuring</MenuItem>
+                                                        <MenuItem value={"Banking"}>Banking</MenuItem>
+                                                        <MenuItem value={"Finance"}>Finance</MenuItem>
+                                                        <MenuItem value={"Intellectual Property Rights"}>Intellectual Property Rights</MenuItem>
+                                                        <MenuItem value={"Data Privacy"}>Data Privacy</MenuItem>
+                                                        <MenuItem value={"Litigation"}>Litigation</MenuItem>
+                                                        <MenuItem value={"Sports Law"}>Sports Law</MenuItem>
+                                                        <MenuItem value={"Arbitration"}>Arbitration</MenuItem>
+                                                        <MenuItem value={"Aviation"}>Aviation</MenuItem>
+                                                        <MenuItem value={"Employment and Labour Laws"}>Employment and Labour Laws</MenuItem>
+                                                        <MenuItem value={"Mergers and Acquisition"}>Mergers and Acquisition</MenuItem>
+                                                        <MenuItem value={"Public Policy"}>Public Policy</MenuItem>
+                                                        <MenuItem value={"White Collar Crimes"}>White Collar Crimes</MenuItem> */}
                                                     </Select>
                                                 </FormControl>
                                             </div>

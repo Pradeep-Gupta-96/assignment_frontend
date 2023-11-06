@@ -32,7 +32,7 @@ import {
     Competitive_and_Anti_Trust,
     AVIATION_LAW,
     Environment,
-
+    Public_Policy,
 } from './Questionpart/SkillBasedQuestion';
 
 const Textarea = styled(BaseTextareaAutosize)(
@@ -111,6 +111,8 @@ const Practices = () => {
                 return AVIATION_LAW;
             case 'Environment':
                 return Environment;
+            case 'Public_Policy':
+                return Public_Policy;
             default:
                 // Default to Entertainment_and_Media_Law or any other default you prefer
                 return Entertainment_and_Media_Law;

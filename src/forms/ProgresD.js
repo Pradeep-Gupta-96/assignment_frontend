@@ -1,4 +1,4 @@
-import React, {  useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../images/logo.png'
 import Box from '@mui/material/Box';
@@ -55,7 +55,7 @@ const ProgresD = () => {
                                 ))}
                             </Stepper>
                         </Box>
-                            <Practices />
+                        <Practices />
                     </div>
                 </div>
             </div>
