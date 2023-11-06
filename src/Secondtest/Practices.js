@@ -13,7 +13,27 @@ import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAuto
 import { styled } from '@mui/system';
 import videobg from '../images/background-video.mp4';
 import TimmerCompo from '../forms/TimmerCompo';
-import { Entertainment_and_Media_Law } from './Questionpart/SkillBasedQuestion';
+import {
+    Entertainment_and_Media_Law,
+    Capital_Market_Securities,
+    Banking_Law,
+    Mediation_and_Conciliation,
+    Merger_Acquisition,
+    Sports_Law,
+    Intellectual_Property_Rights,
+    Labour_Laws,
+    International_Business_Law,
+    Startup_in_India_related_legal_Question,
+    Insurance_Law,
+    Joint_Venture_Public_private_partnership_and_MSME,
+    Tax_Law,
+    ARBITRATION,
+    IBC,
+    Competitive_and_Anti_Trust,
+    AVIATION_LAW,
+    Environment,
+
+} from './Questionpart/SkillBasedQuestion';
 
 const Textarea = styled(BaseTextareaAutosize)(
     ({ theme }) => `
@@ -52,7 +72,56 @@ const getRandomQuestions = (questions, count) => {
 };
 
 const Practices = () => {
-    const [Sillbased] = useState(() => getRandomQuestions(Entertainment_and_Media_Law, 3));
+
+    function getQuestionsForFieldOfInterest(fieldOfInterest) {
+        switch (fieldOfInterest) {
+            case 'Entertainment_and_Media_Law':
+                return Entertainment_and_Media_Law;
+            case 'Capital_Market_Securities':
+                return Capital_Market_Securities;
+            case 'Banking_Law':
+                return Banking_Law;
+            case 'Mediation_and_Conciliation':
+                return Mediation_and_Conciliation;
+            case 'Merger_Acquisition':
+                return Merger_Acquisition;
+            case 'Sports_Law':
+                return Sports_Law;
+            case 'Intellectual_Property_Rights':
+                return Intellectual_Property_Rights;
+            case 'Labour_Laws':
+                return Labour_Laws;
+            case 'International_Business_Law':
+                return International_Business_Law;
+            case 'Startup_in_India_related_legal_Question':
+                return Startup_in_India_related_legal_Question;
+            case 'Insurance_Law':
+                return Insurance_Law;
+            case 'Joint_Venture_Public_private_partnership_and_MSME':
+                return Joint_Venture_Public_private_partnership_and_MSME;
+            case 'Tax_Law':
+                return Tax_Law;
+            case 'ARBITRATION':
+                return ARBITRATION;
+            case 'IBC':
+                return IBC;
+            case 'Competitive_and_Anti_Trust':
+                return Competitive_and_Anti_Trust;
+            case 'AVIATION_LAW':
+                return AVIATION_LAW;
+            case 'Environment':
+                return Environment;
+            default:
+                // Default to Entertainment_and_Media_Law or any other default you prefer
+                return Entertainment_and_Media_Law;
+        }
+    }
+
+
+    const fieldOfInterest = localStorage.getItem("field_of_interest");
+    const selectedQuestions = getQuestionsForFieldOfInterest(fieldOfInterest);
+    const [Sillbased] = useState(() => getRandomQuestions(selectedQuestions, 3));
+
     const [sectionA1] = useState(() => getRandomQuestions(allQuestionsA1, 3));
     const [sectionB] = useState(() => getRandomQuestions(allQuestionsB, 2));
     const [sectionC] = useState(() => getRandomQuestions(allQuestionsC, 2));
@@ -235,7 +304,7 @@ const Practices = () => {
                             {sectionA1.map((questionData, index) => (
                                 <FormControl key={index} className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
                                     <FormLabel sx={{ marginBottom: "15px" }} component="legend">
-                                        Q {index + 1}:- {questionData.question}
+                                        Q {index + 4}:- {questionData.question}
                                     </FormLabel>
                                     {questionData.options.map((option, optionIndex) => (
                                         <FormControlLabel

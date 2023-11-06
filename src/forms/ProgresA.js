@@ -295,23 +295,23 @@ const ProgresA = () => {
                                                         <MenuItem value={"Mergers and Acquisition"}>Mergers and Acquisition</MenuItem>
                                                         <MenuItem value={"Public Policy"}>Public Policy</MenuItem>
                                                         <MenuItem value={"White Collar Crimes"}>White Collar Crimes</MenuItem>
-                                                        <MenuItem value={"Entertainment_and_Media_Law"}>Entertainment_and_Media_Law </MenuItem>
-                                                        <MenuItem value={"Capital_Market_Securities"}>Capital_Market_Securities </MenuItem>
-                                                        <MenuItem value={"Banking_Law"}>Banking_Law </MenuItem>
-                                                        <MenuItem value={"Mediation_and_Conciliation"}>Mediation_and_Conciliation </MenuItem>
-                                                        <MenuItem value={"Merger_Acquisition"}>Merger_Acquisition </MenuItem>
-                                                        <MenuItem value={"Sports_Law"}>Sports_Law </MenuItem>
+                                                        <MenuItem value={"Entertainment_and_Media_Law"}>Entertainment and Media Law </MenuItem>
+                                                        <MenuItem value={"Capital_Market_Securities"}>Capital Market Securities </MenuItem>
+                                                        <MenuItem value={"Banking_Law"}>Banking Law </MenuItem>
+                                                        <MenuItem value={"Mediation_and_Conciliation"}>Mediation and Conciliation </MenuItem>
+                                                        <MenuItem value={"Merger_Acquisition"}>Merger Acquisition </MenuItem>
+                                                        <MenuItem value={"Sports_Law"}>Sports Law </MenuItem>
                                                         <MenuItem value={"Intellectual_Property_Rights"}>Intellectual Property Rights </MenuItem>
-                                                        <MenuItem value={"Labour_Laws"}>Labour_Laws </MenuItem>
-                                                        <MenuItem value={"International_Business_Law"}>International_Business_Law </MenuItem>
-                                                        <MenuItem value={"Startup_in_India_related_legal_Question"}>Startup_in_India_related_legal_Question </MenuItem>
+                                                        <MenuItem value={"Labour_Laws"}>Labour Laws </MenuItem>
+                                                        <MenuItem value={"International_Business_Law"}>International Business_Law </MenuItem>
+                                                        <MenuItem value={"Startup_in_India_related_legal_Question"}>Startup in India related legal Question </MenuItem>
                                                         <MenuItem value={"Insurance_Law"}>Insurance_Law </MenuItem>
-                                                        <MenuItem value={"Joint_Venture_Public_private_partnership_and_MSME"} >Joint_Venture_Public_private_partnership_and_MSME</MenuItem>
-                                                        <MenuItem value={"Tax_Law"}>Tax_Law </MenuItem>
+                                                        <MenuItem value={"Joint_Venture_Public_private_partnership_and_MSME"} >Joint Venture Public private partnership and MSME</MenuItem>
+                                                        <MenuItem value={"Tax_Law"}>Tax Law </MenuItem>
                                                         <MenuItem value={"ARBITRATION"}>ARBITRATION </MenuItem>
                                                         <MenuItem value={"IBC"}>IBC </MenuItem>
-                                                        <MenuItem value={"Competitive_and_Anti_Trust"}>Competitive_and_Anti_Trust </MenuItem>
-                                                        <MenuItem value={"AVIATION_LAW"}>AVIATION_LAW </MenuItem>
+                                                        <MenuItem value={"Competitive_and_Anti_Trust"}>Competitive and Anti Trust </MenuItem>
+                                                        <MenuItem value={"AVIATION_LAW"}>AVIATION LAW </MenuItem>
                                                         <MenuItem value={"Environment"}>Environment </MenuItem>
 
                                                     </Select>
