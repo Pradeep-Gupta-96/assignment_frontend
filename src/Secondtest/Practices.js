@@ -13,7 +13,7 @@ import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAuto
 import { styled } from '@mui/system';
 import videobg from '../images/background-video.mp4';
 import TimmerCompo from '../forms/TimmerCompo';
-import { egotiation } from './Questionpart/SkillBasedQuestion';
+import { Entertainment_and_Media_Law } from './Questionpart/SkillBasedQuestion';
 
 const Textarea = styled(BaseTextareaAutosize)(
     ({ theme }) => `
@@ -52,7 +52,7 @@ const getRandomQuestions = (questions, count) => {
 };
 
 const Practices = () => {
-    const [Sillbased] = useState(() => getRandomQuestions(egotiation, 3));
+    const [Sillbased] = useState(() => getRandomQuestions(Entertainment_and_Media_Law, 3));
     const [sectionA1] = useState(() => getRandomQuestions(allQuestionsA1, 3));
     const [sectionB] = useState(() => getRandomQuestions(allQuestionsB, 2));
     const [sectionC] = useState(() => getRandomQuestions(allQuestionsC, 2));
