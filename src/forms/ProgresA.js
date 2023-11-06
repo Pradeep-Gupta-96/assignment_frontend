@@ -72,9 +72,6 @@ const ProgresA = () => {
         Class12Education: "",
         Class12_percentage: "",
         Class12_year_of_passing: "",
-        graduation_university: "",
-        graduation_percentage: "",
-        graduation_year_of_passing: "",
         masters_university: "",
         masters_percentage: "",
         masters_year_of_passing: "",
@@ -94,7 +91,8 @@ const ProgresA = () => {
         );
     };
 
-
+    // Set field_of_interest in local storage
+    localStorage.setItem("field_of_interest", formData.field_of_interest);
 
     const handleAvatarChange = (event) => {
         const file = event.target.files[0];
@@ -294,6 +292,25 @@ const ProgresA = () => {
                                                         <MenuItem value={"Mergers and Acquisition"}>Mergers and Acquisition</MenuItem>
                                                         <MenuItem value={"Public Policy"}>Public Policy</MenuItem>
                                                         <MenuItem value={"White Collar Crimes"}>White Collar Crimes</MenuItem>
+                                                        <MenuItem value={"Entertainment_and_Media_Law"}>Entertainment and Media Law </MenuItem>
+                                                        <MenuItem value={"Capital_Market_Securities"}>Capital Market Securities </MenuItem>
+                                                        <MenuItem value={"Banking_Law"}>Banking Law </MenuItem>
+                                                        <MenuItem value={"Mediation_and_Conciliation"}>Mediation and Conciliation </MenuItem>
+                                                        <MenuItem value={"Merger_Acquisition"}>Merger Acquisition </MenuItem>
+                                                        <MenuItem value={"Sports_Law"}>Sports Law </MenuItem>
+                                                        <MenuItem value={"Intellectual_Property_Rights"}>Intellectual Property Rights </MenuItem>
+                                                        <MenuItem value={"Labour_Laws"}>Labour Laws </MenuItem>
+                                                        <MenuItem value={"International_Business_Law"}>International Business_Law </MenuItem>
+                                                        <MenuItem value={"Startup_in_India_related_legal_Question"}>Startup in India related legal Question </MenuItem>
+                                                        <MenuItem value={"Insurance_Law"}>Insurance_Law </MenuItem>
+                                                        <MenuItem value={"Joint_Venture_Public_private_partnership_and_MSME"} >Joint Venture Public private partnership and MSME</MenuItem>
+                                                        <MenuItem value={"Tax_Law"}>Tax Law </MenuItem>
+                                                        <MenuItem value={"ARBITRATION"}>ARBITRATION </MenuItem>
+                                                        <MenuItem value={"IBC"}>IBC </MenuItem>
+                                                        <MenuItem value={"Competitive_and_Anti_Trust"}>Competitive and Anti Trust </MenuItem>
+                                                        <MenuItem value={"AVIATION_LAW"}>AVIATION LAW </MenuItem>
+                                                        <MenuItem value={"Environment"}>Environment </MenuItem>
+
                                                     </Select>
                                                 </FormControl>
                                             </div>
