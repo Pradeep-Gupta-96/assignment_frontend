@@ -41,7 +41,7 @@ button.blue-btn:hover,.blue-btn:hover {color: #1976d2;}
 form.top-form {padding-bottom: 100px;min-height: 450px;padding-top: 10px;}
 form.top-form label,.checkbox-row legend { font-weight: 600;color: #000 !important;}
 form.top-form input,form.top-form label,form.top-form .MuiOutlinedInput-root,.MuiMenu-list li {font-family: 'Montserrat', sans-serif !important;}
-.bottom-form {border-top: 1px solid #ccc;display: flex;justify-content: space-between;align-items: center;position: fixed;bottom: 0px;background: #fff;max-width: 1160px;z-index: 9;background: #ededed;}
+.bottom-form {border-top: 5px solid rgba(0,0,0,.07);display: flex;justify-content: space-between;align-items: center;position: fixed;bottom: 0px;background: #fff;max-width: 1160px;z-index: 9;background: #ededed;}
 .form-sce {background: url(../src//images/main-banner.mp4) no-repeat center; background-size: cover;background-attachment: fixed;}
 .form-sce.sucess {background: none;}
 form.top-form .checkbox-row {display: flex;flex-direction: inherit;align-items: center;}
