@@ -46,17 +46,33 @@ const ProgresB = () => {
         });
     };
 
-    console.log(formData)
+    const API = `http://localhost:4000/api/updateTodo2/${id}`;
 
     const onSubmit = async () => {
         try {
-            localStorage.setItem("yashodanandC", "yashodanandC")
-            navigate(`/progresc/${id}`);
+            const response = await fetch(API, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+    
+            if (response.ok) {
+                await response.json();
+                localStorage.setItem("yashodanandC", "yashodanandC");
+                navigate(`/progresc/${id}`);
+            } else {
+                const errorMessage = await response.text();
+                // Handle error response
+                console.error('Error:', response.statusText);
+            }
         } catch (error) {
-            console.error(error)
+           // Handle any errors that occur during the request
+            console.error('Update error:', error);
         }
-    }
-
+    };
+    
     useEffect(() => {
         if (!localStorage.getItem('yashodanandB')) {
             navigate(`/progresa`)

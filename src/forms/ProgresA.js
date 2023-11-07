@@ -53,46 +53,48 @@ const steps = [
 ];
 
 const ProgresA = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
         field_of_interest: '',
-        LinkedinURL: '',
+        linkedin_url: '',
         university: '',
         college: '',
         course_duration: '',
         course: '',
         publications: '',
-        publicationslink: '',
-        Class10Education: "",
-        Class10_percentage: "",
-        Class10_year_of_passing: "",
-        Class12Education: "",
-        Class12_percentage: "",
-        Class12_year_of_passing: "",
-        masters_university: "",
-        masters_percentage: "",
-        masters_year_of_passing: "",
-        LastInternshipDetails: "",
-        PreferredLocation: "",
+        publications_link: '',
+        class_10_education: '',
+        class_10_percentage: '',
+        class_10_year_of_passing: '',
+        class_12_education: '',
+        class_12_percentage: '',
+        class_12_year_of_passing: '',
+        masters_university: '',
+        masters_percentage: '',
+        masters_year_of_passing: '',
+        last_internship_details: '',
+        preferred_location: '',
     });
+
     const [avatar, setAvatar] = useState(null);
-    const [skills, setSkills] = React.useState([]);
+    const [skills, setSkills] = useState([]);
+    const [error, setError] = useState(null); // State to store error messages
 
     const handleChange1 = (event) => {
         const {
             target: { value },
         } = event;
         setSkills(
-            // On autofill we get a stringified value.
-            typeof value === 'string' ? value.split(',') : value,
+            // On autofill, we get a stringified value.
+            typeof value === 'string' ? value.split(',') : value
         );
     };
 
     // Set field_of_interest in local storage
-    localStorage.setItem("field_of_interest", formData.field_of_interest);
+    localStorage.setItem('field_of_interest', formData.field_of_interest);
 
     const handleAvatarChange = (event) => {
         const file = event.target.files[0];
@@ -107,30 +109,33 @@ const ProgresA = () => {
         });
     };
 
-    const id = localStorage.getItem("id");
+    const id = localStorage.getItem('id');
 
-    const onSubmit = async (event) => {
+    const onSubmit = async () => {
         try {
-            if (event) {
-                event.preventDefault();
+            const API = `http://localhost:4000/api/updateTodo1/${id}`; // Include the ID in the API URL
+
+            const formDataObject = new FormData();
+            for (const key in formData) {
+                formDataObject.append(key, formData[key]);
             }
-            // Check if 'id' is stored in local storage
 
-            const API = `http://localhost:4000/api/updateTodo1/${id}`; // Update the API endpoint
-
-            // Make the HTTP POST request
+            if (avatar) {
+                formDataObject.append('upload_resume', avatar); // Append the avatar file
+            }
+            // Append skills to the formDataObject
+            formDataObject.append('skills', skills.join(','));
+            
+            // Make the HTTP PUT request
             const response = await fetch(API, {
                 method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json', // Set the content type
-                },
-                body: JSON.stringify(formData), // Convert to JSON
+                body: formDataObject, // Send the FormData object
             });
 
             if (response.ok) {
                 // Handle successful response
-                const data = await response.json();
-                localStorage.setItem("yashodanandB", "yashodanandB")
+                await response.json();
+                localStorage.setItem('yashodanandB', 'yashodanandB');
                 // Save the current time in local storage
                 const currentTime = new Date().getTime();
                 localStorage.setItem('currentStartTime', currentTime.toString());
@@ -138,13 +143,57 @@ const ProgresA = () => {
                 navigate(`/progresb/${id}`);
             } else {
                 // Handle error response
-                console.error('Error:', response.statusText);
+                const errorMessage = await response.text();
+                const errorObj = JSON.parse(errorMessage);
+                if (errorObj.message) {
+                    setError(`${errorObj.message}`);
+                } else {
+                    setError('An error occurred while updating the data.');
+                }
             }
         } catch (error) {
             // Handle any errors that occur during the request
-            console.error('Form submission error:', error);
+            setError(error.message); // Store the error message in the state
+            console.error('Update error:', error);
         }
     };
+
+    // const onSubmit = async (event) => {
+    //     try {
+    //         if (event) {
+    //             event.preventDefault();
+    //         }
+    //         // Check if 'id' is stored in local storage
+
+    //         const API = `http://localhost:4000/api/updateTodo1/${id}`; // Update the API endpoint
+
+    //         // Make the HTTP POST request
+    //         const response = await fetch(API, {
+    //             method: 'PUT',
+    //             headers: {
+    //                 'Content-Type': 'application/json', // Set the content type
+    //             },
+    //             body: JSON.stringify(formData), // Convert to JSON
+    //         });
+
+    //         if (response.ok) {
+    //             // Handle successful response
+    //             const data = await response.json();
+    //             localStorage.setItem("yashodanandB", "yashodanandB")
+    //             // Save the current time in local storage
+    //             const currentTime = new Date().getTime();
+    //             localStorage.setItem('currentStartTime', currentTime.toString());
+    //             // Redirect to another page or perform other actions
+    //             navigate(`/progresb/${id}`);
+    //         } else {
+    //             // Handle error response
+    //             console.error('Error:', response.statusText);
+    //         }
+    //     } catch (error) {
+    //         // Handle any errors that occur during the request
+    //         console.error('Form submission error:', error);
+    //     }
+    // };
 
 
     useEffect(() => {
@@ -153,42 +202,7 @@ const ProgresA = () => {
         }
     }, [])
 
-
-    // const onSubmit = async () => {
-    //     try {
-    //         const API = `http://localhost:4000/api/updateTodo2/${id}`; // Include the ID in the API URL
-
-    //         const formDataObject = new FormData();
-    //         for (const key in formData) {
-    //             formDataObject.append(key, formData[key]);
-    //         }
-
-    //         if (avatar) {
-    //             formDataObject.append('UploadResume', avatar); // Append the avatar file
-    //         }
-
-    //         // Make the HTTP PUT request
-    //         const response = await fetch(API, {
-    //             method: 'PUT',
-    //             body: formDataObject, // Send the FormData object
-    //         });
-
-    //         if (response.ok) {
-    //             // Handle successful response
-    //             await response.json();
-    //             localStorage.setItem("yashodanandC", "yashodanandC")
-    //             navigate(`/progresc/${id}`);
-    //         } else {
-    //             // Handle error response
-    //             console.error('Error:', response.statusText);
-    //         }
-    //     } catch (error) {
-    //         // Handle any errors that occur during the request
-    //         console.error('Update error:', error);
-    //     }
-    // };
-
-
+    console.log(error)
 
     // const API1 = `http://localhost:4000/api/todo/${id}`;
     // const fetchData1 = React.useCallback(async () => {
@@ -297,7 +311,7 @@ const ProgresA = () => {
                                                         <MenuItem value={"AVIATION_LAW"}>AVIATION LAW </MenuItem>
                                                         <MenuItem value={"Environment"}>Environment </MenuItem>
                                                         <MenuItem value={"Public_Policy"}>Public Policy </MenuItem>
-{/* 
+                                                        {/* 
                                                         <MenuItem value={"Insolvency and Bankruptcy Code"}>Insolvency and Bankruptcy Code</MenuItem>
                                                         <MenuItem value={"Corporate Restructuring"}>Corporate Restructuring</MenuItem>
                                                         <MenuItem value={"Banking"}>Banking</MenuItem>
@@ -316,7 +330,7 @@ const ProgresA = () => {
                                                 </FormControl>
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="Linkedin URL" name='LinkedinURL' value={formData.LinkedinURL} onChange={handleChange} fullWidth />
+                                                <TextField required id="outlined-required" label="Linkedin URL" name='linkedin_url' value={formData.linkedin_url} onChange={handleChange} fullWidth />
                                             </div>
                                             <div className="class-box">
                                                 <FormControl fullWidth >
@@ -505,8 +519,8 @@ const ProgresA = () => {
                                                     <Select
                                                         labelId="10th_board"
                                                         id="demo-simple-select-helper"
-                                                        name='Class10Education'
-                                                        value={formData.Class10Education}
+                                                        name='class_10_education'
+                                                        value={formData.class_10_education}
                                                         label="Education Board"
                                                         onChange={handleChange}
                                                     >
@@ -519,11 +533,11 @@ const ProgresA = () => {
                                             </div>
                                             <div className="class-box">
                                                 <FormControl fullWidth>
-                                                    <TextField required id="outlined-required" label="Percentage" name='Class10_percentage' value={formData.Class10_percentage} onChange={handleChange} fullWidth />
+                                                    <TextField required id="outlined-required" label="Percentage" name='class_10_percentage' value={formData.class_10_percentage} onChange={handleChange} fullWidth />
                                                 </FormControl>
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="Year of Passing" name='Class10_year_of_passing' value={formData.Class10_year_of_passing} onChange={handleChange} fullWidth />
+                                                <TextField required id="outlined-required" label="Year of Passing" name='class_10_year_of_passing' value={formData.class_10_year_of_passing} onChange={handleChange} fullWidth />
                                             </div>
                                         </div>
                                         <div className="edu-class">
@@ -537,8 +551,8 @@ const ProgresA = () => {
                                                         labelId="12th_board"
                                                         id="demo-simple-select-helper"
                                                         label="Education Board"
-                                                        name='Class12Education'
-                                                        value={formData.Class12Education}
+                                                        name='class_12_education'
+                                                        value={formData.class_12_education}
                                                         onChange={handleChange}
                                                     >
                                                         <MenuItem value={"IB"}>IB</MenuItem>
@@ -549,11 +563,11 @@ const ProgresA = () => {
                                             </div>
                                             <div className="class-box">
                                                 <FormControl fullWidth>
-                                                    <TextField required id="outlined-required" label="Percentage" name='Class12_percentage' value={formData.Class12_percentage} onChange={handleChange} fullWidth />
+                                                    <TextField required id="outlined-required" label="Percentage" name='class_12_percentage' value={formData.class_12_percentage} onChange={handleChange} fullWidth />
                                                 </FormControl>
                                             </div>
                                             <div className="class-box">
-                                                <TextField required id="outlined-required" label="Year of Passing" name='Class12_year_of_passing' value={formData.Class12_year_of_passing} onChange={handleChange} fullWidth />
+                                                <TextField required id="outlined-required" label="Year of Passing" name='class_12_year_of_passing' value={formData.class_12_year_of_passing} onChange={handleChange} fullWidth />
                                             </div>
                                         </div>
                                         <div className="edu-class">
@@ -593,15 +607,15 @@ const ProgresA = () => {
                                         />
                                     </FormControl>
                                     {formData.publications === 'Yes' && (
-                                        <TextField required id="outlined-required" label="Publications Link" name='publicationslink' value={formData.publicationslink} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                        <TextField required id="outlined-required" label="Publications Link" name='publications_link' value={formData.publications_link} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
                                     )}
 
-                                    <TextField required id="outlined-required" label="Last Internship Details " name='LastInternshipDetails' value={formData.LastInternshipDetails} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                    <TextField required id="outlined-required" label="Last Internship Details " name='last_internship_details' value={formData.last_internship_details} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
 
                                     <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Preferred Location:</FormLabel>
-                                        <FormControlLabel name='PreferredLocation' value={"Delhi"} checked={formData.PreferredLocation === 'Delhi'} onChange={handleChange} control={<Checkbox />} label="Delhi" />
-                                        <FormControlLabel name='PreferredLocation' value={"Gurugram"} checked={formData.PreferredLocation === 'Gurugram'} onChange={handleChange} control={<Checkbox />} label="Gurugram" />
+                                        <FormControlLabel name='preferred_location' value={"Delhi"} checked={formData.preferred_location === 'Delhi'} onChange={handleChange} control={<Checkbox />} label="Delhi" />
+                                        <FormControlLabel name='preferred_location' value={"Gurugram"} checked={formData.preferred_location === 'Gurugram'} onChange={handleChange} control={<Checkbox />} label="Gurugram" />
                                     </FormControl>
                                     <FormControl className="checkbox-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
                                         <FormLabel sx={{ paddingBottom: "10px" }} component="legend">Upload Resume:</FormLabel>
@@ -625,6 +639,7 @@ const ProgresA = () => {
                         </Box>
                         <Box sx={{ width: '100%' }} className="bottom-form">
                             <Link className='back-link' to="/">Back</Link>
+                            {error && <div style={{ color: "#dc3232" }}>{error}</div>} {/* Display error message if there is an error */}
                             <Button className="blue-btn" onClick={onSubmit}>Next</Button>
                         </Box>
 

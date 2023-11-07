@@ -132,6 +132,66 @@ const Practices = () => {
     const id = localStorage.getItem("id");
     const navigate = useNavigate()
 
+    const [formDataInterestbased, setformDataInterestbased] = useState({
+        Answer1_Entertainment_and_Media_Law:'',
+        Answer2_Entertainment_and_Media_Law:'',
+        Answer3_Entertainment_and_Media_Law:'',
+        Answer1_Capital_Market_Securities:'',
+        Answer1_Banking_Law:'',
+        Answer2_Banking_Law:'',
+        Answer3_Banking_Law:'',
+        Answer1_Mediation_and_Conciliation:'',
+        Answer2_Mediation_and_Conciliation:'',
+        Answer3_Mediation_and_Conciliation:'',
+        Answer1_Merger_Acquisition:'',
+        Answer2_Merger_Acquisition:'',
+        Answer3_Merger_Acquisition:'',
+        Answer1_Sports_Law:'',
+        Answer2_Sports_Law:'',
+        Answer3_Sports_Law:'',
+        Answer1_Intellectual_Property_Rights:'',
+        Answer2_Intellectual_Property_Rights:'',
+        Answer3_Intellectual_Property_Rights:'',
+        Answer1_Labour_Laws:'',
+        Answer2_Labour_Laws:'',
+        Answer3_Labour_Laws:'',
+        Answer1_International_Business_Law:'',
+        Answer2_International_Business_Law:'',
+        Answer3_International_Business_Law:'',
+        Answer1_Startup_in_India_related_legal_Question:'',
+        Answer2_Startup_in_India_related_legal_Question:'',
+        Answer3_Startup_in_India_related_legal_Question:'',
+        Answer1_Insurance_Law:'',
+        Answer2_Insurance_Law:'',
+        Answer3_Insurance_Law:'',
+        Answer1_Joint_Venture_Public_private_partnership_and_MSME:'',
+        Answer2_Joint_Venture_Public_private_partnership_and_MSME:'',
+        Answer3_Joint_Venture_Public_private_partnership_and_MSME:'',
+        Answer1_Tax_Law:'',
+        Answer2_Tax_Law:'',
+        Answer3_Tax_Law:'',
+        Answer1_ARBITRATION:'',
+        Answer2_ARBITRATION:'',
+        Answer3_ARBITRATION:'',
+        Answer4_ARBITRATION:'',
+        Answer5_ARBITRATION:'',
+        Answer1_IBC:'',
+        Answer2_IBC:'',
+        Answer3_IBC:'',
+        Answer1_Competitive_and_Anti_Trust:'',
+        Answer1_AVIATION_LAW:'',
+        Answer2_AVIATION_LAW:'',
+        Answer3_AVIATION_LAW:'',
+        Answer4_AVIATION_LAW:'',
+        Answer1_Environment:'',
+        Answer2_Environment:'',
+        Answer3_Environment:'',
+        Answer4_Environment:'',
+        Answer5_Environment:'',
+        Answer1_Public_Policy:'',
+        Answer2_Public_Policy:'',
+    });
+
     const [formDataPartA, setFormDataPartA] = useState({
         Answer1_PartA: '',
         Answer2_PartA: '',
@@ -179,6 +239,14 @@ const Practices = () => {
     });
 
 
+    const handleChangeInterestbased = (event) => {
+        const { name, value } = event.target;
+        setformDataInterestbased({
+            ...formDataInterestbased,
+            [name]: value,
+        });
+    };
+
     const handleChangePartA = (event) => {
         const { name, value } = event.target;
         setFormDataPartA({
@@ -220,6 +288,7 @@ const Practices = () => {
 
             // Merge all form data objects into one
             const formData = {
+                ...formDataInterestbased,
                 ...formDataPartA,
                 ...formDataPartB,
                 ...formDataPartC,
@@ -295,7 +364,7 @@ const Practices = () => {
                                                 <Checkbox
                                                     name={questionData.PartA}
                                                     value={(optionIndex + 1).toString()} // Set the value to the selected option (e.g., "1" for option A)
-                                                    onChange={handleChangePartA}
+                                                    onChange={handleChangeInterestbased}
                                                 />
                                             }
                                             label={option}
