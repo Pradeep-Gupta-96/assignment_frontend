@@ -125,7 +125,7 @@ const ProgresA = () => {
             }
             // Append skills to the formDataObject
             formDataObject.append('skills', skills.join(','));
-            
+
             // Make the HTTP PUT request
             const response = await fetch(API, {
                 method: 'PUT',
@@ -638,7 +638,6 @@ const ProgresA = () => {
                             </Grid>
                         </Box>
                         <Box sx={{ width: '100%' }} className="bottom-form">
-                            <Link className='back-link' to="/">Back</Link>
                             {error && <div style={{ color: "#dc3232" }}>{error}</div>} {/* Display error message if there is an error */}
                             <Button className="blue-btn" onClick={onSubmit}>Next</Button>
                         </Box>
