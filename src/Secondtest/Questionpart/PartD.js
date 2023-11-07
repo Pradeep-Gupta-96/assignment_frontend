@@ -1,6 +1,6 @@
 export const allQuestionsD = [
     {
-        PartD: "Answer1_PartD",
+        PartD: "answer1_part_d",
         question: "Which one of the following institutions has been replaced by the NITI Ayog?",
         options: [
             "A. Inter-State Council",
@@ -10,7 +10,7 @@ export const allQuestionsD = [
         ],
     },
     {
-         PartD: "Answer2_PartD",
+         PartD: "answer2_part_d",
         question: "The Supreme Court of India consists of ______________ ?",
         options: [
             "A.	The Chief Justice of India and other 25 Judges.",
@@ -20,7 +20,7 @@ export const allQuestionsD = [
         ],
     },
     {
-         PartD: "Answer3_PartD",
+         PartD: "answer3_part_d",
         question: "Who was the first law minister of independent India?",
         options: [
             "A.	B.R. Ambedkar",
@@ -30,7 +30,7 @@ export const allQuestionsD = [
         ],
     },
     {
-         PartD: "Answer4_PartD",
+         PartD: "answer4_part_d",
         question: "'Persona non- grata' in legal terms means ______________ ?",
         options: [
             "A.	Non-person",
@@ -40,7 +40,7 @@ export const allQuestionsD = [
         ],
     },
     {
-         PartD: "Answer5_PartD",
+         PartD: "answer5_part_d",
         question: "'Obiter dicta' in legal terms means ______________ ?",
         options: [
             "A.	Direction by a judge.",
@@ -50,7 +50,7 @@ export const allQuestionsD = [
         ],
     },
     {
-         PartD: "Answer6_PartD",
+         PartD: "answer6_part_d",
         question: "Which among the following was described by Dr B.R. Ambedkar as the heart and soul of the Constitution of India? ",
         options: [
             "A.	Right to Constitutional Remedies",
@@ -60,7 +60,7 @@ export const allQuestionsD = [
         ],
     },
     {
-         PartD: "Answer7_PartD",
+         PartD: "answer7_part_d",
         question: <div style={{display: "inline"}}>Choose the correct statement:<br /><b>Statement A:</b> According to RBI data, India’s household savings have touched a decade low at  5.1%  FY 2023.
         <br /><b>Statement B:</b> Household savings have been estimated by subtracting aggregate financial liabilities from total financial assets.</div>,
         options: [
@@ -71,7 +71,7 @@ export const allQuestionsD = [
         ],
     },
     {
-         PartD: "Answer8_PartD",
+         PartD: "answer8_part_d",
         question: "Which of the following options correctly describes the term’ Regulatory Sandbox’...?",
         options: [
             "A. They are rules and regulations to be followed by all the insurance service offering companies",
@@ -81,7 +81,7 @@ export const allQuestionsD = [
         ],
     },
     {
-         PartD: "Answer9_PartD",
+         PartD: "answer9_part_d",
         question: <div style={{display: "inline"}}>Choose the correct statement:<br /><b>Statement A:</b> An OIS (Overnight index swap) is an interest rate derivative contract in which two entities agree to swap/switch a fixed interest change (OIS rate) for a floating interest payment
         <br /><b>Statement B:</b> Disadvantages of OIS; hedging interest rate risk, reduction of credit risk, effective management of debt portfolio by financial institution etc.</div>,
         options: [
@@ -92,7 +92,7 @@ export const allQuestionsD = [
         ],
     },
     {
-         PartD: "Answer10_PartD",
+         PartD: "answer10_part_d",
         question: "What do you understand by Gresham’s law...?",
         options: [
             "A. It's a fixed rate exchange system ‘bribe money drives out good’. It comes into play when the exchange rate between two currencies is fixed by the govt at a fixed ratio that is different from the market exchange rate",

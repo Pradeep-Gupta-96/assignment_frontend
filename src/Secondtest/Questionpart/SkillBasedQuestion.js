@@ -1,6 +1,6 @@
  export const Entertainment_and_Media_Law=[
     {
-        PartA: "Answer1_PartA",
+        PartA: "answer1_entertainment_and_media_law",
         question: "Which of the following acts provides for the certification of films for exhibition in India?",
         options: [
             "A. Copyright Act, 1957",
@@ -10,7 +10,7 @@
         ],
     },
     {
-        PartA: "Answer2_PartA",
+        PartA: "answer2_entertainment_and_media_law",
         question: "Which of the following acts protects the copyright of literary, dramatic, musical, and artistic works, including cinematograph films, in India?",
         options: [
             "A. Copyright Act, 1957",
@@ -20,7 +20,7 @@
         ],
     },
     {
-        PartA: "Answer3_PartA",
+        PartA: "answer3_entertainment_and_media_law",
         question: "Which of the following act regulates the broadcasting of television and radio programs in India? ",
         options: [
             "A. Copyright Act, 1957",
@@ -32,7 +32,7 @@
 ];
  export const Capital_Market_Securities=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_capital_market_securities",
         question: "Which of the following act/acts governs the capital market and securities?",
         options: [
             "A. The Depositories Act, 1996",
@@ -44,7 +44,7 @@
     },
  ]
  export const Banking_Law=[{
-    PartA: "Answer4_PartA",
+    PartA: "answer1_banking_law",
     question: "Which of the following acts is the primary legislation governing banking in India?",
     options: [
         "A. Banking Regulation Act, 1949",
@@ -54,7 +54,7 @@
     ],
 },
 {
-    PartA: "Answer4_PartA",
+    PartA: "answer2_banking_law",
     question: "Which of the following acts establishes the Reserve Bank of India (RBI) and sets out its powers and functions?",
     options: [
         "A. Banking Regulation Act, 1949",
@@ -64,7 +64,7 @@
     ],
 },
 {
-    PartA: "Answer4_PartA",
+    PartA: "answer3_banking_law",
     question: "Which of the following acts regulates the issue of negotiable instruments, such as cheques, bills of exchange, and promissory notes?",
     options: [
         "A. Banking Regulation Act, 1949",
@@ -76,7 +76,7 @@
 ]
  export const Mediation_and_Conciliation=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_mediation_and_conciliation",
         question: "Which of the following is NOT an objective of mediation and conciliation under Indian law?",
         options: [
             "A. To facilitate the voluntary resolution of disputes by the parties.",
@@ -86,7 +86,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer2_mediation_and_conciliation",
         question: "Under the Arbitration and Conciliation Act 1996, mediation and conciliation proceedings are:",
         options: [
             "A. Confidential",
@@ -96,7 +96,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer3_mediation_and_conciliation",
         question: "Which of the following is a benefit of mediation and conciliation over litigation?",
         options: [
             "A. It is faster and less expensive.",
@@ -108,7 +108,7 @@
  ]
  export const Merger_Acquisition=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_merger_acquisition",
         question: "Under the Companies Act, 2013, a merger is defined as:",
         options: [
             "A. The combination of two or more companies into a single company. ",
@@ -118,7 +118,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer2_merger_acquisition",
         question: "The Competition Act 2002 prohibits mergers and acquisitions that have the effect of:",
         options: [
             "A. Reducing competition in the market.",
@@ -128,7 +128,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer3_merger_acquisition",
         question: "The Securities and Exchange Board of India (SEBI) has issued regulations governing mergers and acquisitions involving listed companies. These regulations aim to:",
         options: [
             "A. Protect the interests of minority shareholders.",
@@ -140,7 +140,7 @@
  ]
  export const Sports_Law=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_sports_law",
         question: "The Sports Act, of 2011 was enacted to:",
         options: [
             "A. Promote the development of sports in India.",
@@ -150,7 +150,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer2_sports_law",
         question: "The National Anti-Doping Agency (NADA) is responsible for:",
         options: [
             "A. Testing athletes for banned substances.",
@@ -160,7 +160,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer3_sports_law",
         question: "The Sports Broadcasting Act, of 2007 gives the government the power to:",
         options: [
             "A. Regulate the broadcasting of sports events.",
@@ -172,7 +172,7 @@
  ]
  export const Intellectual_Property_Rights=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_intellectual_property_rights",
         question: "The Indian Copyright Act, 1957 protects:",
         options: [
             "A. Original literary, dramatic, musical, and artistic works, cinematograph films, and sound recordings.",
@@ -182,7 +182,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer2_intellectual_property_rights",
         question: "The Patents Act, 1970 protects:",
         options: [
             "A. New and useful inventions that are not obvious to a person skilled in the art.",
@@ -192,7 +192,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer3_intellectual_property_rights",
         question: "The Trade Marks Act, 1999 protects:",
         options: [
             "A. New and useful inventions that are not obvious to a person skilled in the art.",
@@ -204,7 +204,7 @@
  ]
  export const Labour_Laws=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_labour_laws",
         question: "The Factories Act, 1948:",
         options: [
             "A. Regulates the working conditions of workers in factories.",
@@ -214,7 +214,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer2_labour_laws",
         question: "The Minimum Wages Act, 1948:",
         options: [
             "A. Fixes the minimum wages that must be paid to workers in different industries and occupations.",
@@ -224,7 +224,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer3_labour_laws",
         question: "The Industrial Disputes Act, 1947:",
         options: [
             "A. Provides for the settlement of industrial disputes between workers and employers.",
@@ -236,7 +236,7 @@
  ]
  export const International_Business_Law=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_international_business_law",
         question: "Which of the following is NOT a valid form of business organization in India for foreign companies?",
         options: [
             "A. Branch Office",
@@ -246,7 +246,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer2_international_business_law",
         question: "The Foreign Exchange Management Act (FEMA), 1999 is the primary law governing foreign exchange transactions in India. Under FEMA, which of the following is NOT a requirement for foreign direct investment (FDI) in India?",
         options: [
             "A. Prior approval from the Reserve Bank of India (RBI)",
@@ -256,7 +256,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer3_international_business_law",
         question: "The Special Economic Zones Act, 2005 provides for the establishment of special economic zones (SEZs) in India. Which of the following is NOT a benefit of setting up a business in an SEZ? ",
         options: [
             "A. Exemption from customs duties on imports and exports",
@@ -268,7 +268,7 @@
  ]
  export const Startup_in_India_related_legal_Question=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_startup_in_india_related_legal_question",
         question: "Which of the following is NOT a benefit of being recognized as a startup under the Startup India initiative? ",
         options: [
             "A. Tax exemption for up to three years",
@@ -278,7 +278,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer2_startup_in_india_related_legal_question",
         question: "Under the Companies Act, 2013, which of the following is a requirement for a startup to be eligible for the simplified incorporation process? ",
         options: [
             "A. The startup must have a paid-up share capital of not more than one lakh rupees.",
@@ -288,7 +288,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer3_startup_in_india_related_legal_question",
         question: "Which of the following is NOT a benefit of being listed on the Startup India Hub?",
         options: [
             "A. Access to government funding schemes",
@@ -300,7 +300,7 @@
  ]
  export const Insurance_Law=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_insurance_law",
         question: "Which of the following is NOT a type of insurance regulated by the Insurance Regulatory and Development Authority of India (IRDAI)?",
         options: [
             "A. Life Insurance ",
@@ -310,7 +310,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer2_insurance_law",
         question: "The Insurance Act, 1938 is the primary law governing the insurance sector in India. Which of the following is NOT a requirement for an insurance company to obtain a license from the IRDAI? ",
         options: [
             "A. The company must have a minimum paid-up capital.",
@@ -320,7 +320,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer3_insurance_law",
         question: "Which of the following is NOT a right of an insurance policyholder?",
         options: [
             "A. The right to know the terms and conditions of the policy.",
@@ -332,7 +332,7 @@
  ]
  export const Joint_Venture_Public_private_partnership_and_MSME=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_joint_venture_public_private_partnership_and_msme",
         question: "Which of the following is NOT a benefit of joint ventures for MSMEs?",
         options: [
             "A. Access to new markets and technologies",
@@ -342,7 +342,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer2_joint_venture_public_private_partnership_and_msme",
         question: "Which of the following is NOT a type of public-private partnership (PPP) in India? ",
         options: [
             "A. Build-operate-transfer (BOT)",
@@ -352,7 +352,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer3_joint_venture_public_private_partnership_and_msme",
         question: "Which of the following is NOT a government scheme to support MSMEs in India?",
         options: [
             "A. Micro Units Development and Refinance Agency (MUDRA)",
@@ -364,7 +364,7 @@
  ]
  export const Tax_Law=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_tax_law",
         question: "Which of the following is NOT a taxable income under the Indian Income Tax Act, 1961? ",
         options: [
             "A. Salary",
@@ -374,7 +374,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer2_tax_law",
         question: "Which of the following is a basic exemption limit for income tax in India for the financial year 2023-24? ",
         options: [
             "A. ₹3 Lakhs",
@@ -384,7 +384,7 @@
         ],
     },
     {
-        PartA: "Answer10_PartA",
+        PartA: "answer3_tax_law",
         question: (<div style={{display: "inline"}}>
             A taxpayer in India has a taxable income of ₹10 lakhs for the financial year 2023-24. The taxpayer has no other income or deductions. Calculate the taxpayer's income tax liability using the following income tax rates: 
             <div className="four-op">
@@ -415,7 +415,7 @@
  ]
  export const ARBITRATION=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_arbitration",
         question: "Finality to arbitral awards within the meaning of section 35 of the Arbitration and Conciliation Act, 1996 shall",
         options: [
             "A. Not be binding on parties",
@@ -425,7 +425,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer2_arbitration",
         question: "An application for referring the parties to arbitration under section 8, Arbitration and Conciliation Act, 1996, must be accompanied by",
         options: [
             "A. The original arbitration agreement or a photocopy thereof",
@@ -435,7 +435,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer3_arbitration",
         question: "Which is the incorrect statement: ",
         options: [
             "A. The arbitral tribunal is bound by Code of Civil Procedure, 1908",
@@ -445,7 +445,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer4_arbitration",
         question: "Section 64, which provides for the procedure for the appointment of the conciliator is enacted on the basis of:  ",
         options: [
             "A. Article 2 of UNCITRAL Conciliation Rules",
@@ -455,7 +455,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer5_arbitration",
         question: "If one party is Indian Company and another is American company and the dispute arises out of legal relationship under contract entered between them, then such dispute falls ",
         options: [
             "A. Under International Commercial Arbitration within the meaning of section 2(f) of Arbitration and Conciliation Act, 1996",
@@ -467,7 +467,7 @@
  ]
  export const IBC=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_ibc",
         question: "Which of the following is NOT a creditor under the IBC? ",
         options: [
             "A. Financial Creditor",
@@ -477,7 +477,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer2_ibc",
         question: "Which of the following is a ground for initiating the corporate insolvency resolution process under the IBC?",
         options: [
             "A. Default in payment of debt",
@@ -487,7 +487,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer3_ibc",
         question: "A corporate debtor in India has assets worth ₹100 crore and liabilities worth ₹75 crore. The corporate debtor files an application for initiation of corporate insolvency resolution process under the IBC. Calculate the value of the corporate debtor's estate. ",
         options: [
             "A. ₹24.5 Crore",
@@ -499,7 +499,7 @@
  ]
  export const Competitive_and_Anti_Trust=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_competitive_and_anti_trust",
         question: "Today's antitrust laws are direct descendants of which common law actions?",
         options: [
             "A. Actions to promote discrimination.",
@@ -511,7 +511,7 @@
  ]
  export const AVIATION_LAW=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_aviation_law",
         question: "The international convention concerning the responsibility of international air carriers (operators ) for the carriage of passengers carriage and freight is covered under which of the following conventions ‘ ",
         options: [
             "A. Tokyo Convention",
@@ -521,7 +521,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer2_aviation_law",
         question: "The objective of ICAO was defined by Chicago Convention of 1944 ",
         options: [
             "A. True",
@@ -529,7 +529,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer3_aviation_law",
         question: "Which of the following is NOT a responsibility of an airline under the Aircraft Act, 1934?",
         options: [
             "A. To maintain its aircraft in a safe and airworthy condition.",
@@ -539,7 +539,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer4_aviation_law",
         question: "Which of the following is NOT a right of an air passenger under the Carriage by Air Act, 1972? ",
         options: [
             "A. The right to be informed of the flight schedule and any changes to the schedule.",
@@ -551,7 +551,7 @@
  ]
  export const Environment=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_environment",
         question: "Which of the following is NOT a provision of the Water (Prevention and Control of Pollution) Act, 1974? ",
         options: [
             "A. The establishment of Central and State Pollution Control Boards.",
@@ -561,7 +561,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer2_environment",
         question: "Which of the following is a valid reason for the Central Government to notify an area as an ecologically sensitive area under the Environment (Protection) Act, 1986? ",
         options: [
             "A. The area is home to a variety of rare and endangered species of plants and animals.",
@@ -571,7 +571,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer3_environment",
         question: "Which of the following is a fundamental right under the Constitution of India that is related to environmental protection? ",
         options: [
             "A. The right to life",
@@ -581,7 +581,7 @@
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer4_environment",
         question: "Who is in charge of making environmental laws in India",
         options: [
             "A. Prime minister’s office",
@@ -591,7 +591,7 @@
         ],
     },
     {
-        PartA: "Answer10_PartA",
+        PartA: "answer5_environment",
         question: (<div style={{display: "inline"}}>
             In the case of Samir Mehta vs Union of India 2017, an environmentalist filed a claim for damages of the sinking of a ship named M.V.Rak, carrying a large quantity of coal. Fuel oil and diesel. When the ship sank on the Mumbai southern coast, a thick layer of oil formed on the sea surface, causing major damage to mangroves and marine ecosystems.<br />
 <br />The court ruled that the sinking of the ship was due to the negligence of the Defendants and ordered Defendants no. 5,7 and 11 to pay rupees 100 crores to the Ministry of Shipping, Government of India. Which is still now one of the largest sums paid by a private entity for environmental damaged caused. 
@@ -606,7 +606,7 @@ Please read the following situation and answer.
  ]
  export const Public_Policy=[
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer1_public_policy",
         question: "Choose which of the following is an example of option identification as a step of the policy process? ",
         options: [
             "A. Tim's team is trying to figure out what the main problem of the country is. They are brainstorming and several have mentioned slow economic growth, while others have concluded that it is a bad foreign policy. They cannot agree on what the main problem is.",
@@ -616,7 +616,7 @@ Please read the following situation and answer.
         ],
     },
     {
-        PartA: "Answer4_PartA",
+        PartA: "answer2_public_policy",
         question: "What type of analysis is commonly used in the selection and implementation step of creating public policy? ",
         options: [
             "A. Regression analysis",
