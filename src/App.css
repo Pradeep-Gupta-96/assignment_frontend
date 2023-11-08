@@ -65,17 +65,7 @@ a.dawn-csv {float: right;display: inline-flex;margin-bottom: 15px;}
 
 form.top-form input, form.top-form .MuiOutlinedInput-root {background: #fff;border-radius: 4px;}
 form.top-form .checkbox-row .MuiOutlinedInput-root {background: none;}
-.background-video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-  }
+.background-video {width: 100vw;height: 100vh;object-fit: cover;position: fixed;left: 0;right: 0;top: 0;bottom: 0;z-index: -1;}
 
 /* Test Css */
 .test-checkbox legend,.test-checkbox label span {font-family: 'Montserrat', sans-serif !important;}
@@ -97,3 +87,7 @@ form.top-form .test-checkbox label {padding-left: 15px;}
 .footer {text-align: center;padding: 100px 0px 20px;font-size: 12px;color: #000;}
 .social-icon a {display: inline-block;padding: 0px 10px;color: #ccc;}
 .copyright {border-top: 1px solid #ccc;display: inline-block;padding: 10px 0px 0px;margin-top: 20px;}
+
+@media (min-width:768px){
+    .right-sce {min-height: 1089px;}
+}
