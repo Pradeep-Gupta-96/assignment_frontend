@@ -364,6 +364,7 @@ const Practices = () => {
                                                 <Checkbox
                                                     name={questionData.PartA}
                                                     value={(optionIndex + 1).toString()} // Set the value to the selected option (e.g., "1" for option A)
+                                                    checked={formDataInterestbased[questionData.PartA] === (optionIndex + 1).toString()}
                                                     onChange={handleChangeInterestbased}
                                                 />
                                             }
@@ -384,6 +385,7 @@ const Practices = () => {
                                                 <Checkbox
                                                     name={questionData.PartA}
                                                     value={(optionIndex + 1).toString()} // Set the value to the selected option (e.g., "1" for option A)
+                                                    checked={formDataPartA[questionData.PartA] === (optionIndex + 1).toString()}
                                                     onChange={handleChangePartA}
                                                 />
                                             }
@@ -451,6 +453,7 @@ const Practices = () => {
                                                 <Checkbox
                                                     name={questionData.PartD}
                                                     value={(optionIndex + 1).toString()} // Set the value to the selected option (e.g., "1" for option A)
+                                                    checked={formDataPartD[questionData.PartD] === (optionIndex + 1).toString()}
                                                     onChange={handleChangePartD}
                                                 />
                                             }

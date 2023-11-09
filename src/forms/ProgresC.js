@@ -237,7 +237,7 @@ const ProgresC = () => {
                                             aria-label="maximum height"
                                             minRows={3}
                                             placeholder="Maximum 250 Words"
-                                            onPaste={(e) => e.preventDefault()}
+                                            // onPaste={(e) => e.preventDefault()}
                                         />
                                     </FormControl>
                                 </Grid>
