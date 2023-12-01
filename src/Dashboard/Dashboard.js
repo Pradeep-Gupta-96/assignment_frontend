@@ -166,6 +166,7 @@ const Dashboard = () => {
                                     <TableCell> answer10_partd</TableCell> */}
                                     <TableCell>created at</TableCell>
                                     <TableCell>Delete</TableCell>
+                                    <TableCell>Total Marks</TableCell>
 
                                 </TableHead>
                                 <TableBody>
@@ -226,7 +227,7 @@ const Dashboard = () => {
                                                             View Answer 3
                                                         </Link>
                                                     </TableCell> */}
-                                                    
+
                                                     <TableCell>
                                                         <a href={`http://localhost:4000/${item.uploadresume}`} target="_blank" rel="noopener noreferrer">
                                                             <ArticleIcon />
@@ -278,7 +279,7 @@ const Dashboard = () => {
                                                             </Button>
                                                         </DialogActions>
                                                     </Dialog>
-
+                                                    <TableCell> {item.total_marks}</TableCell>
                                                 </TableRow>
                                             );
                                         })}
