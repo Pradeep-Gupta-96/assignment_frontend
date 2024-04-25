@@ -13,6 +13,7 @@ import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAuto
 import { styled } from '@mui/system';
 import videobg from '../images/background-video.mp4'
 import TimmerCompo from './TimmerCompo';
+import { Baseurl } from '../common/Url';
 
 const steps = [
     'Preliminary Details',
@@ -71,7 +72,7 @@ const ProgresC = () => {
             if (event) {
                 event.preventDefault();
             }
-            const API = `http://localhost:4000/api/updateTodo3/${id}`; // Include the ID in the API URL
+            const API = `${Baseurl}/updateTodo3/${id}`; // Include the ID in the API URL
 
             // Make the HTTP POST request
             const response = await fetch(API, {

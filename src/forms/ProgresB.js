@@ -13,6 +13,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import videobg from '../images/background-video.mp4';
 import TimmerCompo from './TimmerCompo';
+import { Baseurl } from '../common/Url';
 
 const steps = [
     'Preliminary Details',
@@ -46,7 +47,7 @@ const ProgresB = () => {
         });
     };
 
-    const API = `http://localhost:4000/api/updateTodo2/${id}`;
+    const API = `${Baseurl}/updateTodo2/${id}`;
 
     const onSubmit = async () => {
         try {

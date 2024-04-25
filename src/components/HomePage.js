@@ -9,6 +9,7 @@ import ArticleIcon from '@mui/icons-material/Article';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { Button } from '@mui/material';
 import Footer from './Footer';
+import { Baseurl } from '../common/Url';
 
 // import "particles/app.js"
 
@@ -19,7 +20,7 @@ const HomePage = () => {
     const onSubmit = async (event) => {
         try {
             event.preventDefault();
-            const API = 'http://localhost:4000/api/insertTimestampOnly';
+            const API = `${Baseurl}/insertTimestampOnly`;
 
             const response = await fetch(API, {
                 method: 'POST',

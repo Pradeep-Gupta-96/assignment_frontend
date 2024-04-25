@@ -14,6 +14,7 @@ import * as XLSX from 'xlsx'; // Correct import statement
 import ArticleIcon from '@mui/icons-material/Article';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import { Baseurl } from '../common/Url';
 
 const Dashboard = () => {
     const [page, setPage] = React.useState(0);
@@ -22,7 +23,7 @@ const Dashboard = () => {
     const [openDialogIndex, setOpenDialogIndex] = React.useState(-1);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
 
-    const API1 = 'http://localhost:4000/api/getAllTodo';
+    const API1 = `${Baseurl}/getAllTodo`;
 
     const fetchData1 = React.useCallback(async () => {
         try {
@@ -72,7 +73,7 @@ const Dashboard = () => {
     };
 
     const clickForDelete = async (id) => {
-        const API2 = `http://localhost:4000/api/deletetodo/${id}`;
+        const API2 = `${Baseurl}/deletetodo/${id}`;
         try {
             const response = await fetch(`${API2}`, {
                 method: "DELETE"
@@ -229,7 +230,7 @@ const Dashboard = () => {
                                                     </TableCell> */}
 
                                                     <TableCell>
-                                                        <a href={`http://localhost:4000/${item.uploadresume}`} target="_blank" rel="noopener noreferrer">
+                                                        <a href={`${Baseurl}/${item.uploadresume}`} target="_blank" rel="noopener noreferrer">
                                                             <ArticleIcon />
                                                         </a>
                                                     </TableCell>

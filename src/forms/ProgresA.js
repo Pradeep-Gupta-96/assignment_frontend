@@ -17,6 +17,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Checkbox from '@mui/material/Checkbox';
 import videobg from '../images/background-video.mp4';
+import { Baseurl } from '../common/Url';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -113,7 +114,7 @@ const ProgresA = () => {
 
     const onSubmit = async () => {
         try {
-            const API = `http://localhost:4000/api/updateTodo1/${id}`; // Include the ID in the API URL
+            const API = `${Baseurl}/updateTodo1/${id}`; // Include the ID in the API URL
 
             const formDataObject = new FormData();
             for (const key in formData) {
