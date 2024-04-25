@@ -98,4 +98,10 @@ form.top-form .test-checkbox label {padding-left: 15px;}
     .menu a {font-size: 14px;}
     .content-box {padding: 32px 15px;}
     .c-box-1 {font-size: 12px;}
+    .edu-class {display: inline-block;width: 100%;}
+    .p-details .class-box {width: 100%;}
+    form.top-form .checkbox-row {display: inline-block;}
+    .checkbox-row label {margin-left: 0px;}
+    .class-box,.class-box:first-child {width: 100%;}
+    .bottom-form {width: 100%;left: 0px;padding: 0px 15px;box-sizing: border-box;}
 }
