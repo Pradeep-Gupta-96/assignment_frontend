@@ -5,13 +5,10 @@ import videobanner from '../images/main-banner.mp4'
 import Grid from '@mui/material/Grid';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
-import ArticleIcon from '@mui/icons-material/Article';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { Button } from '@mui/material';
 import Footer from './Footer';
 import { Baseurl } from '../common/Url';
-
-// import "particles/app.js"
 
 
 const HomePage = () => {

@@ -1,1 +1,1 @@
-  export const Baseurl="http://13.201.8.38:4000/api"
+  export const Baseurl="https://careers.areness.in/api"

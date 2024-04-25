@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import logo from '../images/logo.png'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { Button, Checkbox, FormControlLabel } from '@mui/material';
@@ -11,7 +10,6 @@ import { allQuestionsC } from './Questionpart/PartC';
 import { allQuestionsD } from './Questionpart/PartD';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
-import videobg from '../images/background-video.mp4';
 import TimmerCompo from '../forms/TimmerCompo';
 import {
     Entertainment_and_Media_Law,
