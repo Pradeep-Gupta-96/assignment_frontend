@@ -34,6 +34,7 @@ import {
     Environment,
     Public_Policy,
 } from './Questionpart/SkillBasedQuestion';
+import { Baseurl } from '../common/Url';
 
 const Textarea = styled(BaseTextareaAutosize)(
     ({ theme }) => `
@@ -284,7 +285,7 @@ const Practices = () => {
             if (event) {
                 event.preventDefault();
             }
-            const API = `http://localhost:4000/api/lastround/${id}`; // Include the ID in the API URL
+            const API = `${Baseurl}/lastround/${id}`; // Include the ID in the API URL
 
             // Merge all form data objects into one
             const formData = {
