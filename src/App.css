@@ -93,7 +93,7 @@ form.top-form .test-checkbox label {padding-left: 15px;}
     .right-sce {min-height: 1089px;}
 }
 @media (max-width:1024px){
-    .bound {padding: 0px 15px;}
+    .bound {padding: 0px 15px;box-sizing: border-box;}
     .logo img {height: 40px;}
     .menu a {font-size: 14px;}
     .content-box {padding: 32px 15px;}
