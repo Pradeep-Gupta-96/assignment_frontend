@@ -104,4 +104,13 @@ form.top-form .test-checkbox label {padding-left: 15px;}
     .checkbox-row label {margin-left: 0px;}
     .class-box,.class-box:first-child {width: 100%;}
     .bottom-form {width: 100%;left: 0px;padding: 0px 15px;box-sizing: border-box;}
+    .title-box {padding: 10px 15px;}
+    .title-box h2 {margin-bottom: 0px;}
+    button.blue-btn, .blue-btn {font-size: 14px;}
+    .form-box {padding: 24px 15px;}
+    .prog-bar .MuiStepLabel-alternativeLabel {font-size: 12px;}
+    .prog-bar {padding-bottom: 30px;}
+    .test-checkbox legend,.question-row legend {line-height: 22px; font-size: 14px;}
+    form.top-form .test-checkbox label {margin-bottom: 13px;align-items: flex-start;}
+    .test-checkbox label span {padding-top: 0px;} 
 }
