@@ -13,6 +13,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import videobg from '../images/background-video.mp4';
 import TimmerCompo from './TimmerCompo';
+import { Baseurl } from '../common/Url';
 
 const steps = [
     'Preliminary Details',
@@ -46,7 +47,7 @@ const ProgresB = () => {
         });
     };
 
-    const API = `http://localhost:4000/api/updateTodo2/${id}`;
+    const API = `${Baseurl}/updateTodo2/${id}`;
 
     const onSubmit = async () => {
         try {
@@ -486,13 +487,13 @@ const ProgresB = () => {
                                             onChange={handleChange}
                                         />
                                     </FormControl>
-                                    <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
+                                    {/* <FormControl className="test-checkbox" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Q 11. Who is the current Minister of State, Ministry of Law and Justice (Independent Charge)?</FormLabel>
                                         <FormControlLabel name='PreferredLocation' value={"1"} control={<Checkbox />} label="A.	Sri. Arjun Ram Meghwal" />
                                         <FormControlLabel name='PreferredLocation' value={"2"} control={<Checkbox />} label="B.	Sri. Anurag Thakur" />
                                         <FormControlLabel name='PreferredLocation' value={"3"} control={<Checkbox />} label="C.	Smt. Smriti Irani" />
                                         <FormControlLabel name='PreferredLocation' value={"4"} control={<Checkbox />} label="D.	Sri. Nithin Gadkari" />
-                                    </FormControl>
+                                    </FormControl> */}
                                 </Grid>
                             </Grid>
                         </Box>

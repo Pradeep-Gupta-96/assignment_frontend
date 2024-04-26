@@ -5,12 +5,10 @@ import videobanner from '../images/main-banner.mp4'
 import Grid from '@mui/material/Grid';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
-import ArticleIcon from '@mui/icons-material/Article';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { Button } from '@mui/material';
 import Footer from './Footer';
-
-// import "particles/app.js"
+import { Baseurl } from '../common/Url';
 
 
 const HomePage = () => {
@@ -19,7 +17,7 @@ const HomePage = () => {
     const onSubmit = async (event) => {
         try {
             event.preventDefault();
-            const API = 'http://localhost:4000/api/insertTimestampOnly';
+            const API = `${Baseurl}/insertTimestampOnly`;
 
             const response = await fetch(API, {
                 method: 'POST',

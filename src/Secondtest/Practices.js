@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import logo from '../images/logo.png'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { Button, Checkbox, FormControlLabel } from '@mui/material';
@@ -11,7 +10,6 @@ import { allQuestionsC } from './Questionpart/PartC';
 import { allQuestionsD } from './Questionpart/PartD';
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
-import videobg from '../images/background-video.mp4';
 import TimmerCompo from '../forms/TimmerCompo';
 import {
     Entertainment_and_Media_Law,
@@ -34,6 +32,7 @@ import {
     Environment,
     Public_Policy,
 } from './Questionpart/SkillBasedQuestion';
+import { Baseurl } from '../common/Url';
 
 const Textarea = styled(BaseTextareaAutosize)(
     ({ theme }) => `
@@ -284,7 +283,7 @@ const Practices = () => {
             if (event) {
                 event.preventDefault();
             }
-            const API = `http://localhost:4000/api/lastround/${id}`; // Include the ID in the API URL
+            const API = `${Baseurl}/lastround/${id}`; // Include the ID in the API URL
 
             // Merge all form data objects into one
             const formData = {
@@ -364,6 +363,7 @@ const Practices = () => {
                                                 <Checkbox
                                                     name={questionData.PartA}
                                                     value={(optionIndex + 1).toString()} // Set the value to the selected option (e.g., "1" for option A)
+                                                    checked={formDataInterestbased[questionData.PartA] === (optionIndex + 1).toString()}
                                                     onChange={handleChangeInterestbased}
                                                 />
                                             }
@@ -384,6 +384,7 @@ const Practices = () => {
                                                 <Checkbox
                                                     name={questionData.PartA}
                                                     value={(optionIndex + 1).toString()} // Set the value to the selected option (e.g., "1" for option A)
+                                                    checked={formDataPartA[questionData.PartA] === (optionIndex + 1).toString()}
                                                     onChange={handleChangePartA}
                                                 />
                                             }
@@ -451,6 +452,7 @@ const Practices = () => {
                                                 <Checkbox
                                                     name={questionData.PartD}
                                                     value={(optionIndex + 1).toString()} // Set the value to the selected option (e.g., "1" for option A)
+                                                    checked={formDataPartD[questionData.PartD] === (optionIndex + 1).toString()}
                                                     onChange={handleChangePartD}
                                                 />
                                             }

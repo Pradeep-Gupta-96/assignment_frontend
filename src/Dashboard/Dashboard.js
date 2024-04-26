@@ -14,6 +14,7 @@ import * as XLSX from 'xlsx'; // Correct import statement
 import ArticleIcon from '@mui/icons-material/Article';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import { Baseurl } from '../common/Url';
 
 const Dashboard = () => {
     const [page, setPage] = React.useState(0);
@@ -22,7 +23,7 @@ const Dashboard = () => {
     const [openDialogIndex, setOpenDialogIndex] = React.useState(-1);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
 
-    const API1 = 'http://localhost:4000/api/getAllTodo';
+    const API1 = `${Baseurl}/getAllTodo`;
 
     const fetchData1 = React.useCallback(async () => {
         try {
@@ -72,7 +73,7 @@ const Dashboard = () => {
     };
 
     const clickForDelete = async (id) => {
-        const API2 = `http://localhost:4000/api/deletetodo/${id}`;
+        const API2 = `${Baseurl}/deletetodo/${id}`;
         try {
             const response = await fetch(`${API2}`, {
                 method: "DELETE"
@@ -130,11 +131,11 @@ const Dashboard = () => {
                                     <TableCell>lastinternshipdetails</TableCell>
                                     <TableCell>Participated in Court</TableCell>
                                     <TableCell>Preferred Location</TableCell>
-                                    <TableCell>Answer 1</TableCell>
+                                    {/* <TableCell>Answer 1</TableCell>
                                     <TableCell>Answer 2</TableCell>
-                                    <TableCell>Answer 3</TableCell>
+                                    <TableCell>Answer 3</TableCell> */}
                                     <TableCell>Resume</TableCell>
-                                    <TableCell> answer1_parta</TableCell>
+                                    {/* <TableCell> answer1_parta</TableCell>
                                     <TableCell> answer2_parta</TableCell>
                                     <TableCell> answer3_parta</TableCell>
                                     <TableCell> answer4_parta</TableCell>
@@ -163,9 +164,10 @@ const Dashboard = () => {
                                     <TableCell> answer7_partd</TableCell>
                                     <TableCell> answer8_partd</TableCell>
                                     <TableCell> answer9_partd</TableCell>
-                                    <TableCell> answer10_partd</TableCell>
+                                    <TableCell> answer10_partd</TableCell> */}
                                     <TableCell>created at</TableCell>
                                     <TableCell>Delete</TableCell>
+                                    <TableCell>Total Marks</TableCell>
 
                                 </TableHead>
                                 <TableBody>
@@ -202,7 +204,7 @@ const Dashboard = () => {
                                                     <TableCell>{item.haveyouparticipatedinmootcourt}</TableCell>
                                                     <TableCell>{item.preferredlocation}</TableCell>
 
-                                                    <TableCell>
+                                                    {/* <TableCell>
                                                         <Link
                                                             variant="outlined"
                                                             onClick={() => handleClickOpen(index, 1)}
@@ -225,13 +227,14 @@ const Dashboard = () => {
                                                         >
                                                             View Answer 3
                                                         </Link>
-                                                    </TableCell>
+                                                    </TableCell> */}
+
                                                     <TableCell>
-                                                        <a href={`http://localhost:4000/${item.uploadresume}`} target="_blank" rel="noopener noreferrer">
+                                                        <a href={`${Baseurl}/${item.uploadresume}`} target="_blank" rel="noopener noreferrer">
                                                             <ArticleIcon />
                                                         </a>
                                                     </TableCell>
-                                                    <TableCell> {item.answer1_parta}</TableCell>
+                                                    {/* <TableCell> {item.answer1_parta}</TableCell>
                                                     <TableCell> {item.answer2_parta}</TableCell>
                                                     <TableCell> {item.answer3_parta}</TableCell>
                                                     <TableCell> {item.answer4_parta}</TableCell>
@@ -260,7 +263,7 @@ const Dashboard = () => {
                                                     <TableCell> {item.answer7_partd}</TableCell>
                                                     <TableCell> {item.answer8_partd}</TableCell>
                                                     <TableCell> {item.answer9_partd}</TableCell>
-                                                    <TableCell> {item.answer10_partd}</TableCell>
+                                                    <TableCell> {item.answer10_partd}</TableCell> */}
 
                                                     <TableCell>{formatDate(item.created_at)}</TableCell>
                                                     <TableCell><DeleteIcon onClick={() => { clickForDelete(item.id) }} /></TableCell>
@@ -277,7 +280,7 @@ const Dashboard = () => {
                                                             </Button>
                                                         </DialogActions>
                                                     </Dialog>
-
+                                                    <TableCell> {item.total_marks}</TableCell>
                                                 </TableRow>
                                             );
                                         })}
