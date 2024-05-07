@@ -44,8 +44,13 @@ const HomePage = () => {
         } catch (error) {
             console.error('Form submission error:', error);
         }
+        // Scroll to the top of the page
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Optional: smooth scrolling animation
+        });
     };
-
+    
     return (
         <>
             <div className="header">
