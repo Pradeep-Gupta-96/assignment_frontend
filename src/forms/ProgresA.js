@@ -146,7 +146,7 @@ const ProgresA = () => {
                 // Handle error response
                 const errorMessage = await response.text();
                 const errorObj = JSON.parse(errorMessage); 
-                console.log ('hjk0', errorObj);
+                //console.log ('hjk0', errorObj);
                 if (errorObj.message) {
                     setError(`${errorObj.message}`);
                 } else {
