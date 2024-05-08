@@ -145,7 +145,8 @@ const ProgresA = () => {
             } else {
                 // Handle error response
                 const errorMessage = await response.text();
-                const errorObj = JSON.parse(errorMessage);
+                const errorObj = JSON.parse(errorMessage); 
+                //console.log ('hjk0', errorObj);
                 if (errorObj.message) {
                     setError(`${errorObj.message}`);
                 } else {
@@ -157,8 +158,13 @@ const ProgresA = () => {
             setError(error.message); // Store the error message in the state
             console.error('Update error:', error);
         }
+        // Scroll to the top of the page
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Optional: smooth scrolling animation
+          });
     };
-
+    
     // const onSubmit = async (event) => {
     //     try {
     //         if (event) {
@@ -281,8 +287,8 @@ const ProgresA = () => {
                                         <div className="edu-class">
                                             <div className="class-box">
                                                 <FormControl fullWidth>
-                                                    <InputLabel required id="field-of-interest">Interest Area</InputLabel>
-                                                    <Select
+                                                    <InputLabel id="field-of-interest">Interest Area</InputLabel>
+                                                    <Select required
                                                         labelId="field-of-interest"
                                                         id="demo-simple-select-helper"
                                                         name="field_of_interest"
@@ -331,12 +337,12 @@ const ProgresA = () => {
                                                 </FormControl>
                                             </div>
                                             <div className="class-box">
-                                                <TextField  id="outlined-required" label="Linkedin URL" name='linkedin_url' value={formData.linkedin_url} onChange={handleChange} fullWidth />
+                                                <TextField required id="outlined-required" label="Linkedin URL" name='linkedin_url' value={formData.linkedin_url} onChange={handleChange} fullWidth />
                                             </div>
                                             <div className="class-box">
                                                 <FormControl fullWidth >
-                                                    <InputLabel required id="demo-multiple-checkbox-label">Skills</InputLabel>
-                                                    <Select
+                                                    <InputLabel id="demo-multiple-checkbox-label">Skills</InputLabel>
+                                                    <Select required
                                                         labelId="demo-multiple-checkbox-label"
                                                         id="demo-multiple-checkbox"
                                                         multiple
@@ -363,7 +369,7 @@ const ProgresA = () => {
                                             <div className="class-box">
                                                 <FormControl fullWidth>
                                                     <InputLabel id="course">Course</InputLabel>
-                                                    <Select
+                                                    <Select required
                                                         labelId="course"
                                                         id="demo-simple-select-helper"
                                                         name="course"
@@ -386,7 +392,7 @@ const ProgresA = () => {
                                             <div className="class-box">
                                                 <FormControl fullWidth>
                                                     <InputLabel id="year-of-passing">College</InputLabel>
-                                                    <Select
+                                                    <Select required
                                                         labelId="college"
                                                         id="demo-simple-select-helper"
                                                         name="college"
@@ -435,7 +441,7 @@ const ProgresA = () => {
                                             <div className="class-box">
                                                 <FormControl fullWidth>
                                                     <InputLabel id="university">University</InputLabel>
-                                                    <Select
+                                                    <Select required
                                                         labelId="university"
                                                         id="demo-simple-select-helper"
                                                         name="university"
@@ -443,9 +449,7 @@ const ProgresA = () => {
                                                         label="University"
                                                         onChange={handleChange}
                                                     >
-                                                        <MenuItem value="">
-                                                            <em>University Name</em>
-                                                        </MenuItem>
+                                                        <MenuItem value=""><em>University Name</em></MenuItem>
                                                         <MenuItem value={"NLSUI- Bangalore"}>NLSUI- Bangalore</MenuItem>
                                                         <MenuItem value={"NALSAR-Hyderabad "}>NALSAR-Hyderabad </MenuItem>
                                                         <MenuItem value={"NUJS- KOLKATA"}>NUJS- KOLKATA</MenuItem>
@@ -488,7 +492,7 @@ const ProgresA = () => {
                                         </div>
                                     </div>
 
-                                    <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
+                                    <FormControl  required className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Course Duration:</FormLabel>
                                         <FormControlLabel
                                             control={<Checkbox />}
@@ -517,7 +521,7 @@ const ProgresA = () => {
                                             <div className="class-box">
                                                 <FormControl fullWidth>
                                                     <InputLabel id="10th-board">Board</InputLabel>
-                                                    <Select
+                                                    <Select required
                                                         labelId="10th_board"
                                                         id="demo-simple-select-helper"
                                                         name='class_10_education'
@@ -534,11 +538,11 @@ const ProgresA = () => {
                                             </div>
                                             <div className="class-box">
                                                 <FormControl fullWidth>
-                                                    <TextField id="outlined-required" label="Percentage" name='class_10_percentage' value={formData.class_10_percentage} onChange={handleChange} fullWidth />
+                                                    <TextField required id="outlined-required" label="Percentage" name='class_10_percentage' value={formData.class_10_percentage} onChange={handleChange} fullWidth />
                                                 </FormControl>
                                             </div>
                                             <div className="class-box">
-                                                <TextField id="outlined-required" label="Year of Passing" name='class_10_year_of_passing' value={formData.class_10_year_of_passing} onChange={handleChange} fullWidth />
+                                                <TextField required id="outlined-required" label="Year of Passing" name='class_10_year_of_passing' value={formData.class_10_year_of_passing} onChange={handleChange} fullWidth />
                                             </div>
                                         </div>
                                         <div className="edu-class">
@@ -548,7 +552,7 @@ const ProgresA = () => {
                                             <div className="class-box">
                                                 <FormControl fullWidth>
                                                     <InputLabel id="12th-board">Board</InputLabel>
-                                                    <Select
+                                                    <Select required
                                                         labelId="12th_board"
                                                         id="demo-simple-select-helper"
                                                         label="Education Board"
@@ -564,11 +568,11 @@ const ProgresA = () => {
                                             </div>
                                             <div className="class-box">
                                                 <FormControl fullWidth>
-                                                    <TextField id="outlined-required" label="Percentage" name='class_12_percentage' value={formData.class_12_percentage} onChange={handleChange} fullWidth />
+                                                    <TextField required id="outlined-required" label="Percentage" name='class_12_percentage' value={formData.class_12_percentage} onChange={handleChange} fullWidth />
                                                 </FormControl>
                                             </div>
                                             <div className="class-box">
-                                                <TextField id="outlined-required" label="Year of Passing" name='class_12_year_of_passing' value={formData.class_12_year_of_passing} onChange={handleChange} fullWidth />
+                                                <TextField required id="outlined-required" label="Year of Passing" name='class_12_year_of_passing' value={formData.class_12_year_of_passing} onChange={handleChange} fullWidth />
                                             </div>
                                         </div>
                                         <div className="edu-class">
@@ -576,19 +580,19 @@ const ProgresA = () => {
                                                 <label>LLB</label>
                                             </div>
                                             <div className="class-box">
-                                                <TextField id="outlined-required" label="University" name='masters_university' value={formData.masters_university} onChange={handleChange} fullWidth />
+                                                <TextField required id="outlined-required" label="University" name='masters_university' value={formData.masters_university} onChange={handleChange} fullWidth />
                                             </div>
                                             <div className="class-box">
-                                                <TextField id="outlined-required" label="Percentage" name='masters_percentage' value={formData.masters_percentage} onChange={handleChange} fullWidth />
+                                                <TextField required id="outlined-required" label="Percentage" name='masters_percentage' value={formData.masters_percentage} onChange={handleChange} fullWidth />
                                             </div>
                                             <div className="class-box">
-                                                <TextField id="outlined-required" label="Year of Passing" name='masters_year_of_passing' value={formData.masters_year_of_passing} onChange={handleChange} fullWidth />
+                                                <TextField required id="outlined-required" label="Year of Passing" name='masters_year_of_passing' value={formData.masters_year_of_passing} onChange={handleChange} fullWidth />
                                             </div>
                                         </div>
                                     </div>
 
 
-                                    <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
+                                    <FormControl required className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Publications, if any:</FormLabel>
                                         <FormControlLabel
                                             control={<Checkbox />}
@@ -611,15 +615,15 @@ const ProgresA = () => {
                                         <TextField required id="outlined-required" label="Publications Link" name='publications_link' value={formData.publications_link} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
                                     )}
 
-                                    <TextField  id="outlined-required" label="Last Internship Details " name='last_internship_details' value={formData.last_internship_details} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                    <TextField required  id="outlined-required" label="Last Internship Details " name='last_internship_details' value={formData.last_internship_details} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
 
-                                    <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
+                                    <FormControl required className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Preferred Location:</FormLabel>
                                         <FormControlLabel name='preferred_location' value={"Delhi"} checked={formData.preferred_location === 'Delhi'} onChange={handleChange} control={<Checkbox />} label="Delhi" />
                                         <FormControlLabel name='preferred_location' value={"Gurugram"} checked={formData.preferred_location === 'Gurugram'} onChange={handleChange} control={<Checkbox />} label="Gurugram" />
                                     </FormControl>
                                     <FormControl className="checkbox-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
-                                        <FormLabel sx={{ paddingBottom: "10px" }} component="legend">Upload Resume:</FormLabel>
+                                        <FormLabel required sx={{ paddingBottom: "10px" }} component="legend">Upload Resume:</FormLabel>
                                         <TextField
                                             required
                                             id="outlined-required"
@@ -637,12 +641,13 @@ const ProgresA = () => {
                                         5. There shall be no negative marking.</p>
                                 </Grid>
                             </Grid>
-                        </Box>
-                        <Box sx={{ width: '100%' }} className="bottom-form">
-                        <Link className='back-link'></Link>
+                            <Box sx={{ width: '100%' }} className="bottom-form">
+                            <Link className='back-link'></Link>
                             {error && <div style={{ color: "#dc3232" }}>{error}</div>} {/* Display error message if there is an error */}
-                            <Button className="blue-btn" onClick={onSubmit}>Next</Button>
+                            <Button type='submit' className="blue-btn" onClick={onSubmit}>Next</Button>
                         </Box>
+                        </Box>
+                        
 
                     </div>
                 </div>

@@ -11,6 +11,7 @@ a {text-decoration: none;}
 .logo a {display: inline-block;width: 100%;}.logo img {height: 60px;}
 .menu a {color: #000;}
 .banner-box {margin-bottom: 20px; display: flex;justify-content: center;align-items: center;}
+.banner-box video {width: 100%;}
 
 .left-sec {background: rgb(255, 255, 255);margin-bottom: 24px;position: relative;box-sizing: border-box;}
 .title-box {border-bottom: 1px solid rgb(206, 211, 217);padding: 32px 40px;box-sizing: border-box;position: -webkit-sticky;position: sticky;top: -1px;background: #fff;z-index: 9;}
@@ -18,7 +19,7 @@ a {text-decoration: none;}
 button.blue-btn,.blue-btn {background: #1976d2;color: #fff;width: auto;padding: 8px 30px;border: 1px solid #1976d2;font-size: 20px;text-transform: uppercase;margin: 10px 0;display: inline-block;}
 button.blue-btn:hover,.blue-btn:hover {color: #1976d2;}
 .content-box {padding: 32px 40px;box-sizing: border-box;}
-.c-box-1 {display: flex;margin-bottom: 21px;width: 100%;justify-content: space-between;font-weight: 500;line-height: 30px;}
+.c-box-1 {display: flex;margin-bottom: 21px;width: 100%;justify-content: space-between;font-weight: 500;line-height: 30px;font-size: 14px;}
 .c-box-1 svg {float: left; margin-right: 10px; position: relative;top: 3px;}
 .other-info > div {margin-bottom: 5px;}
 .c-box-2 h3 {margin: 20px 0px 10px;}
@@ -90,4 +91,26 @@ form.top-form .test-checkbox label {padding-left: 15px;}
 
 @media (min-width:768px){
     .right-sce {min-height: 1089px;}
+}
+@media (max-width:1024px){
+    .bound {padding: 0px 15px;box-sizing: border-box;}
+    .logo img {height: 40px;}
+    .menu a {font-size: 14px;}
+    .content-box {padding: 32px 15px;}
+    .c-box-1 {font-size: 12px;}
+    .edu-class {display: inline-block;width: 100%;}
+    .p-details .class-box {width: 100%;}
+    form.top-form .checkbox-row {display: inline-block;}
+    .checkbox-row label {margin-left: 0px;}
+    .class-box,.class-box:first-child {width: 100%;}
+    .bottom-form {width: 100%;left: 0px;padding: 0px 15px;box-sizing: border-box;}
+    .title-box {padding: 10px 15px;}
+    .title-box h2 {margin-bottom: 0px;}
+    button.blue-btn, .blue-btn {font-size: 14px;}
+    .form-box {padding: 24px 15px;}
+    .prog-bar .MuiStepLabel-alternativeLabel {font-size: 12px;}
+    .prog-bar {padding-bottom: 30px;}
+    .test-checkbox legend,.question-row legend {line-height: 22px; font-size: 14px;}
+    form.top-form .test-checkbox label {margin-bottom: 13px;align-items: flex-start;}
+    .test-checkbox label span {padding-top: 0px;} 
 }

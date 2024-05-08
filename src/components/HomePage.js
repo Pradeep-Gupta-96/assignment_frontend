@@ -44,8 +44,13 @@ const HomePage = () => {
         } catch (error) {
             console.error('Form submission error:', error);
         }
+        // Scroll to the top of the page
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Optional: smooth scrolling animation
+        });
     };
-
+    
     return (
         <>
             <div className="header">
@@ -61,11 +66,7 @@ const HomePage = () => {
             <div className="banner">
                 <div className="bound">
                     <div className="banner-box">
-                        <video
-                            autoPlay
-                            loop
-                            muted
-                        >
+                        <video autoPlay loop muted >
                             <source src={videobanner} type="video/mp4" />
                         </video>
                     </div>
