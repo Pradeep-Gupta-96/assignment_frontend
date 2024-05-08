@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../images/logo.png'
 import videobanner from '../images/main-banner.mp4'
@@ -50,7 +50,11 @@ const HomePage = () => {
             behavior: 'smooth' // Optional: smooth scrolling animation
         });
     };
-    
+
+    useEffect(() => {
+        localStorage.clear()
+    }, [])
+
     return (
         <>
             <div className="header">
