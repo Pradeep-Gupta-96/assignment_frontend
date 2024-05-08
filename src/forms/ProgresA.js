@@ -84,6 +84,20 @@ const ProgresA = () => {
     const [skills, setSkills] = useState([]);
     const [error, setError] = useState(null); // State to store error messages
 
+
+
+    useEffect(() => {
+      
+        const pageDetails = localStorage.getItem('yashodanandB');
+        const id = localStorage.getItem('id');
+
+        if(pageDetails == 'yashodanandB') {
+            navigate(`/progresb/${id}`)
+        }
+
+    }, [])
+    
+
     const handleChange1 = (event) => {
         const {
             target: { value },
@@ -95,7 +109,7 @@ const ProgresA = () => {
     };
 
     // Set field_of_interest in local storage
-    localStorage.setItem('field_of_interest', formData.field_of_interest);
+    // localStorage.setItem('field_of_interest', formData.field_of_interest);
 
     const handleAvatarChange = (event) => {
         const file = event.target.files[0];
