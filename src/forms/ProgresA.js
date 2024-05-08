@@ -145,7 +145,8 @@ const ProgresA = () => {
             } else {
                 // Handle error response
                 const errorMessage = await response.text();
-                const errorObj = JSON.parse(errorMessage);
+                const errorObj = JSON.parse(errorMessage); 
+                //console.log ('hjk0', errorObj);
                 if (errorObj.message) {
                     setError(`${errorObj.message}`);
                 } else {
@@ -286,8 +287,8 @@ const ProgresA = () => {
                                         <div className="edu-class">
                                             <div className="class-box">
                                                 <FormControl fullWidth>
-                                                    <InputLabel required id="field-of-interest">Interest Area</InputLabel>
-                                                    <Select
+                                                    <InputLabel id="field-of-interest">Interest Area</InputLabel>
+                                                    <Select required
                                                         labelId="field-of-interest"
                                                         id="demo-simple-select-helper"
                                                         name="field_of_interest"
@@ -340,8 +341,8 @@ const ProgresA = () => {
                                             </div>
                                             <div className="class-box">
                                                 <FormControl fullWidth >
-                                                    <InputLabel required id="demo-multiple-checkbox-label">Skills</InputLabel>
-                                                    <Select
+                                                    <InputLabel id="demo-multiple-checkbox-label">Skills</InputLabel>
+                                                    <Select required
                                                         labelId="demo-multiple-checkbox-label"
                                                         id="demo-multiple-checkbox"
                                                         multiple
@@ -367,8 +368,8 @@ const ProgresA = () => {
                                         <div className="edu-class">
                                             <div className="class-box">
                                                 <FormControl fullWidth>
-                                                    <InputLabel required id="course">Course</InputLabel>
-                                                    <Select
+                                                    <InputLabel id="course">Course</InputLabel>
+                                                    <Select required
                                                         labelId="course"
                                                         id="demo-simple-select-helper"
                                                         name="course"
@@ -390,8 +391,8 @@ const ProgresA = () => {
                                             </div>
                                             <div className="class-box">
                                                 <FormControl fullWidth>
-                                                    <InputLabel required id="year-of-passing">College</InputLabel>
-                                                    <Select
+                                                    <InputLabel id="year-of-passing">College</InputLabel>
+                                                    <Select required
                                                         labelId="college"
                                                         id="demo-simple-select-helper"
                                                         name="college"
@@ -439,8 +440,8 @@ const ProgresA = () => {
                                             </div>
                                             <div className="class-box">
                                                 <FormControl fullWidth>
-                                                    <InputLabel required id="university">University</InputLabel>
-                                                    <Select
+                                                    <InputLabel id="university">University</InputLabel>
+                                                    <Select required
                                                         labelId="university"
                                                         id="demo-simple-select-helper"
                                                         name="university"
@@ -491,8 +492,8 @@ const ProgresA = () => {
                                         </div>
                                     </div>
 
-                                    <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
-                                        <FormLabel required component="legend">Course Duration:</FormLabel>
+                                    <FormControl  required className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
+                                        <FormLabel component="legend">Course Duration:</FormLabel>
                                         <FormControlLabel
                                             control={<Checkbox />}
                                             label="3 Years"
@@ -519,8 +520,8 @@ const ProgresA = () => {
                                             </div>
                                             <div className="class-box">
                                                 <FormControl fullWidth>
-                                                    <InputLabel required id="10th-board">Board</InputLabel>
-                                                    <Select
+                                                    <InputLabel id="10th-board">Board</InputLabel>
+                                                    <Select required
                                                         labelId="10th_board"
                                                         id="demo-simple-select-helper"
                                                         name='class_10_education'
@@ -550,8 +551,8 @@ const ProgresA = () => {
                                             </div>
                                             <div className="class-box">
                                                 <FormControl fullWidth>
-                                                    <InputLabel required id="12th-board">Board</InputLabel>
-                                                    <Select
+                                                    <InputLabel id="12th-board">Board</InputLabel>
+                                                    <Select required
                                                         labelId="12th_board"
                                                         id="demo-simple-select-helper"
                                                         label="Education Board"
@@ -591,8 +592,8 @@ const ProgresA = () => {
                                     </div>
 
 
-                                    <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
-                                        <FormLabel required component="legend">Publications, if any:</FormLabel>
+                                    <FormControl required className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
+                                        <FormLabel component="legend">Publications, if any:</FormLabel>
                                         <FormControlLabel
                                             control={<Checkbox />}
                                             label="Yes"
@@ -616,7 +617,7 @@ const ProgresA = () => {
 
                                     <TextField required  id="outlined-required" label="Last Internship Details " name='last_internship_details' value={formData.last_internship_details} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
 
-                                    <FormControl className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
+                                    <FormControl required className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Preferred Location:</FormLabel>
                                         <FormControlLabel name='preferred_location' value={"Delhi"} checked={formData.preferred_location === 'Delhi'} onChange={handleChange} control={<Checkbox />} label="Delhi" />
                                         <FormControlLabel name='preferred_location' value={"Gurugram"} checked={formData.preferred_location === 'Gurugram'} onChange={handleChange} control={<Checkbox />} label="Gurugram" />
@@ -640,12 +641,13 @@ const ProgresA = () => {
                                         5. There shall be no negative marking.</p>
                                 </Grid>
                             </Grid>
-                        </Box>
-                        <Box sx={{ width: '100%' }} className="bottom-form">
-                        <Link className='back-link'></Link>
+                            <Box sx={{ width: '100%' }} className="bottom-form">
+                            <Link className='back-link'></Link>
                             {error && <div style={{ color: "#dc3232" }}>{error}</div>} {/* Display error message if there is an error */}
-                            <Button className="blue-btn" onClick={onSubmit}>Next</Button>
+                            <Button type='submit' className="blue-btn" onClick={onSubmit}>Next</Button>
                         </Box>
+                        </Box>
+                        
 
                     </div>
                 </div>

@@ -228,9 +228,8 @@ const Dashboard = () => {
                                                             View Answer 3
                                                         </Link>
                                                     </TableCell> */}
-
                                                     <TableCell>
-                                                        <a href={`${Baseurl}/${item.uploadresume}`} target="_blank" rel="noopener noreferrer">
+                                                        <a href={`${Baseurl}/cv/${item.id}`} target="_blank" rel="noopener noreferrer">
                                                             <ArticleIcon />
                                                         </a>
                                                     </TableCell>
