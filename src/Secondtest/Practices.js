@@ -134,6 +134,21 @@ const Practices = () => {
     const id = localStorage.getItem("id");
     const navigate = useNavigate()
 
+    useEffect(() => {
+        const handlePopstate = (event) => {
+            console.log('Preventing back navigation...');
+            // Prevent the default behavior of the back button
+            window.history.pushState(null, '', window.location.href);
+        };
+
+        // Add an event listener to the window's popstate event
+        window.addEventListener('popstate', handlePopstate);
+
+        // Clean up the event listener when the component unmounts
+        return () => {
+            window.removeEventListener('popstate', handlePopstate);
+        };
+    }, []);
 
     //const [formDataInterestbased, setformDataInterestbased] = useState({
         const [formDataInterestbased, setformDataInterestbased] = useState(() => {

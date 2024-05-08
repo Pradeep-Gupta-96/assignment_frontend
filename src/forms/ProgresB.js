@@ -117,6 +117,7 @@ const ProgresB = () => {
 
 
     const navigate = useNavigate();
+    
     const [formData, setFormData] = useState(() => {
         const savedFormData = localStorage.getItem('formData');
         return savedFormData ? JSON.parse(savedFormData) : {
@@ -132,6 +133,10 @@ const ProgresB = () => {
             Aptitude_answer10: "",
         };
     });
+
+
+ 
+
 
     const id = localStorage.getItem("id");
 

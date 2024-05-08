@@ -66,6 +66,10 @@ const Dashboard = () => {
         return `${day}/${month}/${year}`;
     };
     const exportToExcel = () => {
+        todos.forEach(obj => {
+            obj.Resume_Link =  `${Baseurl}/cv/${obj.id}`;
+        });
+        
         const worksheet = XLSX.utils.json_to_sheet(todos);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Candidates');
