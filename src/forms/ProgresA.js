@@ -84,6 +84,20 @@ const ProgresA = () => {
     const [skills, setSkills] = useState([]);
     const [error, setError] = useState(null); // State to store error messages
 
+
+
+    useEffect(() => {
+      
+        const pageDetails = localStorage.getItem('yashodanandB');
+        const id = localStorage.getItem('id');
+
+        if(pageDetails == 'yashodanandB') {
+            navigate(`/progresb/${id}`)
+        }
+
+    }, [])
+    
+
     const handleChange1 = (event) => {
         const {
             target: { value },
