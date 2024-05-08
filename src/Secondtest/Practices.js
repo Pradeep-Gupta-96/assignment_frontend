@@ -72,6 +72,8 @@ const getRandomQuestions = (questions, count) => {
 
 const Practices = () => {
 
+
+
     function getQuestionsForFieldOfInterest(fieldOfInterest) {
         switch (fieldOfInterest) {
             case 'Entertainment_and_Media_Law':
@@ -119,6 +121,7 @@ const Practices = () => {
     }
 
 
+
     const fieldOfInterest = localStorage.getItem("field_of_interest");
     const selectedQuestions = getQuestionsForFieldOfInterest(fieldOfInterest);
     const [Sillbased] = useState(() => getRandomQuestions(selectedQuestions, 3));
@@ -131,7 +134,10 @@ const Practices = () => {
     const id = localStorage.getItem("id");
     const navigate = useNavigate()
 
-    const [formDataInterestbased, setformDataInterestbased] = useState({
+
+    //const [formDataInterestbased, setformDataInterestbased] = useState({
+        const [formDataInterestbased, setformDataInterestbased] = useState(() => {
+            const savedData = JSON.parse(localStorage.getItem('formDataInterestbased')) || {  
         answer1_entertainment_and_media_law: '',
         answer2_entertainment_and_media_law: '',
         answer3_entertainment_and_media_law: '',
@@ -189,9 +195,13 @@ const Practices = () => {
         answer5_environment: '',
         answer1_public_policy: '',
         answer2_public_policy: '',
+    };
+    return savedData;  
     });
 
-    const [formDataPartA, setFormDataPartA] = useState({
+    //const [formDataPartA, setFormDataPartA] = useState({
+        const [formDataPartA, setFormDataPartA] = useState(() => {
+            const savedData = JSON.parse(localStorage.getItem('formDataPartA')) || {    
         answer1_part_a: '',
         answer2_part_a: '',
         answer3_part_a: '',
@@ -207,23 +217,35 @@ const Practices = () => {
         answer13_part_a: '',
         answer14_part_a: '',
         // ... other PartA questions
+    };
+    return savedData; 
     });
 
-    const [formDataPartB, setFormDataPartB] = useState({
+   // const [formDataPartB, setFormDataPartB] = useState({
+    const [formDataPartB, setFormDataPartB] = useState(() => {
+        const savedData = JSON.parse(localStorage.getItem('formDataPartB')) || {
         answer1_part_b: '',
         answer2_part_b: '',
         answer3_part_b: '',
         // ... other PartB questions
+    };
+    return savedData;  
     });
 
-    const [formDataPartC, setFormDataPartC] = useState({
+    //const [formDataPartC, setFormDataPartC] = useState({
+        const [formDataPartC, setFormDataPartC] = useState(() => {
+            const savedData = JSON.parse(localStorage.getItem('formDataPartC')) || {   
         answer1_part_c: '',
         answer2_part_c: '',
         answer3_part_c: '',
         // ... other PartC questions
+    };
+    return savedData; 
     });
 
-    const [formDataPartD, setFormDataPartD] = useState({
+    //const [formDataPartD, setFormDataPartD] = useState({
+        const [formDataPartD, setFormDataPartD] = useState(() => {
+            const savedData = JSON.parse(localStorage.getItem('formDataPartD')) || {  
         answer1_part_d: '',
         answer2_part_d: '',
         answer3_part_d: '',
@@ -235,7 +257,18 @@ const Practices = () => {
         answer9_part_d: '',
         answer10_part_d: '',
         // ... other PartD questions
+    };
+    return savedData;
     });
+
+    // Effect to save form data in localStorage
+    useEffect(() => {
+        localStorage.setItem('formDataInterestbased', JSON.stringify(formDataInterestbased));
+        localStorage.setItem('formDataPartA', JSON.stringify(formDataPartA));
+        localStorage.setItem('formDataPartB', JSON.stringify(formDataPartB));
+        localStorage.setItem('formDataPartC', JSON.stringify(formDataPartC));
+        localStorage.setItem('formDataPartD', JSON.stringify(formDataPartD));
+    }, [formDataInterestbased, formDataPartA, formDataPartB, formDataPartC, formDataPartD]);
 
 
     const handleChangeInterestbased = (event) => {

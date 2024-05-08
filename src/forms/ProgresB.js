@@ -15,26 +15,122 @@ import videobg from '../images/background-video.mp4';
 import TimmerCompo from './TimmerCompo';
 import { Baseurl } from '../common/Url';
 
-const steps = [
-    'Preliminary Details',
-    'Aptitude',
-    'Ethical',
-    'Technical '
-];
+// const steps = [
+//     'Preliminary Details',
+//     'Aptitude',
+//     'Ethical',
+//     'Technical '
+// ];
+
+// const ProgresB = () => {
+//     const navigate = useNavigate()
+//     const [formData, setFormData] = useState({
+//         Aptitude_answer1: "",
+//         Aptitude_answer2: "",
+//         Aptitude_answer3: "",
+//         Aptitude_answer4: "",
+//         Aptitude_answer5: "",
+//         Aptitude_answer6: "",
+//         Aptitude_answer7: "",
+//         Aptitude_answer8: "",
+//         Aptitude_answer9: "",
+//         Aptitude_answer10: "",
+//     });
+
+//     const id = localStorage.getItem("id");
+
+
+
+
+//     const handleChange = (event) => {
+//         const { name, value } = event.target;
+//         setFormData({
+//             ...formData,
+//             [name]: value,
+//         });
+//     };
+
+//     const API = `${Baseurl}/updateTodo2/${id}`;
+
+//     const onSubmit = async () => {
+//         try {
+//             const response = await fetch(API, {
+//                 method: 'PUT',
+//                 headers: {
+//                     'Content-Type': 'application/json',
+//                 },
+//                 body: JSON.stringify(formData),
+//             });
+    
+//             if (response.ok) {
+//                 await response.json();
+//                 localStorage.setItem("yashodanandC", "yashodanandC");
+//                 navigate(`/progresc/${id}`);
+//             } else {
+//                 const errorMessage = await response.text();
+//                 // Handle error response
+//                 console.error('Error:', response.statusText);
+//             }
+//         } catch (error) {
+//            // Handle any errors that occur during the request
+//             console.error('Update error:', error);
+//         }
+//     };
+    
+//     useEffect(() => {
+//         if (!localStorage.getItem('yashodanandB')) {
+//             navigate(`/progresa`)
+//         }
+//     }, [])
+
+//     // Function to get the saved current time from local storage
+//     const getSavedCurrentTime = () => {
+//         const storedStartTime = localStorage.getItem('currentStartTime');
+//         return storedStartTime ? parseInt(storedStartTime, 10) : null;
+//     };
+
+//     // Get the saved current time from local storage
+//     const currentStartTime = getSavedCurrentTime();
+
+//     // Calculate target time based on current time
+//     const targetTime = currentStartTime ? currentStartTime + 45 * 60 * 1000 : 0;
+
+//     useEffect(() => {
+//         // Start the timer when this component mounts
+//         if (currentStartTime) {
+//             // The targetTime variable is calculated based on the current time.
+//             // You can use this targetTime to start the countdown timer as needed.
+//             // If you want to use the countdown timer, call the startTimer function here.
+//             // startTimer();
+//         }
+//     }, [currentStartTime]);
+
+
+ const steps = [
+         'Preliminary Details',
+         'Aptitude',
+         'Ethical',
+         'Technical '
+     ];
 
 const ProgresB = () => {
-    const navigate = useNavigate()
-    const [formData, setFormData] = useState({
-        Aptitude_answer1: "",
-        Aptitude_answer2: "",
-        Aptitude_answer3: "",
-        Aptitude_answer4: "",
-        Aptitude_answer5: "",
-        Aptitude_answer6: "",
-        Aptitude_answer7: "",
-        Aptitude_answer8: "",
-        Aptitude_answer9: "",
-        Aptitude_answer10: "",
+
+
+    const navigate = useNavigate();
+    const [formData, setFormData] = useState(() => {
+        const savedFormData = localStorage.getItem('formData');
+        return savedFormData ? JSON.parse(savedFormData) : {
+            Aptitude_answer1: "",
+            Aptitude_answer2: "",
+            Aptitude_answer3: "",
+            Aptitude_answer4: "",
+            Aptitude_answer5: "",
+            Aptitude_answer6: "",
+            Aptitude_answer7: "",
+            Aptitude_answer8: "",
+            Aptitude_answer9: "",
+            Aptitude_answer10: "",
+        };
     });
 
     const id = localStorage.getItem("id");
@@ -58,7 +154,7 @@ const ProgresB = () => {
                 },
                 body: JSON.stringify(formData),
             });
-    
+
             if (response.ok) {
                 await response.json();
                 localStorage.setItem("yashodanandC", "yashodanandC");
@@ -69,38 +165,35 @@ const ProgresB = () => {
                 console.error('Error:', response.statusText);
             }
         } catch (error) {
-           // Handle any errors that occur during the request
+            // Handle any errors that occur during the request
             console.error('Update error:', error);
         }
     };
-    
+
+    useEffect(() => {
+        localStorage.setItem('formData', JSON.stringify(formData));
+    }, [formData]);
+
     useEffect(() => {
         if (!localStorage.getItem('yashodanandB')) {
-            navigate(`/progresa`)
+            navigate(`/progresa`);
         }
-    }, [])
+    }, []);
 
-    // Function to get the saved current time from local storage
     const getSavedCurrentTime = () => {
         const storedStartTime = localStorage.getItem('currentStartTime');
         return storedStartTime ? parseInt(storedStartTime, 10) : null;
     };
 
-    // Get the saved current time from local storage
     const currentStartTime = getSavedCurrentTime();
-
-    // Calculate target time based on current time
     const targetTime = currentStartTime ? currentStartTime + 45 * 60 * 1000 : 0;
 
     useEffect(() => {
-        // Start the timer when this component mounts
         if (currentStartTime) {
-            // The targetTime variable is calculated based on the current time.
-            // You can use this targetTime to start the countdown timer as needed.
-            // If you want to use the countdown timer, call the startTimer function here.
-            // startTimer();
+            // Start the timer or perform any other actions based on the current time
         }
     }, [currentStartTime]);
+
 
     return (
         <>

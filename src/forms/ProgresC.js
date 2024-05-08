@@ -46,65 +46,67 @@ const Textarea = styled(BaseTextareaAutosize)(
 );
 
 
+//------------------------------
+// const ProgresC = () => {
+//     const navigate = useNavigate()
 
-const ProgresC = () => {
-    const navigate = useNavigate()
+//     const [formData, setFormData] = useState({
+//         "Answer1": "",
+//         "Answer2": "",
+//         "Answer3": "",
+//     });
+//     //const [timerTargetTime, setTimerTargetTime] = useState(0); // Initialize target time to 0
 
-    const [formData, setFormData] = useState({
-        "Answer1": "",
-        "Answer2": "",
-        "Answer3": "",
-    });
-    //const [timerTargetTime, setTimerTargetTime] = useState(0); // Initialize target time to 0
+//     const handleChange = (event) => {
+//         const { name, value } = event.target;
+//         setFormData({
+//             ...formData,
+//             [name]: value,
+//         });
+//     };
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-    };
+//     const id = localStorage.getItem('id');
 
-    const id = localStorage.getItem('id');
+//     const handleSubmit = async (event) => {
+//         try {
+//             if (event) {
+//                 event.preventDefault();
+//             }
+//             const API = `${Baseurl}/updateTodo3/${id}`; // Include the ID in the API URL
 
-    const handleSubmit = async (event) => {
-        try {
-            if (event) {
-                event.preventDefault();
-            }
-            const API = `${Baseurl}/updateTodo3/${id}`; // Include the ID in the API URL
+//             // Make the HTTP POST request
+//             const response = await fetch(API, {
+//                 method: 'PUT',
+//                 headers: {
+//                     'Content-Type': 'application/json', // Set the content type
+//                 },
+//                 body: JSON.stringify(formData), // Convert to JSON
+//             });
 
-            // Make the HTTP POST request
-            const response = await fetch(API, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json', // Set the content type
-                },
-                body: JSON.stringify(formData), // Convert to JSON
-            });
+//             if (response.ok) {
+//                 // Handle successful response
+//                 await response.json();
+//                 // Redirect to another page or perform other actions
+//                 localStorage.setItem("yashodanandD", "yashodanandD")
+//                 // Redirect to another page or perform other actions
+//                 navigate(`/progresd/${id}`);
+//             } else {
+//                 // Handle error response
+//                 console.error('Error:', response.statusText);
+//             }
+//         } catch (error) {
+//             // Handle any errors that occur during the request
+//             console.error('Form submission error:', error);
+//         }
+//     };
 
-            if (response.ok) {
-                // Handle successful response
-                await response.json();
-                // Redirect to another page or perform other actions
-                localStorage.setItem("yashodanandD", "yashodanandD")
-                // Redirect to another page or perform other actions
-                navigate(`/progresd/${id}`);
-            } else {
-                // Handle error response
-                console.error('Error:', response.statusText);
-            }
-        } catch (error) {
-            // Handle any errors that occur during the request
-            console.error('Form submission error:', error);
-        }
-    };
+//     useEffect(() => {
+//         if (!localStorage.getItem('yashodanandC')) {
+//             navigate(`/progresb/${id}`)
+//         }
+//     }, [])
 
-    useEffect(() => {
-        if (!localStorage.getItem('yashodanandC')) {
-            navigate(`/progresb/${id}`)
-        }
-    }, [])
+//--------------------------------------------------
 
     // this funtion is for checking timming 
     // const API1 = `http://localhost:4000/api/todo/${id}`;
@@ -133,28 +135,106 @@ const ProgresC = () => {
 
     //     return () => clearInterval(interval);
     // }, [fetchData1]);
+//---------------------------------------------------
 
     // Function to get the saved current time from local storage
+//     const getSavedCurrentTime = () => {
+//         const storedStartTime = localStorage.getItem('currentStartTime');
+//         return storedStartTime ? parseInt(storedStartTime, 10) : null;
+//     };
+
+//     // Get the saved current time from local storage
+//     const currentStartTime = getSavedCurrentTime();
+
+//     // Calculate target time based on current time
+//     const targetTime = currentStartTime ? currentStartTime + 45 * 60 * 1000 : 0;
+
+//     useEffect(() => {
+//         // Start the timer when this component mounts
+//         if (currentStartTime) {
+//             // The targetTime variable is calculated based on the current time.
+//             // You can use this targetTime to start the countdown timer as needed.
+//             // If you want to use the countdown timer, call the startTimer function here.
+//             // startTimer();
+//         }
+//     }, [currentStartTime]);
+// //--------------------------------------------------------------
+
+
+             
+const ProgresC = () => {
+    const navigate = useNavigate();
+
+    const [formData, setFormData] = useState(() => {
+        const savedFormData = localStorage.getItem('formDataC');
+        return savedFormData ? JSON.parse(savedFormData) : {
+            "Answer1": "",
+            "Answer2": "",
+            "Answer3": "",
+        };
+    });
+
+    const id = localStorage.getItem('id');
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = async (event) => {
+        try {
+            if (event) {
+                event.preventDefault();
+            }
+            const API = `${Baseurl}/updateTodo3/${id}`;
+
+            const response = await fetch(API, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                await response.json();
+                localStorage.setItem("yashodanandD", "yashodanandD")
+                navigate(`/progresd/${id}`);
+            } else {
+                console.error('Error:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+        }
+    };
+
+    useEffect(() => {
+        localStorage.setItem('formDataC', JSON.stringify(formData));
+    }, [formData]);
+
+    useEffect(() => {
+        if (!localStorage.getItem('yashodanandC')) {
+            navigate(`/progresb/${id}`)
+        }
+    }, []);
+
     const getSavedCurrentTime = () => {
         const storedStartTime = localStorage.getItem('currentStartTime');
         return storedStartTime ? parseInt(storedStartTime, 10) : null;
     };
 
-    // Get the saved current time from local storage
     const currentStartTime = getSavedCurrentTime();
-
-    // Calculate target time based on current time
     const targetTime = currentStartTime ? currentStartTime + 45 * 60 * 1000 : 0;
 
     useEffect(() => {
-        // Start the timer when this component mounts
         if (currentStartTime) {
-            // The targetTime variable is calculated based on the current time.
-            // You can use this targetTime to start the countdown timer as needed.
-            // If you want to use the countdown timer, call the startTimer function here.
-            // startTimer();
+            // Start the timer or perform any other actions based on the current time
         }
     }, [currentStartTime]);
+
 
 
     return (
