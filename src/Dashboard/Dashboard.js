@@ -135,40 +135,9 @@ const Dashboard = () => {
                                     <TableCell>lastinternshipdetails</TableCell>
                                     <TableCell>Participated in Court</TableCell>
                                     <TableCell>Preferred Location</TableCell>
-                                    {/* <TableCell>Answer 1</TableCell>
-                                    <TableCell>Answer 2</TableCell>
-                                    <TableCell>Answer 3</TableCell> */}
+                                   
                                     <TableCell>Resume</TableCell>
-                                    {/* <TableCell> answer1_parta</TableCell>
-                                    <TableCell> answer2_parta</TableCell>
-                                    <TableCell> answer3_parta</TableCell>
-                                    <TableCell> answer4_parta</TableCell>
-                                    <TableCell> answer5_parta</TableCell>
-                                    <TableCell> answer6_parta</TableCell>
-                                    <TableCell> answer7_parta</TableCell>
-                                    <TableCell> answer8_parta</TableCell>
-                                    <TableCell> answer9_parta</TableCell>
-                                    <TableCell> answer10_parta</TableCell>
-                                    <TableCell> answer11_parta</TableCell>
-                                    <TableCell> answer12_parta</TableCell>
-                                    <TableCell> answer13_parta</TableCell>
-                                    <TableCell> answer14_parta</TableCell>
-                                    <TableCell> answer1_partb</TableCell>
-                                    <TableCell> answer2_partb</TableCell>
-                                    <TableCell> answer3_partb</TableCell>
-                                    <TableCell> answer1_partc</TableCell>
-                                    <TableCell> answer2_partc</TableCell>
-                                    <TableCell> answer3_partc</TableCell>
-                                    <TableCell> answer1_partd</TableCell>
-                                    <TableCell> answer2_partd</TableCell>
-                                    <TableCell> answer3_partd</TableCell>
-                                    <TableCell> answer4_partd</TableCell>
-                                    <TableCell> answer5_partd</TableCell>
-                                    <TableCell> answer6_partd</TableCell>
-                                    <TableCell> answer7_partd</TableCell>
-                                    <TableCell> answer8_partd</TableCell>
-                                    <TableCell> answer9_partd</TableCell>
-                                    <TableCell> answer10_partd</TableCell> */}
+                                 
                                     <TableCell>created at</TableCell>
                                     <TableCell>Delete</TableCell>
                                     <TableCell>Total Marks</TableCell>
@@ -208,65 +177,13 @@ const Dashboard = () => {
                                                     <TableCell>{item.haveyouparticipatedinmootcourt}</TableCell>
                                                     <TableCell>{item.preferredlocation}</TableCell>
 
-                                                    {/* <TableCell>
-                                                        <Link
-                                                            variant="outlined"
-                                                            onClick={() => handleClickOpen(index, 1)}
-                                                        >
-                                                            View Answer 1
-                                                        </Link>
-                                                    </TableCell>
-                                                    <TableCell>
-                                                        <Link
-                                                            variant="outlined"
-                                                            onClick={() => handleClickOpen(index, 2)}
-                                                        >
-                                                            View Answer 2
-                                                        </Link>
-                                                    </TableCell>
-                                                    <TableCell>
-                                                        <Link
-                                                            variant="outlined"
-                                                            onClick={() => handleClickOpen(index, 3)}
-                                                        >
-                                                            View Answer 3
-                                                        </Link>
-                                                    </TableCell> */}
+                                                  
                                                     <TableCell>
                                                         <a href={`${Baseurl}/cv/${item.id}`} target="_blank" rel="noopener noreferrer">
                                                             <ArticleIcon />
                                                         </a>
                                                     </TableCell>
-                                                    {/* <TableCell> {item.answer1_parta}</TableCell>
-                                                    <TableCell> {item.answer2_parta}</TableCell>
-                                                    <TableCell> {item.answer3_parta}</TableCell>
-                                                    <TableCell> {item.answer4_parta}</TableCell>
-                                                    <TableCell> {item.answer5_parta}</TableCell>
-                                                    <TableCell> {item.answer6_parta}</TableCell>
-                                                    <TableCell> {item.answer7_parta}</TableCell>
-                                                    <TableCell> {item.answer8_parta}</TableCell>
-                                                    <TableCell> {item.answer9_parta}</TableCell>
-                                                    <TableCell> {item.answer10_parta}</TableCell>
-                                                    <TableCell> {item.answer11_parta}</TableCell>
-                                                    <TableCell> {item.answer12_parta}</TableCell>
-                                                    <TableCell> {item.answer13_parta}</TableCell>
-                                                    <TableCell> {item.answer14_parta}</TableCell>
-                                                    <TableCell> {item.answer1_partb}</TableCell>
-                                                    <TableCell> {item.answer2_partb}</TableCell>
-                                                    <TableCell> {item.answer3_partb}</TableCell>
-                                                    <TableCell> {item.answer1_partc}</TableCell>
-                                                    <TableCell> {item.answer2_partc}</TableCell>
-                                                    <TableCell> {item.answer3_partc}</TableCell>
-                                                    <TableCell> {item.answer1_partd}</TableCell>
-                                                    <TableCell> {item.answer2_partd}</TableCell>
-                                                    <TableCell> {item.answer3_partd}</TableCell>
-                                                    <TableCell> {item.answer4_partd}</TableCell>
-                                                    <TableCell> {item.answer5_partd}</TableCell>
-                                                    <TableCell> {item.answer6_partd}</TableCell>
-                                                    <TableCell> {item.answer7_partd}</TableCell>
-                                                    <TableCell> {item.answer8_partd}</TableCell>
-                                                    <TableCell> {item.answer9_partd}</TableCell>
-                                                    <TableCell> {item.answer10_partd}</TableCell> */}
+                                                  
 
                                                     <TableCell>{formatDate(item.created_at)}</TableCell>
                                                     <TableCell><DeleteIcon onClick={() => { clickForDelete(item.id) }} /></TableCell>

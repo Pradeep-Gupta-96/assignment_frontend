@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../images/logo.png'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -8,7 +8,6 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import { Button, FormLabel, ListItemText } from '@mui/material';
-import { useNavigate } from "react-router-dom"
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -30,7 +29,6 @@ const MenuProps = {
     },
 };
 
-
 const skillsOptions = [
     "Negotiation",
     "Drafting",
@@ -50,7 +48,7 @@ const steps = [
     'Preliminary Details',
     'Aptitude',
     'Ethical',
-    'Technical '
+    'Technical'
 ];
 
 const ProgresA = () => {
@@ -84,32 +82,21 @@ const ProgresA = () => {
     const [skills, setSkills] = useState([]);
     const [error, setError] = useState(null); // State to store error messages
 
-
-
     useEffect(() => {
-      
         const pageDetails = localStorage.getItem('yashodanandB');
         const id = localStorage.getItem('id');
 
-        if(pageDetails == 'yashodanandB') {
+        if (pageDetails === 'yashodanandB') {
             navigate(`/progresb/${id}`)
         }
-
-    }, [])
-    
+    }, [navigate]);
 
     const handleChange1 = (event) => {
-        const {
-            target: { value },
-        } = event;
+        const { target: { value } } = event;
         setSkills(
-            // On autofill, we get a stringified value.
             typeof value === 'string' ? value.split(',') : value
         );
     };
-
-    // Set field_of_interest in local storage
-    // localStorage.setItem('field_of_interest', formData.field_of_interest);
 
     const handleAvatarChange = (event) => {
         const file = event.target.files[0];
@@ -126,7 +113,9 @@ const ProgresA = () => {
 
     const id = localStorage.getItem('id');
 
-    const onSubmit = async () => {
+    const onSubmit = async (event) => {
+        event.preventDefault(); // Prevent the default form submission behavior
+
         try {
             const API = `${Baseurl}/updateTodo1/${id}`; // Include the ID in the API URL
 
@@ -159,8 +148,7 @@ const ProgresA = () => {
             } else {
                 // Handle error response
                 const errorMessage = await response.text();
-                const errorObj = JSON.parse(errorMessage); 
-                //console.log ('hjk0', errorObj);
+                const errorObj = JSON.parse(errorMessage);
                 if (errorObj.message) {
                     setError(`${errorObj.message}`);
                 } else {
@@ -176,84 +164,14 @@ const ProgresA = () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth' // Optional: smooth scrolling animation
-          });
+        });
     };
-    
-    // const onSubmit = async (event) => {
-    //     try {
-    //         if (event) {
-    //             event.preventDefault();
-    //         }
-    //         // Check if 'id' is stored in local storage
-
-    //         const API = `http://localhost:4000/api/updateTodo1/${id}`; // Update the API endpoint
-
-    //         // Make the HTTP POST request
-    //         const response = await fetch(API, {
-    //             method: 'PUT',
-    //             headers: {
-    //                 'Content-Type': 'application/json', // Set the content type
-    //             },
-    //             body: JSON.stringify(formData), // Convert to JSON
-    //         });
-
-    //         if (response.ok) {
-    //             // Handle successful response
-    //             const data = await response.json();
-    //             localStorage.setItem("yashodanandB", "yashodanandB")
-    //             // Save the current time in local storage
-    //             const currentTime = new Date().getTime();
-    //             localStorage.setItem('currentStartTime', currentTime.toString());
-    //             // Redirect to another page or perform other actions
-    //             navigate(`/progresb/${id}`);
-    //         } else {
-    //             // Handle error response
-    //             console.error('Error:', response.statusText);
-    //         }
-    //     } catch (error) {
-    //         // Handle any errors that occur during the request
-    //         console.error('Form submission error:', error);
-    //     }
-    // };
-
 
     useEffect(() => {
         if (!localStorage.getItem('yashodanandA')) {
             navigate('/')
         }
-    }, [])
-
-    console.log(error)
-
-    // const API1 = `http://localhost:4000/api/todo/${id}`;
-    // const fetchData1 = React.useCallback(async () => {
-    //     try {
-    //         const response = await fetch(API1);
-    //         const data = await response.json();
-    //         const timestamp = new Date(data.todo.created_at).getTime(); // Assuming 'created_at' is the timestamp field
-
-    //         const now = new Date().getTime();
-    //         const fortyFiveMinutes = 45 * 60 * 1000; // 45 minutes in milliseconds
-    //         setTimerTargetTime(timestamp + fortyFiveMinutes);
-
-    //         if (now - timestamp >= fortyFiveMinutes) {
-    //             navigate('/')
-    //             // Time is up, navigate to the '/progresc/{id}' route
-    //             // onSubmit()
-    //         }
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }, [API1, id, navigate]);
-
-    // React.useEffect(() => {
-    //     fetchData1();
-    //     const interval = setInterval(fetchData1, 1000);
-
-    //     return () => clearInterval(interval);
-    // }, [fetchData1]);
-
-
+    }, [navigate]);
 
     return (
         <>
@@ -282,7 +200,7 @@ const ProgresA = () => {
                                 ))}
                             </Stepper>
                         </Box>
-                        <Box className='top-form' component="form" >
+                        <Box className='top-form' component="form" onSubmit={onSubmit}>
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={12}>
                                     <div className="eduction p-details">
@@ -332,21 +250,6 @@ const ProgresA = () => {
                                                         <MenuItem value={"AVIATION_LAW"}>AVIATION LAW </MenuItem>
                                                         <MenuItem value={"Environment"}>Environment </MenuItem>
                                                         <MenuItem value={"Public_Policy"}>Public Policy </MenuItem>
-                                                        {/* 
-                                                        <MenuItem value={"Insolvency and Bankruptcy Code"}>Insolvency and Bankruptcy Code</MenuItem>
-                                                        <MenuItem value={"Corporate Restructuring"}>Corporate Restructuring</MenuItem>
-                                                        <MenuItem value={"Banking"}>Banking</MenuItem>
-                                                        <MenuItem value={"Finance"}>Finance</MenuItem>
-                                                        <MenuItem value={"Intellectual Property Rights"}>Intellectual Property Rights</MenuItem>
-                                                        <MenuItem value={"Data Privacy"}>Data Privacy</MenuItem>
-                                                        <MenuItem value={"Litigation"}>Litigation</MenuItem>
-                                                        <MenuItem value={"Sports Law"}>Sports Law</MenuItem>
-                                                        <MenuItem value={"Arbitration"}>Arbitration</MenuItem>
-                                                        <MenuItem value={"Aviation"}>Aviation</MenuItem>
-                                                        <MenuItem value={"Employment and Labour Laws"}>Employment and Labour Laws</MenuItem>
-                                                        <MenuItem value={"Mergers and Acquisition"}>Mergers and Acquisition</MenuItem>
-                                                        <MenuItem value={"Public Policy"}>Public Policy</MenuItem>
-                                                        <MenuItem value={"White Collar Crimes"}>White Collar Crimes</MenuItem> */}
                                                     </Select>
                                                 </FormControl>
                                             </div>
@@ -354,7 +257,7 @@ const ProgresA = () => {
                                                 <TextField required id="outlined-required" label="Linkedin URL" name='linkedin_url' value={formData.linkedin_url} onChange={handleChange} fullWidth />
                                             </div>
                                             <div className="class-box">
-                                                <FormControl fullWidth >
+                                                <FormControl fullWidth>
                                                     <InputLabel id="demo-multiple-checkbox-label">Skills</InputLabel>
                                                     <Select required
                                                         labelId="demo-multiple-checkbox-label"
@@ -506,7 +409,7 @@ const ProgresA = () => {
                                         </div>
                                     </div>
 
-                                    <FormControl  required className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
+                                    <FormControl required className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Course Duration:</FormLabel>
                                         <FormControlLabel
                                             control={<Checkbox />}
@@ -605,7 +508,6 @@ const ProgresA = () => {
                                         </div>
                                     </div>
 
-
                                     <FormControl required className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Publications, if any:</FormLabel>
                                         <FormControlLabel
@@ -629,7 +531,7 @@ const ProgresA = () => {
                                         <TextField required id="outlined-required" label="Publications Link" name='publications_link' value={formData.publications_link} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
                                     )}
 
-                                    <TextField required  id="outlined-required" label="Last Internship Details " name='last_internship_details' value={formData.last_internship_details} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
+                                    <TextField required id="outlined-required" label="Last Internship Details " name='last_internship_details' value={formData.last_internship_details} onChange={handleChange} fullWidth sx={{ marginBottom: "25px" }} />
 
                                     <FormControl required className="checkbox-row" sx={{ marginBottom: "25px" }} fullWidth>
                                         <FormLabel component="legend">Preferred Location:</FormLabel>
@@ -656,20 +558,16 @@ const ProgresA = () => {
                                 </Grid>
                             </Grid>
                             <Box sx={{ width: '100%' }} className="bottom-form">
-                            <Link className='back-link'></Link>
-                            {error && <div style={{ color: "#dc3232" }}>{error}</div>} {/* Display error message if there is an error */}
-                            <Button type='submit' className="blue-btn" onClick={onSubmit}>Next</Button>
+                                <Link className='back-link'></Link>
+                                {error && <div style={{ color: "#dc3232" }}>{error}</div>} {/* Display error message if there is an error */}
+                                <Button type='submit' className="blue-btn">Next</Button>
+                            </Box>
                         </Box>
-                        </Box>
-                        
-
                     </div>
                 </div>
             </div>
-
         </>
-
-    )
+    );
 }
 
-export default ProgresA
+export default ProgresA;
