@@ -105,7 +105,7 @@ const Dashboard = () => {
                 <div className="bound">
                     <Link className='dawn-csv' variant="contained" color="primary" onClick={exportToExcel}><FileDownloadIcon /> Export to CSV </Link>
                     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-                        <TableContainer sx={{ maxHeight: 440 }}>
+                        <TableContainer>
                             <Table stickyHeader aria-label="sticky table" className='data-table'>
                                 <TableHead>
                                     <TableCell>ID</TableCell>
