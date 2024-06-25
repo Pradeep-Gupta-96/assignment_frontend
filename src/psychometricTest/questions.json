@@ -1,0 +1,86 @@
+[
+    {
+        "section": "A",
+        "questionId": 1,
+        "questionText": "What is the capital of France?",
+        "type": "checkbox",
+        "options": [
+            {
+                "optionId": 1,
+                "optionText": "Paris",
+                "isCorrect": true
+            },
+            {
+                "optionId": 2,
+                "optionText": "London",
+                "isCorrect": false
+            },
+            {
+                "optionId": 3,
+                "optionText": "Berlin",
+                "isCorrect": false
+            },
+            {
+                "optionId": 4,
+                "optionText": "Madrid",
+                "isCorrect": false
+            }
+        ]
+    },
+    {
+        "section": "A",
+        "questionId": 2,
+        "questionText": "Provide a brief description of the Eiffel Tower.",
+        "type": "input",
+        "inputType": "text"
+    },
+    {
+        "section": "B",
+        "questionId": 3,
+        "questionText": "Which of the following are fruits? (Select all that apply)",
+        "type": "checkbox",
+        "options": [
+            {
+                "optionId": 5,
+                "optionText": "Apple",
+                "isCorrect": true
+            },
+            {
+                "optionId": 6,
+                "optionText": "Carrot",
+                "isCorrect": false
+            },
+            {
+                "optionId": 7,
+                "optionText": "Banana",
+                "isCorrect": true
+            },
+            {
+                "optionId": 8,
+                "optionText": "Broccoli",
+                "isCorrect": false
+            }
+        ]
+    },
+    {
+        "section": "B",
+        "questionId": 4,
+        "questionText": "What is your favorite fruit?",
+        "type": "input",
+        "inputType": "text"
+    },
+    {
+        "section": "C",
+        "questionId": 5,
+        "questionText": "Upload an image of a fruit.",
+        "type": "input",
+        "inputType": "file"
+    },
+    {
+        "section": "C",
+        "questionId": 6,
+        "questionText": "How many continents are there in the world?",
+        "type": "input",
+        "inputType": "number"
+    }
+]

@@ -539,7 +539,7 @@ const ProgresA = () => {
                                         <FormControlLabel name='preferred_location' value={"Gurugram"} checked={formData.preferred_location === 'Gurugram'} onChange={handleChange} control={<Checkbox />} label="Gurugram" />
                                     </FormControl>
                                     <FormControl className="checkbox-row" sx={{ marginBottom: "25px", display: "inline-block !important" }} fullWidth>
-                                        <FormLabel required sx={{ paddingBottom: "10px" }} component="legend">Upload Resume:</FormLabel>
+                                        <FormLabel required sx={{ paddingBottom: "10px" }} component="legend">Upload Resume: <span style={{fontWeight:'lighter', fontSize:'13px'}}>(Only PDFs/DOC/DOCX less than <span style={{ color:'red', fontWeight:'bold'}}> 2MB</span> )</span> </FormLabel>
                                         <TextField
                                             required
                                             id="outlined-required"

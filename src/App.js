@@ -9,6 +9,8 @@ import Successpage from './forms/Successpage';
 import Dashboard from './Dashboard/Dashboard';
 import Practices from './Secondtest/Practices';
 import ProgresD from './forms/ProgresD';
+import PsychometricTest from './psychometricTest/PsychometricTest';
+import PsychometricSuccess from './psychometricTest/PsychometricSuccess';
 
 
 
@@ -25,6 +27,8 @@ function App() {
     { path: "/successpage", element: <Successpage/> },
     { path: "/dashboard", element: <Dashboard/> },
     { path: "/practices", element: <Practices/> },
+    { path: "/PsychometricTest", element: <PsychometricTest/> },
+    { path: "/PsychometricSuccess", element: <PsychometricSuccess/> },
   
   ]
   
