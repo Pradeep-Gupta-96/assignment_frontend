@@ -2,42 +2,21 @@
     {
         "section": "A",
         "questionId": 1,
-        "questionText": "What is the capital of France?",
-        "type": "checkbox",
-        "options": [
-            {
-                "optionId": 1,
-                "optionText": "Paris",
-                "isCorrect": true
-            },
-            {
-                "optionId": 2,
-                "optionText": "London",
-                "isCorrect": false
-            },
-            {
-                "optionId": 3,
-                "optionText": "Berlin",
-                "isCorrect": false
-            },
-            {
-                "optionId": 4,
-                "optionText": "Madrid",
-                "isCorrect": false
-            }
-        ]
+        "questionText": "<b>Q1.</b> <span class='sec-bg'>Section A:</span> <strong>STORY TELLING</strong><ul><li>You are required to create a story from the given picture. The picture will be shown just for 30 sec. The story must include the character (hero), the problem or the crisis the person is facing, and how he is going to overcome that. The time for this activity is 3 minutes. The candidate is required to create a story conveying both a negative and a positive message.</li></ul>",
+        "type": "input",
+        "inputType": "textarea"
     },
     {
         "section": "A",
         "questionId": 2,
-        "questionText": "Provide a brief description of the Eiffel Tower.",
+        "questionText": "<p><b>Q2.</b> <span class='sec-bg'>Section B:</span> <strong>Spot the difference</strong>.</p><p>Carefully observe the two images provided below. Identify and list 8 differences between the two images. This activity is for 1.5 mins.</p>",
         "type": "input",
         "inputType": "text"
     },
     {
         "section": "B",
         "questionId": 3,
-        "questionText": "Which of the following are fruits? (Select all that apply)",
+        "questionText": "<b>Q3.</b> <span class='sec-bg'>Section C:</span> <strong>Situation Based Questions</strong><ol><li><strong>You will be given a series of 10 hypothetical situations, each described in a single line. You are required to give your response to the given situation in a line or two. The time given is 10 minutes to read and respond to all 10 situations</strong>.</li><ul><li>He is walking down the road and he sees a stranger collapsed on the road. What would he do?</li><li>He is standing in a queue and someone tries to jump ahead of him. How would he react?</li><li>He is in a situation where his team members are not cooperating. What steps would he take?</li><li>He is in a situation where he is asked to do something that he is not comfortable with. What would he do?</li><li>He is in a situation where he is running late for an important meeting. What steps would he take?</li><li>He is in a situation where he is asked to do something illegal. What would he do?</li><li>He is in a situation where he is accused of something that he did not do. How would he react?</li><li>He is in a situation where his supervisor is unfair towards him. What steps would he take?</li><li>He is in a situation where he has to handle a difficult customer. How would he handle the situation?</li><li>He is in a situation where he has to give bad news to someone. What approach would he take?</li></ul></ol>",
         "type": "checkbox",
         "options": [
             {
@@ -63,8 +42,15 @@
         ]
     },
     {
-        "section": "B",
+        "section": "A",
         "questionId": 4,
+        "questionText": "<ol><li><b>Q4.</b> <strong>You are required to write a sentence based on the word given below. </strong></li></ol><p><strong>Conditions:</strong></p><ul><li>This includes 10 words which will appear one after the other for 20 seconds on the screen.</li><li>You are required to read the word and write the sentence at the same time.</li><li>There will not be any gap between the words appearing on the screen to write the sentence.</li><li>The duration of this activity would be 3 minutes and 20 seconds.</li></ul><p><strong>Words are:</strong></p><ul><li>Duty</li><li>Discipline</li><li>Luck</li><li>Escape</li><li>Problem</li><li>Defeat</li><li>Impulsive</li><li>Failure</li><li>Insult</li><li>Exploitation</li></ul>",
+        "type": "input",
+        "inputType": "textarea"
+    },
+    {
+        "section": "B",
+        "questionId": 45,
         "questionText": "What is your favorite fruit?",
         "type": "input",
         "inputType": "text"

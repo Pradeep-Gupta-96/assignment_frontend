@@ -46,10 +46,12 @@ const Question = ({ question, onSubmit }) => {
 
     return (
         <div className='qsn-row'>
-            <div className='question'>{showQuestionText && <h3>{question.questionText}</h3>}</div>
+            <div className='cd-time'>Time left: <span>{timeLeft}</span> Seconds</div>
+            {showQuestionText && <div className='question' dangerouslySetInnerHTML={{ __html: question.questionText }}></div>}
             {showOptions && (
-                <div className='Ans-row'>
-                    <div className='checkbox-row'>
+                <div className='Ans-row fadeInRight'>
+                    <h4 style={{marginTop: "0px"}}><span>Ans:</span> Write your answer here</h4>
+                    <div className='checkbox-row test-checkbox'>
                         {question.type === 'checkbox' &&
                             question.options.map((option) => (
                                 <label key={option.optionId}>
@@ -71,10 +73,11 @@ const Question = ({ question, onSubmit }) => {
                             />
                         )}
                     </div>
+                    
                     <button onClick={handleSubmit}>Submit</button>
                 </div>
             )}
-            <p>Time left: {timeLeft} seconds</p>
+            
         </div>
     );
 };

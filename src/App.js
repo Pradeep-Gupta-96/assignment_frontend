@@ -11,6 +11,7 @@ import Practices from './Secondtest/Practices';
 import ProgresD from './forms/ProgresD';
 import PsychometricTest from './psychometricTest/PsychometricTest';
 import PsychometricSuccess from './psychometricTest/PsychometricSuccess';
+import HomepsychometricTest from './psychometricTest/HomepsychometricTest';
 
 
 
@@ -27,8 +28,9 @@ function App() {
     { path: "/successpage", element: <Successpage/> },
     { path: "/dashboard", element: <Dashboard/> },
     { path: "/practices", element: <Practices/> },
-    { path: "/PsychometricTest", element: <PsychometricTest/> },
+    { path: "/psychometric-test-start", element: <PsychometricTest/> },
     { path: "/PsychometricSuccess", element: <PsychometricSuccess/> },
+    { path: "/psychometric-test", element: <HomepsychometricTest/> },
   
   ]
   
