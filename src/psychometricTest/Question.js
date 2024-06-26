@@ -50,7 +50,7 @@ const Question = ({ question, onSubmit }) => {
             {showQuestionText && <div className='question' dangerouslySetInnerHTML={{ __html: question.questionText }}></div>}
             {showOptions && (
                 <div className='Ans-row fadeInRight'>
-                    <h4 style={{marginTop: "0px"}}><span>Ans:</span> Write your answer here</h4>
+                    <h4 style={{ marginTop: "0px" }}><span>Ans:</span> Write your answer here</h4>
                     <div className='checkbox-row test-checkbox'>
                         {question.type === 'checkbox' &&
                             question.options.map((option) => (
@@ -65,19 +65,27 @@ const Question = ({ question, onSubmit }) => {
                             ))}
                     </div>
                     <div className='input-row'>
-                        {question.type === 'input' && (
+                        {question.type === 'input' && question.inputType === 'text' && (
                             <input
-                                type={question.inputType}
+                                type="text"
                                 value={answer}
                                 onChange={(e) => setAnswer(e.target.value)}
                             />
                         )}
                     </div>
-                    
+                    <div className='input-row'>
+                        {question.type === 'input' && question.inputType === 'textarea' && (
+                            <textarea
+                                value={answer}
+                                onChange={(e) => setAnswer(e.target.value)}
+                            ></textarea>
+                        )}
+                    </div>
+
                     <button onClick={handleSubmit}>Submit</button>
                 </div>
             )}
-            
+
         </div>
     );
 };

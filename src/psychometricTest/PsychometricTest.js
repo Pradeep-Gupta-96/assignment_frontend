@@ -3,24 +3,10 @@ import questionsData from "./questions.json";
 import Question from "./Question";
 import Header from "./Header";
 
-import { Link, useNavigate } from "react-router-dom";
-import logo from "../images/logo.png";
+import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField";
-import Stepper from "@mui/material/Stepper";
-import Step from "@mui/material/Step";
-import StepLabel from "@mui/material/StepLabel";
-import { Button, FormLabel, ListItemText } from "@mui/material";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import Checkbox from "@mui/material/Checkbox";
 import videobg from "../images/background-video.mp4";
-import { Baseurl } from "../common/Url";
 import Pfooter from "./Pfooter";
 
 const PsychometricTest = () => {
